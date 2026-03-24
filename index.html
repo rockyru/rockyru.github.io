@@ -1,1 +1,184 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aris Velasco | Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a', // Slate 900
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 selection:bg-primary/20 selection:text-primary pb-20">
+
+  <nav class="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <span class="text-sm font-bold tracking-tighter text-slate-900">arisvelasco_</span>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">
+          <i data-lucide="github" class="w-5 h-5"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 pt-20 space-y-32">
+    
+    <section class="space-y-8">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Available for work
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
+          Hi, I'm Aris.<br />
+          <span class="text-slate-400">Full-Stack Engineer.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+          Building clean, modern web applications and scalable system architectures.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="mailto:hello@example.com" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors gap-2 text-base font-medium">
+          <i data-lucide="mail" class="w-4 h-4"></i> Get in touch
+        </a>
+        <a href="#" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors gap-2 text-base font-medium">
+          <i data-lucide="terminal" class="w-4 h-4"></i> View Resume
+        </a>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
+        <i data-lucide="code" class="w-4 h-4"></i> Tech Stack
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Vue 3</span>
+        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">TypeScript</span>
+        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Tailwind CSS</span>
+        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Laravel</span>
+        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">PostgreSQL</span>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
+        <i data-lucide="terminal" class="w-4 h-4"></i> Selected Projects
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
+          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
+            <i data-lucide="external-link" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">AWTOR API Gateway</h3>
+          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">A centralized dashboard for managing API endpoints, mock responses, and system parameters.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Vue 3</span>
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Tailwind</span>
+          </div>
+        </a>
+
+        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
+          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
+            <i data-lucide="external-link" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">University Portal</h3>
+          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">Student and faculty portal featuring real-time push notifications and role-based access control.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Laravel</span>
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">MySQL</span>
+          </div>
+        </a>
+
+        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
+          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
+            <i data-lucide="external-link" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Research Repository</h3>
+          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">Digital object identifier (DOI) indexing system with advanced search and citation tracking.</p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Node.js</span>
+            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Elasticsearch</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
+        <i data-lucide="briefcase" class="w-4 h-4"></i> Experience
+      </div>
+      
+      <div class="space-y-0">
+        
+        <div class="group flex flex-col md:flex-row gap-4 md:gap-12 py-8 border-b border-slate-200 last:border-0">
+          <div class="md:w-1/4 shrink-0 mt-1">
+            <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">2023 — Present</span>
+          </div>
+          <div class="md:w-3/4 space-y-2">
+            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              Lead Frontend Engineer
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 group-hover:text-slate-900 transition-all group-hover:translate-x-1"></i>
+            </h4>
+            <p class="text-sm font-medium text-slate-900">Tech Solutions Inc.</p>
+            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl mt-4">
+              Spearheaded the migration of legacy dashboards to Vue 3 Composition API, improving render speeds by 40% and reducing technical debt.
+            </p>
+          </div>
+        </div>
+
+        <div class="group flex flex-col md:flex-row gap-4 md:gap-12 py-8 border-b border-slate-200 last:border-0">
+          <div class="md:w-1/4 shrink-0 mt-1">
+            <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">2021 — 2023</span>
+          </div>
+          <div class="md:w-3/4 space-y-2">
+            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              Full-Stack Developer
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 group-hover:text-slate-900 transition-all group-hover:translate-x-1"></i>
+            </h4>
+            <p class="text-sm font-medium text-slate-900">University Dev Team</p>
+            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl mt-4">
+              Developed and maintained the core student information system using Laravel and Vue, handling data for over 10,000 active students.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
