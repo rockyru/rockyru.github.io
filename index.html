@@ -1,184 +1,209 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aris Velasco | Portfolio</title>
+  <title>Ruther Bergonia | Full Stack Developer</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            primary: '#0f172a', // Slate 900
-          },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              lime: '#ccff00', 
+              bg: '#f6f6f6'
+            }
           }
         }
       }
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-  
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    /* Creates the subtle technical background grid pattern 
+      using Tailwind-compatible arbitrary values 
+    */
+    body {
+      background-color: #f6f6f6;
+      background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 4rem 4rem; /* Size of the grid squares */
+    }
   </style>
 </head>
-<body class="min-h-screen bg-slate-50 text-slate-900 selection:bg-primary/20 selection:text-primary pb-20">
+<body class="text-slate-900 min-h-screen flex flex-col font-sans selection:bg-brand-lime selection:text-black">
 
-  <nav class="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <span class="text-sm font-bold tracking-tighter text-slate-900">arisvelasco_</span>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">
-          <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">
-          <i data-lucide="linkedin" class="w-5 h-5"></i>
-        </a>
-      </div>
+  <nav class="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-8 flex justify-between items-center sticky top-0 z-50 backdrop-blur-sm bg-[#f6f6f6]/80 border-b border-transparent transition-all">
+    <div class="font-mono font-bold text-sm tracking-tighter uppercase">
+      &lt;ARISVELASCO&gt;
+    </div>
+    
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#projects" class="hover:underline decoration-2 underline-offset-4 hover:text-slate-600 transition-colors">Projects</a>
+      <a href="#contact" class="hover:underline decoration-2 underline-offset-4 hover:text-slate-600 transition-colors">Contact</a>
+      <a href="https://github.com" target="_blank" class="hover:underline decoration-2 underline-offset-4 hover:text-slate-600 transition-colors">GitHub</a>
+      <a href="#" class="hover:underline decoration-2 underline-offset-4 hover:text-slate-600 transition-colors">My CV</a>
     </div>
   </nav>
 
-  <main class="max-w-5xl mx-auto px-6 pt-20 space-y-32">
+  <main class="w-full max-w-[1400px] mx-auto px-6 md:px-12 mt-12 md:mt-20 flex-1">
     
-    <section class="space-y-8">
-      <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Available for work
+    <h1 class="text-[3.5rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem] font-black uppercase leading-[0.85] tracking-tighter mb-16 lg:mb-24">
+      Full Stack Developer<br/>
+      Ruther Bergonia
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end pb-32 border-b border-slate-200">
+      
+      <div class="lg:col-span-6 xl:col-span-5 space-y-6">
+        <div class="font-mono font-bold text-sm md:text-base tracking-tight bg-white inline-block px-3 py-1 border border-slate-200 rounded-md">
+          &lt;Vue.js Tailwind Laravel Node.js TypeScript&gt;
         </div>
-        <h1 class="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
-          Hi, I'm Aris.<br />
-          <span class="text-slate-400">Full-Stack Engineer.</span>
-        </h1>
-        <p class="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-          Building clean, modern web applications and scalable system architectures.
+        
+        <p class="text-slate-600 text-lg md:text-xl leading-relaxed max-w-md">
+          A full stack developer with experience in both team projects and individual work, I focus on building scalable, efficient solutions.
         </p>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-4">
-        <a href="mailto:hello@example.com" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors gap-2 text-base font-medium">
-          <i data-lucide="mail" class="w-4 h-4"></i> Get in touch
-        </a>
-        <a href="#" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 transition-colors gap-2 text-base font-medium">
-          <i data-lucide="terminal" class="w-4 h-4"></i> View Resume
-        </a>
-      </div>
-    </section>
-
-    <section class="space-y-6">
-      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
-        <i data-lucide="code" class="w-4 h-4"></i> Tech Stack
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Vue 3</span>
-        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">TypeScript</span>
-        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Tailwind CSS</span>
-        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">Laravel</span>
-        <span class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition-colors">PostgreSQL</span>
-      </div>
-    </section>
-
-    <section class="space-y-6">
-      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
-        <i data-lucide="terminal" class="w-4 h-4"></i> Selected Projects
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
-          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
-            <i data-lucide="external-link" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">AWTOR API Gateway</h3>
-          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">A centralized dashboard for managing API endpoints, mock responses, and system parameters.</p>
-          <div class="flex flex-wrap gap-2 mt-auto">
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Vue 3</span>
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Tailwind</span>
-          </div>
-        </a>
-
-        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
-          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
-            <i data-lucide="external-link" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">University Portal</h3>
-          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">Student and faculty portal featuring real-time push notifications and role-based access control.</p>
-          <div class="flex flex-wrap gap-2 mt-auto">
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Laravel</span>
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">MySQL</span>
-          </div>
-        </a>
-
-        <a href="#" class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-400 transition-colors relative overflow-hidden min-h-[200px]">
-          <div class="absolute top-6 right-6 text-slate-300 group-hover:text-slate-900 transition-colors">
-            <i data-lucide="external-link" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Research Repository</h3>
-          <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed">Digital object identifier (DOI) indexing system with advanced search and citation tracking.</p>
-          <div class="flex flex-wrap gap-2 mt-auto">
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Node.js</span>
-            <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">Elasticsearch</span>
-          </div>
-        </a>
-
+        <div class="pt-4 flex gap-4">
+          <a href="#" class="inline-flex items-center gap-2 bg-brand-lime text-black font-bold text-sm md:text-base px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-300 shadow-sm border border-brand-lime">
+            Download CV
+          </a>
+          <a href="#projects" class="inline-flex items-center gap-2 bg-white text-black font-bold text-sm md:text-base px-8 py-3.5 rounded-full hover:bg-slate-50 transition-colors duration-300 shadow-sm border border-slate-200">
+            View Work <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
-    </section>
 
-    <section class="space-y-6">
-      <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
-        <i data-lucide="briefcase" class="w-4 h-4"></i> Experience
-      </div>
-      
-      <div class="space-y-0">
-        
-        <div class="group flex flex-col md:flex-row gap-4 md:gap-12 py-8 border-b border-slate-200 last:border-0">
-          <div class="md:w-1/4 shrink-0 mt-1">
-            <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">2023 — Present</span>
+      <div class="lg:col-span-6 xl:col-start-8 xl:col-span-5 w-full">
+        <div class="bg-white rounded-[2rem] p-6 md:p-8 shadow-sm border border-slate-200 hover:border-brand-lime transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">GitHub contributions</span>
+            <i data-lucide="github" class="w-5 h-5 text-slate-800"></i>
           </div>
-          <div class="md:w-3/4 space-y-2">
-            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-              Lead Frontend Engineer
-              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 group-hover:text-slate-900 transition-all group-hover:translate-x-1"></i>
-            </h4>
-            <p class="text-sm font-medium text-slate-900">Tech Solutions Inc.</p>
-            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl mt-4">
-              Spearheaded the migration of legacy dashboards to Vue 3 Composition API, improving render speeds by 40% and reducing technical debt.
-            </p>
+          <div class="w-full overflow-hidden">
+            <div id="github-graph" class="grid grid-rows-7 grid-flow-col gap-1.5 w-max"></div>
+          </div>
+          <div class="flex justify-between items-center text-[10px] md:text-xs font-medium text-slate-400 mt-4">
+            <span>May '25</span>
+            <span>Nov '25</span>
           </div>
         </div>
-
-        <div class="group flex flex-col md:flex-row gap-4 md:gap-12 py-8 border-b border-slate-200 last:border-0">
-          <div class="md:w-1/4 shrink-0 mt-1">
-            <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">2021 — 2023</span>
-          </div>
-          <div class="md:w-3/4 space-y-2">
-            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-              Full-Stack Developer
-              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 group-hover:text-slate-900 transition-all group-hover:translate-x-1"></i>
-            </h4>
-            <p class="text-sm font-medium text-slate-900">University Dev Team</p>
-            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl mt-4">
-              Developed and maintained the core student information system using Laravel and Vue, handling data for over 10,000 active students.
-            </p>
-          </div>
-        </div>
-
       </div>
-    </section>
 
+    </div>
   </main>
 
+  <section id="projects" class="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-32 border-b border-slate-200">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">Selected<br/>Works</h2>
+      <p class="text-slate-500 max-w-sm font-medium">A collection of recent applications, system architectures, and frontend interfaces.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <a href="#" class="group block bg-white rounded-[2rem] p-8 md:p-12 border border-slate-200 hover:border-black transition-all duration-300 relative overflow-hidden">
+        <div class="absolute top-8 right-8 w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center group-hover:bg-brand-lime group-hover:scale-110 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-5 h-5 text-black"></i>
+        </div>
+        <div class="mt-24">
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-mono text-[10px] uppercase font-bold tracking-widest px-3 py-1 bg-slate-100 rounded-md">Vue.js</span>
+            <span class="font-mono text-[10px] uppercase font-bold tracking-widest px-3 py-1 bg-slate-100 rounded-md">Tailwind</span>
+          </div>
+          <h3 class="text-3xl font-black uppercase tracking-tighter mb-4">AWTOR API Gateway</h3>
+          <p class="text-slate-600 leading-relaxed max-w-md">A centralized dashboard for managing API endpoints, mock responses, and system parameters with zero latency.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group block bg-white rounded-[2rem] p-8 md:p-12 border border-slate-200 hover:border-black transition-all duration-300 relative overflow-hidden">
+        <div class="absolute top-8 right-8 w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center group-hover:bg-brand-lime group-hover:scale-110 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-5 h-5 text-black"></i>
+        </div>
+        <div class="mt-24">
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-mono text-[10px] uppercase font-bold tracking-widest px-3 py-1 bg-slate-100 rounded-md">Laravel</span>
+            <span class="font-mono text-[10px] uppercase font-bold tracking-widest px-3 py-1 bg-slate-100 rounded-md">MySQL</span>
+          </div>
+          <h3 class="text-3xl font-black uppercase tracking-tighter mb-4">University Portal</h3>
+          <p class="text-slate-600 leading-relaxed max-w-md">Student and faculty portal featuring real-time push notifications and robust role-based access control.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="contact" class="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-32">
+    <div class="flex flex-col items-center text-center space-y-8">
+      <div class="font-mono font-bold text-sm tracking-tight bg-brand-lime px-4 py-2 rounded-full inline-flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-black animate-pulse"></span>
+        Currently accepting new projects
+      </div>
+      
+      <a href="mailto:hello@example.com" class="block group">
+        <h2 class="text-[3rem] md:text-[6rem] lg:text-[8rem] font-black uppercase tracking-tighter leading-none group-hover:text-brand-lime transition-colors duration-300" style="-webkit-text-stroke: 1px #0f172a;">
+          Let's Talk
+        </h2>
+        <div class="flex items-center justify-center gap-4 mt-4 text-slate-500 group-hover:text-black transition-colors">
+          <span class="text-xl md:text-3xl font-bold tracking-tight">hello@example.com</span>
+          <i data-lucide="arrow-right" class="w-6 h-6 md:w-8 md:h-8"></i>
+        </div>
+      </a>
+    </div>
+
+    <div class="mt-32 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-slate-500">
+      <p>&copy; 2026 Aris Velasco. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="https://github.com" target="_blank" class="hover:text-black transition-colors">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" class="hover:text-black transition-colors">Twitter / X</a>
+      </div>
+    </div>
+  </section>
+
   <script>
+    // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Generate GitHub Graph
+    const graphContainer = document.getElementById('github-graph');
+    if (graphContainer) {
+      const cols = 22; 
+      const rows = 7;  
+      
+      const colors = [
+        'bg-slate-100', 
+        'bg-[#eaff99]', 
+        'bg-[#d5ff4d]', 
+        'bg-[#ccff00]', 
+        'bg-[#a3cc00]'  
+      ];
+
+      for (let i = 0; i < cols * rows; i++) {
+        const square = document.createElement('div');
+        let randomColor;
+        const rand = Math.random();
+        
+        if (rand < 0.4) randomColor = colors[0]; 
+        else if (rand < 0.7) randomColor = colors[1]; 
+        else if (rand < 0.9) randomColor = colors[2]; 
+        else randomColor = colors[Math.floor(Math.random() * (colors.length - 3)) + 3]; 
+
+        square.className = `w-3 h-3 md:w-4 md:h-4 rounded-[2px] ${randomColor} hover:ring-2 ring-black transition-all cursor-pointer`;
+        graphContainer.appendChild(square);
+      }
+    }
   </script>
 </body>
 </html>
