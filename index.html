@@ -16,16 +16,16 @@
            CSS VARIABLES & RESET
            ========================================= */
         :root {
-            --bg-color: #050505;
+            --bg-color: #26667F;
             --grid-line: rgba(255, 255, 255, 0.07); /* Visible Gridline Color */
-            --surface-color: rgba(255, 255, 255, 0.03);
+            --surface-color: #67C090;
             --border-color: rgba(255, 255, 255, 0.1);
             --text-main: #ffffff;
             --text-muted: #a1a1aa;
-            --highlight-bg: #ffffff;
+            --highlight-bg: #DDF4E7;
             --highlight-text: #000000;
-            --accent-color: #4facfe;
-            --accent-gradient: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            --accent-color: #DDF4E7;
+            --accent-gradient: linear-gradient(90deg, #DDF4E7 0%, #00f2fe 100%);
             --dot-color: rgba(255, 255, 255, 0.08);
         }
 
@@ -264,7 +264,7 @@
         .bio-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--text-muted);
+            color: #fff;
             margin-bottom: 2rem;
             max-width: 650px;
         }
@@ -349,12 +349,12 @@
 
         .timeline-company {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: #DDF4E7;
             margin-bottom: 1rem;
         }
 
         .timeline-desc {
-            color: var(--text-muted);
+            color: #DDF4E7;
             line-height: 1.7;
         }
 
@@ -404,12 +404,12 @@
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.05);
+            background: #DDF4E7;
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color:#26667F;
             transition: background 0.3s ease;
         }
         
@@ -468,6 +468,7 @@
         .portfolio-content h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--text-main);
         }
 
         .portfolio-content p {
@@ -579,12 +580,12 @@
 </head>
 <body>
 
-    <aside class="social-sidebar">
+    <!-- <aside class="social-sidebar">
         <a href="#" class="social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
         <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
         <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
         <a href="mailto:hello@ruther.dev" class="social-icon" aria-label="Email"><i data-lucide="mail"></i></a>
-    </aside>
+    </aside> -->
 
     <div class="container">
         
@@ -592,21 +593,22 @@
         <div class="dot-grid bottom"></div>
 
         <header>
-            <a href="#" class="logo">Ruther Bergonia</a>
+            <a href="#" class="logo">RB</a>
             <nav class="nav-links">
                 <a href="#about"><span>/</span>aboutMe</a>
                 <a href="#experience"><span>/</span>workExperience</a>
                 <a href="#tech"><span>/</span>techSkills</a>
                 <a href="#portfolio"><span>/</span>creativePortfolio</a>
+               
             </nav>
         </header>
 
         <main id="about" class="hero fade-in-section">
             <i data-lucide="quote" class="quote-icon"></i>
             
-            <div class="profile-wrapper">
+            <!-- <div class="profile-wrapper">
                 <img src="https://ui-avatars.com/api/?name=Ruther+Bergonia&background=4facfe&color=fff&size=200" alt="Ruther Bergonia" class="profile-img">
-            </div>
+            </div> -->
 
             <h1>
                 Hi <span class="name">Ruther</span> here,<br>
@@ -621,10 +623,10 @@
                 Beyond writing code, I handle deployments using <span class="highlight">Docker</span> and specialize in cloud server management, specifically with <span class="highlight">DigitalOcean</span>. When I step away from the keyboard, I am an avid <span class="highlight">photographer & videographer</span>, capturing the world through my lens.
             </p>
 
-            <div class="hero-footer">
+            <!-- <div class="hero-footer">
                 <div class="gradient-circle"></div>
                 <span class="handwriting">Crafting code & capturing moments</span>
-            </div>
+            </div> -->
         </main>
 
         <section id="experience" class="fade-in-section">
@@ -632,24 +634,30 @@
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="timeline-date">2022 - Present</span>
-                    <h3 class="timeline-title">Senior Fullstack Developer</h3>
-                    <div class="timeline-company">Tech Solutions Inc.</div>
-                    <p class="timeline-desc">Lead the development of scalable SaaS platforms using Laravel and Vue3. Architected database structures in MySQL, managed containerized deployments via Docker, and maintained DigitalOcean Droplet infrastructure ensuring 99.9% uptime.</p>
+                    <span class="timeline-date">2025 - Present</span>
+                    <h3 class="timeline-title">Senior Admnistrative Assistant II</h3>
+                    <div class="timeline-company">Research Grants Administration Office <br/> University of the Philippines Manila</div>
+                    <p class="timeline-desc" style="text-align: justify;">
+                        Leading the development of System for Universirty Research Inteliigence (SURI). A research repository and analytics platform built with Laravel 12 and Vue3. Responsible for end-to-end project management, from gathering requirements to deployment and maintenance. Collaborate closely with university stakeholders to ensure the system meets the needs of researchers and administrators.
+                    </p>
                 </div>
                 
                 <div class="timeline-item">
-                    <span class="timeline-date">2019 - 2022</span>
-                    <h3 class="timeline-title">Web Developer</h3>
-                    <div class="timeline-company">Creative Digital Agency</div>
-                    <p class="timeline-desc">Developed responsive, interactive user interfaces for e-commerce clients. Integrated third-party APIs and built custom CMS solutions. Frequently collaborated with the design team to bridge the gap between UI/UX and technical implementation.</p>
+                    <span class="timeline-date">2021-2025</span>
+                    <h3 class="timeline-title">Senior ICT Assistant</h3>
+                    <div class="timeline-company">National Graduate Office for the Health Sciences <br/> University of the Philippines Manila</div>
+                    <p class="timeline-desc" style="text-align: justify;">
+                        Spearheaded the development of Academic Resources and Assistance for Learning (ARAL) platform, an application portal for the Graduate Studies and an online inquiry system where students can submit their inquiries and concerns regarding Graduate Programs and Graduate Programs Application.    
+                    </p>
                 </div>
 
                 <div class="timeline-item">
-                    <span class="timeline-date">Freelance</span>
-                    <h3 class="timeline-title">Photographer & Videographer</h3>
-                    <div class="timeline-company">Self-Employed</div>
-                    <p class="timeline-desc">Shot and edited commercial video content, event photography, and creative portraits. Managed end-to-end production including color grading, audio mixing, and final delivery using the Adobe Creative Suite.</p>
+                    <span class="timeline-date">2020-2021</span>
+                    <h3 class="timeline-title">LMQ Technology LLC</h3>
+                    <div class="timeline-company">Freelance</div>
+                    <p class="timeline-desc" style="text-align: justify;">
+                        Developed a custom network monitoring dashboard for a mid-sized IT firm using Vue3 and Laravel. The web app focuses on analytics and visualization of logs monitoring and ticketing system as well to resolve issues that are detected by their external monitoring tool.  
+                    </p>
                 </div>
             </div>
         </section>
@@ -701,58 +709,51 @@
                         <span class="tag">Videography</span>
                         <span class="tag">Premiere Pro</span>
                         <span class="tag">Lightroom</span>
-                        <span class="tag">Figma</span>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
+       
         <section id="portfolio" class="fade-in-section">
             <h2 class="section-title"><span>/</span> creativePortfolio</h2>
             
             <div class="portfolio-grid">
                 <a href="#" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Data Dashboard" class="portfolio-img">
+                    <img src="images/suri.png" alt="Data Dashboard" class="portfolio-img">
                     <div class="portfolio-content">
                         <span class="badge">Development</span>
-                        <h3>FinTech Analytics Dashboard</h3>
-                        <p>Vue3 + Laravel API. Real-time data visualization platform built for financial analysts.</p>
+                        <h3>SURI</h3>
+                        <p>Research Repository</p>
                     </div>
                 </a>
 
                 <a href="#" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="E-Commerce System" class="portfolio-img">
+                    <img src="images/aral.png" alt="E-Commerce System" class="portfolio-img">
                     <div class="portfolio-content">
                         <span class="badge">Development</span>
-                        <h3>Custom E-Commerce Engine</h3>
-                        <p>Headless architecture using Vue3 frontend and custom Laravel backend with MySQL.</p>
+                        <h3>ARAL</h3>
+                        <p>Application and Inquiry Platform.</p>
                     </div>
                 </a>
 
                 <a href="#" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?q=80&w=1000&auto=format&fit=crop" alt="Urban Photography" class="portfolio-img">
+                    <img src="images/spam.png" alt="Urban Photography" class="portfolio-img">
                     <div class="portfolio-content">
-                        <span class="badge" style="background: #ffffff; color: #000;">Photography</span>
-                        <h3>Urban Neon Series</h3>
-                        <p>A collection of street photography capturing the vibrant nightlife of the city.</p>
+                        <span class="badge" style="background: #ffffff; color: #000;">Open Source Project</span>
+                        <h3>Layer 7</h3>
+                        <p>Paste any link, message, or screenshot. We compare it against trusted security sources and anonymous reports from other people who’ve seen the same scams.</p>
                     </div>
                 </a>
 
-                <a href="#" class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1000&auto=format&fit=crop" alt="Cinematic Video" class="portfolio-img">
-                    <div class="portfolio-content">
-                        <span class="badge" style="background: #ffffff; color: #000;">Videography</span>
-                        <h3>Travel Cinematic Cut</h3>
-                        <p>Short-form documentary style video. Shot, directed, and color-graded in Premiere Pro.</p>
-                    </div>
-                </a>
             </div>
         </section>
 
         <footer class="fade-in-section">
             <p style="color: var(--text-muted); margin-bottom: 1rem;">Have a project in mind?</p>
-            <a href="mailto:hello@ruther.dev" class="email-link">hello@ruther.dev</a>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">© 2026 Ruther Bergonia. Built with Vanilla HTML/CSS/JS.</p>
+            <a href="mailto:ruther.bergonia@gmail.com" class="email-link">ruther.bergonia@gmail.com</a>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">© 2026 Ruther Bergonia.</p>
         </footer>
     </div>
 
