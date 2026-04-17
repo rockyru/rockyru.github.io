@@ -1,0 +1,303 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>AWTOR-SURI Case Study | Alex Wyatt</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                900: "#12261a",
+                800: "#1b3826",
+                700: "#244a33",
+              },
+              lime: "#dcf3a8",
+              offwhite: "#fcfcfc",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["Space Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans bg-offwhite text-forest-900 overflow-x-hidden selection:bg-lime selection:text-forest-900">
+    <nav class="w-full flex justify-between items-center px-6 py-8 lg:px-12 max-w-[1000px] mx-auto border-b border-forest-900/10">
+      <a
+        href="index.html"
+        class="flex items-center gap-3 font-mono text-xs font-bold tracking-widest hover:text-forest-700 transition-colors"
+      >
+        ← BACK TO PORTFOLIO
+      </a>
+      <div class="font-bold tracking-tighter text-xl">R.B.</div>
+    </nav>
+
+    <header class="pt-24 pb-16 px-6 lg:px-12 max-w-[1000px] mx-auto">
+      <div class="inline-flex items-center gap-3 font-mono text-xs tracking-widest mb-8 text-forest-900">
+        <span class="w-2.5 h-2.5 bg-lime block rounded-full"></span> SYSTEM ARCHITECTURE & AUTH
+      </div>
+
+      <h1 class="text-[clamp(3rem,6vw,5rem)] font-semibold leading-[1.05] tracking-tight mb-8">
+        Seamless Cross-System <br />
+        <span class="text-forest-900/40">Authentication.</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-forest-900/70 font-light max-w-2xl leading-relaxed mb-16">
+        Designing a frictionless, secure handshake protocol between the University of the Philippines Manila's core research platforms.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-forest-900/10 font-mono text-xs uppercase tracking-widest">
+        <div>
+          <span class="block text-forest-900/40 mb-2">Client</span>
+          <span class="font-bold">UP Manila</span>
+        </div>
+        <div>
+          <span class="block text-forest-900/40 mb-2">Systems</span>
+          <span class="font-bold">AWTOR & SURI</span>
+        </div>
+        <div>
+          <span class="block text-forest-900/40 mb-2">Focus</span>
+          <span class="font-bold">Auth / Cryptography</span>
+        </div>
+        <div>
+          <span class="block text-forest-900/40 mb-2">Timeline</span>
+          <span class="font-bold">2025</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="px-6 lg:px-12 max-w-[1000px] mx-auto pb-32">
+      <section class="mb-32">
+        <h2 class="text-3xl font-semibold mb-8 tracking-tight">The Problem</h2>
+        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none">
+          <p class="mb-6">
+            The University of the Philippines Manila operates two distinct systems critical to academic operations:
+            <strong>AWTOR</strong> (Author's Workflow and Tracking of Research) and <strong>SURI</strong> (System for University Research
+            Intelligence).
+          </p>
+          <p class="mb-6">
+            AWTOR functions as the primary research dashboard, handling ethics management, intellectual property, and prerequisite
+            certificates. SURI handles the final research registration, management, and funding.
+          </p>
+          <div class="bg-forest-900 text-white p-8 rounded-2xl my-12 border-l-4 border-lime shadow-lg">
+            <h4 class="font-mono text-xs tracking-widest text-lime mb-4 uppercase">The Core Friction</h4>
+            <p class="text-lg m-0 text-white/90">
+              Researchers are strictly required to clear prerequisites in AWTOR before they are permitted to register their research in
+              SURI. However, redirecting users between these isolated environments forced a secondary login screen. This
+              double-authentication requirement created immense UX friction and fragmented the user journey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-semibold mb-8 tracking-tight">The Fix: Signed URL Handshake</h2>
+        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none mb-16">
+          <p>
+            We needed a way to guarantee identity transfer without passing raw credentials or forcing a secondary sign-in. The solution was
+            a secure, backend-verified handshake utilizing time-boxed, cryptographically signed URLs.
+          </p>
+        </div>
+
+        <div class="bg-white border border-forest-900/10 rounded-3xl p-8 lg:p-16 shadow-sm mb-16 relative overflow-hidden">
+          <div
+            class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background-image: radial-gradient(#12261a 1px, transparent 1px); background-size: 20px 20px"
+          ></div>
+
+          <div class="relative z-10 flex flex-col gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div class="md:col-span-3 text-center md:text-right">
+                <div class="inline-block bg-forest-900 text-white font-mono text-xs px-4 py-2 rounded-lg tracking-widest">
+                  STEP 01 : AWTOR
+                </div>
+              </div>
+              <div class="md:col-span-9 bg-offwhite border border-forest-900/10 p-6 rounded-xl relative">
+                <p class="text-sm font-medium mb-2">Prerequisite Clearance & Token Generation</p>
+                <p class="text-sm text-forest-900/60 leading-relaxed">
+                  The researcher completes certificate checks. AWTOR generates a short-lived token containing the user's ID and signs it
+                  using a shared private key.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex justify-center md:justify-start md:pl-[25%] -my-6">
+              <div class="w-px h-12 bg-forest-900/20 relative">
+                <div
+                  class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 border-r border-b border-forest-900/50"
+                ></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div class="md:col-span-3 text-center md:text-right">
+                <div class="inline-block bg-lime text-forest-900 font-mono text-xs px-4 py-2 rounded-lg tracking-widest font-bold">
+                  STEP 02 : CLIENT
+                </div>
+              </div>
+              <div class="md:col-span-9 bg-[#12261a] border border-forest-900 text-white p-6 rounded-xl">
+                <p class="text-sm font-medium text-lime mb-2">Redirection via Signed URL</p>
+                <div class="font-mono text-[10px] sm:text-xs text-white/50 bg-black/30 p-3 rounded overflow-x-auto whitespace-nowrap">
+                  GET https://suri.upm.edu.ph/register?auth=<span class="text-lime">eyJhbGciOiJIUzI1Ni...</span>&sig=<span
+                    class="text-blue-300"
+                    >8f2a9b...</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center md:justify-start md:pl-[25%] -my-6">
+              <div class="w-px h-12 bg-forest-900/20 relative">
+                <div
+                  class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 border-r border-b border-forest-900/50"
+                ></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div class="md:col-span-3 text-center md:text-right">
+                <div class="inline-block bg-forest-900 text-white font-mono text-xs px-4 py-2 rounded-lg tracking-widest">
+                  STEP 03 : SURI
+                </div>
+              </div>
+              <div class="md:col-span-9 bg-offwhite border border-forest-900/10 p-6 rounded-xl">
+                <p class="text-sm font-medium mb-2">Backend Handshake & Verification</p>
+                <p class="text-sm text-forest-900/60 leading-relaxed">
+                  SURI intercepts the URL. Before granting access, it makes a secure server-to-server API call back to AWTOR to verify the
+                  token hasn't been tampered with or expired. If valid, a session is established immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none">
+          <p>
+            <strong>The Result:</strong> Researchers experience a continuous flow. They hit a button in AWTOR and instantly land inside the
+            SURI registration dashboard, fully authenticated, while maintaining strict architectural decoupling between the two databases.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <footer
+      id="contact"
+      class="relative bg-forest-900 text-white min-h-[85vh] flex flex-col justify-between pt-32 pb-8 overflow-hidden font-sans border-t border-white/10"
+    >
+      <div class="mx-auto px-6 lg:px-12 relative z-10 flex-grow flex flex-col justify-between w-full">
+        <div class="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 mb-24">
+          <div class="max-w-2xl">
+            <h2 class="text-[clamp(2rem,4vw,3.5rem)] leading-[1.1] font-medium mb-12 tracking-tight text-white/90">
+              Let's build robust, scalable software together.
+            </h2>
+            <div class="flex items-center gap-4">
+              <a
+                href="mailto:alexwyatt@example.com"
+                class="bg-forest-800 text-white border border-white/10 px-8 py-4 rounded-full text-sm font-bold hover:bg-forest-700 transition-colors"
+              >
+                rsolutionsdev@gmail.com
+              </a>
+              <!-- <a
+                href="mailto:alexwyatt@example.com"
+                class="w-12 h-12 bg-lime text-forest-900 rounded-full flex items-center justify-center text-xl hover:bg-[#cde499] transition-colors"
+              >
+                →
+              </a> -->
+            </div>
+          </div>
+
+          <div class="flex gap-16 lg:gap-24 flex-wrap relative">
+            <div class="flex flex-col gap-4">
+              <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Navigate</h4>
+              <a
+                href="awtor-suri.html"
+                class="text-lg hover:text-lime transition-colors"
+                >AWTOR-SURI</a
+              >
+              <a
+                href="layer-7.html"
+                class="text-lg hover:text-lime transition-colors"
+                >Layer 7</a
+              >
+              <a
+                href="#work"
+                class="text-lg hover:text-lime transition-colors"
+                >Expertise</a
+              >
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Connect</h4>
+
+              <a
+                href="https://github.com/rockyru"
+                class="text-lg hover:text-lime transition-colors"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="relative w-full mt-auto">
+          <div class="w-full overflow-hidden">
+            <h1
+              class="text-[21vw] lg:text-[18vw] font-bold leading-[0.75] tracking-tighter text-white whitespace-nowrap ml-[-1vw] select-none"
+            >
+              Rockyru
+            </h1>
+          </div>
+
+          <div
+            class="mt-8 font-mono text-[10px] sm:text-xs tracking-widest text-white/50 uppercase flex flex-col md:flex-row justify-between gap-4"
+          >
+            <span>© 2026 RUTHER BERGONIA. ALL RIGHTS RESERVED.</span>
+            <span>BASED IN METRO MANILA, PHILIPPINES</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      aria-label="Scroll to top"
+      class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-lime text-forest-900 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-forest-900 hover:text-lime border border-forest-900/10 transition-all duration-300 group"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="group-hover:-translate-y-1 transition-transform duration-300"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </a>
+  </body>
+</html>

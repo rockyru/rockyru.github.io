@@ -45,43 +45,43 @@
     </script>
   </head>
   <body class="font-sans bg-offwhite text-forest-900 overflow-x-hidden selection:bg-lime selection:text-forest-900">
-    <nav class="w-full flex justify-between items-center px-6 py-6 lg:px-12 border-b border-forest-900/10 bg-offwhite sticky top-0 z-50">
-      <div class="text-2xl font-bold tracking-tighter text-forest-900 flex items-center gap-2">
-        <!-- <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M12 2L2 22h20L12 2z" />
-        </svg> -->
-        RB
-      </div>
-
-      <div
-        class="hidden md:flex bg-white border border-forest-900/10 px-6 py-2.5 rounded-full gap-8 font-mono text-xs font-bold tracking-widest shadow-sm"
+    <div class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center pointer-events-none">
+      <nav
+        class="pointer-events-auto bg-white/70 backdrop-blur-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-forest-900/10 px-6 py-3 rounded-full flex items-center justify-between w-full max-w-3xl gap-8 transition-all"
       >
         <a
-          href="#work"
-          class="text-forest-900/60 hover:text-forest-900 transition-colors"
-          >WORK</a
+          href="#"
+          class="text-xl font-bold tracking-tighter text-forest-900 hover:opacity-70 transition-opacity"
         >
-        <a
-          href="#approach"
-          class="text-forest-900/60 hover:text-forest-900 transition-colors"
-          >APPROACH</a
-        >
-      </div>
+          R.B.
+        </a>
 
-      <a
-        href="#contact"
-        class="bg-forest-900 text-white px-6 py-3 rounded-full font-mono text-xs font-bold tracking-widest hover:bg-forest-800 transition-colors shadow-sm"
-      >
-        WORK WITH ME
-      </a>
-    </nav>
+        <div class="hidden md:flex gap-8 font-mono text-xs font-bold tracking-widest uppercase text-forest-900/50">
+          <a
+            href="#work"
+            class="hover:text-forest-900 transition-colors"
+            >Work</a
+          >
+          <a
+            href="#approach"
+            class="hover:text-forest-900 transition-colors"
+            >Approach</a
+          >
+          <a
+            href="#about"
+            class="hover:text-forest-900 transition-colors"
+            >About</a
+          >
+        </div>
+
+        <a
+          href="#contact"
+          class="bg-forest-900 text-white px-5 py-2.5 rounded-full font-mono text-[10px] font-bold tracking-widest hover:bg-lime hover:text-forest-900 transition-all duration-300 shadow-sm"
+        >
+          GET IN TOUCH
+        </a>
+      </nav>
+    </div>
 
     <header class="px-6 lg:px-12 max-w-[1600px] mx-auto min-h-[80vh] flex flex-col justify-center pt-16 pb-24">
       <div class="inline-flex items-center gap-3 font-mono text-xs tracking-widest mb-16 text-forest-900">
@@ -209,10 +209,10 @@
             </p>
 
             <a
-              href="#"
+              href="awtor-suri.html"
               class="inline-flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-lime hover:text-white transition-colors"
             >
-              VIEW PROTOCOL ↗
+              VIEW USECASE ↗
             </a>
           </div>
         </div>
@@ -279,7 +279,7 @@
             </div>
 
             <a
-              href="#"
+              href="layer7.html"
               class="w-10 h-10 rounded-full border border-forest-900 text-forest-900 flex items-center justify-center text-lg hover:bg-forest-900 hover:text-white transition-colors"
             >
               ↗
@@ -443,16 +443,16 @@
             <div class="flex items-center gap-4">
               <a
                 href="mailto:alexwyatt@example.com"
-                class="bg-forest-800 text-white border border-white/10 px-8 py-4 rounded-full font-mono text-xs font-bold tracking-widest hover:bg-forest-700 transition-colors"
+                class="bg-forest-800 text-white border border-white/10 px-8 py-4 rounded-full text-sm font-bold hover:bg-forest-700 transition-colors"
               >
-                WORK WITH ME
+                rsolutionsdev@gmail.com
               </a>
-              <a
+              <!-- <a
                 href="mailto:alexwyatt@example.com"
                 class="w-12 h-12 bg-lime text-forest-900 rounded-full flex items-center justify-center text-xl hover:bg-[#cde499] transition-colors"
               >
                 →
-              </a>
+              </a> -->
             </div>
           </div>
 
@@ -460,17 +460,17 @@
             <div class="flex flex-col gap-4">
               <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Navigate</h4>
               <a
+                href="awtor-suri.html"
+                class="text-lg hover:text-lime transition-colors"
+                >AWTOR-SURI</a
+              >
+              <a
+                href="layer-7.html"
+                class="text-lg hover:text-lime transition-colors"
+                >Layer 7</a
+              >
+              <a
                 href="#work"
-                class="text-lg hover:text-lime transition-colors"
-                >Projects</a
-              >
-              <a
-                href="#approach"
-                class="text-lg hover:text-lime transition-colors"
-                >Approach</a
-              >
-              <a
-                href="#expertise"
                 class="text-lg hover:text-lime transition-colors"
                 >Expertise</a
               >
@@ -478,29 +478,13 @@
 
             <div class="flex flex-col gap-4">
               <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Connect</h4>
+
               <a
-                href="#"
-                class="text-lg hover:text-lime transition-colors"
-                >LinkedIn</a
-              >
-              <a
-                href="#"
+                href="https://github.com/rockyru"
                 class="text-lg hover:text-lime transition-colors"
                 >GitHub</a
               >
-              <a
-                href="#"
-                class="text-lg hover:text-lime transition-colors"
-                >Twitter (X)</a
-              >
             </div>
-
-            <button
-              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-sm hover:bg-white/10 transition-colors lg:absolute lg:-right-20 lg:top-0"
-            >
-              ↑
-            </button>
           </div>
         </div>
 
@@ -522,5 +506,25 @@
         </div>
       </div>
     </footer>
+
+    <a
+      href="#"
+      aria-label="Scroll to top"
+      class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-lime text-forest-900 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-forest-900 hover:text-lime border border-forest-900/10 transition-all duration-300 group"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="group-hover:-translate-y-1 transition-transform duration-300"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </a>
   </body>
 </html>
