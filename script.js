@@ -1,24 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all elements with the 'fade-in' class
-    const observerElements = document.querySelectorAll('.fade-in');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Intersection Observer for Scroll Animations
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px",
+  };
 
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add the 'visible' class when the element comes into view
-                entry.target.classList.add('visible');
-                // Optional: Unobserve the element if you only want it to fade in once
-                // observer.unobserve(entry.target); 
-            }
-        });
-    }, {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: "0px 0px -50px 0px"
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
+  }, observerOptions);
 
-    // Attach observer to each element
-    observerElements.forEach(el => {
-        observer.observe(el);
-    });
+  // Grab all elements with the Tailwind custom 'fade-in' class
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    observer.observe(el);
+  });
+
+  // 2. Dynamic Navbar (Optional but recommended)
+  // Makes the navbar transparent at the very top, and solid when scrolling down
+  const nav = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      nav.classList.add("bg-white/90", "backdrop-blur-md", "shadow-sm");
+      nav.classList.remove("bg-transparent");
+    } else {
+      nav.classList.remove("bg-white/90", "backdrop-blur-md", "shadow-sm");
+      nav.classList.add("bg-transparent");
+    }
+  });
 });
