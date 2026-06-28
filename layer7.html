@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="en"
-  class="scroll-smooth"
+  class="scroll-smooth js"
 >
   <head>
     <meta charset="UTF-8" />
@@ -9,10 +9,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Layer 7 Case Study | Alex Wyatt</title>
+    <title>Layer 7 Spam Scanner Case Study | Ruther Bergonia</title>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -27,332 +31,294 @@
         theme: {
           extend: {
             colors: {
-              forest: {
-                900: "#12261a",
-                800: "#1b3826",
-                700: "#244a33",
-              },
-              lime: "#dcf3a8",
-              offwhite: "#fcfcfc",
+              ink: { 950: "#08080c", 900: "#0d0d14", 800: "#14141f", 700: "#1c1c2b", 600: "#26263a" },
+              violet: { glow: "#7b5cff", 400: "#9d8bff", 300: "#c4b8ff" },
             },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              mono: ["Space Mono", "monospace"],
-            },
+            fontFamily: { sans: ["Manrope", "Inter", "sans-serif"], body: ["Inter", "sans-serif"], mono: ["Space Mono", "monospace"] },
           },
         },
       };
     </script>
+
+    <style>
+      html,
+      body {
+        background-color: #08080c;
+        overscroll-behavior: none;
+      }
+      /* Rising-sun glow — identical language to the homepage hero */
+      /* Rising-sun arc — same prominent glow as the homepage hero */
+      .hero-glow {
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 66%,
+            rgba(255, 255, 255, 0.4) 80%,
+            rgba(255, 255, 255, 0.92) 90%,
+            rgba(255, 255, 255, 1) 95%
+          ),
+          radial-gradient(
+            ellipse 130% 40% at 50% 100%,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(244, 241, 255, 0.8) 30%,
+            rgba(150, 122, 240, 0.22) 62%,
+            rgba(8, 8, 12, 0) 95%
+          ),
+          radial-gradient(
+            ellipse 38vw 30vw at 50% 80%,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(243, 238, 255, 0.72) 38%,
+            rgba(150, 120, 255, 0.4) 60%,
+            rgba(120, 95, 240, 0) 85%
+          ),
+          radial-gradient(
+            ellipse 100% 100% at 50% 104%,
+            rgba(150, 120, 255, 0.95) 0%,
+            rgba(108, 78, 250, 0.85) 24%,
+            rgba(78, 54, 225, 0.6) 42%,
+            rgba(40, 30, 90, 0.15) 64%,
+            rgba(8, 8, 12, 0) 82%
+          );
+      }
+    </style>
   </head>
-  <body class="font-sans bg-offwhite text-forest-900 overflow-x-hidden selection:bg-lime selection:text-forest-900">
-    <nav class="w-full flex justify-between items-center px-6 py-8 lg:px-12 max-w-[1000px] mx-auto border-b border-forest-900/10">
-      <a
-        href="index.html"
-        class="flex items-center gap-3 font-mono text-xs font-bold tracking-widest hover:text-forest-700 transition-colors"
-      >
-        ← BACK TO PORTFOLIO
-      </a>
-      <div class="font-bold tracking-tighter text-xl">R.B.</div>
-    </nav>
-
-    <header class="pt-24 pb-16 px-6 lg:px-12 max-w-[1000px] mx-auto">
-      <div class="inline-flex items-center gap-3 font-mono text-xs tracking-widest mb-8 text-forest-900">
-        <span class="w-2.5 h-2.5 bg-lime block rounded-full"></span> THREAT INTELLIGENCE & API
-      </div>
-
-      <h1 class="text-[clamp(3rem,6vw,5rem)] font-semibold leading-[1.05] tracking-tight mb-8">
-        Layer 7 <br />
-        <span class="text-forest-900/40">Spam Scanner.</span>
-      </h1>
-
-      <p class="text-xl md:text-2xl text-forest-900/70 font-light max-w-2xl leading-relaxed mb-16">
-        A community‑driven security tool built for Filipino users to analyze URLs, SMS texts, and screenshots for phishing and smishing
-        threats.
-      </p>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-forest-900/10 font-mono text-xs uppercase tracking-widest">
-        <div>
-          <span class="block text-forest-900/40 mb-2">Stack</span>
-          <span class="font-bold">FastAPI / React</span>
+  <body class="font-sans bg-ink-950 text-white overflow-x-hidden antialiased selection:bg-violet-glow selection:text-white">
+    <!-- NAVBAR — flat, matches homepage -->
+    <div class="absolute top-0 left-0 right-0 z-50">
+      <nav class="max-w-[1600px] mx-auto px-6 lg:px-12 py-7 lg:py-8 flex items-center justify-between gap-8">
+        <a href="index.html" class="text-xl lg:text-2xl font-bold tracking-tight text-white hover:opacity-70 transition-opacity">
+          Ruther&nbsp;Bergonia
+        </a>
+        <div class="hidden md:flex items-center text-[15px] text-white/85">
+          <a href="index.html#work" class="hover:text-white transition-colors">Work</a>
+          <span class="text-white/30 mx-2">,</span>
+          <a href="index.html#about" class="hover:text-white transition-colors">About</a>
+          <span class="text-white/30 mx-2">,</span>
+          <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
         </div>
-        <div>
-          <span class="block text-forest-900/40 mb-2">Database</span>
-          <span class="font-bold">Supabase</span>
+        <a href="index.html" class="flex items-center gap-2 text-[13px] font-medium tracking-widest uppercase text-white hover:opacity-70 transition-opacity">
+          ← Portfolio
+        </a>
+      </nav>
+    </div>
+
+    <!-- HERO — dark with rising-sun glow, fades to white. Content sits high in the dark zone. -->
+    <header class="relative min-h-[90vh] overflow-hidden">
+      <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-12 pt-32 lg:pt-36">
+        <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-8 text-white/70">
+          <span class="w-2 h-2 bg-violet-glow block rounded-full"></span> THREAT INTELLIGENCE & API
         </div>
-        <div>
-          <span class="block text-forest-900/40 mb-2">Integrations</span>
-          <span class="font-bold">Google API</span>
-        </div>
-        <div>
-          <span class="block text-forest-900/40 mb-2">Focus</span>
-          <span class="font-bold">Security Utilities</span>
-        </div>
+
+        <h1 class="text-[clamp(2.8rem,8vw,7rem)] font-extrabold leading-[0.92] tracking-tighter mb-8">
+          Layer 7<br />
+          <span class="text-white/30">Spam Scanner.</span>
+        </h1>
+
+        <p class="text-lg md:text-2xl text-white/65 font-light max-w-2xl leading-relaxed">
+          A community-driven security tool built for Filipino users to analyze URLs, SMS texts, and screenshots for phishing and smishing
+          threats.
+        </p>
       </div>
     </header>
 
-    <article class="px-6 lg:px-12 max-w-[1000px] mx-auto pb-32">
-      <section class="mb-24">
-        <h2 class="text-3xl font-semibold mb-8 tracking-tight">How It Works</h2>
-        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none">
-          <p class="mb-8">
-            Layer 7 provides users with an immediate <strong>0–10 risk score</strong> alongside a human‑readable verdict (e.g., “Verified
-            Safe”, “Be Careful”, “Scam Alert”). It operates on three distinct scanning layers to ensure accuracy and adapt to emerging
-            threats in the Philippine digital space:
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="border border-forest-900/10 p-6 rounded-xl bg-white shadow-sm">
-              <div class="w-8 h-8 bg-forest-900 text-lime rounded-full flex items-center justify-center mb-4 font-mono text-xs">01</div>
-              <h4 class="font-semibold mb-2 text-forest-900">Google API Sync</h4>
-              <p class="text-sm text-forest-900/60 leading-relaxed m-0">
-                Cross-references inputs against the Google Safe Browsing database for known malicious domains.
-              </p>
-            </div>
-            <div class="border border-forest-900/10 p-6 rounded-xl bg-white shadow-sm">
-              <div class="w-8 h-8 bg-forest-900 text-lime rounded-full flex items-center justify-center mb-4 font-mono text-xs">02</div>
-              <h4 class="font-semibold mb-2 text-forest-900">Heuristic Engine</h4>
-              <p class="text-sm text-forest-900/60 leading-relaxed m-0">
-                Analyzes syntax for common local smishing/phishing patterns (e.g., specific bank impersonations).
-              </p>
-            </div>
-            <div class="border border-forest-900/10 p-6 rounded-xl bg-white shadow-sm">
-              <div class="w-8 h-8 bg-forest-900 text-lime rounded-full flex items-center justify-center mb-4 font-mono text-xs">03</div>
-              <h4 class="font-semibold mb-2 text-forest-900">Community Score</h4>
-              <p class="text-sm text-forest-900/60 leading-relaxed m-0">
-                Aggregates anonymous user feedback to dynamically boost risk scores on unreported, zero-day scams.
-              </p>
-            </div>
+    <!-- WHITE ARTICLE ZONE — matches homepage white content language -->
+    <div class="bg-white text-ink-950">
+      <!-- Meta bar -->
+      <div class="border-b border-ink-950/10">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 py-10 font-mono text-[11px] uppercase tracking-widest">
+          <div>
+            <span class="block text-ink-950/40 mb-2">Stack</span>
+            <span class="font-bold">FastAPI / React</span>
           </div>
-        </div>
-      </section>
-
-      <section class="mb-24">
-        <h2 class="text-3xl font-semibold mb-8 tracking-tight">System Architecture</h2>
-        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none mb-12">
-          <p>
-            The project is strictly decoupled. The frontend is an optimized Vite/React application featuring the scanner UI and an open
-            metrics dashboard. The backend is powered by Python via FastAPI, utilizing Supabase for persistent data and telemetry.
-          </p>
-        </div>
-
-        <div class="bg-forest-900 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl">
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
-              background-image:
-                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-              background-size: 30px 30px;
-            "
-          ></div>
-
-          <div class="relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-              <div class="w-full md:w-1/3 border border-white/20 bg-white/5 rounded-xl p-6 backdrop-blur-sm">
-                <div class="font-mono text-[10px] text-lime tracking-widest uppercase mb-4">Client App</div>
-                <h4 class="text-xl font-medium mb-2">Vite + React</h4>
-                <ul class="font-mono text-xs text-white/60 space-y-2 mt-4">
-                  <li>→ Multi-modal UI</li>
-                  <li>→ Result Visualization</li>
-                  <li>→ Metrics Dashboard</li>
-                </ul>
-              </div>
-
-              <div class="hidden md:flex flex-col items-center justify-center text-lime font-mono text-[10px] tracking-widest gap-2">
-                <span>HTTP / REST</span>
-                <div class="flex gap-1">
-                  <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
-                  <span
-                    class="w-2 h-2 rounded-full bg-lime animate-pulse"
-                    style="animation-delay: 150ms"
-                  ></span>
-                  <span
-                    class="w-2 h-2 rounded-full bg-lime animate-pulse"
-                    style="animation-delay: 300ms"
-                  ></span>
-                </div>
-              </div>
-
-              <div class="w-full md:w-1/2 border border-lime/30 bg-[#0d1c13] rounded-xl p-6 shadow-lg relative">
-                <div
-                  class="absolute -top-3 -right-3 bg-lime text-forest-900 font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase"
-                >
-                  Engine
-                </div>
-
-                <div class="font-mono text-[10px] text-lime tracking-widest uppercase mb-4">Backend</div>
-                <h4 class="text-xl font-medium mb-6">FastAPI</h4>
-
-                <div class="space-y-3 font-mono text-xs">
-                  <div class="bg-white/10 px-3 py-2 rounded border border-white/5 flex justify-between items-center">
-                    <span class="text-blue-300">POST</span>
-                    <span class="text-white/80">/api/verify</span>
-                  </div>
-                  <div class="bg-white/10 px-3 py-2 rounded border border-white/5 flex justify-between items-center">
-                    <span class="text-blue-300">POST</span>
-                    <span class="text-white/80">/api/feedback</span>
-                  </div>
-                  <div class="bg-white/10 px-3 py-2 rounded border border-white/5 flex justify-between items-center">
-                    <span class="text-green-300">GET</span>
-                    <span class="text-white/80">/api/metrics/summary</span>
-                  </div>
-                </div>
-
-                <div
-                  class="mt-6 pt-6 border-t border-white/10 flex justify-between text-white/50 text-[10px] font-mono tracking-widest uppercase"
-                >
-                  <span>↓ Supabase DB</span>
-                  <span>↓ Google API</span>
-                </div>
-              </div>
-            </div>
+          <div>
+            <span class="block text-ink-950/40 mb-2">Database</span>
+            <span class="font-bold">Supabase</span>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-3xl font-semibold mb-6 tracking-tight">API & Data Flow</h2>
-        <div class="prose prose-lg text-forest-900/80 font-light leading-relaxed max-w-none">
-          <ul class="space-y-6 list-none pl-0">
-            <li class="flex gap-4 items-start">
-              <span
-                class="mt-1 w-6 h-6 rounded-full bg-lime text-forest-900 flex items-center justify-center font-mono text-[10px] flex-shrink-0"
-                >1</span
-              >
-              <div>
-                <strong class="text-forest-900 font-medium">Core Verification (<code>/api/verify</code>):</strong>
-                <p class="mt-1 m-0 text-base">
-                  Handles the primary ingestion of content. Includes in‑memory rate limiting and basic content filtering to prevent abuse.
-                  It queries external security feeds and calculates the final 0-10 risk assessment.
-                </p>
-              </div>
-            </li>
-            <li class="flex gap-4 items-start">
-              <span
-                class="mt-1 w-6 h-6 rounded-full bg-forest-900 text-white flex items-center justify-center font-mono text-[10px] flex-shrink-0"
-                >2</span
-              >
-              <div>
-                <strong class="text-forest-900 font-medium">Telemetry & Crowdsourcing (<code>/api/feedback</code>):</strong>
-                <p class="mt-1 m-0 text-base">
-                  Allows users to report results directly from the React UI as “safe”, “suspicious”, or “phishing”. This mutates the
-                  internal <code>community_score</code> weight without exposing PII.
-                </p>
-              </div>
-            </li>
-            <li class="flex gap-4 items-start">
-              <span
-                class="mt-1 w-6 h-6 rounded-full border border-forest-900 text-forest-900 flex items-center justify-center font-mono text-[10px] flex-shrink-0"
-                >3</span
-              >
-              <div>
-                <strong class="text-forest-900 font-medium">Public Dashboard (<code>/api/metrics/summary</code>):</strong>
-                <p class="mt-1 m-0 text-base">
-                  Exposes non-sensitive telemetry—scans per day, risk distribution, Google Safe Browsing hit rates, and total feedback
-                  counts—powering the frontend data visualization layer.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </article>
-
-    <footer
-      id="contact"
-      class="relative bg-forest-900 text-white min-h-[85vh] flex flex-col justify-between pt-32 pb-8 overflow-hidden font-sans border-t border-white/10"
-    >
-      <div class="mx-auto px-6 lg:px-12 relative z-10 flex-grow flex flex-col justify-between w-full">
-        <div class="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 mb-24">
-          <div class="max-w-2xl">
-            <h2 class="text-[clamp(2rem,4vw,3.5rem)] leading-[1.1] font-medium mb-12 tracking-tight text-white/90">
-              Let's build robust, scalable software together.
-            </h2>
-            <div class="flex items-center gap-4">
-              <a
-                href="mailto:alexwyatt@example.com"
-                class="bg-forest-800 text-white border border-white/10 px-8 py-4 rounded-full text-sm font-bold hover:bg-forest-700 transition-colors"
-              >
-                rsolutionsdev@gmail.com
-              </a>
-              <!-- <a
-                href="mailto:alexwyatt@example.com"
-                class="w-12 h-12 bg-lime text-forest-900 rounded-full flex items-center justify-center text-xl hover:bg-[#cde499] transition-colors"
-              >
-                →
-              </a> -->
-            </div>
+          <div>
+            <span class="block text-ink-950/40 mb-2">Integrations</span>
+            <span class="font-bold">Google API</span>
           </div>
-
-          <div class="flex gap-16 lg:gap-24 flex-wrap relative">
-            <div class="flex flex-col gap-4">
-              <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Navigate</h4>
-              <a
-                href="awtor-suri.html"
-                class="text-lg hover:text-lime transition-colors"
-                >AWTOR-SURI</a
-              >
-              <a
-                href="layer7.html"
-                class="text-lg hover:text-lime transition-colors"
-                >Layer 7</a
-              >
-              <a
-                href="#work"
-                class="text-lg hover:text-lime transition-colors"
-                >Expertise</a
-              >
-            </div>
-
-            <div class="flex flex-col gap-4">
-              <h4 class="font-mono text-xs tracking-widest text-white/50 mb-2 uppercase">Connect</h4>
-
-              <a
-                href="https://github.com/rockyru"
-                class="text-lg hover:text-lime transition-colors"
-                >GitHub</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="relative w-full mt-auto">
-          <div class="w-full overflow-hidden">
-            <h1
-              class="text-[21vw] lg:text-[18vw] font-bold leading-[0.75] tracking-tighter text-white whitespace-nowrap ml-[-1vw] select-none"
-            >
-              Rockyru
-            </h1>
-          </div>
-
-          <div
-            class="mt-8 font-mono text-[10px] sm:text-xs tracking-widest text-white/50 uppercase flex flex-col md:flex-row justify-between gap-4"
-          >
-            <span>© 2026 RUTHER BERGONIA. ALL RIGHTS RESERVED.</span>
-            <span>BASED IN METRO MANILA, PHILIPPINES</span>
+          <div>
+            <span class="block text-ink-950/40 mb-2">Focus</span>
+            <span class="font-bold">Security Utilities</span>
           </div>
         </div>
       </div>
-    </footer>
 
-    <a
-      href="#"
-      aria-label="Scroll to top"
-      class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-lime text-forest-900 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-forest-900 hover:text-lime border border-forest-900/10 transition-all duration-300 group"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="group-hover:-translate-y-1 transition-transform duration-300"
-      >
-        <path d="M12 19V5M5 12l7-7 7 7" />
-      </svg>
-    </a>
+      <article class="max-w-[1100px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
+        <section class="mb-24">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">How It Works</h2>
+          <div class="text-ink-950/65 leading-relaxed max-w-none text-lg">
+            <p class="mb-10">
+              Layer 7 provides users with an immediate <strong class="text-ink-950 font-semibold">0–10 risk score</strong> alongside a
+              human-readable verdict (e.g., "Verified Safe", "Be Careful", "Scam Alert"). It operates on three distinct scanning layers to
+              ensure accuracy and adapt to emerging threats in the Philippine digital space:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-4">
+              <div class="border border-ink-950/10 p-6 rounded-2xl bg-ink-950/[0.02]">
+                <div class="w-8 h-8 bg-violet-glow text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">01</div>
+                <h4 class="font-bold mb-2 text-ink-950">Google API Sync</h4>
+                <p class="text-sm text-ink-950/55 leading-relaxed m-0">
+                  Cross-references inputs against the Google Safe Browsing database for known malicious domains.
+                </p>
+              </div>
+              <div class="border border-ink-950/10 p-6 rounded-2xl bg-ink-950/[0.02]">
+                <div class="w-8 h-8 bg-violet-glow text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">02</div>
+                <h4 class="font-bold mb-2 text-ink-950">Heuristic Engine</h4>
+                <p class="text-sm text-ink-950/55 leading-relaxed m-0">
+                  Analyzes syntax for common local smishing/phishing patterns (e.g., specific bank impersonations).
+                </p>
+              </div>
+              <div class="border border-ink-950/10 p-6 rounded-2xl bg-ink-950/[0.02]">
+                <div class="w-8 h-8 bg-violet-glow text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">03</div>
+                <h4 class="font-bold mb-2 text-ink-950">Community Score</h4>
+                <p class="text-sm text-ink-950/55 leading-relaxed m-0">
+                  Aggregates anonymous user feedback to dynamically boost risk scores on unreported, zero-day scams.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-24">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">System Architecture</h2>
+          <div class="text-ink-950/65 leading-relaxed max-w-none mb-12 text-lg">
+            <p>
+              The project is strictly decoupled. The frontend is an optimized Vite/React application featuring the scanner UI and an open
+              metrics dashboard. The backend is powered by Python via FastAPI, utilizing Supabase for persistent data and telemetry.
+            </p>
+          </div>
+
+          <div class="bg-ink-950 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
+            <div
+              class="absolute inset-0 opacity-[0.06]"
+              style="
+                background-image:
+                  linear-gradient(rgba(157, 139, 255, 0.4) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(157, 139, 255, 0.4) 1px, transparent 1px);
+                background-size: 30px 30px;
+              "
+            ></div>
+
+            <div class="relative z-10">
+              <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="w-full md:w-1/3 border border-white/15 bg-white/5 rounded-xl p-6 backdrop-blur-sm">
+                  <div class="font-mono text-[10px] text-violet-300 tracking-widest uppercase mb-4">Client App</div>
+                  <h4 class="text-xl font-semibold mb-2">Vite + React</h4>
+                  <ul class="font-mono text-xs text-white/55 space-y-2 mt-4">
+                    <li>→ Multi-modal UI</li>
+                    <li>→ Result Visualization</li>
+                    <li>→ Metrics Dashboard</li>
+                  </ul>
+                </div>
+
+                <div class="hidden md:flex flex-col items-center justify-center text-violet-300 font-mono text-[10px] tracking-widest gap-2">
+                  <span>HTTP / REST</span>
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-violet-glow animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-violet-glow animate-pulse" style="animation-delay: 150ms"></span>
+                    <span class="w-2 h-2 rounded-full bg-violet-glow animate-pulse" style="animation-delay: 300ms"></span>
+                  </div>
+                </div>
+
+                <div class="w-full md:w-1/2 border border-violet-glow/30 bg-ink-800 rounded-xl p-6 relative">
+                  <div class="absolute -top-3 -right-3 bg-violet-glow text-white font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                    Engine
+                  </div>
+
+                  <div class="font-mono text-[10px] text-violet-300 tracking-widest uppercase mb-4">Backend</div>
+                  <h4 class="text-xl font-semibold mb-6">FastAPI</h4>
+
+                  <div class="space-y-3 font-mono text-xs">
+                    <div class="bg-white/5 px-3 py-2 rounded border border-white/10 flex justify-between items-center">
+                      <span class="text-blue-300">POST</span>
+                      <span class="text-white/80">/api/verify</span>
+                    </div>
+                    <div class="bg-white/5 px-3 py-2 rounded border border-white/10 flex justify-between items-center">
+                      <span class="text-blue-300">POST</span>
+                      <span class="text-white/80">/api/feedback</span>
+                    </div>
+                    <div class="bg-white/5 px-3 py-2 rounded border border-white/10 flex justify-between items-center">
+                      <span class="text-green-300">GET</span>
+                      <span class="text-white/80">/api/metrics/summary</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 pt-6 border-t border-white/10 flex justify-between text-white/45 text-[10px] font-mono tracking-widest uppercase">
+                    <span>↓ Supabase DB</span>
+                    <span>↓ Google API</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">API & Data Flow</h2>
+          <div class="text-ink-950/65 leading-relaxed max-w-none">
+            <ul class="space-y-6 list-none pl-0">
+              <li class="flex gap-4 items-start">
+                <span class="mt-1 w-6 h-6 rounded-full bg-violet-glow text-white flex items-center justify-center font-mono text-[10px] flex-shrink-0">1</span>
+                <div>
+                  <strong class="text-ink-950 font-semibold">Core Verification (<code>/api/verify</code>):</strong>
+                  <p class="mt-1 m-0 text-base text-ink-950/60">
+                    Handles the primary ingestion of content. Includes in-memory rate limiting and basic content filtering to prevent abuse.
+                    It queries external security feeds and calculates the final 0-10 risk assessment.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <span class="mt-1 w-6 h-6 rounded-full bg-ink-950/10 text-ink-950 flex items-center justify-center font-mono text-[10px] flex-shrink-0">2</span>
+                <div>
+                  <strong class="text-ink-950 font-semibold">Telemetry & Crowdsourcing (<code>/api/feedback</code>):</strong>
+                  <p class="mt-1 m-0 text-base text-ink-950/60">
+                    Allows users to report results directly from the React UI as "safe", "suspicious", or "phishing". This mutates the
+                    internal <code>community_score</code> weight without exposing PII.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <span class="mt-1 w-6 h-6 rounded-full border border-ink-950/30 text-ink-950 flex items-center justify-center font-mono text-[10px] flex-shrink-0">3</span>
+                <div>
+                  <strong class="text-ink-950 font-semibold">Public Dashboard (<code>/api/metrics/summary</code>):</strong>
+                  <p class="mt-1 m-0 text-base text-ink-950/60">
+                    Exposes non-sensitive telemetry—scans per day, risk distribution, Google Safe Browsing hit rates, and total feedback
+                    counts—powering the frontend data visualization layer.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <!-- FOOTER — pure black, matches homepage -->
+    <footer class="relative bg-ink-950 pt-24 pb-8 border-t border-white/10">
+      <div class="mx-auto px-6 lg:px-12 w-full max-w-[1100px]">
+        <div class="mb-16">
+          <h2 class="text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] font-bold tracking-tighter mb-8">
+            Let's build robust,<br />
+            <span class="text-violet-400">scalable software</span> together.
+          </h2>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="mailto:ruther.bergonia@gmail.com" class="bg-white text-ink-950 px-7 py-4 rounded-full text-sm font-bold hover:bg-violet-glow hover:text-white transition-colors">
+              ruther.bergonia@gmail.com
+            </a>
+            <a href="index.html" class="border border-white/20 text-white px-7 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors">
+              ← Back to portfolio
+            </a>
+          </div>
+        </div>
+        <div class="font-mono text-[10px] sm:text-[11px] tracking-widest text-white/40 uppercase flex flex-col md:flex-row justify-between gap-3 border-t border-white/10 pt-6">
+          <span>© 2026 Ruther Bergonia. All rights reserved.</span>
+          <span>Based in Metro Manila, Philippines</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
