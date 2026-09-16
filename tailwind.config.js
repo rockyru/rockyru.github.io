@@ -3,7 +3,7 @@
 // Regenerate assets/tailwind.css after editing any HTML:
 //   npx tailwindcss@3 -c tailwind.config.js -i tailwind.source.css -o assets/tailwind.css --minify
 module.exports = {
-  content: ["./*.html", "./about-ruther-bergonia/**/*.html", "./case-studies/**/*.html", "./services/**/*.html", "./work/**/*.html", "./script.js"],
+  content: ["./*.html", "./about-ruther-bergonia/**/*.html", "./contact/**/*.html", "./services/**/*.html", "./work/**/*.html", "./script.js"],
   theme: {
     extend: {
       colors: {

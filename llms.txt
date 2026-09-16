@@ -17,10 +17,10 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 
 ## Case studies
 
-- [SURI: research information system for UP Manila](https://rmbergonia.com/case-studies/suri-research-information-system/): API-first Laravel + Vue platform — 15,000+ records, 50+ users, reporting in seconds
-- [GO-ARAL: graduate application & ticketing portal](https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/): ~1,000 applicants annually at NGOHS, UP Manila
-- [ARIA: controlled-response AI support assistant](https://rmbergonia.com/case-studies/aria-controlled-response-ai/): answers from approved sources, human handoff, tracked tickets
-- [RACE: platform orchestration layer](https://rmbergonia.com/case-studies/race-platform-orchestration/): shared authentication and services beneath SURI and ARIA (in development)
+- [SURI: research information system for UP Manila](https://rmbergonia.com/work/suri-research-information-system/): API-first Laravel + Vue platform — 15,000+ records, 50+ users, reporting in seconds
+- [GO-ARAL: graduate application & ticketing portal](https://rmbergonia.com/work/go-aral-graduate-support-platform/): ~1,000 applicants annually at NGOHS, UP Manila
+- [ARIA: controlled-response AI support assistant](https://rmbergonia.com/work/aria-controlled-response-ai/): answers from approved sources, human handoff, tracked tickets
+- [RACE: platform orchestration layer](https://rmbergonia.com/work/race-platform-orchestration/): shared authentication and services beneath SURI and ARIA (in development)
 
 ## External profiles
 

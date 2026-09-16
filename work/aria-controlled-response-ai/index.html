@@ -10,13 +10,13 @@
     />
     <meta name="author" content="Ruther Bergonia" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://rmbergonia.com/case-studies/aria-controlled-response-ai/" />
+    <link rel="canonical" href="https://rmbergonia.com/work/aria-controlled-response-ai/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Ruther Bergonia" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://rmbergonia.com/case-studies/aria-controlled-response-ai/" />
+    <meta property="og:url" content="https://rmbergonia.com/work/aria-controlled-response-ai/" />
     <meta property="og:title" content="ARIA Case Study: A Controlled-Response AI Assistant for Research Support" />
     <meta
       property="og:description"
@@ -59,6 +59,7 @@
       }
       .label-lg { font-size: 13px; letter-spacing: 0.12em; }
       .rule { border-color: #e3e0da; }
+      p.leading-relaxed { text-align: justify; }
 
       .js .fade-up {
         opacity: 0;
@@ -86,13 +87,13 @@
       "@graph": [
         {
           "@type": "TechArticle",
-          "@id": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/#article",
+          "@id": "https://rmbergonia.com/work/aria-controlled-response-ai/#article",
           "headline": "ARIA Case Study: A Controlled-Response AI Assistant for Research Support",
           "description": "How Ruther Bergonia designed ARIA, an AI-assisted support platform that answers research inquiries from approved sources, hands off to humans when out of scope, and creates tracked tickets.",
           "inLanguage": "en",
           "dateModified": "2026-09-16",
           "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
-          "mainEntityOfPage": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/",
+          "mainEntityOfPage": "https://rmbergonia.com/work/aria-controlled-response-ai/",
           "keywords": "ARIA, AI assistant, controlled-response architecture, retrieval-augmented generation, Claude, research support, responsible AI, ticketing",
           "about": {
             "@type": "SoftwareApplication",
@@ -103,11 +104,11 @@
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/#breadcrumb",
+          "@id": "https://rmbergonia.com/work/aria-controlled-response-ai/#breadcrumb",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmbergonia.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://rmbergonia.com/#work" },
-            { "@type": "ListItem", "position": 3, "name": "ARIA Controlled-Response AI", "item": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/" }
+            { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://rmbergonia.com/work/" },
+            { "@type": "ListItem", "position": 3, "name": "ARIA Controlled-Response AI", "item": "https://rmbergonia.com/work/aria-controlled-response-ai/" }
           ]
         },
         {
@@ -137,11 +138,10 @@
         </a>
         <div class="flex items-center gap-6 sm:gap-10">
           <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
-          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Experience</a>
           <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
           <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
           <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
-          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
+          <a href="/contact/" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </nav>
@@ -151,7 +151,7 @@
         <ol class="flex items-center gap-2">
           <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
           <li aria-hidden="true" class="label text-ink-300">/</li>
-          <li><a href="/work/" class="label text-ink-300 transition-colors hover:text-ink-900">Case Studies</a></li>
+          <li><a href="/work/" class="label text-ink-300 transition-colors hover:text-ink-900">Work</a></li>
           <li aria-hidden="true" class="label text-ink-300">/</li>
           <li><span class="label text-ink-900">ARIA</span></li>
         </ol>
@@ -175,7 +175,7 @@
 
       <!-- INTRO -->
       <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
-        <p class="max-w-[70ch] text-[18px] leading-relaxed text-ink-500 sm:text-[20px]">
+        <p class="text-[18px] leading-relaxed text-ink-500 sm:text-[20px]">
           ARIA is an AI-assisted support platform designed by Ruther Bergonia to answer research inquiries from approved information
           sources — routing anything outside its scope to a human rather than guessing — and to automatically create tracked tickets for
           follow-up.
@@ -208,7 +208,7 @@
           <span class="label text-ink-900">+01</span>
           <h2 id="problem-heading" class="label text-ink-500">The problem</h2>
         </div>
-        <div class="max-w-[70ch] space-y-6 text-[16.5px] leading-relaxed text-ink-500">
+        <div class="space-y-6 text-[16.5px] leading-relaxed text-ink-500">
           <p>
             Research administration offices field a constant stream of inquiries — most of them answerable from existing policies,
             guidelines, and records. Answering them by hand consumes staff time; leaving them unanswered erodes trust in the office.
@@ -226,7 +226,7 @@
           <span class="label text-ink-900">+02</span>
           <h2 id="decision-heading" class="label text-ink-500">The design decision: controlled response</h2>
         </div>
-        <p class="max-w-[70ch] text-[16.5px] leading-relaxed text-ink-500">ARIA is built on a controlled-response architecture with three rules:</p>
+        <p class="text-[16.5px] leading-relaxed text-ink-500">ARIA is built on a controlled-response architecture with three rules:</p>
 
         <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-3">
           <div class="fade-up border-t-2 border-ink-900 pt-8">
@@ -246,8 +246,8 @@
           </div>
         </div>
 
-        <p class="mt-14 max-w-[70ch] text-[16.5px] leading-relaxed text-ink-500">
-          The assistant is powered by Claude. The same responsible-AI stance runs through all of Ruther's AI work: AI should reduce
+        <p class="mt-14 text-[16.5px] leading-relaxed text-ink-500">
+          The assistant is powered by Claude. The same responsible-AI stance runs through all of my AI work: AI should reduce
           operational risk, not add it.
         </p>
       </section>
@@ -258,10 +258,10 @@
           <span class="label text-ink-900">+03</span>
           <h2 id="fits-heading" class="label text-ink-500">Where ARIA fits</h2>
         </div>
-        <p class="max-w-[70ch] text-[16.5px] leading-relaxed text-ink-500">
+        <p class="text-[16.5px] leading-relaxed text-ink-500">
           ARIA operates in the same research-platform ecosystem as
-          <a href="/case-studies/suri-research-information-system/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">SURI, the research information system at UP Manila</a>.
-          Beneath both, <a href="/case-studies/race-platform-orchestration/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">RACE</a> is being
+          <a href="/work/suri-research-information-system/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">SURI, the research information system at UP Manila</a>.
+          Beneath both, <a href="/work/race-platform-orchestration/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">RACE</a> is being
           developed as the shared orchestration layer — shared authentication, shared services, and integration capabilities — so
           assistant, platform, and future systems behave as one ecosystem.
         </p>
@@ -270,9 +270,9 @@
       <!-- WRITTEN BY -->
       <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
         <span class="label text-ink-300">Written by</span>
-        <p class="mt-4 max-w-[70ch] text-[16.5px] leading-relaxed text-ink-500">
+        <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">
           <strong class="font-semibold text-ink-900">Ruther Bergonia</strong> — Software Systems Architect &amp; Senior Full-Stack
-          Engineer, Metro Manila, Philippines. He designed ARIA's controlled-response architecture.
+          Engineer, Metro Manila, Philippines. I designed ARIA's controlled-response architecture.
           <a href="/about-ruther-bergonia/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">More about Ruther Bergonia</a>.
         </p>
       </section>
@@ -281,8 +281,8 @@
       <section class="px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
         <span class="label text-ink-300">Related case studies</span>
         <div class="mt-6 flex flex-col gap-4">
-          <a href="/case-studies/suri-research-information-system/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">SURI: a research information system for UP Manila <span aria-hidden="true">→</span></a>
-          <a href="/case-studies/race-platform-orchestration/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">RACE: platform orchestration for the research ecosystem <span aria-hidden="true">→</span></a>
+          <a href="/work/suri-research-information-system/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">SURI: a research information system for UP Manila <span aria-hidden="true">→</span></a>
+          <a href="/work/race-platform-orchestration/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">RACE: platform orchestration for the research ecosystem <span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
@@ -297,14 +297,13 @@
         <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Have a system worth building properly?</h2>
 
         <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
-          <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
+          <p class="text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
             Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right
             fit — and how I'd approach it. Replies within one business day.
           </p>
           <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end">
             <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
             <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
-            <a href="/" class="label label-lg border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">← Back to portfolio</a>
           </div>
         </div>
       </div>
@@ -320,7 +319,6 @@
           </div>
           <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
             <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Experience</a>
             <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
             <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
             <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>

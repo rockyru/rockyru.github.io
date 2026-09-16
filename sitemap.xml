@@ -21,22 +21,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rmbergonia.com/case-studies/suri-research-information-system/</loc>
+    <loc>https://rmbergonia.com/contact/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rmbergonia.com/work/suri-research-information-system/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rmbergonia.com/case-studies/aria-controlled-response-ai/</loc>
+    <loc>https://rmbergonia.com/work/aria-controlled-response-ai/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rmbergonia.com/case-studies/race-platform-orchestration/</loc>
+    <loc>https://rmbergonia.com/work/race-platform-orchestration/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/</loc>
+    <loc>https://rmbergonia.com/work/go-aral-graduate-support-platform/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
   </url>
