@@ -27,5 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     window.addEventListener("scroll", toggle, { passive: true });
     toggle();
+
+    scrollTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 });

@@ -6,7 +6,7 @@ Primary title: Software Systems Architect & Senior Full-Stack Engineer
 
 Core expertise: software systems architecture, full-stack development (Laravel, PHP, Vue.js, React, Next.js, TypeScript), API design and integration, MySQL and relational database design, authentication and authorization, role-based access control, workflow automation, institutional software, multi-tenant SaaS platforms, AI integration with controlled-response architectures (Claude, OpenAI, Gemini, RAG), Docker, Linux server administration, Nginx, cloud deployment, and production support.
 
-Selected verified work: SURI, a Laravel + Vue research information system at the University of the Philippines Manila managing 15,000+ records for 50+ users; GO-ARAL, a graduate application and ticketing portal supporting ~1,000 applicants annually at NGOHS, UP Manila; ARIA, a controlled-response AI support assistant; RACE, an orchestration layer in development; the AWTOR–SURI cross-system single sign-on; and Layer 7, a phishing/smishing scanner for Filipino users.
+Selected verified work: SURI, a Laravel + Vue research information system at the University of the Philippines Manila managing 15,000+ records for 50+ users; GO-ARAL, a graduate application and ticketing portal supporting ~1,000 applicants annually at NGOHS, UP Manila; ARIA, a controlled-response AI support assistant; and RACE, an orchestration layer in development.
 
 Contact: ruther.bergonia@gmail.com — available for remote projects across time zones; taking on a small number of new client projects for 2026.
 
@@ -21,8 +21,6 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 - [GO-ARAL: graduate application & ticketing portal](https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/): ~1,000 applicants annually at NGOHS, UP Manila
 - [ARIA: controlled-response AI support assistant](https://rmbergonia.com/case-studies/aria-controlled-response-ai/): answers from approved sources, human handoff, tracked tickets
 - [RACE: platform orchestration layer](https://rmbergonia.com/case-studies/race-platform-orchestration/): shared authentication and services beneath SURI and ARIA (in development)
-- [AWTOR–SURI: cross-system single sign-on](https://rmbergonia.com/awtor-suri.html): cryptographically signed URL handshake between university research platforms
-- [Layer 7: phishing & smishing scanner](https://rmbergonia.com/layer7.html): FastAPI + React + Supabase security tool for Filipino users
 
 ## External profiles
 

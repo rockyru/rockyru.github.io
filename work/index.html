@@ -27,29 +27,29 @@
     <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
 
     <style>
       html { -webkit-font-smoothing: antialiased; }
-      body { background: #fbfaf8; }
+      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
       /* Display type: oversized, tight, MIXED CASE — the editorial register.
          Uppercase reads as UI chrome; the peg's page titles are sentence case. */
       .display {
-        font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 700;
+        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 800;
         letter-spacing: -0.035em;
         line-height: 0.95;
         text-wrap: balance;
       }
       /* Page-title scale: the one place type is allowed to dominate. */
-      .display-xl { font-weight: 700; letter-spacing: -0.045em; line-height: 0.88; }
+      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
 
       /* Micro-labels. Structural, never decorative — they name a section
          or number a real sequence. */
       .label {
-        font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif;
+        font-family: Inter, "Helvetica Neue", sans-serif;
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.16em;
@@ -60,7 +60,7 @@
       .rule { border-color: #e3e0da; }
 
       /* Editorial two-column row: label left, prose right. */
-      .row-label { font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+      .row-label { font-family: Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 
       .js .fade-up {
         opacity: 0;
@@ -107,14 +107,12 @@
         {
           "@type": "ItemList",
           "itemListOrder": "https://schema.org/ItemListOrderDescending",
-          "numberOfItems": 6,
+          "numberOfItems": 4,
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "SURI — Research Information System", "url": "https://rmbergonia.com/case-studies/suri-research-information-system/" },
             { "@type": "ListItem", "position": 2, "name": "ARIA — Controlled-Response AI", "url": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/" },
             { "@type": "ListItem", "position": 3, "name": "RACE — Platform Orchestration", "url": "https://rmbergonia.com/case-studies/race-platform-orchestration/" },
-            { "@type": "ListItem", "position": 4, "name": "AWTOR–SURI — Single Sign-On", "url": "https://rmbergonia.com/awtor-suri.html" },
-            { "@type": "ListItem", "position": 5, "name": "GO-ARAL — Graduate Support Platform", "url": "https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/" },
-            { "@type": "ListItem", "position": 6, "name": "Layer 7 — Phishing & Smishing Scanner", "url": "https://rmbergonia.com/layer7.html" }
+            { "@type": "ListItem", "position": 4, "name": "GO-ARAL — Graduate Support Platform", "url": "https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/" }
           ]
         }
       ]
@@ -126,60 +124,61 @@
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
 
     <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
-      <div class="flex w-full items-center justify-between px-6 py-5 sm:px-10">
+      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
         <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
-          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
           <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
         </a>
         <div class="flex items-center gap-6 sm:gap-10">
           <a href="/work/" class="label hidden text-ink-900 underline decoration-ink-900 decoration-2 underline-offset-[6px] sm:block" aria-current="page">Work</a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Experience</a>
           <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
           <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
-          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
+          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </nav>
 
-    <main id="main">
-      <header class="border-b rule px-6 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-48 xl:px-16">
-        <div class="w-full">
-          <nav aria-label="Breadcrumb" class="mb-14 border-b rule pb-6">
-            <ol class="flex items-center gap-2">
-              <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
-              <li aria-hidden="true" class="label text-ink-300">/</li>
-              <li><span class="label text-ink-900">Work</span></li>
-            </ol>
-          </nav>
+    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
+      <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
+          <li aria-hidden="true" class="label text-ink-300">/</li>
+          <li><span class="label text-ink-900">Work</span></li>
+        </ol>
+      </nav>
 
-          <h1 class="display display-xl text-center text-[clamp(3.25rem,15.5vw,18rem)] text-ink-900">Work</h1>
-
-          <div class="mt-16 flex items-baseline justify-between border-t rule pt-5">
-            <span class="label text-ink-500">Six systems, still running</span>
-            <span class="label text-ink-500">2021 &mdash; 2026</span>
-          </div>
-
-          <p class="mx-auto mt-16 max-w-[24ch] text-center text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.3] tracking-[-0.02em] text-ink-900 sm:max-w-[34ch]">
-            <span class="text-ink-300" aria-hidden="true">[</span> Each of these replaced something that was breaking &mdash; a spreadsheet, an inbox, a process nobody trusted. <span class="text-ink-300" aria-hidden="true">]</span>
-          </p>
-
-          <div class="mt-24 grid items-end gap-14 border-t rule pt-14 lg:grid-cols-12 lg:gap-16">
-            <p class="max-w-[52ch] text-[15px] leading-relaxed text-ink-500 lg:col-span-4">
-              They&rsquo;re in production, used daily, and the write-ups below say what
-              was actually hard about building them.
-            </p>
-            <div class="grid grid-cols-2 gap-10 lg:col-span-5 lg:col-start-8 lg:gap-12">
-              <div>
-                <p class="display text-[clamp(2.25rem,5vw,3.5rem)] text-ink-900">15,000<span class="text-ink-300">+</span></p>
-                <p class="label mt-3 text-ink-500">Records managed</p>
-              </div>
-              <div>
-                <p class="display text-[clamp(2.25rem,5vw,3.5rem)] text-ink-900">6</p>
-                <p class="label mt-3 text-ink-500">In production</p>
-              </div>
-            </div>
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="hidden min-h-[160px] border-r rule md:block"></div>
+        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
+          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">Four systems.<br />Still running.</h1>
+          <p class="label mt-4 text-ink-500">Each one solved a real operational problem.</p>
+        </div>
+        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
+          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
+            <div>15,000+ Records managed</div>
+            <div>4 In production</div>
+            <div>2021 &mdash; 2026</div>
           </div>
         </div>
-      </header>
+      </section>
+
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="flex flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+          <div class="space-y-3">
+            <p class="text-xs font-normal leading-relaxed text-ink-500">
+              They&rsquo;re in production, used daily &mdash; <br />and the write-ups below say what<br />
+              <span class="font-semibold text-ink-900">was actually hard about building them.</span>
+            </p>
+            <a href="#contact" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">Start a project</a>
+          </div>
+        </div>
+        <div class="relative min-h-[340px] overflow-hidden border-b rule bg-ink-900 md:col-span-2 md:aspect-auto md:border-b-0 md:border-r">
+          <span class="pointer-events-none absolute -bottom-10 -right-10 h-[65%] w-[65%] text-ink-700 opacity-60" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+        </div>
+        <div class="hidden md:block"></div>
+      </section>
 
       <section class="px-6 py-24 sm:px-10 sm:py-32 xl:px-16" aria-labelledby="index-heading">
         <div class="w-full">
@@ -244,27 +243,9 @@
               </a>
             </li>
             <li class="fade-up">
-              <a href="/awtor-suri.html" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
-                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
-                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">04</span>
-                  <span class="label text-ink-300">Single sign-on</span>
-                </div>
-                <div class="md:col-span-6">
-                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">AWTOR&ndash;SURI</h2>
-                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">One login across two systems that were never designed to trust each other. Identity, sessions, and the edge cases nobody documents.</p>
-                </div>
-                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
-                  <span class="label text-ink-300">OAuth</span>
-                  <span class="label text-ink-300">Laravel</span>
-                  <span class="label text-ink-300">Sessions</span>
-                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
-                </div>
-              </a>
-            </li>
-            <li class="fade-up">
               <a href="/case-studies/go-aral-graduate-support-platform/" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
                 <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
-                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">05</span>
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">04</span>
                   <span class="label text-ink-300">Applications &amp; ticketing</span>
                 </div>
                 <div class="md:col-span-6">
@@ -279,31 +260,13 @@
                 </div>
               </a>
             </li>
-            <li class="fade-up">
-              <a href="/layer7.html" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
-                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
-                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">06</span>
-                  <span class="label text-ink-300">Security tooling</span>
-                </div>
-                <div class="md:col-span-6">
-                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">Layer 7</h2>
-                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">A phishing and smishing scanner built for how Filipinos actually get targeted &mdash; GCash texts, parcel scams, and fake bank domains.</p>
-                </div>
-                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
-                  <span class="label text-ink-300">Python</span>
-                  <span class="label text-ink-300">Heuristics</span>
-                  <span class="label text-ink-300">Next.js</span>
-                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
-                </div>
-              </a>
-            </li>
           </ol>
         </div>
       </section>
     </main>
 
-    <footer id="contact" class="border-t rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-      <div class="w-full">
+    <footer id="contact" class="border-t rule">
+      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
         <div class="mb-14 flex items-baseline gap-6">
           <span class="label text-ink-900">+02</span>
           <span class="label text-ink-500">Start here</span>
@@ -313,26 +276,28 @@
 
         <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
           <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">Tell me what&rsquo;s breaking and I&rsquo;ll tell you whether it&rsquo;s worth building, what it costs, and how long it takes. If a spreadsheet is genuinely fine for now, I&rsquo;ll say that.</p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">Email me</a>
-            <a href="/services/" class="label label-lg rounded-full border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">Local business? Start here</a></div>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">Email me</a>
+            <a href="/services/" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">Local business? Start here</a></div>
         </div>
+      </div>
 
-        <div class="mt-28 border-t rule pt-10">
-          <div class="flex flex-wrap items-center justify-between gap-6">
-            <div class="flex items-center gap-4">
-              <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
-              <div>
-                <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-                <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-              </div>
+      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
+        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
+          <div class="flex items-center gap-4">
+            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+            <div>
+              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
             </div>
-            <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-              <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-              <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
-              <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
-            </nav>
-            <p class="label text-ink-300">© 2026</p>
           </div>
+          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Experience</a>
+            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
+          </nav>
+          <p class="label text-ink-300">© 2026</p>
         </div>
       </div>
 

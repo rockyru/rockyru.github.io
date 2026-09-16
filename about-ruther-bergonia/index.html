@@ -143,63 +143,59 @@
     <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
       <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
         <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
-          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
           <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
         </a>
         <div class="flex items-center gap-6 sm:gap-10">
           <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Experience</a>
           <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
           <a href="/about-ruther-bergonia/" class="label hidden text-ink-900 underline decoration-ink-900 decoration-2 underline-offset-[6px] sm:block" aria-current="page">About</a>
-          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
+          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </nav>
 
-    <main id="main">
-      <header class="border-b rule px-6 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-48 xl:px-16">
-        <div class="w-full">
-          <nav aria-label="Breadcrumb" class="mb-14 border-b rule pb-6">
-            <ol class="flex items-center gap-2">
-              <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
-              <li aria-hidden="true" class="label text-ink-300">/</li>
-              <li><span class="label text-ink-900">About</span></li>
-            </ol>
-          </nav>
+    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
+      <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
+          <li aria-hidden="true" class="label text-ink-300">/</li>
+          <li><span class="label text-ink-900">About</span></li>
+        </ol>
+      </nav>
 
-          <h1 class="display display-xl text-center text-[clamp(3.25rem,15.5vw,18rem)] text-ink-900">About</h1>
-
-          <div class="mt-16 flex items-baseline justify-between border-t rule pt-5">
-            <span class="label text-ink-500">Ruther Bergonia</span>
-            <span class="label text-ink-500">Metro Manila, PH</span>
-          </div>
-
-          <p class="mx-auto mt-16 max-w-[24ch] text-center text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.3] tracking-[-0.02em] text-ink-900 sm:max-w-[34ch]">
-            <span class="text-ink-300" aria-hidden="true">[</span> One engineer, end to end &mdash; from the first schema to the running server. <span class="text-ink-300" aria-hidden="true">]</span>
-          </p>
-
-          <div class="mt-24 grid items-end gap-14 border-t rule pt-14 lg:grid-cols-12 lg:gap-16">
-            <p class="max-w-[52ch] text-[15px] leading-relaxed text-ink-500 lg:col-span-4">
-              I&rsquo;m a software systems architect and senior full-stack engineer in
-              Metro Manila. I replace fragmented spreadsheets and manual processes with
-              platforms that hold up in production.
-            </p>
-            <dl class="grid grid-cols-3 gap-8 lg:col-span-5 lg:col-start-8">
-              <div>
-                <dt class="label text-ink-500">Experience</dt>
-                <dd class="display mt-3 text-[clamp(1.5rem,3.2vw,2.3rem)] text-ink-900">5+ yrs</dd>
-              </div>
-              <div>
-                <dt class="label text-ink-500">Based in</dt>
-                <dd class="display mt-3 text-[clamp(1.5rem,3.2vw,2.3rem)] text-ink-900">Manila</dd>
-              </div>
-              <div>
-                <dt class="label text-ink-500">Availability</dt>
-                <dd class="display mt-3 text-[clamp(1.5rem,3.2vw,2.3rem)] text-ink-900">Open</dd>
-              </div>
-            </dl>
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="hidden min-h-[160px] border-r rule md:block"></div>
+        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
+          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">One engineer.<br />End to end.</h1>
+          <p class="label mt-4 text-ink-500">From the first schema to the running server.</p>
+        </div>
+        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
+          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
+            <div>11+ Years experience</div>
+            <div>Metro Manila, PH</div>
+            <div>Open for work</div>
           </div>
         </div>
-      </header>
+      </section>
+
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="flex flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+          <div class="space-y-3">
+            <p class="text-xs font-normal leading-relaxed text-ink-500">
+              I&rsquo;m a software systems architect and <br/>senior full-stack engineer in Metro Manila.<br />
+              <span class="font-semibold text-ink-900">Replies within a day.</span>
+            </p>
+            <a href="#contact" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">Start a project</a>
+          </div>
+        </div>
+        <div class="relative min-h-[340px] overflow-hidden border-b rule bg-ink-900 md:col-span-2 md:aspect-auto md:border-b-0 md:border-r">
+          <span class="pointer-events-none absolute -bottom-10 -right-10 h-[65%] w-[65%] text-ink-700 opacity-60" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+        </div>
+        <div class="hidden md:block"></div>
+      </section>
 
       <!-- WHAT I DO -->
       <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="expertise-heading">
@@ -212,7 +208,7 @@
           <div class="border-t rule">
             <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
               <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">Systems architecture</h3>
-              <p class="max-w-[62ch] text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">API-first service design, cross-system authentication, database architecture, and platform orchestration &mdash; like the AWTOR&ndash;SURI single sign-on handshake and the RACE orchestration layer.</p>
+              <p class="max-w-[62ch] text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">API-first service design, cross-system authentication, database architecture, and platform orchestration &mdash; like the RACE orchestration layer beneath UP Manila's research platforms.</p>
             </div>
             <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
               <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">Full-stack development</h3>
@@ -279,31 +275,41 @@
       </section>
 
       <!-- STACK -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="stack-heading">
-        <div class="w-full">
-          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+03</span>
-            <h2 id="stack-heading" class="label text-ink-500">Technical capabilities</h2>
+      <section class="border-b rule" aria-labelledby="stack-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-0">
+              <span class="label text-ink-900">+03</span>
+              <h2 id="stack-heading" class="label text-ink-500">Technical capabilities</h2>
+            </div>
           </div>
-
-          <dl class="grid gap-px border rule bg-ink-100 md:grid-cols-2 lg:grid-cols-4">
-            <div class="fade-up bg-paper-raised p-8 sm:p-10">
-              <dt class="label text-ink-900">Backend</dt>
-              <dd class="mt-6 text-[16.5px] leading-relaxed text-ink-500">PHP &middot; Laravel &middot; FastAPI &middot; REST API design &middot; MySQL &middot; relational database design &middot; authentication &amp; authorization &middot; role-based access control &middot; workflow automation &middot; reporting engines</dd>
+          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
+            <div>
+              <h3 class="mb-6 text-base font-bold text-ink-900">Backend</h3>
+              <p class="text-xs leading-relaxed text-ink-500">PHP, Laravel, FastAPI, REST API design, MySQL, relational database design, authentication &amp; authorization, role-based access control, workflow automation, reporting engines</p>
             </div>
-            <div class="fade-up bg-paper-raised p-8 sm:p-10">
-              <dt class="label text-ink-900">Frontend</dt>
-              <dd class="mt-6 text-[16.5px] leading-relaxed text-ink-500">Vue.js &middot; React &middot; Next.js &middot; TypeScript &middot; Tailwind CSS &middot; progressive web apps &middot; offline-first architectures &middot; responsive, accessible interfaces</dd>
+          </div>
+          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
+            <div>
+              <h3 class="mb-6 text-base font-bold text-ink-900">Frontend</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Vue.js, React, Next.js, TypeScript, Tailwind CSS, progressive web apps, offline-first architectures, responsive, accessible interfaces</p>
             </div>
-            <div class="fade-up bg-paper-raised p-8 sm:p-10">
-              <dt class="label text-ink-900">AI</dt>
-              <dd class="mt-6 text-[16.5px] leading-relaxed text-ink-500">Claude &amp; OpenAI integration &middot; Gemini &middot; retrieval-augmented generation &middot; controlled-response architectures &middot; prompt engineering &middot; AI-assisted workflow automation</dd>
+          </div>
+          <div class="fade-up flex flex-col justify-between p-8">
+            <div>
+              <h3 class="mb-6 text-base font-bold text-ink-900">AI</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Claude &amp; OpenAI integration, Gemini, retrieval-augmented generation, controlled-response architectures, prompt engineering, AI-assisted workflow automation</p>
             </div>
-            <div class="fade-up bg-paper-raised p-8 sm:p-10">
-              <dt class="label text-ink-900">Infrastructure</dt>
-              <dd class="mt-6 text-[16.5px] leading-relaxed text-ink-500">Docker &middot; Linux server administration &middot; Nginx &middot; VPS &amp; cloud deployment &middot; CI/CD &middot; release management &middot; production database architecture</dd>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 border-t rule md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
+            <div>
+              <h3 class="mb-6 text-base font-bold text-ink-900">Infrastructure</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Docker, Linux server administration, Nginx, VPS &amp; cloud deployment, CI/CD, release management, production database architecture</p>
             </div>
-          </dl>
+          </div>
         </div>
       </section>
 
@@ -338,8 +344,8 @@
       </section>
     </main>
 
-    <footer id="contact" class="mx-auto max-w-[1440px] border-x border-t rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-      <div class="w-full">
+    <footer id="contact" class="border-t rule">
+      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
         <div class="mb-14 flex items-baseline gap-6">
           <span class="label text-ink-900">+05</span>
           <span class="label text-ink-500">Start here</span>
@@ -349,27 +355,29 @@
 
         <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
           <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">Tell me what you&rsquo;re building and what&rsquo;s getting in the way. I&rsquo;ll come back with an honest read on whether I&rsquo;m the right fit &mdash; and how I&rsquo;d approach it. Replies within one business day.</p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
-            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg rounded-full border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
-            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg rounded-full border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
+            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
         </div>
+      </div>
 
-        <div class="mt-28 border-t rule pt-10">
-          <div class="flex flex-wrap items-center justify-between gap-6">
-            <div class="flex items-center gap-4">
-              <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
-              <div>
-                <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-                <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-              </div>
+      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
+        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
+          <div class="flex items-center gap-4">
+            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+            <div>
+              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
             </div>
-            <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-              <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-              <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
-              <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
-            </nav>
-            <p class="label text-ink-300">© 2026</p>
           </div>
+          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Experience</a>
+            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
+          </nav>
+          <p class="label text-ink-300">© 2026</p>
         </div>
       </div>
 

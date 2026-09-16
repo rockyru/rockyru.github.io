@@ -1,14 +1,8 @@
 <!doctype html>
-<html
-  lang="en"
-  class="scroll-smooth js"
->
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RACE Case Study: Platform Orchestration for a University Research Ecosystem | Ruther Bergonia</title>
     <meta
       name="description"
@@ -37,63 +31,53 @@
       content="The orchestration layer in development beneath SURI and ARIA — shared authentication, shared services, and integration capabilities for a research platform ecosystem."
     />
 
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
 
     <style>
-      html,
-      body {
-        background-color: #08080c;
-        overscroll-behavior: none;
+      html { -webkit-font-smoothing: antialiased; }
+      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+      .display {
+        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        line-height: 0.95;
+        text-wrap: balance;
       }
-      /* Rising-sun glow — identical language to the homepage hero */
-      .hero-glow {
-        background:
-          linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0) 74%,
-            rgba(255, 255, 255, 0.35) 86%,
-            rgba(255, 255, 255, 0.9) 93%,
-            rgba(255, 255, 255, 1) 95%
-          ),
-          radial-gradient(
-            ellipse 130% 32% at 50% 104%,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(244, 244, 244, 0.80) 30%,
-            rgba(140, 140, 140, 0.22) 62%,
-            rgba(8, 8, 12, 0) 95%
-          ),
-          radial-gradient(
-            ellipse 34vw 24vw at 50% 92%,
-            rgba(255, 255, 255, 0.92) 0%,
-            rgba(243, 243, 243, 0.55) 38%,
-            rgba(140, 140, 140, 0.40) 60%,
-            rgba(140, 140, 140, 0) 85%
-          ),
-          radial-gradient(
-            ellipse 100% 100% at 50% 104%,
-            rgba(120, 120, 124, 0.95) 0%,
-            rgba(90, 90, 94, 0.85) 24%,
-            rgba(58, 58, 62, 0.60) 42%,
-            rgba(30, 30, 32, 0.15) 64%,
-            rgba(8, 8, 12, 0) 82%
-          );
+      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
+
+      .label {
+        font-family: Inter, "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
+      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
+      .rule { border-color: #e3e0da; }
+
+      .js .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .7s ease-out, transform .7s ease-out;
+      }
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .js .fade-up { opacity: 1; transform: none; transition: none; }
+        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      }
+
+      a:focus-visible, button:focus-visible, summary:focus-visible {
+        outline: 2px solid #111013;
+        outline-offset: 3px;
+      }
+      ::selection { background: #111013; color: #fbfaf8; }
     </style>
 
     <script type="application/ld+json">
@@ -106,7 +90,7 @@
           "headline": "RACE Case Study: Platform Orchestration for a University Research Ecosystem",
           "description": "RACE is the orchestration layer Ruther Bergonia is developing beneath SURI and ARIA — shared authentication, shared services, and integrations so research platforms join one ecosystem.",
           "inLanguage": "en",
-          "dateModified": "2026-07-20",
+          "dateModified": "2026-09-16",
           "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
           "mainEntityOfPage": "https://rmbergonia.com/case-studies/race-platform-orchestration/",
           "keywords": "RACE, platform orchestration, shared authentication, systems architecture, service architecture, research platforms, integration",
@@ -136,189 +120,217 @@
     }
     </script>
   </head>
-  <body class="font-sans bg-ink-900 text-white overflow-x-hidden antialiased selection:bg-white selection:text-ink-900">
-    <!-- NAVBAR — flat, matches homepage -->
-    <div class="absolute top-0 left-0 right-0 z-50">
-      <nav class="max-w-[1600px] mx-auto px-6 lg:px-12 py-7 lg:py-8 flex items-center justify-between gap-8">
-        <a href="/" class="text-xl lg:text-2xl font-bold tracking-tight text-white hover:opacity-70 transition-opacity">
-          Ruther&nbsp;Bergonia
+
+  <body class="bg-paper font-body text-ink-900 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+
+    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
+      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
+        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
         </a>
-        <div class="hidden md:flex items-center text-[15px] text-white/85">
-          <a href="/work/" class="hover:text-white transition-colors">Work</a>
-          <span class="text-white/30 mx-2">,</span>
-          <a href="/about-ruther-bergonia/" class="hover:text-white transition-colors">About</a>
-          <span class="text-white/30 mx-2">,</span>
-          <a href="/services/#faq" class="hover:text-white transition-colors">FAQ</a>
+        <div class="flex items-center gap-6 sm:gap-10">
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Experience</a>
+          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
+          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
+          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
         </div>
-        <a href="/" class="flex items-center gap-2 text-[13px] font-medium tracking-widest uppercase text-white hover:opacity-70 transition-opacity">
-          ← Portfolio
-        </a>
+      </div>
+    </nav>
+
+    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
+      <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
+          <li aria-hidden="true" class="label text-ink-300">/</li>
+          <li><a href="/work/" class="label text-ink-300 transition-colors hover:text-ink-900">Case Studies</a></li>
+          <li aria-hidden="true" class="label text-ink-300">/</li>
+          <li><span class="label text-ink-900">RACE</span></li>
+        </ol>
       </nav>
-    </div>
 
-    <!-- HERO — dark with rising-sun glow, fades to white -->
-    <header class="relative min-h-[90vh] overflow-hidden">
-      <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-
-      <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-12 pt-32 lg:pt-36">
-        <nav aria-label="Breadcrumb" class="font-mono text-[11px] tracking-widest text-white/50 mb-8 uppercase">
-          <a href="/" class="hover:text-white transition-colors">Home</a>
-          <span class="mx-2 text-white/30">/</span>
-          <a href="/work/" class="hover:text-white transition-colors">Case Studies</a>
-          <span class="mx-2 text-white/30">/</span>
-          <span class="text-white/70">RACE</span>
-        </nav>
-
-        <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-8 text-white/70">
-          <span class="w-2 h-2 bg-white block rounded-full"></span> SYSTEMS ARCHITECTURE · IN DEVELOPMENT
+      <!-- HERO -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="hidden min-h-[160px] border-r rule md:block"></div>
+        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
+          <h1 class="display display-xl max-w-lg text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">One ecosystem,<br />not another silo.</h1>
+          <p class="label mt-4 text-ink-500">Systems architecture · In development</p>
         </div>
+        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
+          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
+            <div>Orchestration Layer</div>
+            <div>Sits Beneath SURI &amp; ARIA</div>
+            <div>In Development</div>
+          </div>
+        </div>
+      </section>
 
-        <h1 class="text-[clamp(2.8rem,8vw,7rem)] font-extrabold leading-[0.92] tracking-tighter mb-8">
-          RACE: one ecosystem,<br />
-          <span class="text-white/55">not another silo.</span>
-        </h1>
-
-        <p class="text-lg md:text-2xl text-white/80 font-light max-w-3xl leading-relaxed">
+      <!-- INTRO -->
+      <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
+        <p class="max-w-[70ch] text-[18px] leading-relaxed text-ink-500 sm:text-[20px]">
           RACE is the architecture layer Ruther Bergonia is developing beneath SURI and ARIA — providing shared authentication, shared
           services, and integration capabilities so future research platforms join one ecosystem instead of becoming another silo.
         </p>
-      </div>
-    </header>
+      </section>
 
-    <!-- WHITE ARTICLE ZONE -->
-    <main class="bg-white text-ink-900">
-      <!-- Meta bar -->
-      <div class="border-b border-ink-100">
-        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 py-10 font-mono text-[11px] uppercase tracking-widest">
-          <div>
-            <span class="block text-ink-500 mb-2">Role</span>
-            <span class="font-bold">Systems Architect</span>
+      <!-- META BAR -->
+      <section class="grid grid-cols-2 gap-8 border-b rule px-6 py-10 sm:px-10 md:grid-cols-4 xl:px-16">
+        <div>
+          <span class="label block text-ink-300">Role</span>
+          <span class="mt-2 block text-[15px] font-bold text-ink-900">Systems Architect</span>
+        </div>
+        <div>
+          <span class="label block text-ink-300">Type</span>
+          <span class="mt-2 block text-[15px] font-bold text-ink-900">Orchestration Layer</span>
+        </div>
+        <div>
+          <span class="label block text-ink-300">Sits Beneath</span>
+          <span class="mt-2 block text-[15px] font-bold text-ink-900">SURI &amp; ARIA</span>
+        </div>
+        <div>
+          <span class="label block text-ink-300">Status</span>
+          <span class="mt-2 block text-[15px] font-bold text-ink-900">In Development</span>
+        </div>
+      </section>
+
+      <!-- THE PROBLEM -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="problem-heading">
+        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+          <span class="label text-ink-900">+01</span>
+          <h2 id="problem-heading" class="label text-ink-500">The problem</h2>
+        </div>
+        <div class="max-w-[70ch] space-y-6 text-[16.5px] leading-relaxed text-ink-500">
+          <p>
+            Institutional software tends to accumulate one system at a time — each with its own login, its own user store, and its own
+            way of talking to nothing else. Every new platform makes the next integration harder. Solving that problem one pair of
+            systems at a time doesn't scale; RACE is the generalization of that lesson.
+          </p>
+          <p>
+            As the research platform ecosystem at UP Manila grows —
+            <a href="/case-studies/suri-research-information-system/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">SURI</a> for research
+            information, <a href="/case-studies/aria-controlled-response-ai/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">ARIA</a> for
+            AI-assisted support — the question is no longer how to connect two systems, but how to stop every future system from
+            needing bespoke connections at all.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHAT RACE PROVIDES -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="provides-heading">
+        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+          <span class="label text-ink-900">+02</span>
+          <h2 id="provides-heading" class="label text-ink-500">What RACE provides</h2>
+        </div>
+
+        <div class="grid gap-x-12 gap-y-16 md:grid-cols-3">
+          <div class="fade-up border-t-2 border-ink-900 pt-8">
+            <span class="label text-ink-300">01</span>
+            <h3 class="display mt-3 text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">Shared authentication</h3>
+            <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">One identity layer for the ecosystem, so users move between platforms without re-authenticating and new platforms don't build their own user stores.</p>
           </div>
-          <div>
-            <span class="block text-ink-500 mb-2">Type</span>
-            <span class="font-bold">Orchestration Layer</span>
+          <div class="fade-up border-t-2 border-ink-900 pt-8">
+            <span class="label text-ink-300">02</span>
+            <h3 class="display mt-3 text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">Shared services</h3>
+            <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">Common capabilities extracted below the platforms, built once and reused instead of duplicated per system.</p>
           </div>
-          <div>
-            <span class="block text-ink-500 mb-2">Sits Beneath</span>
-            <span class="font-bold">SURI &amp; ARIA</span>
-          </div>
-          <div>
-            <span class="block text-ink-500 mb-2">Status</span>
-            <span class="font-bold">In Development</span>
+          <div class="fade-up border-t-2 border-ink-900 pt-8">
+            <span class="label text-ink-300">03</span>
+            <h3 class="display mt-3 text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">Integration capabilities</h3>
+            <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">Defined ways for platforms to exchange data and workflows, so joining the ecosystem is a supported path rather than a custom project.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <article class="max-w-[1100px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <section class="mb-20">
-          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">The problem</h2>
-          <div class="text-ink-700 leading-relaxed text-lg">
-            <p class="mb-6">
-              Institutional software tends to accumulate one system at a time — each with its own login, its own user store, and its own
-              way of talking to nothing else. Every new platform makes the next integration harder. The
-              <a href="/awtor-suri.html" class="text-ink-900 hover:underline">AWTOR–SURI single sign-on handshake</a> solved that
-              problem for one pair of systems; RACE is the generalization of that lesson.
-            </p>
-            <p>
-              As the research platform ecosystem at UP Manila grows —
-              <a href="/case-studies/suri-research-information-system/" class="text-ink-900 hover:underline">SURI</a> for research
-              information, <a href="/case-studies/aria-controlled-response-ai/" class="text-ink-900 hover:underline">ARIA</a> for
-              AI-assisted support — the question is no longer how to connect two systems, but how to stop every future system from
-              needing bespoke connections at all.
-            </p>
-          </div>
-        </section>
-
-        <section class="mb-20">
-          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">What RACE provides</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
-              <div class="w-8 h-8 bg-ink-900 text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">01</div>
-              <h3 class="font-bold mb-2 text-ink-900 text-base">Shared authentication</h3>
-              <p class="text-sm text-ink-700 leading-relaxed m-0">
-                One identity layer for the ecosystem, so users move between platforms without re-authenticating and new platforms don't
-                build their own user stores.
-              </p>
-            </div>
-            <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
-              <div class="w-8 h-8 bg-ink-900 text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">02</div>
-              <h3 class="font-bold mb-2 text-ink-900 text-base">Shared services</h3>
-              <p class="text-sm text-ink-700 leading-relaxed m-0">
-                Common capabilities extracted below the platforms, built once and reused instead of duplicated per system.
-              </p>
-            </div>
-            <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
-              <div class="w-8 h-8 bg-ink-900 text-white rounded-full flex items-center justify-center mb-4 font-mono text-xs">03</div>
-              <h3 class="font-bold mb-2 text-ink-900 text-base">Integration capabilities</h3>
-              <p class="text-sm text-ink-700 leading-relaxed m-0">
-                Defined ways for platforms to exchange data and workflows, so joining the ecosystem is a supported path rather than a
-                custom project.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="mb-20">
-          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">Status</h2>
-          <div class="bg-ink-900 text-white p-8 rounded-3xl border-l-4 border-l-ink-100">
-            <p class="text-lg m-0 text-white/85">
-              RACE is in active development. SURI and ARIA are its first tenants; the architecture is being extracted from systems already
-              running in production rather than designed in the abstract.
-            </p>
-          </div>
-        </section>
-
-        <!-- Author -->
-        <section class="mb-20 border-t border-ink-100 pt-10">
-          <h2 class="font-mono text-[11px] tracking-widest text-ink-500 uppercase mb-4">Written by</h2>
-          <p class="text-ink-700 leading-relaxed text-lg m-0">
-            <strong class="text-ink-900 font-semibold">Ruther Bergonia</strong> — Software Systems Architect &amp; Senior Full-Stack
-            Engineer, Metro Manila, Philippines. RACE is his ongoing architecture work beneath the UP Manila research platforms.
-            <a href="/about-ruther-bergonia/" class="text-ink-900 hover:underline">More about Ruther Bergonia</a>.
+      <!-- STATUS -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="status-heading">
+        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+          <span class="label text-ink-900">+03</span>
+          <h2 id="status-heading" class="label text-ink-500">Status</h2>
+        </div>
+        <div class="max-w-[70ch] border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
+          <p class="text-[18px] leading-relaxed text-ink-700">
+            RACE is in active development. SURI and ARIA are its first tenants; the architecture is being extracted from systems already
+            running in production rather than designed in the abstract.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <!-- Related -->
-        <section>
-          <h2 class="font-mono text-[11px] tracking-widest text-ink-500 uppercase mb-6">Related case studies</h2>
-          <div class="flex flex-col gap-3">
-            <a href="/awtor-suri.html" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">AWTOR–SURI: single sign-on between UP Manila research platforms →</a>
-            <a href="/case-studies/suri-research-information-system/" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">SURI: a research information system for UP Manila →</a>
-            <a href="/case-studies/aria-controlled-response-ai/" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">ARIA: a controlled-response AI assistant for research inquiries →</a>
-          </div>
-        </section>
-      </article>
+      <!-- WRITTEN BY -->
+      <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
+        <span class="label text-ink-300">Written by</span>
+        <p class="mt-4 max-w-[70ch] text-[16.5px] leading-relaxed text-ink-500">
+          <strong class="font-semibold text-ink-900">Ruther Bergonia</strong> — Software Systems Architect &amp; Senior Full-Stack
+          Engineer, Metro Manila, Philippines. RACE is his ongoing architecture work beneath the UP Manila research platforms.
+          <a href="/about-ruther-bergonia/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">More about Ruther Bergonia</a>.
+        </p>
+      </section>
+
+      <!-- RELATED -->
+      <section class="px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
+        <span class="label text-ink-300">Related case studies</span>
+        <div class="mt-6 flex flex-col gap-4">
+          <a href="/case-studies/suri-research-information-system/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">SURI: a research information system for UP Manila <span aria-hidden="true">→</span></a>
+          <a href="/case-studies/aria-controlled-response-ai/" class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500">ARIA: a controlled-response AI assistant for research inquiries <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
     </main>
 
-    <!-- FOOTER — pure black, matches homepage -->
-    <footer class="relative bg-ink-900 pt-24 pb-8 border-t border-white/10">
-      <div class="mx-auto px-6 lg:px-12 w-full max-w-[1100px]">
-        <div class="mb-16">
-          <h2 class="text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] font-bold tracking-tighter mb-6">
-            Have a system worth<br />
-            <span class="text-ink-300">building properly?</span>
-          </h2>
-          <p class="text-white/55 text-base leading-relaxed max-w-lg mb-8">
+    <footer id="contact" class="border-t rule">
+      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
+        <div class="mb-14 flex items-baseline gap-6">
+          <span class="label text-ink-900">+04</span>
+          <span class="label text-ink-500">Start here</span>
+        </div>
+
+        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Have a system worth building properly?</h2>
+
+        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
+          <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
             Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right
             fit — and how I'd approach it. Replies within one business day.
           </p>
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="mailto:ruther.bergonia@gmail.com" class="bg-white text-ink-900 px-7 py-4 rounded-full text-sm font-bold hover:bg-ink-700 hover:text-white transition-colors">
-              ruther.bergonia@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" class="border border-white/20 text-white px-7 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors">
-              LinkedIn ↗
-            </a>
-            <a href="/" class="border border-white/20 text-white px-7 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors">
-              ← Back to portfolio
-            </a>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end">
+            <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
+            <a href="/" class="label label-lg border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">← Back to portfolio</a>
           </div>
         </div>
-        <div class="font-mono text-[10px] sm:text-[11px] tracking-widest text-white/40 uppercase flex flex-col md:flex-row justify-between gap-3 border-t border-white/10 pt-6">
-          <span>© 2026 Ruther Bergonia. All rights reserved.</span>
-          <span>Based in Metro Manila · Working remotely across time zones</span>
+      </div>
+
+      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
+        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
+          <div class="flex items-center gap-4">
+            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
+            <div>
+              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
+            </div>
+          </div>
+          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Experience</a>
+            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
+          </nav>
+          <p class="label text-ink-300">© 2026</p>
         </div>
       </div>
+
+      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
+        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
+      </div>
     </footer>
+
+    <button id="scrollTop" type="button" aria-label="Scroll back to top"
+      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="/script.js" defer></script>
   </body>
 </html>
