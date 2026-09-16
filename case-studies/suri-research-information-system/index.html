@@ -9,34 +9,34 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>AWTOR–SURI Case Study: Single Sign-On Between UP Manila Research Systems | Ruther Bergonia</title>
+    <title>SURI Case Study: Building a Research Information System for UP Manila | Ruther Bergonia</title>
     <meta
       name="description"
-      content="How Ruther Bergonia designed a secure, cryptographically signed single sign-on handshake between UP Manila's AWTOR and SURI research platforms — no second login, no shared database."
+      content="How Ruther Bergonia architected SURI, an API-first Laravel and Vue research information system managing 15,000+ records for 50+ users at the University of the Philippines Manila."
     />
     <meta name="author" content="Ruther Bergonia" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://rmbergonia.com/awtor-suri.html" />
+    <link rel="canonical" href="https://rmbergonia.com/case-studies/suri-research-information-system/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Ruther Bergonia" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://rmbergonia.com/awtor-suri.html" />
-    <meta property="og:title" content="AWTOR–SURI Case Study: Single Sign-On Between UP Manila Research Systems" />
+    <meta property="og:url" content="https://rmbergonia.com/case-studies/suri-research-information-system/" />
+    <meta property="og:title" content="SURI Case Study: Building a Research Information System for UP Manila" />
     <meta
       property="og:description"
-      content="A secure, cryptographically signed single sign-on handshake between UP Manila's AWTOR and SURI research platforms — no second login, no shared database."
+      content="An API-first Laravel and Vue platform unifying research registration, document management, reporting, and approval workflows — 15,000+ records, 50+ users."
     />
     <meta property="og:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
     <meta property="og:image:alt" content="SURI research information system dashboard" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AWTOR–SURI Case Study: Single Sign-On Between UP Manila Research Systems" />
+    <meta name="twitter:title" content="SURI Case Study: Building a Research Information System for UP Manila" />
     <meta
       name="twitter:description"
-      content="A secure, cryptographically signed single sign-on handshake between UP Manila's AWTOR and SURI research platforms — no second login, no shared database."
+      content="An API-first Laravel and Vue platform unifying research registration, document management, reporting, and approval workflows — 15,000+ records, 50+ users."
     />
     <meta name="twitter:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
 
@@ -65,7 +65,6 @@
         overscroll-behavior: none;
       }
       /* Rising-sun glow — identical language to the homepage hero */
-      /* Rising-sun arc — same prominent glow as the homepage hero */
       .hero-glow {
         background:
           linear-gradient(
@@ -106,23 +105,29 @@
       "@graph": [
         {
           "@type": "TechArticle",
-          "@id": "https://rmbergonia.com/awtor-suri.html#article",
-          "headline": "AWTOR–SURI Case Study: Single Sign-On Between UP Manila Research Systems",
-          "description": "How Ruther Bergonia designed a secure, cryptographically signed single sign-on handshake between UP Manila's AWTOR and SURI research platforms — no second login, no shared database.",
+          "@id": "https://rmbergonia.com/case-studies/suri-research-information-system/#article",
+          "headline": "SURI Case Study: Building a Research Information System for UP Manila",
+          "description": "How Ruther Bergonia architected SURI, an API-first Laravel and Vue research information system managing 15,000+ records for 50+ users at the University of the Philippines Manila.",
           "image": "https://rmbergonia.com/images/suri-dashboard.png",
           "inLanguage": "en",
           "dateModified": "2026-07-20",
           "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
-          "mainEntityOfPage": "https://rmbergonia.com/awtor-suri.html",
-          "keywords": "single sign-on, signed URLs, cross-system authentication, cryptographic handshake, Laravel, UP Manila, AWTOR, SURI, systems architecture"
+          "mainEntityOfPage": "https://rmbergonia.com/case-studies/suri-research-information-system/",
+          "keywords": "SURI, research information system, Laravel, Vue.js, MySQL, UP Manila, institutional software, workflow automation, systems architecture",
+          "about": {
+            "@type": "SoftwareApplication",
+            "name": "SURI — System for Unified Research Information",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web"
+          }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://rmbergonia.com/awtor-suri.html#breadcrumb",
+          "@id": "https://rmbergonia.com/case-studies/suri-research-information-system/#breadcrumb",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmbergonia.com/" },
             { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://rmbergonia.com/#work" },
-            { "@type": "ListItem", "position": 3, "name": "AWTOR–SURI Single Sign-On", "item": "https://rmbergonia.com/awtor-suri.html" }
+            { "@type": "ListItem", "position": 3, "name": "SURI Research Information System", "item": "https://rmbergonia.com/case-studies/suri-research-information-system/" }
           ]
         },
         {
@@ -160,7 +165,7 @@
       </nav>
     </div>
 
-    <!-- HERO — dark with rising-sun glow, fades to white. Content sits high in the dark zone. -->
+    <!-- HERO — dark with rising-sun glow, fades to white -->
     <header class="relative min-h-[90vh] overflow-hidden">
       <div class="absolute inset-0 hero-glow pointer-events-none"></div>
 
@@ -170,174 +175,153 @@
           <span class="mx-2 text-white/30">/</span>
           <a href="/work/" class="hover:text-white transition-colors">Case Studies</a>
           <span class="mx-2 text-white/30">/</span>
-          <span class="text-white/70">AWTOR–SURI</span>
+          <span class="text-white/70">SURI</span>
         </nav>
 
         <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-8 text-white/70">
-          <span class="w-2 h-2 bg-white block rounded-full"></span> SYSTEM ARCHITECTURE & AUTH
+          <span class="w-2 h-2 bg-white block rounded-full"></span> RESEARCH INFORMATION SYSTEM
         </div>
 
         <h1 class="text-[clamp(2.8rem,8vw,7rem)] font-extrabold leading-[0.92] tracking-tighter mb-8">
-          AWTOR–SURI:<br />
-          cross-system<br />
-          <span class="text-white/55">single sign-on.</span>
+          SURI: one platform<br />
+          <span class="text-white/55">for university research.</span>
         </h1>
 
         <p class="text-lg md:text-2xl text-white/80 font-light max-w-3xl leading-relaxed">
-          Ruther Bergonia designed and built a secure single sign-on handshake between the University of the Philippines Manila's core
-          research platforms — AWTOR and SURI — using time-boxed, cryptographically signed URLs with backend verification, removing
-          double logins while keeping both systems strictly decoupled.
+          SURI (System for Unified Research Information) is an API-first Laravel and Vue.js platform at the University of the Philippines
+          Manila that unifies research registration, document management, reporting, and approval workflows — managing 15,000+ records
+          across 50+ users, and replacing manual spreadsheet compilation with reporting that runs in seconds.
         </p>
       </div>
     </header>
 
-    <!-- WHITE ARTICLE ZONE — matches homepage white content language -->
+    <!-- WHITE ARTICLE ZONE -->
     <main class="bg-white text-ink-900">
       <!-- Meta bar -->
       <div class="border-b border-ink-100">
         <div class="max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 py-10 font-mono text-[11px] uppercase tracking-widest">
           <div>
+            <span class="block text-ink-500 mb-2">Role</span>
+            <span class="font-bold">Lead Engineer / Systems Architect</span>
+          </div>
+          <div>
             <span class="block text-ink-500 mb-2">Client</span>
-            <span class="font-bold">UP Manila</span>
+            <span class="font-bold">RGAO · UP Manila</span>
           </div>
           <div>
-            <span class="block text-ink-500 mb-2">Systems</span>
-            <span class="font-bold">AWTOR & SURI</span>
+            <span class="block text-ink-500 mb-2">Stack</span>
+            <span class="font-bold">Laravel / Vue.js / MySQL</span>
           </div>
           <div>
-            <span class="block text-ink-500 mb-2">Focus</span>
-            <span class="font-bold">Auth / Cryptography</span>
-          </div>
-          <div>
-            <span class="block text-ink-500 mb-2">Timeline</span>
-            <span class="font-bold">2025</span>
+            <span class="block text-ink-500 mb-2">Status</span>
+            <span class="font-bold">In Production · 2025</span>
           </div>
         </div>
       </div>
 
       <article class="max-w-[1100px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <section class="mb-24">
-          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">The Problem</h2>
-          <div class="text-ink-700 leading-relaxed max-w-none text-lg">
+        <section class="mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">The problem</h2>
+          <div class="text-ink-700 leading-relaxed text-lg">
             <p class="mb-6">
-              The University of the Philippines Manila operates two distinct systems critical to academic operations:
-              <strong class="text-ink-900 font-semibold">AWTOR</strong> (Author's Workflow and Tracking of Research) and
-              <strong class="text-ink-900 font-semibold">SURI</strong> (System for Unified Research Information).
+              Research administration at a university generates a constant stream of registrations, documents, approvals, and reports.
+              Before SURI, these workflows at the Research Grants Administration Office (RGAO) of the University of the Philippines
+              Manila ran by hand — compiled manually across spreadsheets and disconnected tools.
             </p>
-            <p class="mb-6">
-              AWTOR functions as the primary research dashboard, handling ethics management, intellectual property, and prerequisite
-              certificates. SURI handles the final research registration, management, and funding.
+            <p>
+              Manual compilation doesn't just cost time. It fragments the record of the university's research activity, makes reporting a
+              recurring project instead of a query, and leaves approval workflows without a single system of record.
             </p>
-            <div class="bg-ink-900 text-white p-8 rounded-3xl my-12 border-l-4 border-l-ink-100">
-              <h3 class="font-mono text-[11px] tracking-widest text-ink-300 mb-4 uppercase">The Core Friction</h3>
-              <p class="text-lg m-0 text-white/85">
-                Researchers are strictly required to clear prerequisites in AWTOR before they are permitted to register their research in
-                SURI. However, redirecting users between these isolated environments forced a secondary login screen. This
-                double-authentication requirement created immense UX friction and fragmented the user journey.
-              </p>
+          </div>
+        </section>
+
+        <section class="mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">What SURI does</h2>
+          <div class="text-ink-700 leading-relaxed text-lg">
+            <p class="mb-10">
+              SURI consolidates the research lifecycle into one platform serving 50+ users and 15,000+ research records:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
+                <h3 class="font-bold mb-2 text-ink-900 text-base">Research registration</h3>
+                <p class="text-sm text-ink-700 leading-relaxed m-0">Final registration, management, and funding records for university research.</p>
+              </div>
+              <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
+                <h3 class="font-bold mb-2 text-ink-900 text-base">Document management</h3>
+                <p class="text-sm text-ink-700 leading-relaxed m-0">Research documents handled inside the platform instead of scattered files.</p>
+              </div>
+              <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
+                <h3 class="font-bold mb-2 text-ink-900 text-base">Approval workflows</h3>
+                <p class="text-sm text-ink-700 leading-relaxed m-0">Workflows that previously ran by hand, tracked and automated end to end.</p>
+              </div>
+              <div class="border border-ink-100 p-6 rounded-2xl bg-paper-sunk">
+                <h3 class="font-bold mb-2 text-ink-900 text-base">Reporting</h3>
+                <p class="text-sm text-ink-700 leading-relaxed m-0">Reports that once required manual spreadsheet compilation now run in seconds.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">The Fix: Signed URL Handshake</h2>
-          <div class="text-ink-700 leading-relaxed max-w-none mb-16 text-lg">
+        <section class="mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">Architecture &amp; design decisions</h2>
+          <div class="text-ink-700 leading-relaxed text-lg">
+            <p class="mb-6">
+              SURI is built API-first on Laravel with a Vue.js frontend and a MySQL database. The API-first decision matters because SURI
+              does not live alone: it operates alongside AWTOR, the university's research prerequisite and ethics platform, and is
+              designed to join a broader ecosystem of research systems.
+            </p>
+            <p class="mb-6">
+              Authentication and role-based access control are treated as architecture, not features. Researchers clear prerequisites in
+              AWTOR and land in SURI already authenticated, through a
+              <a href="/awtor-suri.html" class="text-ink-900 hover:underline">time-boxed, cryptographically signed URL handshake</a>
+              — no second login, no shared database, and strict decoupling between the two systems.
+            </p>
             <p>
-              We needed a way to guarantee identity transfer without passing raw credentials or forcing a secondary sign-in. The solution was
-              a secure, backend-verified handshake utilizing time-boxed, cryptographically signed URLs.
+              The next step of that decoupling is <a href="/case-studies/race-platform-orchestration/" class="text-ink-900 hover:underline">RACE</a>,
+              the orchestration layer in development beneath SURI and <a href="/case-studies/aria-controlled-response-ai/" class="text-ink-900 hover:underline">ARIA</a>,
+              which extracts shared authentication and shared services so future platforms join the ecosystem instead of becoming new silos.
             </p>
           </div>
+        </section>
 
-          <div class="bg-ink-900 rounded-3xl p-8 lg:p-16 mb-16 relative overflow-hidden">
-            <div
-              class="absolute inset-0 opacity-[0.08] pointer-events-none"
-              style="background-image: radial-gradient(#9d8bff 1px, transparent 1px); background-size: 20px 20px"
-            ></div>
-
-            <div class="relative z-10 flex flex-col gap-12 text-white">
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                <div class="md:col-span-3 text-center md:text-right">
-                  <div class="inline-block bg-white/10 text-white font-mono text-[11px] px-4 py-2 rounded-lg tracking-widest">
-                    STEP 01 : AWTOR
-                  </div>
-                </div>
-                <div class="md:col-span-9 bg-ink-700 border border-white/10 p-6 rounded-xl">
-                  <p class="text-sm font-semibold mb-2">Prerequisite Clearance & Token Generation</p>
-                  <p class="text-sm text-white/55 leading-relaxed">
-                    The researcher completes certificate checks. AWTOR generates a short-lived token containing the user's ID and signs it
-                    using a shared private key.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex justify-center md:justify-start md:pl-[25%] -my-6">
-                <div class="w-px h-12 bg-white/15 relative">
-                  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 border-r border-b border-white/40"></div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                <div class="md:col-span-3 text-center md:text-right">
-                  <div class="inline-block bg-ink-900 text-white font-mono text-[11px] px-4 py-2 rounded-lg tracking-widest font-bold">
-                    STEP 02 : CLIENT
-                  </div>
-                </div>
-                <div class="md:col-span-9 bg-ink-700 border border-ink-100/30 p-6 rounded-xl">
-                  <p class="text-sm font-semibold text-ink-300 mb-2">Redirection via Signed URL</p>
-                  <div class="font-mono text-[10px] sm:text-xs text-white/50 bg-black/40 p-3 rounded overflow-x-auto whitespace-nowrap">
-                    GET https://suri.upm.edu.ph/register?auth=<span class="text-ink-300">eyJhbGciOiJIUzI1Ni...</span>&sig=<span class="text-ink-300">8f2a9b...</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex justify-center md:justify-start md:pl-[25%] -my-6">
-                <div class="w-px h-12 bg-white/15 relative">
-                  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 border-r border-b border-white/40"></div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                <div class="md:col-span-3 text-center md:text-right">
-                  <div class="inline-block bg-white/10 text-white font-mono text-[11px] px-4 py-2 rounded-lg tracking-widest">
-                    STEP 03 : SURI
-                  </div>
-                </div>
-                <div class="md:col-span-9 bg-ink-700 border border-white/10 p-6 rounded-xl">
-                  <p class="text-sm font-semibold mb-2">Backend Handshake & Verification</p>
-                  <p class="text-sm text-white/55 leading-relaxed">
-                    SURI intercepts the URL. Before granting access, it makes a secure server-to-server API call back to AWTOR to verify the
-                    token hasn't been tampered with or expired. If valid, a session is established immediately.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-ink-700 leading-relaxed max-w-none text-lg">
+        <section class="mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">Deployment &amp; operations</h2>
+          <div class="text-ink-700 leading-relaxed text-lg">
             <p>
-              <strong class="text-ink-900 font-semibold">The Result:</strong> Researchers experience a continuous flow. They hit a button in
-              AWTOR and instantly land inside the SURI registration dashboard, fully authenticated, while maintaining strict architectural
-              decoupling between the two databases.
+              Ruther Bergonia leads SURI's architecture and development and owns it through production: deployments, production database
+              architecture, and release management. The platform runs live for the university's research administration — this is
+              operated software, not a prototype.
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 tracking-tight">Outcome</h2>
+          <div class="bg-ink-900 text-white p-8 rounded-3xl border-l-4 border-l-ink-100">
+            <p class="text-lg m-0 text-white/85">
+              One platform now manages 15,000+ research records for 50+ users, unifying registration, document management, reporting, and
+              approval workflows that previously ran by hand. Reporting that used to mean manual spreadsheet compilation now runs in
+              seconds.
             </p>
           </div>
         </section>
 
         <!-- Author -->
-        <section class="mt-24 border-t border-ink-100 pt-10">
+        <section class="mb-20 border-t border-ink-100 pt-10">
           <h2 class="font-mono text-[11px] tracking-widest text-ink-500 uppercase mb-4">Written by</h2>
           <p class="text-ink-700 leading-relaxed text-lg m-0">
             <strong class="text-ink-900 font-semibold">Ruther Bergonia</strong> — Software Systems Architect &amp; Senior Full-Stack
-            Engineer, Metro Manila, Philippines. He designed and built the AWTOR–SURI handshake as part of his architecture work on the
-            UP Manila research platforms.
+            Engineer, Metro Manila, Philippines. He architected and built SURI end to end.
             <a href="/about-ruther-bergonia/" class="text-ink-900 hover:underline">More about Ruther Bergonia</a>.
           </p>
         </section>
 
         <!-- Related -->
-        <section class="mt-16">
+        <section>
           <h2 class="font-mono text-[11px] tracking-widest text-ink-500 uppercase mb-6">Related case studies</h2>
           <div class="flex flex-col gap-3">
-            <a href="/case-studies/suri-research-information-system/" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">SURI: a research information system for UP Manila →</a>
+            <a href="/awtor-suri.html" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">AWTOR–SURI: single sign-on between UP Manila research platforms →</a>
+            <a href="/case-studies/aria-controlled-response-ai/" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">ARIA: a controlled-response AI assistant for research inquiries →</a>
             <a href="/case-studies/race-platform-orchestration/" class="text-lg font-semibold text-ink-900 hover:text-ink-500 transition-colors">RACE: platform orchestration for the research ecosystem →</a>
           </div>
         </section>

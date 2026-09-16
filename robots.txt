@@ -1,0 +1,13 @@
+# robots.txt for https://rmbergonia.com
+# Allow search engines and AI search crawlers; opt out of GPTBot training crawls.
+
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://rmbergonia.com/sitemap.xml

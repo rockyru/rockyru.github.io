@@ -1,853 +1,526 @@
 <!doctype html>
-<html
-  lang="en"
-  class="scroll-smooth"
->
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Ruther Bergonia — Senior Full-Stack Software Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruther Bergonia — Systems That Hold Under Load</title>
     <meta
       name="description"
-      content="Systems Architect and full-stack engineer building production platforms for universities, government offices, and SaaS teams. Laravel, Next.js, React & AI integrations — designed, built, and deployed end to end."
+      content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, and complete digital setups for local businesses from ₱35,000."
     />
+    <meta name="author" content="Ruther Bergonia" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://rmbergonia.com/" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ruther Bergonia" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://rmbergonia.com/" />
+    <meta property="og:title" content="Ruther Bergonia — Systems That Hold Under Load" />
+    <meta
+      property="og:description"
+      content="Institutional platforms managing 15,000+ records in production. Complete digital setups for local businesses from ₱35,000."
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta property="og:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
+    <meta property="og:image:alt" content="The SURI research information system dashboard" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ruther Bergonia — Systems That Hold Under Load" />
+    <meta
+      name="twitter:description"
+      content="Institutional platforms managing 15,000+ records in production. Complete digital setups for local businesses from ₱35,000."
+    />
+    <meta name="twitter:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              ink: {
-                950: "#08080c", // page base
-                900: "#0d0d14",
-                800: "#14141f",
-                700: "#1c1c2b",
-                600: "#26263a",
-              },
-              violet: {
-                glow: "#7b5cff",
-                400: "#9d8bff",
-                300: "#c4b8ff",
-              },
-            },
-            fontFamily: {
-              sans: ["Manrope", "Inter", "sans-serif"],
-              body: ["Inter", "sans-serif"],
-              mono: ["Space Mono", "monospace"],
-            },
-          },
-        },
-      };
-    </script>
-    <script>
-      // Mark JS active so fade-up reveal animations engage (content stays visible if JS fails).
-      document.documentElement.classList.add("js");
-    </script>
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
 
     <style>
-      html,
-      body {
-        background-color: #08080c;
-        overscroll-behavior: none;
+      html { -webkit-font-smoothing: antialiased; }
+      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+      /* Display type: oversized, tight, MIXED CASE — the editorial register.
+         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
+      .display {
+        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        line-height: 0.95;
+        text-wrap: balance;
       }
-      /* Hero glow — a "rising sun": a brilliant white-hot core cresting at the
-         bottom-center, radiating an intense halo upward, surrounded by a tall broad
-         column of saturated royal indigo. Fades to pure white at the base, near-black up top. */
-      .hero-glow {
-        background:
-          /* 1. Pure-white floor so the base meets the white section seamlessly.
-             Reaches full #fff well before the edge so there's always a pure-white margin
-             regardless of viewport height — no lavender band at the boundary. */
-          linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0) 60%,
-            rgba(255, 255, 255, 0.4) 74%,
-            rgba(255, 255, 255, 0.92) 85%,
-            rgba(255, 255, 255, 1) 90%
-          ),
-          /* 2. THE SUN — wide intense white-hot core, cresting HIGH so the dome dominates */
-          radial-gradient(
-            ellipse 38vw 32vw at 50% 78%,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0.95) 18%,
-            rgba(243, 238, 255, 0.72) 38%,
-            rgba(190, 170, 255, 0.4) 60%,
-            rgba(120, 95, 240, 0) 85%
-          ),
-          /* 3. Radiant halo around the sun — wide & high */
-          radial-gradient(
-            ellipse 78% 70% at 50% 84%,
-            rgba(220, 208, 255, 0.58) 0%,
-            rgba(150, 120, 250, 0.42) 42%,
-            rgba(90, 64, 220, 0) 80%
-          ),
-          /* 4. Tall broad SATURATED royal-indigo column — the "sky", high & wide */
-          radial-gradient(
-            ellipse 100% 110% at 50% 102%,
-            rgba(150, 120, 255, 1) 0%,
-            rgba(108, 78, 250, 0.92) 24%,
-            rgba(78, 54, 225, 0.8) 42%,
-            rgba(52, 36, 165, 0.5) 60%,
-            rgba(28, 20, 90, 0.22) 74%,
-            rgba(8, 8, 12, 0) 88%
-          );
+      /* Page-title scale: the one place type is allowed to dominate. */
+      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
+
+      /* Micro-labels. Structural, never decorative — they name a section
+         or number a real sequence. */
+      .label {
+        font-family: Inter, "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
-      .text-gradient {
-        background: linear-gradient(180deg, #ffffff 0%, #9d8bff 140%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .grain {
-        background-image:
-          radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 1px, transparent 0),
-          radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 1px, transparent 0);
-        background-size: 4px 4px;
-      }
-      /* FAQ accordion */
-      .faq-item[open] .faq-icon {
-        transform: rotate(45deg);
-      }
-      .faq-item summary::-webkit-details-marker {
-        display: none;
-      }
-      /* Only hide fade-up elements when JS is active to drive the reveal;
-         without JS (or before it runs) content stays fully visible. */
+      /* Nav and buttons carry a touch more weight than section eyebrows. */
+      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
+      .rule { border-color: #e3e0da; }
+
+      /* Editorial two-column row: label left, prose right. */
+      .row-label { font-family: Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+
       .js .fade-up {
         opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.9s ease-out,
-          transform 0.9s ease-out;
+        transform: translateY(20px);
+        transition: opacity .7s ease-out, transform .7s ease-out;
       }
-      .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+      /* FAQ disclosure: the + rotates to an x when open. */
+      .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .js .fade-up { opacity: 1; transform: none; transition: none; }
+        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       }
+
+      a:focus-visible, button:focus-visible, summary:focus-visible {
+        outline: 2px solid #111013;
+        outline-offset: 3px;
+      }
+      ::selection { background: #111013; color: #fbfaf8; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://rmbergonia.com/#website",
+          "name": "Ruther Bergonia",
+          "url": "https://rmbergonia.com/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://rmbergonia.com/#ruther-bergonia" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://rmbergonia.com/#ruther-bergonia",
+          "name": "Ruther Bergonia",
+          "url": "https://rmbergonia.com/",
+          "jobTitle": "Software Systems Architect & Senior Full-Stack Engineer",
+          "description": "Ruther Bergonia is a software systems architect and senior full-stack engineer based in Metro Manila, Philippines. He builds production platforms for institutions and complete digital setups for local businesses.",
+          "email": "mailto:ruther.bergonia@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Metro Manila",
+            "addressCountry": "PH"
+          },
+          "sameAs": [
+            "https://github.com/rockyru",
+            "https://www.linkedin.com/in/ruther-bergonia-a9959813a/"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Research Grants Administration Office, University of the Philippines Manila"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://rmbergonia.com/services/#localbiz",
+          "name": "LocalBiz Digital Hub",
+          "provider": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
+          "areaServed": { "@type": "City", "name": "Manila", "addressCountry": "PH" },
+          "description": "A complete digital setup for a local business: website, online booking, Google Business profile, and messaging \u2014 built and launched in 5 to 7 days.",
+          "offers": {
+            "@type": "Offer",
+            "price": "35000",
+            "priceCurrency": "PHP",
+            "url": "https://rmbergonia.com/services/"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
-  <body class="font-sans bg-ink-950 text-white overflow-x-hidden antialiased selection:bg-violet-glow selection:text-white">
-    <!-- NAVBAR -->
-    <div class="absolute top-0 left-0 right-0 z-50">
-      <nav class="max-w-[1600px] mx-auto px-6 lg:px-12 py-7 lg:py-8 flex items-center justify-between gap-8">
-        <a href="#" class="text-xl lg:text-2xl font-bold tracking-tight text-white hover:opacity-70 transition-opacity">
-          Ruther&nbsp;Bergonia
+
+  <body class="bg-paper font-body text-ink-900 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+
+    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
+      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
+        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
         </a>
-
-        <div class="hidden md:flex items-center text-[15px] text-white/85">
-          <a href="#work" class="hover:text-white transition-colors">Work</a>
-          <span class="text-white/30 mx-2">,</span>
-          <a href="#about" class="hover:text-white transition-colors">About</a>
-          <span class="text-white/30 mx-2">,</span>
-          <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-        </div>
-
-        <a href="#contact" class="flex items-center gap-2 text-[13px] font-medium tracking-widest uppercase text-white hover:opacity-70 transition-opacity">
-          Contact Me <span class="text-base">→</span>
-        </a>
-      </nav>
-    </div>
-
-    <!-- HERO -->
-    <header class="relative min-h-screen flex flex-col overflow-hidden">
-      <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-      <div class="absolute inset-0 grain pointer-events-none opacity-30"></div>
-
-      <!-- Headline (upper-left) + tagline (upper-right) -->
-      <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-12 pt-32 lg:pt-40">
-        <div class="flex flex-col lg:flex-row justify-between gap-8 lg:gap-12">
-          <h1 class="text-[clamp(2.6rem,7.5vw,7rem)] font-extrabold leading-[0.92] tracking-tighter">
-            <span class="text-white">I build the</span><br />
-            <span class="text-white">systems</span><br />
-            <span class="text-white/30">institutions</span><br />
-            <span class="text-white/30">run on.</span>
-          </h1>
-          <p class="lg:ml-auto max-w-[20rem] font-light text-base leading-relaxed text-white/50 lg:text-right lg:pt-2">
-            Systems Architect and full-stack engineer with 5+ years building production software. I help universities, government offices, and SaaS teams replace fragmented tools with platforms built to scale — designed, built, and deployed end to end.
-          </p>
-        </div>
-
-        <!-- Avatar / tech cluster + key stats -->
-        <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8 mt-10">
-          <div class="flex -space-x-3">
-            <span class="w-11 h-11 rounded-full bg-ink-800 ring-2 ring-white flex items-center justify-center text-sm font-bold text-white">L</span>
-            <span class="w-11 h-11 rounded-full bg-ink-800 ring-2 ring-white flex items-center justify-center text-sm font-bold text-white">V</span>
-            <span class="w-11 h-11 rounded-full bg-ink-800 ring-2 ring-white flex items-center justify-center text-sm font-bold text-white">R</span>
-            <span class="w-11 h-11 rounded-full bg-violet-glow ring-2 ring-white flex items-center justify-center text-xs font-bold text-white">AI</span>
-          </div>
-          <p class="font-mono text-[11px] sm:text-xs tracking-widest text-white/55 leading-relaxed uppercase">
-            <span class="text-white font-bold">15,000+</span> records managed in production<br />
-            Live systems for research, admissions &amp; administration
-          </p>
+        <div class="flex items-center gap-6 sm:gap-10">
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
+          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
+          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
+          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
         </div>
       </div>
+    </nav>
 
-      <!-- Bottom row: portfolio link · thumbnails · scroll (sits on the bright pool) -->
-      <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-12 mt-auto pb-8 lg:pb-10">
-        <div class="flex items-end justify-between gap-6">
-          <a href="#work" class="font-mono text-[11px] sm:text-xs font-bold tracking-widest text-ink-950/80 hover:text-ink-950 transition-colors uppercase">
-            See My Portfolio
-          </a>
-
-          <div class="hidden sm:flex items-center gap-2.5">
-            <div class="w-24 h-16 rounded-xl overflow-hidden border border-black/10 shadow-xl">
-              <img src="images/suri.png" alt="SURI" class="w-full h-full object-cover" />
-            </div>
-            <div class="w-24 h-16 rounded-xl overflow-hidden border border-black/10 shadow-xl">
-              <img src="images/aral.png" alt="GO-ARAL" class="w-full h-full object-cover" />
-            </div>
-            <div class="w-24 h-16 rounded-xl overflow-hidden border border-black/10 shadow-xl bg-ink-900 flex items-center justify-center">
-              <span class="font-mono text-[10px] text-violet-300 tracking-widest">+4</span>
-            </div>
-          </div>
-
-          <a href="#work" class="flex items-center gap-3 font-mono text-[11px] sm:text-xs font-bold tracking-widest text-ink-950/80 hover:text-ink-950 transition-colors uppercase">
-            Scroll Now
-            <span class="w-9 h-9 border border-ink-950/40 rounded-full flex items-center justify-center text-ink-950">↓</span>
-          </a>
+    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
+      <!-- ══ HERO — exact copy of the reference's HeroSection: 4-col grid,
+           col 1 empty spacer, cols 2-3 headline, col 4 discipline tags
+           top-right. Every cell keeps the reference's own border rules. ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="hidden min-h-[160px] border-r rule md:block"></div>
+        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
+          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">Systems that<br />hold under<br />load</h1>
+          <p class="label mt-4 text-ink-500">Software, built with method.</p>
         </div>
-      </div>
-    </header>
-
-    <!-- WHITE ZONE: About → Best Project → What I Do → Experience (flows out of the hero's white base) -->
-    <div class="bg-white text-ink-950">
-      <!-- INTRO -->
-      <section class="py-28 lg:py-36 px-6 lg:px-12 max-w-[1600px] mx-auto">
-        <div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24">
-          <div class="inline-flex items-start gap-3 font-mono text-[11px] tracking-widest text-ink-950/50 flex-shrink-0 lg:pt-4">
-            <span class="w-2 h-2 mt-1 rounded-full bg-violet-glow block"></span> ABOUT
-          </div>
-          <div class="lg:w-[78%]">
-            <p class="text-[clamp(1.6rem,3.2vw,3rem)] font-medium leading-[1.25] tracking-tight text-ink-950">
-              I build the platforms organizations run their work on. Most of it starts where quick fixes end — when a team has outgrown spreadsheets and
-              <span class="text-violet-glow">disconnected tools</span>. I design the architecture, build it across the full stack, and own it through to
-              <span class="text-violet-glow">production</span> — built to grow instead of being rebuilt.
-            </p>
-            <a
-              href="#about"
-              class="inline-flex items-center gap-2 mt-10 font-mono text-[11px] font-bold tracking-widest text-ink-950 border-b-2 border-violet-glow pb-2 hover:text-violet-glow transition-colors"
-            >
-              MY EXPERIENCE ↗
-            </a>
+        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
+          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
+            <div>Access &amp; audit</div>
+            <div>Integration &amp; AI</div>
+            <div>Product Engineering</div>
+            <div>Systems Architecture</div>
+            <div>Cloud & Deployment</div>
           </div>
         </div>
       </section>
 
-    <!-- BEST PROJECT -->
-    <section id="work" class="py-12 lg:py-16 px-6 lg:px-12 max-w-[1600px] mx-auto">
-      <div class="flex items-end justify-between mb-8">
-        <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-ink-950/50">
-          <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> BEST PROJECT
-        </div>
-        <a href="https://github.com/rockyru" class="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-widest text-ink-950/60 hover:text-ink-950 transition-colors">
-          SEE MORE ↗
-        </a>
-      </div>
-
-      <!-- Large full-width featured project: SURI -->
-      <a href="awtor-suri.html" class="group block relative rounded-3xl overflow-hidden min-h-[640px] lg:min-h-[860px] mb-5 fade-up">
-        <img src="images/suri-dashboard.png" alt="SURI research intelligence dashboard" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
-        <!-- lighter overlay: top stays clear to show the dashboard, bottom darkens for text -->
-        <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent"></div>
-        <div class="relative z-10 h-full min-h-[640px] lg:min-h-[860px] flex flex-col justify-between p-8 lg:p-12 text-white">
-          <div class="flex items-start justify-between">
-            <span class="font-mono text-[11px] tracking-widest text-white/80 uppercase bg-ink-950/40 backdrop-blur px-3 py-1.5 rounded-full">UP Manila · 2025</span>
-            <span class="font-mono text-[11px] tracking-widest text-white/80 bg-ink-950/40 backdrop-blur px-3 py-1.5 rounded-full">01 / 03</span>
-          </div>
-          <div class="max-w-2xl">
-            <h3 class="text-4xl lg:text-6xl font-bold tracking-tighter mb-4 text-white">SURI</h3>
-            <p class="text-white/70 text-sm lg:text-base leading-relaxed mb-6 max-w-xl">
-              System for Unified Research Information — one platform managing 15,000+ records across 50+ users, unifying registration,
-              document management, reporting, and approval workflows that previously ran by hand. Built API-first on Laravel, it replaced
-              manual spreadsheet compilation with reporting that runs in seconds.
+      <!-- ══ HERO VISUAL BANNER — availability callout, portrait photo
+           block, empty col 4, matching HeroVisualBanner 1:2:1 rhythm ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="flex flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+          <div class="space-y-3">
+            <p class="text-xs font-normal leading-relaxed text-ink-500">
+              Currently open:<br />
+              <span class="font-semibold text-ink-900">Replies within a day.</span>
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-white/10 backdrop-blur rounded-md font-mono text-[10px] tracking-widest text-white">Laravel</span>
-              <span class="px-3 py-1 bg-white/10 backdrop-blur rounded-md font-mono text-[10px] tracking-widest text-white">Vue.js</span>
-              <span class="px-3 py-1 bg-white/10 backdrop-blur rounded-md font-mono text-[10px] tracking-widest text-white">MySQL</span>
-              <span class="px-3 py-1 bg-white/10 backdrop-blur rounded-md font-mono text-[10px] tracking-widest text-white">Enterprise Auth</span>
+            <a href="#contact" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">Start a project</a>
+          </div>
+        </div>
+        <div class="relative min-h-[340px] overflow-hidden border-b rule bg-ink-900 md:col-span-2 md:aspect-auto md:border-b-0 md:border-r">
+          <span class="pointer-events-none absolute -bottom-10 -right-10 h-[65%] w-[65%] text-ink-700 opacity-60" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+        </div>
+        <div class="hidden md:block"></div>
+      </section>
+
+      <!-- ══ LEISTUNGEN — statement, matching ServicesOverview: empty col 1,
+           eyebrow + headline spanning cols 2-4 ══ -->
+      <section class="border-b rule" aria-labelledby="leistungen-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+01</span>
+            <h2 id="leistungen-heading" class="label text-ink-500">What I build</h2>
+          </div>
+            <h2 class="display max-w-3xl text-2xl leading-[1.2] text-ink-900 sm:text-3xl md:text-[38px]">As your systems partner, I scope, build, and stand behind software that has to keep working.</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ SERVICE CARDS — nav/CTA cell + 3-up service tiles, matching
+           ServiceCardsGrid's 4-col row exactly ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
+          <div class="flex items-center gap-2">
+            <button aria-label="Previous service" class="flex h-8 w-8 items-center justify-center rounded-full border border-ink-300 text-ink-500 transition-colors hover:border-ink-900" type="button">&larr;</button>
+            <button aria-label="Next service" class="flex h-8 w-8 items-center justify-center rounded-full border border-ink-300 text-ink-500 transition-colors hover:border-ink-900" type="button">&rarr;</button>
+          </div>
+          <div class="mt-12">
+            <a href="/services/" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">See services</a>
+          </div>
+        </div>
+        <div class="fade-up flex flex-col justify-between bg-paper p-8">
+              <div>
+                <h3 class="mb-6 text-base font-bold text-ink-900">Access &amp;<br />audit trails</h3>
+                <p class="text-xs leading-relaxed text-ink-500">Role-based permissions and a change log an auditor can actually follow, not bolted on after the fact.</p>
+              </div>
+            </div>
+            <div class="fade-up flex flex-col justify-between bg-ink-900 p-8">
+              <div>
+                <h3 class="mb-6 text-base font-bold text-paper">Integration &amp;<br />AI</h3>
+                <p class="text-xs leading-relaxed text-ink-300">Separate systems made to behave like one, plus AI that answers only from sources you control.</p>
+              </div>
+            </div>
+            <div class="fade-up flex flex-col justify-between bg-paper p-8">
+              <div>
+                <h3 class="mb-6 text-base font-bold text-ink-900">Local business<br />setup</h3>
+                <p class="text-xs leading-relaxed text-ink-500">Website, booking, and Google Business profile &mdash; live in 5 to 7 days, not a months-long redesign.</p>
+              </div>
+            </div>
+      </section>
+
+      <!-- ══ TESTIMONIALS INTRO — matching TestimonialsIntro: empty col 1,
+           eyebrow + headline spanning cols 2-4 ══ -->
+      <section class="border-b rule" aria-labelledby="glimpse-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+02</span>
+            <h2 id="glimpse-heading" class="label text-ink-500">Recent works.</h2>
+          </div>
+            <h2 class="display text-3xl text-ink-900 md:text-5xl">What I have<br />worked on <br />so far.</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ TESTIMONIALS GRID — two 4-col rows, quote/logo/quote/logo,
+           matching the reference's TestimonialsGrid row-for-row ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
+          <span class="text-2xl font-black tracking-widest text-ink-200">Government</span>
+        </div>
+        <div class="fade-up flex min-h-[280px] flex-col justify-between bg-ink-900 p-8">
+          <div class="font-serif text-3xl text-paper">&ldquo;</div>
+          <div>
+            <div class="text-xs font-bold text-paper">Senior Adminstrative Assistant II</div>
+            <div class="label mt-1 text-ink-300">UP Manila, Research Grants Adminstration Office</div>
+          </div>
+        </div>
+        <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
+          <span class="text-2xl font-black tracking-widest text-ink-200"
+            >SURI <br />
+            TUKLAS <br />
+            RACE </br/>
+            ARIA <br />
+            RGAO Website
+          </span>
+        </div>
+        <div class="fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8">
+          <p class="my-4 text-xs leading-relaxed text-ink-600">
+            A comprehensive ecosystem of internal applications and public-facing websites that support the research administration process
+            of the University of the Philippines Manila.
+          </p>
+          <div>
+            <div class="text-xs font-bold text-ink-900">ARIA</div>
+            <div class="label mt-1 text-ink-300">Our AI assistant that helps with research administration.</div>
+          </div>
+        </div>
+        <div class="fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8">
+          <p class="my-4 text-xs leading-relaxed text-ink-600">
+            From these feelance works, I also managed servers database, and otherinfrastructure for the clients.
+          </p>
+          <div>
+            <div class="text-xs font-bold text-ink-900">Feelance experience for more than 8 years.</div>
+            <div class="label mt-1 text-ink-300">2018-Present</div>
+          </div>
+        </div>
+        <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
+          <span class="text-2xl font-black tracking-widest text-ink-200">
+            SaaS Platform  <br/>
+            Real Property Management <br/>
+            Logs Monitoring <br/>
+            Targeted Advertisement <br/>
+          </span>
+        </div>
+        <div class="fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8">
+          <p class="my-4 text-xs leading-relaxed text-ink-600">
+            Aside from my day job, I also do freelance work. I have been engaged to some local and international clients to build their web applications.
+          </p>
+          <div>
+            <div class="text-xs font-bold text-ink-900">Independent Contractor</div>
+            <div class="label mt-1 text-ink-300"></div>
+          </div>
+        </div>
+        <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
+          <span class="text-2xl font-black tracking-widest text-ink-200">Freelance</span>
+        </div>
+      </section>
+
+      <!-- ══ COMPANY OVERVIEW — headline + right-aligned meta tags,
+           matching CompanyOverview exactly ══ -->
+      <section class="border-b rule" aria-labelledby="company-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+03</span>
+            <h2 id="company-heading" class="label text-ink-500">Skills &amp; Experience</h2>
+          </div>
+            <h2 class="display max-w-[18ch] text-3xl leading-tight text-ink-900 sm:text-4xl md:text-[44px]">What <br />I am<br />made of.</h2>
+          </div>
+          <div class="flex flex-col items-start justify-start space-y-1 p-8 text-[10px] font-bold uppercase tracking-widest text-ink-400 md:items-end">
+            <div>Since 2021</div>
+            <div>6 platforms live</div>
+            <div>Metro Manila, PH</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ TEAM/FACTS GRID — three 4-col rows: photo / dark-content /
+           photo / rotated-stat, matching TeamGrid's rhythm row-for-row,
+           with color blocks replacing every headshot ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
+        <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2015 &mdash; 2017</span>
+              <span class="label mr-2 rotate-180 text-ink-500">Balibago Waterworks System, Inc.</span>
+            </div>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-ink-900 p-8">
+              <h3 class="text-2xl font-bold text-paper">What I did?</h3>
+              <p class="max-w-xs text-xs leading-relaxed text-ink-300">I worked on their internal application for Job Order Requests Queueing, built with Laravel and Vue. I also managed their servers and database, and helped field-test the mobile app for water meter reading and billing.</p>
+            </div>
+            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2018 &mdash; 2020</span>
+              <span class="label mr-2 rotate-180 text-ink-500">Crosshair Technologies Solutions Inc.</span>
+            </div>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col items-center justify-center bg-paper p-8">
+              <div class="flex items-center gap-3" style="writing-mode: vertical-rl;">
+                <span class="label rotate-180 text-ink-400">Career started</span>
+                <span class="rotate-180 text-6xl font-extrabold tracking-tighter md:text-7xl text-ink-900">2015</span>
+              </div>
+            </div>
+            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-ink-900" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-700"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2021 &mdash; 2025</span>
+              <span class="label mr-2 rotate-180 text-ink-500">NGOHS &middot; UP Manila</span>
+            </div>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-paper p-8">
+              <h3 class="text-2xl font-bold text-ink-900">What I do now?</h3>
+              <p class="max-w-xs text-xs leading-relaxed text-ink-500">I lead architecture and development at UP Manila &mdash; DRMS and GO-ARAL for NGOHS (2021&ndash;2025), then SURI at RGAO since 2025. Alongside NGOHS, I built an ELK Stack ops dashboard for LMQ Tech, a US client, in 2021&ndash;2022.</p>
+            </div>
+            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-ink-900" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-700"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2021 &mdash; 2022</span>
+              <span class="label mr-2 rotate-180 text-ink-500">LMQ Tech (freelance, remote)</span>
+            </div>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col justify-center bg-paper p-8 items-center text-center">
+              <div class="text-5xl font-black tracking-tight md:text-6xl text-ink-900">2025</div>
+              <div class="label mt-1 text-ink-400">RGAO &middot; Systems architect</div>
+            </div>
+            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2025 &mdash; now</span>
+              <span class="label mr-2 rotate-180 text-ink-500">RGAO &middot; UP Manila</span>
+            </div>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-ink-900 p-8">
+              <h3 class="text-2xl font-bold text-paper">Why it matters?</h3>
+              <p class="max-w-xs text-xs leading-relaxed text-ink-300">Because software today is more than a switch you flip on and off. Because bad planning gets expensive. And because reliability in a system isn&rsquo;t negotiable.</p>
+            </div>
+            <div class="fade-up flex min-h-[360px] flex-col justify-end bg-paper p-8">
+              <div class="text-5xl font-black tracking-tight md:text-6xl text-ink-900">15,000+</div>
+              <div class="label mt-1 text-ink-400">Records live</div>
+            </div>
+            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
+              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
+              <span class="rotate-180 text-xs font-bold">2025 &mdash; now</span>
+              <span class="label mr-2 rotate-180 text-ink-500">SaaS architecture (freelance)</span>
+            </div>
+            </div>
+      </section>
+
+      <!-- ══ KONTAKT — sidebar note + form, matching ContactSection ══ -->
+      <section class="grid grid-cols-1 border-b rule md:grid-cols-4" id="kontakt">
+        <div class="flex items-end border-b rule p-8 md:border-b-0 md:border-r">
+          <span class="label text-ink-400">Please fill in every field</span>
+        </div>
+        <div class="flex flex-col border-r rule md:col-span-2">
+          <div class="border-b rule p-8 sm:p-12" aria-labelledby="kontakt-heading">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+04</span>
+            <h2 id="kontakt-heading" class="label text-ink-500">Contact</h2>
+          </div>
+            <h2 class="display text-3xl text-ink-900 sm:text-4xl">Get in<br />touch.</h2>
+          </div>
+          <div class="space-y-1.5 border-b rule p-8 text-xs font-medium text-ink-500">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-ink-300">T</span>
+              <a href="tel:+639000000000" class="transition-colors hover:text-ink-900">+63 900 000 0000</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-ink-300">M</span>
+              <a href="mailto:ruther.bergonia@gmail.com" class="transition-colors hover:text-ink-900">ruther.bergonia@gmail.com</a>
             </div>
           </div>
-        </div>
-      </a>
-
-      <!-- Two medium cards: ARIA + RACE -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 fade-up">
-        <!-- ARIA -->
-        <div class="group relative rounded-3xl overflow-hidden min-h-[380px] bg-gradient-to-br from-ink-800 to-ink-950 border border-white/10">
-          <div class="absolute top-8 right-8 text-violet-glow/25 font-mono text-[11px] leading-loose group-hover:text-violet-glow/50 transition-colors duration-500">
-            assistant({<br />
-            &nbsp;&nbsp;scope: "approved",<br />
-            &nbsp;&nbsp;model: "claude"<br />
-            });<br />
-            -> ticket #created
-          </div>
-          <div class="relative z-10 h-full min-h-[380px] flex flex-col justify-between p-8">
-            <span class="font-mono text-[11px] tracking-widest text-white/50 uppercase">02 / 03</span>
+          <form class="space-y-6 p-8" onsubmit="return false;">
             <div>
-              <div class="flex gap-2 mb-3">
-                <span class="px-3 py-1 bg-violet-glow/15 rounded-md font-mono text-[10px] tracking-widest text-violet-300">Claude AI</span>
-                <span class="px-3 py-1 bg-white/10 rounded-md font-mono text-[10px] tracking-widest text-white/60">RAG</span>
-              </div>
-              <h3 class="text-2xl lg:text-3xl font-bold tracking-tight mb-2 text-white">ARIA</h3>
-              <p class="text-white/65 text-sm leading-relaxed max-w-md">
-                AI-assisted support platform designed to answer research inquiries from approved information sources — routing anything
-                outside its scope to a human rather than guessing — and to automatically create tracked tickets for follow-up.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- RACE -->
-        <div class="group relative rounded-3xl overflow-hidden min-h-[380px] bg-gradient-to-br from-violet-glow via-[#5a3dd6] to-ink-900">
-          <div class="absolute inset-0 grain opacity-25 pointer-events-none"></div>
-          <div class="absolute -right-16 -bottom-20 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
-          <div class="relative z-10 h-full min-h-[380px] flex flex-col justify-between p-8">
-            <div class="flex items-start justify-between">
-              <span class="font-mono text-[11px] tracking-widest text-white/70 uppercase">In Development</span>
-              <span class="font-mono text-[11px] tracking-widest text-white/70">03 / 03</span>
+              <input id="cf-name" name="name" type="text" placeholder="Name" required class="w-full border-0 border-b rule bg-transparent px-0 py-3 text-sm font-medium placeholder-ink-400 focus:border-ink-900 focus:outline-none" />
             </div>
             <div>
-              <div class="flex gap-2 mb-3">
-                <span class="px-3 py-1 bg-white/20 rounded-md font-mono text-[10px] tracking-widest text-white">Orchestration</span>
-                <span class="px-3 py-1 bg-white/20 rounded-md font-mono text-[10px] tracking-widest text-white">AI</span>
-              </div>
-              <h3 class="text-2xl lg:text-3xl font-bold tracking-tight mb-2 text-white">RACE</h3>
-              <p class="text-white/85 text-sm leading-relaxed max-w-md">
-                The architecture layer being developed beneath SURI and ARIA — providing shared authentication, shared services, and
-                integration capabilities so future research platforms join one ecosystem instead of becoming another silo.
-              </p>
+              <input id="cf-email" name="email" type="email" placeholder="Email" required class="w-full border-0 border-b rule bg-transparent px-0 py-3 text-sm font-medium placeholder-ink-400 focus:border-ink-900 focus:outline-none" />
             </div>
-          </div>
+            <div>
+              <input id="cf-phone" name="phone" type="tel" placeholder="Phone" class="w-full border-0 border-b rule bg-transparent px-0 py-3 text-sm font-medium placeholder-ink-400 focus:border-ink-900 focus:outline-none" />
+            </div>
+            <div>
+              <input id="cf-message" name="message" type="text" placeholder="Message" required class="w-full border-0 border-b rule bg-transparent px-0 py-3 text-sm font-medium placeholder-ink-400 focus:border-ink-900 focus:outline-none" />
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <input id="cf-privacy" type="checkbox" required class="h-3.5 w-3.5 rounded-full border-ink-300 text-ink-900 focus:ring-ink-900" />
+              <label for="cf-privacy" class="text-[11px] leading-snug text-ink-500">I accept the privacy policy.*</label>
+            </div>
+            <div class="pt-2">
+              <button type="submit" class="label bg-ink-900 px-8 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Send</button>
+            </div>
+          </form>
         </div>
-      </div>
-    </section>
+        <div class="hidden md:block"></div>
+      </section>
+    </main>
 
-    <!-- WHAT I DO — technical capabilities -->
-    <section class="pb-20 lg:pb-28 px-6 lg:px-12 max-w-[1600px] mx-auto">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-        <div>
-          <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-5 text-ink-950/50">
-            <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> WHAT I DO
-          </div>
-          <h2 class="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[0.95] tracking-tighter text-ink-950">
-            Capabilities &<br />
-            <span class="text-ink-950/35">technical stack.</span>
-          </h2>
+    <footer id="contact" class="mx-auto max-w-[1440px] border-x border-t rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
+      <div class="w-full">
+        <div class="mb-14 flex items-baseline gap-6">
+          <span class="label text-ink-900">+05</span>
+          <span class="label text-ink-500">Start here</span>
         </div>
-        <p class="text-ink-950/55 text-sm leading-relaxed max-w-xs">
-          End-to-end engineering — from database and API design through to polished frontends, AI features, and production infrastructure.
-        </p>
-      </div>
 
-      <div class="border-t border-ink-950/10">
-        <!-- Row 1 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 md:items-baseline py-8 border-b border-ink-950/10 hover:bg-ink-950/[0.02] -mx-6 px-6 transition-colors">
-          <div class="md:col-span-1 font-mono text-[11px] tracking-widest text-violet-glow pt-1">01</div>
-          <h3 class="md:col-span-4 text-2xl lg:text-3xl font-bold tracking-tight text-ink-950">Backend & API Architecture</h3>
-          <p class="md:col-span-4 text-ink-950/60 text-sm leading-relaxed">
-            API-first Laravel services, authentication & RBAC, workflow automation, reporting engines, and database design tuned for query performance.
+        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Tell me what&rsquo;s breaking.</h2>
+
+        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
+          <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
+            Email is fastest. Tell me what you're trying to build, what's currently breaking, or where the workflow falls apart. I'll tell you what I'd investigate first.
           </p>
-          <div class="md:col-span-3 flex md:justify-end gap-1.5 flex-wrap">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#6e7fb8]">PHP</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#f05340]">Laravel</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#00758f]">MySQL</span>
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 md:items-baseline py-8 border-b border-ink-950/10 hover:bg-ink-950/[0.02] -mx-6 px-6 transition-colors">
-          <div class="md:col-span-1 font-mono text-[11px] tracking-widest text-violet-glow pt-1">02</div>
-          <h3 class="md:col-span-4 text-2xl lg:text-3xl font-bold tracking-tight text-ink-950">Frontend & Web Apps</h3>
-          <p class="md:col-span-4 text-ink-950/60 text-sm leading-relaxed">
-            Responsive, accessible interfaces in Vue, React, and Next.js with Tailwind CSS — from institutional portals to multi-tenant SaaS dashboards.
-          </p>
-          <div class="md:col-span-3 flex md:justify-end gap-1.5 flex-wrap">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#42b883]">Vue</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-ink-950 bg-[#61dafb]">React</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-ink-950">Next.js</span>
-          </div>
-        </div>
-        <!-- Row 3 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 md:items-baseline py-8 border-b border-ink-950/10 hover:bg-ink-950/[0.02] -mx-6 px-6 transition-colors">
-          <div class="md:col-span-1 font-mono text-[11px] tracking-widest text-violet-glow pt-1">03</div>
-          <h3 class="md:col-span-4 text-2xl lg:text-3xl font-bold tracking-tight text-ink-950">AI Integration & Automation</h3>
-          <p class="md:col-span-4 text-ink-950/60 text-sm leading-relaxed">
-            Claude & OpenAI-powered assistants, controlled-response architectures, prompt engineering, and automation embedded in real institutional systems.
-          </p>
-          <div class="md:col-span-3 flex md:justify-end gap-1.5 flex-wrap">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#d97757]">Claude</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#10a37f]">OpenAI</span>
-          </div>
-        </div>
-        <!-- Row 4 -->
-        <div class="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 md:items-baseline py-8 border-b border-ink-950/10 hover:bg-ink-950/[0.02] -mx-6 px-6 transition-colors">
-          <div class="md:col-span-1 font-mono text-[11px] tracking-widest text-violet-glow pt-1">04</div>
-          <h3 class="md:col-span-4 text-2xl lg:text-3xl font-bold tracking-tight text-ink-950">Infrastructure & Deployment</h3>
-          <p class="md:col-span-4 text-ink-950/60 text-sm leading-relaxed">
-            Docker, Linux, and Nginx server administration with deployment automation, release management, and production database architecture.
-          </p>
-          <div class="md:col-span-3 flex md:justify-end gap-1.5 flex-wrap">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#2496ed]">Docker</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-ink-950 bg-[#f0c040]">Linux</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#009639]">Nginx</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MORE WORK — case studies (white zone) -->
-    <section class="pb-24 lg:pb-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
-      <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-8 text-ink-950/50">
-        <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> MORE WORK
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 fade-up">
-        <a href="awtor-suri.html" class="group rounded-3xl border border-ink-950/10 bg-white p-7 flex flex-col justify-between min-h-[240px] hover:border-violet-glow/50 hover:shadow-lg transition-all">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-violet-glow">Auth</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Cryptography</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold tracking-tight mb-2">AWTOR-SURI</h3>
-            <p class="text-ink-950/55 text-sm leading-relaxed mb-3">Secure single sign-on between university systems via signed URLs and cryptographic handshakes.</p>
-            <span class="font-mono text-[11px] font-bold tracking-widest text-violet-glow group-hover:underline">CASE STUDY ↗</span>
-          </div>
-        </a>
-
-        <a href="layer7.html" class="group rounded-3xl border border-ink-950/10 bg-white p-7 flex flex-col justify-between min-h-[240px] hover:border-violet-glow/50 hover:shadow-lg transition-all">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#4285f4]">Google API</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#009688]">FastAPI</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold tracking-tight mb-2">Layer 7 Spam Scanner</h3>
-            <p class="text-ink-950/55 text-sm leading-relaxed mb-3">A security tool analyzing URLs, SMS, and screenshots for phishing & smishing threats.</p>
-            <span class="font-mono text-[11px] font-bold tracking-widest text-violet-glow group-hover:underline">CASE STUDY ↗</span>
-          </div>
-        </a>
-
-        <div class="group rounded-3xl border border-ink-950/10 bg-white p-7 flex flex-col justify-between min-h-[240px]">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-violet-glow">Portal</span>
-            <span class="px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Ticketing</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold tracking-tight mb-2">GO-ARAL</h3>
-            <p class="text-ink-950/55 text-sm leading-relaxed">Application & ticketing portal supporting ~1,000 graduate applicants annually at NGOHS, UP Manila.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="about" class="py-20 lg:py-28 px-6 lg:px-12 max-w-[1100px] mx-auto">
-      <div class="mb-16">
-        <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-5 text-ink-950/50">
-          <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> CAREER TRACK
-        </div>
-        <h2 class="text-[clamp(2.2rem,5vw,4rem)] font-bold leading-[0.95] tracking-tighter">
-          Professional<br />
-          <span class="text-ink-950/35">experience.</span>
-        </h2>
-      </div>
-
-      <!-- Selected client work -->
-      <div class="font-mono text-[11px] tracking-widest text-ink-950/40 uppercase mb-2">Selected client work</div>
-      <div class="flex flex-col mb-14">
-        <!-- Independent Contractor -->
-        <div class="group py-10 border-y border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">Mar 2025 — Present</div>
-            <div class="font-bold text-xl tracking-tight">Independent Software Engineer</div>
-            <div class="text-sm text-ink-950/50">Remote · SaaS</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Multi-tenant SaaS platform</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Architected a multi-tenant SaaS platform for managing and publishing digital advertising catalogs. Built Laravel APIs,
-              Vue.js frontends, cloud storage integrations, and deployment pipelines designed for clean tenant isolation at scale.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Multi-tenant SaaS</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Cloud Storage</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">CI/CD</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Career history -->
-      <div class="font-mono text-[11px] tracking-widest text-ink-950/40 uppercase mb-2">Career history</div>
-      <div class="flex flex-col">
-        <!-- RGAO -->
-        <div class="group py-10 border-t border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">Sep 2025 — Present</div>
-            <div class="font-bold text-xl tracking-tight">RGAO · UP Manila</div>
-            <div class="text-sm text-ink-950/50">Research Grants Administration Office</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Lead Software Engineer / Systems Architect</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Lead the architecture and development of SURI, a university-wide research platform serving 50+ users and 15,000+ research
-              records. Architect Laravel APIs, authentication, workflow automation, and reporting services, and own production deployments,
-              database architecture, and release management.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Systems Architecture</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Enterprise Auth</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Government Tech</span>
-            </div>
-          </div>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
+            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
         </div>
 
-        <!-- NGOHS -->
-        <div class="group py-10 border-t border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">Jun 2021 — Sep 2025</div>
-            <div class="font-bold text-xl tracking-tight">NGOHS · UP Manila</div>
-            <div class="text-sm text-ink-950/50">National Graduate Office for the Health Sciences</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Senior ICT Assistant</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Developed DRMS for graduate admissions records and GO-ARAL, supporting ~1,000 applicants annually and ~200 support requests
-              monthly. Architected APIs, database schemas, reporting systems, and RBAC, and led deployment, training, and post-deployment
-              support.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Portal Development</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">VPS Deployment</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">RBAC</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- LMQ Tech -->
-        <div class="group py-10 border-b border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">2021 — 2022</div>
-            <div class="font-bold text-xl tracking-tight">LMQ Tech</div>
-            <div class="text-sm text-ink-950/50">US-based client · Remote</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Full-Stack Developer</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Built an internal dashboard that pulled and visualized data from an ELK Stack, with built-in ticketing and reporting
-              for operations teams.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">ELK Stack</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Dashboards</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Reporting</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Crosshair -->
-        <div class="group py-10 border-b border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">2018 — 2020</div>
-            <div class="font-bold text-xl tracking-tight">Crosshair Technologies &amp; Solutions Co.</div>
-            <div class="text-sm text-ink-950/50">Mandaluyong</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Full-Stack Developer</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Developed and maintained the frontend and backend of the company's flagship product — a demographic-targeted
-              advertising platform that delivered ads by audience attributes via push notifications. Managed the product's deployment
-              on AWS.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Full-Stack</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Push Notifications</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">AWS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Balibago Waterworks -->
-        <div class="group py-10 border-y border-ink-950/10 flex flex-col md:flex-row gap-8 md:gap-14 hover:bg-ink-950/[0.02] -mx-6 px-6 rounded-2xl transition-colors">
-          <div class="md:w-1/3 flex flex-col gap-2 flex-shrink-0">
-            <div class="font-mono text-[11px] text-violet-glow tracking-widest uppercase">2015 — 2017</div>
-            <div class="font-bold text-xl tracking-tight">Balibago Waterworks System, Inc.</div>
-            <div class="text-sm text-ink-950/50">Balibago, Pampanga</div>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="text-xl font-semibold mb-4">Software Developer</h3>
-            <p class="text-ink-950/60 text-sm font-light leading-relaxed mb-6">
-              Assisted in developing the company website and an internal job-order request system.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Web Development</span>
-              <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-violet-glow bg-violet-glow/12 border border-violet-glow/30">Internal Tools</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SIDE PROJECTS — featured PWAs -->
-    <section class="pb-24 lg:pb-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
-      <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-8 text-ink-950/50">
-        <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> INDEPENDENT PRODUCTS
-      </div>
-
-      <div class="flex flex-col gap-5">
-        <!-- RebSync -->
-        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#1a0f10] via-[#2a1012] to-ink-950 fade-up">
-          <div class="absolute -left-24 -top-24 w-[420px] h-[420px] rounded-full bg-[#e23b3b]/20 blur-3xl pointer-events-none"></div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center p-8 lg:p-16">
-            <!-- Copy -->
-            <div class="relative z-10 order-2 lg:order-1">
-              <div class="inline-flex items-center gap-2 mb-6">
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#e23b3b]">PWA</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Offline-First</span>
-              </div>
-              <h3 class="text-4xl lg:text-6xl font-extrabold tracking-tighter text-white mb-2">RebSync</h3>
-              <p class="font-mono text-[11px] tracking-widest text-[#f0a0a0] uppercase mb-6">ADV Juansiksty · Taguig Rebs RT</p>
-              <p class="text-white/65 text-sm lg:text-base leading-relaxed mb-8 max-w-md">
-                A progressive web app for a Honda ADV 160 riding club in Taguig — GPS-based auto check-in within a 2&nbsp;km radius, a
-                points & leaderboard system, member management (MNS), web-push notifications, and ADV 160 rider tools (fuel calculator,
-                maintenance log, tire-pressure guide, emergency SOS). Offline-first with background sync.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-ink-950 bg-[#61dafb]">React</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#646cff]">Vite</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#3ecf8e]/90">Supabase</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Web Push</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Capacitor</span>
+        <div class="mt-28 border-t rule pt-10">
+          <div class="flex flex-wrap items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div>
+                <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+                <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
               </div>
             </div>
-
-            <!-- Phone mockup -->
-            <div class="relative z-10 order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div class="relative w-[230px] sm:w-[260px] rounded-[2.2rem] border-[6px] border-ink-800 bg-ink-950 shadow-2xl overflow-hidden ring-1 ring-white/10">
-                <img src="images/rebsync.jpg" alt="RebSync rider dashboard — member ID, emergency SOS, upcoming rides and points" class="block w-full h-auto" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Alamat -->
-        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0a1424] via-[#0d1b2e] to-ink-950 fade-up">
-          <div class="absolute -right-24 -top-24 w-[420px] h-[420px] rounded-full bg-[#38bdf8]/20 blur-3xl pointer-events-none"></div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center p-8 lg:p-16">
-            <!-- Phone mockup (left on desktop) -->
-            <div class="relative z-10 order-1 flex justify-center lg:justify-start">
-              <div class="relative w-[230px] sm:w-[260px] rounded-[2.2rem] border-[6px] border-ink-800 bg-ink-950 shadow-2xl overflow-hidden ring-1 ring-white/10">
-                <img src="images/alamat.PNG" alt="Alamat exam reviewer — AI-generated UPCAT mock algebra question with multiple-choice options and timer" class="block w-full h-auto" />
-              </div>
-            </div>
-
-            <!-- Copy -->
-            <div class="relative z-10 order-2">
-              <div class="inline-flex items-center gap-2 mb-6">
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#38bdf8]">AI PWA</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Offline-First</span>
-              </div>
-              <h3 class="text-4xl lg:text-6xl font-extrabold tracking-tighter text-white mb-2">Alamat</h3>
-              <p class="font-mono text-[11px] tracking-widest text-[#8fcdf0] uppercase mb-6">Assisted Learning for Mastery & Assessment Training</p>
-              <p class="text-white/65 text-sm lg:text-base leading-relaxed mb-8 max-w-md">
-                An AI-powered Philippine exam reviewer for UPCAT, college entrance exams (ACET, DCAT, USTET), and Civil Service exams.
-                Generates adaptive practice questions with Gemini & OpenAI, a visual reference engine for diagram-based items, timed mock
-                exams, and weakness detection — all stored offline in IndexedDB for review anywhere.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-ink-950 bg-[#61dafb]">React 19</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#4285f4]">Gemini</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-[#10a37f]">OpenAI</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Dexie / IndexedDB</span>
-                <span class="px-3 py-1 rounded-full font-mono text-[10px] tracking-widest font-bold text-white bg-white/10">Tailwind 4</span>
-              </div>
-            </div>
+            <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+              <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+              <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+              <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            </nav>
+            <p class="label text-ink-300">© 2026</p>
           </div>
         </div>
       </div>
-    </section>
-    </div>
-    <!-- /WHITE ZONE -->
 
-    <!-- FAQ -->
-    <section id="faq" class="py-28 lg:py-36 px-6 lg:px-12 bg-ink-950 border-y border-white/10">
-      <div class="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div class="lg:col-span-5">
-          <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest mb-5 text-white/50">
-            <span class="w-2 h-2 rounded-full bg-violet-glow block"></span> FAQ
-          </div>
-          <h2 class="text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold leading-[0.95] tracking-tighter">
-            Frequently<br />
-            asked<br />
-            <span class="text-white/35">questions.</span>
-          </h2>
-          <p class="text-white/50 text-sm mt-6 max-w-xs leading-relaxed">
-            Can't find what you're looking for? Reach out directly and I'll get back to you.
-          </p>
-        </div>
-
-        <div class="lg:col-span-7 flex flex-col gap-3">
-          <details class="faq-item bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-5 group">
-            <summary class="flex items-center justify-between cursor-pointer list-none text-base font-medium">
-              What kind of work do you take on?
-              <span class="faq-icon text-violet-400 text-2xl font-light transition-transform duration-300">+</span>
-            </summary>
-            <p class="text-white/55 text-sm leading-relaxed mt-4">
-              Custom platforms and systems — research and operations tools, internal software, multi-tenant SaaS, and AI-assisted
-              workflows — for organizations that need software they can rely on long term. I take on the architecture and the build,
-              not isolated tickets.
-            </p>
-          </details>
-
-          <details class="faq-item bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-5 group">
-            <summary class="flex items-center justify-between cursor-pointer list-none text-base font-medium">
-              Do you handle the whole system, or just part of it?
-              <span class="faq-icon text-violet-400 text-2xl font-light transition-transform duration-300">+</span>
-            </summary>
-            <p class="text-white/55 text-sm leading-relaxed mt-4">
-              The whole system — architecture, full-stack development, AI integration, and the infrastructure it runs on. You work with
-              one engineer who owns the outcome end to end.
-            </p>
-          </details>
-
-          <details class="faq-item bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-5 group">
-            <summary class="flex items-center justify-between cursor-pointer list-none text-base font-medium">
-              What if you're unavailable mid-project?
-              <span class="faq-icon text-violet-400 text-2xl font-light transition-transform duration-300">+</span>
-            </summary>
-            <p class="text-white/55 text-sm leading-relaxed mt-4">
-              Continuity is built into how I work: clean documentation, version-controlled code, and reproducible, deployable
-              infrastructure. The systems I build aren't locked in my head — they can be picked up, handed off, or maintained by
-              another engineer without starting over.
-            </p>
-          </details>
-
-          <details class="faq-item bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-5 group">
-            <summary class="flex items-center justify-between cursor-pointer list-none text-base font-medium">
-              What does a project cost?
-              <span class="faq-icon text-violet-400 text-2xl font-light transition-transform duration-300">+</span>
-            </summary>
-            <p class="text-white/55 text-sm leading-relaxed mt-4">
-              Every project is scoped individually based on requirements, complexity, and timeline. After an initial discussion, I'll
-              provide a clear proposal with scope, deliverables, and pricing.
-            </p>
-          </details>
-
-          <details class="faq-item bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-5 group">
-            <summary class="flex items-center justify-between cursor-pointer list-none text-base font-medium">
-              How do you handle AI features responsibly?
-              <span class="faq-icon text-violet-400 text-2xl font-light transition-transform duration-300">+</span>
-            </summary>
-            <p class="text-white/55 text-sm leading-relaxed mt-4">
-              I build AI on controlled-response architectures: it answers from approved information and hands off to a human when
-              something falls outside its scope, rather than guessing. AI should reduce risk, not add it.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / FOOTER -->
-    <footer id="contact" class="relative min-h-[80vh] flex flex-col justify-between pt-28 pb-8 overflow-hidden bg-ink-950">
-      <div class="relative z-10 mx-auto px-6 lg:px-12 w-full max-w-[1600px] flex-grow flex flex-col justify-between">
-        <div class="flex flex-col lg:flex-row justify-between gap-16 mb-24">
-          <div class="max-w-2xl">
-            <h2 class="text-[clamp(2rem,4.5vw,4rem)] leading-[1.05] font-bold tracking-tighter mb-6">
-              Have a system worth<br />
-              <span class="text-violet-400">building properly?</span>
-            </h2>
-            <p class="text-white/55 text-base leading-relaxed max-w-lg mb-10">
-              Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right
-              fit — and how I'd approach it. Replies within one business day.
-            </p>
-            <div class="flex flex-wrap items-center gap-4">
-              <a
-                href="mailto:ruther.bergonia@gmail.com"
-                class="bg-white text-ink-950 px-7 py-4 rounded-full text-sm font-bold hover:bg-violet-glow hover:text-white transition-colors"
-              >
-                ruther.bergonia@gmail.com
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/"
-                class="border border-white/20 text-white px-7 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors"
-              >
-                LinkedIn ↗
-              </a>
-              <a
-                href="https://github.com/rockyru"
-                class="border border-white/20 text-white px-7 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors"
-              >
-                GitHub ↗
-              </a>
-            </div>
-            <p class="text-white/40 text-xs mt-6 font-mono tracking-widest uppercase">
-              Taking on a small number of new client projects for 2026
-            </p>
-          </div>
-
-          <div class="flex gap-16 lg:gap-24 flex-wrap">
-            <div class="flex flex-col gap-4">
-              <h4 class="font-mono text-[11px] tracking-widest text-white/45 mb-2 uppercase">Navigate</h4>
-              <a href="#work" class="text-lg hover:text-violet-400 transition-colors">Work</a>
-              <a href="#about" class="text-lg hover:text-violet-400 transition-colors">Experience</a>
-              <a href="#faq" class="text-lg hover:text-violet-400 transition-colors">FAQ</a>
-            </div>
-            <div class="flex flex-col gap-4">
-              <h4 class="font-mono text-[11px] tracking-widest text-white/45 mb-2 uppercase">Case Studies</h4>
-              <a href="awtor-suri.html" class="text-lg hover:text-violet-400 transition-colors">AWTOR-SURI</a>
-              <a href="layer7.html" class="text-lg hover:text-violet-400 transition-colors">Layer 7</a>
-            </div>
-            <div class="flex flex-col gap-4">
-              <h4 class="font-mono text-[11px] tracking-widest text-white/45 mb-2 uppercase">Connect</h4>
-              <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" class="text-lg hover:text-violet-400 transition-colors">LinkedIn</a>
-              <a href="https://github.com/rockyru" class="text-lg hover:text-violet-400 transition-colors">GitHub</a>
-              <a href="mailto:ruther.bergonia@gmail.com" class="text-lg hover:text-violet-400 transition-colors">Email</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative w-full mt-auto">
-          <div class="w-full overflow-hidden">
-            <h1 class="text-[15vw] lg:text-[11.5vw] font-extrabold leading-[0.9] pb-[0.08em] tracking-tighter text-white select-none">
-              Ruther<br class="lg:hidden" /> Bergonia
-            </h1>
-          </div>
-          <div class="mt-8 font-mono text-[10px] sm:text-[11px] tracking-widest text-white/40 uppercase flex flex-col md:flex-row justify-between gap-3 border-t border-white/10 pt-6">
-            <span>© 2026 Ruther Bergonia. All rights reserved.</span>
-            <span>Based in Metro Manila · Working remotely across time zones</span>
-          </div>
-        </div>
+      <!-- Closing wordmark: the name at display scale, trimmed to the
+           baseline so it sits on the page edge like a masthead. -->
+      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
+        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
       </div>
     </footer>
 
-    <!-- Scroll to top -->
-    <a
-      href="#"
-      id="scrollTop"
-      aria-label="Scroll to top"
-      class="fixed bottom-7 right-7 z-50 w-12 h-12 bg-violet-glow text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-white hover:text-ink-950 transition-all duration-300 group opacity-0 translate-y-3 pointer-events-none"
-    >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-y-0.5 transition-transform duration-300">
-        <path d="M12 19V5M5 12l7-7 7 7" />
-      </svg>
-    </a>
+    <button id="scrollTop" type="button" aria-label="Scroll back to top"
+      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
+      <span aria-hidden="true">↑</span>
+    </button>
 
-    <script src="script.js"></script>
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="/script.js" defer></script>
   </body>
 </html>

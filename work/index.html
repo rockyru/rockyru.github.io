@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Studies — Ruther Bergonia</title>
+    <meta
+      name="description"
+      content="Six production systems built by Ruther Bergonia: research information management, controlled-response AI, platform orchestration, single sign-on, graduate portals, and phishing detection."
+    />
+    <meta name="author" content="Ruther Bergonia" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://rmbergonia.com/work/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ruther Bergonia" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://rmbergonia.com/work/" />
+    <meta property="og:title" content="Case Studies — Ruther Bergonia" />
+    <meta property="og:description" content="Six production systems: research information management, controlled-response AI, platform orchestration, SSO, graduate portals, and phishing detection." />
+    <meta property="og:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Case Studies — Ruther Bergonia" />
+    <meta name="twitter:description" content="Six production systems built for universities, institutions, and Filipino users." />
+    <meta name="twitter:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
+
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+
+    <style>
+      html { -webkit-font-smoothing: antialiased; }
+      body { background: #fbfaf8; }
+
+      /* Display type: oversized, tight, MIXED CASE — the editorial register.
+         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
+      .display {
+        font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 0.95;
+        text-wrap: balance;
+      }
+      /* Page-title scale: the one place type is allowed to dominate. */
+      .display-xl { font-weight: 700; letter-spacing: -0.045em; line-height: 0.88; }
+
+      /* Micro-labels. Structural, never decorative — they name a section
+         or number a real sequence. */
+      .label {
+        font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      /* Nav and buttons carry a touch more weight than section eyebrows. */
+      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
+      .rule { border-color: #e3e0da; }
+
+      /* Editorial two-column row: label left, prose right. */
+      .row-label { font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+
+      .js .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .7s ease-out, transform .7s ease-out;
+      }
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+      /* FAQ disclosure: the + rotates to an x when open. */
+      .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .js .fade-up { opacity: 1; transform: none; transition: none; }
+        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      }
+
+      a:focus-visible, button:focus-visible, summary:focus-visible {
+        outline: 2px solid #111013;
+        outline-offset: 3px;
+      }
+      ::selection { background: #111013; color: #fbfaf8; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://rmbergonia.com/work/#page",
+          "name": "Case Studies",
+          "url": "https://rmbergonia.com/work/",
+          "description": "Six production systems built by Ruther Bergonia.",
+          "author": { "@type": "Person", "name": "Ruther Bergonia", "url": "https://rmbergonia.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmbergonia.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://rmbergonia.com/work/" }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "itemListOrder": "https://schema.org/ItemListOrderDescending",
+          "numberOfItems": 6,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "SURI — Research Information System", "url": "https://rmbergonia.com/case-studies/suri-research-information-system/" },
+            { "@type": "ListItem", "position": 2, "name": "ARIA — Controlled-Response AI", "url": "https://rmbergonia.com/case-studies/aria-controlled-response-ai/" },
+            { "@type": "ListItem", "position": 3, "name": "RACE — Platform Orchestration", "url": "https://rmbergonia.com/case-studies/race-platform-orchestration/" },
+            { "@type": "ListItem", "position": 4, "name": "AWTOR–SURI — Single Sign-On", "url": "https://rmbergonia.com/awtor-suri.html" },
+            { "@type": "ListItem", "position": 5, "name": "GO-ARAL — Graduate Support Platform", "url": "https://rmbergonia.com/case-studies/go-aral-graduate-support-platform/" },
+            { "@type": "ListItem", "position": 6, "name": "Layer 7 — Phishing & Smishing Scanner", "url": "https://rmbergonia.com/layer7.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="bg-paper font-body text-ink-900 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+
+    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
+      <div class="flex w-full items-center justify-between px-6 py-5 sm:px-10">
+        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
+        </a>
+        <div class="flex items-center gap-6 sm:gap-10">
+          <a href="/work/" class="label hidden text-ink-900 underline decoration-ink-900 decoration-2 underline-offset-[6px] sm:block" aria-current="page">Work</a>
+          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
+          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
+          <a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="border-b rule px-6 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-48 xl:px-16">
+        <div class="w-full">
+          <nav aria-label="Breadcrumb" class="mb-14 border-b rule pb-6">
+            <ol class="flex items-center gap-2">
+              <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
+              <li aria-hidden="true" class="label text-ink-300">/</li>
+              <li><span class="label text-ink-900">Work</span></li>
+            </ol>
+          </nav>
+
+          <h1 class="display display-xl text-center text-[clamp(3.25rem,15.5vw,18rem)] text-ink-900">Work</h1>
+
+          <div class="mt-16 flex items-baseline justify-between border-t rule pt-5">
+            <span class="label text-ink-500">Six systems, still running</span>
+            <span class="label text-ink-500">2021 &mdash; 2026</span>
+          </div>
+
+          <p class="mx-auto mt-16 max-w-[24ch] text-center text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.3] tracking-[-0.02em] text-ink-900 sm:max-w-[34ch]">
+            <span class="text-ink-300" aria-hidden="true">[</span> Each of these replaced something that was breaking &mdash; a spreadsheet, an inbox, a process nobody trusted. <span class="text-ink-300" aria-hidden="true">]</span>
+          </p>
+
+          <div class="mt-24 grid items-end gap-14 border-t rule pt-14 lg:grid-cols-12 lg:gap-16">
+            <p class="max-w-[52ch] text-[15px] leading-relaxed text-ink-500 lg:col-span-4">
+              They&rsquo;re in production, used daily, and the write-ups below say what
+              was actually hard about building them.
+            </p>
+            <div class="grid grid-cols-2 gap-10 lg:col-span-5 lg:col-start-8 lg:gap-12">
+              <div>
+                <p class="display text-[clamp(2.25rem,5vw,3.5rem)] text-ink-900">15,000<span class="text-ink-300">+</span></p>
+                <p class="label mt-3 text-ink-500">Records managed</p>
+              </div>
+              <div>
+                <p class="display text-[clamp(2.25rem,5vw,3.5rem)] text-ink-900">6</p>
+                <p class="label mt-3 text-ink-500">In production</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="px-6 py-24 sm:px-10 sm:py-32 xl:px-16" aria-labelledby="index-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+01</span>
+            <h2 id="index-heading" class="label text-ink-500">The index</h2>
+          </div>
+
+          <ol class="border-t rule">
+            <li class="fade-up">
+              <a href="/case-studies/suri-research-information-system/" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">01</span>
+                  <span class="label text-ink-300">Research information system</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">SURI</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">The system of record for the UP Manila Research Grants Administration Office. Replaced fragmented spreadsheets with one platform managing 15,000+ records across multiple offices, each with its own permissions and its own idea of what a &ldquo;project&rdquo; means.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">Laravel</span>
+                  <span class="label text-ink-300">Vue</span>
+                  <span class="label text-ink-300">MySQL</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+            <li class="fade-up">
+              <a href="/case-studies/aria-controlled-response-ai/" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">02</span>
+                  <span class="label text-ink-300">Controlled-response AI</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">ARIA</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">A research assistant that answers only from approved institutional sources &mdash; and says it doesn&rsquo;t know rather than inventing an answer. The hard part wasn&rsquo;t the model; it was the refusal behaviour.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">RAG</span>
+                  <span class="label text-ink-300">Laravel</span>
+                  <span class="label text-ink-300">Vector search</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+            <li class="fade-up">
+              <a href="/case-studies/race-platform-orchestration/" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">03</span>
+                  <span class="label text-ink-300">Platform orchestration</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">RACE</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">The layer that keeps a university&rsquo;s separate research systems behaving like one product &mdash; shared identity, shared vocabulary, and a single place to reason about what changed and why.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">Docker</span>
+                  <span class="label text-ink-300">API design</span>
+                  <span class="label text-ink-300">Laravel</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+            <li class="fade-up">
+              <a href="/awtor-suri.html" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">04</span>
+                  <span class="label text-ink-300">Single sign-on</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">AWTOR&ndash;SURI</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">One login across two systems that were never designed to trust each other. Identity, sessions, and the edge cases nobody documents.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">OAuth</span>
+                  <span class="label text-ink-300">Laravel</span>
+                  <span class="label text-ink-300">Sessions</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+            <li class="fade-up">
+              <a href="/case-studies/go-aral-graduate-support-platform/" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">05</span>
+                  <span class="label text-ink-300">Applications &amp; ticketing</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">GO-ARAL</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">Graduate applications and support requests tracked end to end, so nothing depends on remembering which email thread it was in.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">Laravel</span>
+                  <span class="label text-ink-300">Vue</span>
+                  <span class="label text-ink-300">MySQL</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+            <li class="fade-up">
+              <a href="/layer7.html" class="group grid gap-x-10 gap-y-6 border-b rule px-4 py-14 transition-colors hover:bg-paper-raised md:grid-cols-12 sm:py-20">
+                <div class="flex items-baseline gap-4 md:col-span-3 md:flex-col md:gap-4">
+                  <span class="display text-[clamp(2rem,3.6vw,2.9rem)] text-ink-300">06</span>
+                  <span class="label text-ink-300">Security tooling</span>
+                </div>
+                <div class="md:col-span-6">
+                  <h2 class="display text-[clamp(2.1rem,4.6vw,3.5rem)] text-ink-900">Layer 7</h2>
+                  <p class="mt-5 max-w-[54ch] text-[16.5px] leading-relaxed text-ink-500">A phishing and smishing scanner built for how Filipinos actually get targeted &mdash; GCash texts, parcel scams, and fake bank domains.</p>
+                </div>
+                <div class="flex flex-wrap items-start gap-x-5 gap-y-2 md:col-span-3 md:justify-end md:text-right">
+                  <span class="label text-ink-300">Python</span>
+                  <span class="label text-ink-300">Heuristics</span>
+                  <span class="label text-ink-300">Next.js</span>
+                  <span class="label w-full text-ink-900 transition-colors group-hover:text-ink-500 md:mt-4">Read <span aria-hidden="true">&rarr;</span></span>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="border-t rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
+      <div class="w-full">
+        <div class="mb-14 flex items-baseline gap-6">
+          <span class="label text-ink-900">+02</span>
+          <span class="label text-ink-500">Start here</span>
+        </div>
+
+        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Need something like these?</h2>
+
+        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
+          <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">Tell me what&rsquo;s breaking and I&rsquo;ll tell you whether it&rsquo;s worth building, what it costs, and how long it takes. If a spreadsheet is genuinely fine for now, I&rsquo;ll say that.</p>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg rounded-full bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">Email me</a>
+            <a href="/services/" class="label label-lg rounded-full border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">Local business? Start here</a></div>
+        </div>
+
+        <div class="mt-28 border-t rule pt-10">
+          <div class="flex flex-wrap items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div>
+                <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+                <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
+              </div>
+            </div>
+            <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+              <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+              <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+              <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            </nav>
+            <p class="label text-ink-300">© 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing wordmark: the name at display scale, trimmed to the
+           baseline so it sits on the page edge like a masthead. -->
+      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
+        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
+      </div>
+    </footer>
+
+    <button id="scrollTop" type="button" aria-label="Scroll back to top"
+      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="/script.js" defer></script>
+  </body>
+</html>

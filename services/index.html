@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalBiz Digital Hub — ₱35,000</title>
+    <meta
+      name="description"
+      content="A complete digital setup for your business — website, online booking, Google Business profile, and messaging. ₱35,000 one-time, live in 5 to 7 days. Built in Manila by Ruther Bergonia."
+    />
+    <meta name="author" content="Ruther Bergonia" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://rmbergonia.com/services/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ruther Bergonia" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://rmbergonia.com/services/" />
+    <meta property="og:title" content="LocalBiz Digital Hub — ₱35,000" />
+    <meta property="og:description" content="Website, online booking, Google Business profile, and messaging. Live in 5 to 7 days. ₱35,000 one-time." />
+    <meta property="og:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LocalBiz Digital Hub — ₱35,000" />
+    <meta name="twitter:description" content="Website, online booking, Google Business profile, and messaging. Live in 5 to 7 days. ₱35,000 one-time." />
+    <meta name="twitter:image" content="https://rmbergonia.com/images/suri-dashboard.png" />
+
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+
+    <style>
+      html { -webkit-font-smoothing: antialiased; }
+      body { background: #fbfaf8; }
+
+      /* Display type: oversized, tight, MIXED CASE — the editorial register.
+         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
+      .display {
+        font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 0.95;
+        text-wrap: balance;
+      }
+      /* Page-title scale: the one place type is allowed to dominate. */
+      .display-xl { font-weight: 700; letter-spacing: -0.045em; line-height: 0.88; }
+
+      /* Micro-labels. Structural, never decorative — they name a section
+         or number a real sequence. */
+      .label {
+        font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      /* Nav and buttons carry a touch more weight than section eyebrows. */
+      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
+      .rule { border-color: #e3e0da; }
+
+      /* Editorial two-column row: label left, prose right. */
+      .row-label { font-family: "Inter Tight", Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+
+      .js .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .7s ease-out, transform .7s ease-out;
+      }
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+      /* FAQ disclosure: the + rotates to an x when open. */
+      .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .js .fade-up { opacity: 1; transform: none; transition: none; }
+        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      }
+
+      a:focus-visible, button:focus-visible, summary:focus-visible {
+        outline: 2px solid #111013;
+        outline-offset: 3px;
+      }
+      ::selection { background: #111013; color: #fbfaf8; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://rmbergonia.com/services/#localbiz",
+          "name": "LocalBiz Digital Hub",
+          "serviceType": "Website, online booking, and Google Business setup for local businesses",
+          "provider": {
+            "@type": "Person",
+            "name": "Ruther Bergonia",
+            "url": "https://rmbergonia.com/",
+            "email": "mailto:ruther.bergonia@gmail.com"
+          },
+          "areaServed": { "@type": "City", "name": "Manila", "addressCountry": "PH" },
+          "description": "A complete digital setup for a local business: website, online booking, Google Business profile, and messaging \u2014 built and launched in 5 to 7 days.",
+          "offers": {
+            "@type": "Offer",
+            "price": "35000",
+            "priceCurrency": "PHP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://rmbergonia.com/services/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmbergonia.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rmbergonia.com/services/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does it really take?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Five to seven days from the moment I have your photos, services, and prices. Most of that week is waiting on content from you \u2014 the build itself is three days." }
+            },
+            {
+              "@type": "Question",
+              "name": "What does the \u20b15,000 a month actually cover?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Hosting, domain renewal, security updates, backups, and content changes \u2014 new prices, new services, new photos. It is month to month and you can stop it whenever." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I own the website?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. The domain is registered in your name and every login is handed to you at launch. If you stop the care plan, the site is still yours." }
+            },
+            {
+              "@type": "Question",
+              "name": "I already have a Facebook page. Why do I need this?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Keep it \u2014 they do different jobs. Facebook reaches people who already follow you. The website is what people find when they search Google for what you sell." }
+            },
+            {
+              "@type": "Question",
+              "name": "What if I do not like it?",
+              "acceptedAnswer": { "@type": "Answer", "text": "You see it before it goes public, and changes at that stage are included. After launch you have 30 days of fixes." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you do more than this?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Inventory, staff accounts, multiple branches, payments, and reporting are all doable, scoped and priced separately." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="bg-paper font-body text-ink-900 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+
+    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
+      <div class="flex w-full items-center justify-between px-6 py-5 sm:px-10">
+        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
+          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
+        </a>
+        <div class="flex items-center gap-6 sm:gap-10">
+          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
+          <a href="/services/" class="label hidden text-ink-900 underline decoration-ink-900 decoration-2 underline-offset-[6px] sm:block" aria-current="page">Services</a>
+          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
+          <a href="#start" class="label label-lg rounded-full bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Get started <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- HERO -->
+      <header class="border-b rule px-6 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-48 xl:px-16">
+        <div class="w-full">
+          <nav aria-label="Breadcrumb" class="mb-14 border-b rule pb-6">
+            <ol class="flex items-center gap-2">
+              <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
+              <li aria-hidden="true" class="label text-ink-300">/</li>
+              <li><span class="label text-ink-900">Services</span></li>
+            </ol>
+          </nav>
+
+          <h1 class="display display-xl text-center text-[clamp(3.25rem,15.5vw,18rem)] text-ink-900">Services</h1>
+
+          <div class="mt-16 flex items-baseline justify-between border-t rule pt-5">
+            <span class="label text-ink-500">LocalBiz Digital Hub</span>
+            <span class="label text-ink-500">&#8369;35,000 &middot; 5&ndash;7 days</span>
+          </div>
+
+          <p class="mx-auto mt-16 max-w-[24ch] text-center text-[clamp(1.5rem,3vw,2.75rem)] font-medium leading-[1.3] tracking-[-0.02em] text-ink-900 sm:max-w-[34ch]">
+            <span class="text-ink-300" aria-hidden="true">[</span> Someone in your area is searching for what you sell right now. If you&rsquo;re not there, they book the shop that is. <span class="text-ink-300" aria-hidden="true">]</span>
+          </p>
+
+          <div class="mt-24 grid items-end gap-14 border-t rule pt-14 lg:grid-cols-12 lg:gap-16">
+            <p class="max-w-[52ch] text-[15px] leading-relaxed text-ink-500 lg:col-span-4">
+              I build the whole setup &mdash; website, booking, Google profile,
+              messaging &mdash; and hand it to you working, in under a week.
+            </p>
+            <div class="lg:col-span-5 lg:col-start-8">
+              <p class="display text-[clamp(2.25rem,5vw,3.5rem)] text-ink-900">&#8369;35,000</p>
+              <p class="label mt-3 text-ink-500">One-time &middot; live in 5&ndash;7 days</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- THE PROBLEM -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="problem-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+01</span>
+            <h2 id="problem-heading" class="label text-ink-500">What this fixes</h2>
+          </div>
+
+          <div class="grid gap-x-12 gap-y-16 md:grid-cols-3">
+            <div class="fade-up border-t-2 border-ink-900 pt-8">
+              <h3 class="display text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">They can&rsquo;t find you</h3>
+              <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">You search your own business on Google and get a map pin with no hours, no photos, no prices &mdash; or nothing at all. The customer moves on to the next result.</p>
+            </div>
+            <div class="fade-up border-t-2 border-ink-900 pt-8">
+              <h3 class="display text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">Bookings get lost</h3>
+              <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">Messages come in on Messenger, Instagram, and text. Someone replies late, or twice, or not at all. You only notice when the customer doesn&rsquo;t show.</p>
+            </div>
+            <div class="fade-up border-t-2 border-ink-900 pt-8">
+              <h3 class="display text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">You look smaller</h3>
+              <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">The shop down the street has a real website and clear prices. Yours is a Facebook page from 2019. Customers read that gap as a difference in quality.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT YOU GET -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="included-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+02</span>
+            <h2 id="included-heading" class="label text-ink-500">What&rsquo;s included</h2>
+          </div>
+
+          <div>
+            <div class="fade-up border-t rule pt-10">
+              <div class="grid gap-x-12 gap-y-4 md:grid-cols-12">
+                <h3 class="display text-[clamp(1.4rem,2.6vw,1.9rem)] text-ink-900 md:col-span-4">Website</h3>
+                <p class="max-w-[64ch] text-[14px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-6">A real site, not a template dump. Your services and prices written clearly, your photos properly sized, and a domain registered in your name.</p>
+              </div>
+              <div class="mt-12 grid gap-x-12 gap-y-8 pb-16 md:grid-cols-12">
+                <ul class="space-y-3.5 md:col-span-4">
+                  <li class="text-[14px] leading-relaxed text-ink-500">Your services and prices, written clearly</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Your photos, properly sized so pages load fast</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Works on phones first &mdash; that&rsquo;s where customers are</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Your own domain name, registered to you</li>
+                </ul>
+                <div class="md:col-span-7 md:col-start-6"><div class="space-y-4 border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
+                    <p class="text-[15px] leading-relaxed text-ink-700">Customers searching for what you sell find you instead of the shop down the street.</p>
+                    <p class="text-[15px] leading-relaxed text-ink-700">Loads fast on a phone over mobile data &mdash; which is how most people will see it.</p>
+                  </div></div>
+              </div>
+            </div>
+            <div class="fade-up border-t rule pt-10">
+              <div class="grid gap-x-12 gap-y-4 md:grid-cols-12">
+                <h3 class="display text-[clamp(1.4rem,2.6vw,1.9rem)] text-ink-900 md:col-span-4">Booking</h3>
+                <p class="max-w-[64ch] text-[14px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-6">Requests land in one place instead of scattered across Messenger, Instagram, and text. Every one reaches you the moment it arrives.</p>
+              </div>
+              <div class="mt-12 grid gap-x-12 gap-y-8 pb-16 md:grid-cols-12">
+                <ul class="space-y-3.5 md:col-span-4">
+                  <li class="text-[14px] leading-relaxed text-ink-500">A booking form customers actually finish</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Every request emailed to you the moment it comes in</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Click-to-call and click-to-message buttons</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Your hours, location, and map on every page</li>
+                </ul>
+                <div class="md:col-span-7 md:col-start-6"><div class="space-y-4 border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
+                    <p class="text-[15px] leading-relaxed text-ink-700">No more finding a booking request at 11pm three days late.</p>
+                    <p class="text-[15px] leading-relaxed text-ink-700">One inbox you check, not four apps you forget.</p>
+                  </div></div>
+              </div>
+            </div>
+            <div class="fade-up border-t rule pt-10">
+              <div class="grid gap-x-12 gap-y-4 md:grid-cols-12">
+                <h3 class="display text-[clamp(1.4rem,2.6vw,1.9rem)] text-ink-900 md:col-span-4">Google</h3>
+                <p class="max-w-[64ch] text-[14px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-6">Set up the way Google wants it &mdash; profile claimed, hours and photos filled in, and the site structured so Google can actually read it.</p>
+              </div>
+              <div class="mt-12 grid gap-x-12 gap-y-8 pb-16 md:grid-cols-12">
+                <ul class="space-y-3.5 md:col-span-4">
+                  <li class="text-[14px] leading-relaxed text-ink-500">Google Business profile claimed and filled in</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Hours, photos, services, and category set correctly</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">Site structured so Google can read it properly</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">A short guide on asking customers for reviews</li>
+                </ul>
+                <div class="md:col-span-7 md:col-start-6"><div class="space-y-4 border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
+                    <p class="text-[15px] leading-relaxed text-ink-700">Your map pin shows hours, photos, and services instead of a blank card.</p>
+                    <p class="text-[15px] leading-relaxed text-ink-700">You get a plain-language guide for asking happy customers to leave a review.</p>
+                  </div></div>
+              </div>
+            </div>
+            <div class="fade-up border-t rule pt-10">
+              <div class="grid gap-x-12 gap-y-4 md:grid-cols-12">
+                <h3 class="display text-[clamp(1.4rem,2.6vw,1.9rem)] text-ink-900 md:col-span-4">Handover</h3>
+                <p class="max-w-[64ch] text-[14px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-6">Yours outright, with someone to call. Every login handed over, a walkthrough so you know how it works, and 30 days of fixes after launch.</p>
+              </div>
+              <div class="mt-12 grid gap-x-12 gap-y-8 pb-16 md:grid-cols-12">
+                <ul class="space-y-3.5 md:col-span-4">
+                  <li class="text-[14px] leading-relaxed text-ink-500">All logins handed over &mdash; you own everything</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">A walkthrough so you know how it works</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">30 days of fixes included after launch</li>
+                  <li class="text-[14px] leading-relaxed text-ink-500">One person to message &mdash; not a support ticket</li>
+                </ul>
+                <div class="md:col-span-7 md:col-start-6"><div class="space-y-4 border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
+                    <p class="text-[15px] leading-relaxed text-ink-700">You own the domain, the code, and every account. No lock-in.</p>
+                    <p class="text-[15px] leading-relaxed text-ink-700">You message me directly &mdash; not a ticket queue.</p>
+                  </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="pricing-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+03</span>
+            <h2 id="pricing-heading" class="label text-ink-500">What it costs</h2>
+          </div>
+
+          <div class="grid gap-px border rule bg-ink-100 md:grid-cols-2">
+            <article class="fade-up grid content-start bg-paper-raised p-8 sm:p-12 md:[grid-template-rows:auto_auto_auto_1fr_auto]">
+              <p class="label text-ink-300">To build it</p>
+              <div class="mt-7 flex items-baseline gap-3">
+                <p class="display text-[clamp(2.5rem,6vw,4rem)] text-ink-900">&#8369;35,000</p>
+                <p class="label text-ink-300">one-time</p>
+              </div>
+              <p class="mt-5 text-[16.5px] leading-relaxed text-ink-500">Everything above &mdash; website, booking, Google profile, handover. Half to start, half when it goes live.</p>
+              <ul class="mt-8 space-y-3 border-t rule pt-8 text-[16.5px] text-ink-700">
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>Live in 5&ndash;7 days</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>First year&rsquo;s domain included</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>30 days of fixes after launch</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>No lock-in &mdash; you own it outright</li>
+              </ul>
+              <a href="#start" class="label mt-10 inline-flex items-center justify-between rounded-full bg-ink-900 px-6 py-4 font-bold text-paper transition-colors hover:bg-ink-700"><span>Start a project</span><span aria-hidden="true">&rarr;</span></a>
+            </article>
+
+            <article class="fade-up grid content-start bg-paper-raised p-8 sm:p-12 md:[grid-template-rows:auto_auto_auto_1fr_auto]">
+              <p class="label text-ink-300">To keep it running</p>
+              <div class="mt-7 flex items-baseline gap-3">
+                <p class="display text-[clamp(2.5rem,6vw,4rem)] text-ink-900">&#8369;5,000</p>
+                <p class="label text-ink-300">/ month</p>
+              </div>
+              <p class="mt-5 text-[16.5px] leading-relaxed text-ink-500">Optional, month to month. Cancel anytime and the site stays yours &mdash; you&rsquo;d just handle hosting and updates yourself.</p>
+              <ul class="mt-8 space-y-3 border-t rule pt-8 text-[16.5px] text-ink-700">
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>Hosting, domain renewal, and backups</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>Security updates and uptime monitoring</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>Content changes &mdash; prices, services, photos</li>
+                <li class="flex gap-3"><span class="mt-[0.62em] h-px w-3 shrink-0 bg-ink-900" aria-hidden="true"></span>Message me directly when something&rsquo;s wrong</li>
+              </ul>
+              <a href="#faq" class="label mt-10 inline-flex items-center justify-between rounded-full border border-ink-900 px-6 py-4 font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper"><span>Read the questions first</span><span aria-hidden="true">&rarr;</span></a>
+            </article>
+          </div>
+
+          <p class="mt-12 max-w-[70ch] text-[16px] leading-relaxed text-ink-500">
+            If your business needs something beyond this &mdash; inventory, multiple
+            branches, staff accounts, payments &mdash; that&rsquo;s a different scope and
+            a different price. Tell me what you need and I&rsquo;ll quote it honestly,
+            or tell you it isn&rsquo;t worth building.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="process-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+04</span>
+            <h2 id="process-heading" class="label text-ink-500">The week, day by day</h2>
+          </div>
+
+          <ol class="border-t rule">
+            <li class="fade-up grid gap-4 border-b rule py-16 md:grid-cols-12 md:gap-10">
+              <p class="label text-ink-900 md:col-span-2">01</p>
+              <h3 class="display text-[clamp(1.3rem,2.4vw,1.7rem)] text-ink-900 md:col-span-4 md:col-start-3">Day 1 &mdash; We talk</h3>
+              <p class="max-w-[60ch] text-[17px] leading-relaxed text-ink-500 md:col-span-6 md:col-start-7">30 minutes, in person or on a call. Your services, your prices, your busiest hours. I take notes.</p>
+            </li>
+            <li class="fade-up grid gap-4 border-b rule py-16 md:grid-cols-12 md:gap-10">
+              <p class="label text-ink-900 md:col-span-2">02</p>
+              <h3 class="display text-[clamp(1.3rem,2.4vw,1.7rem)] text-ink-900 md:col-span-4 md:col-start-3">Day 2 &mdash; You send</h3>
+              <p class="max-w-[60ch] text-[17px] leading-relaxed text-ink-500 md:col-span-6 md:col-start-7">Photos and your logo if you have one. This is the part that decides whether we finish in five days or nine.</p>
+            </li>
+            <li class="fade-up grid gap-4 border-b rule py-16 md:grid-cols-12 md:gap-10">
+              <p class="label text-ink-900 md:col-span-2">03</p>
+              <h3 class="display text-[clamp(1.3rem,2.4vw,1.7rem)] text-ink-900 md:col-span-4 md:col-start-3">Days 3&ndash;5 &mdash; I build</h3>
+              <p class="max-w-[60ch] text-[17px] leading-relaxed text-ink-500 md:col-span-6 md:col-start-7">You get a link partway through to check names, prices, and spelling before anything goes public.</p>
+            </li>
+            <li class="fade-up grid gap-4 border-b rule py-16 md:grid-cols-12 md:gap-10">
+              <p class="label text-ink-900 md:col-span-2">04</p>
+              <h3 class="display text-[clamp(1.3rem,2.4vw,1.7rem)] text-ink-900 md:col-span-4 md:col-start-3">Days 6&ndash;7 &mdash; Live</h3>
+              <p class="max-w-[60ch] text-[17px] leading-relaxed text-ink-500 md:col-span-6 md:col-start-7">Domain connected, Google profile updated, logins handed to you. I walk you through all of it.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="faq-heading">
+        <div class="w-full">
+          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+            <span class="label text-ink-900">+05</span>
+            <h2 id="faq-heading" class="label text-ink-500">Questions people actually ask</h2>
+          </div>
+
+          <div class="grid gap-x-14 gap-y-10 md:grid-cols-12">
+            <div class="md:col-span-4">
+              <p class="display text-[clamp(2rem,5vw,3.5rem)] text-ink-900">FAQ</p>
+              <p class="mt-4 max-w-[34ch] text-[16.5px] leading-relaxed text-ink-500">
+                The six things every business owner asks me before saying yes.
+                Straight answers, including the ones that cost me work.
+              </p>
+            </div>
+            <div class="border-t rule md:col-span-8">
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">How long does it really take?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">Five to seven days from the moment I have your photos, services, and prices. Most of that week is waiting on content from you &mdash; the build itself is three days. If you send everything on day one, it&rsquo;s faster.</p>
+              </details>
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">What does the &#8369;5,000 a month actually cover?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">Hosting, domain renewal, security updates, backups, and content changes &mdash; new prices, new services, new photos. You message me and it gets done, usually same day. It&rsquo;s month to month; stop it whenever.</p>
+              </details>
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">Do I own the website?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">Yes. The domain is registered in your name and every login is handed to you at launch. If you stop the care plan, the site is still yours &mdash; you&rsquo;d just take over hosting and updates, or hand them to someone else.</p>
+              </details>
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">I already have a Facebook page. Why do I need this?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">Keep it &mdash; they do different jobs. Facebook reaches people who already follow you. The website is what people find when they search Google for what you sell, and it&rsquo;s where bookings land instead of getting buried in Messenger at 11pm.</p>
+              </details>
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">What if I don&rsquo;t like it?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">You see it before it goes public, and changes at that stage are included. After launch you have 30 days of fixes. What I won&rsquo;t do is rebuild it from scratch a third time &mdash; that&rsquo;s a new project, and I&rsquo;ll say so plainly.</p>
+              </details>
+              <details class="faq-item group border-b rule">
+                <summary class="flex cursor-pointer items-center justify-between gap-8 py-8 text-left">
+                  <span class="display text-[clamp(1.15rem,2.1vw,1.55rem)] text-ink-900">Can you do more than this?</span>
+                  <span class="faq-icon label shrink-0 text-ink-900 transition-transform duration-300" aria-hidden="true">+</span>
+                </summary>
+                <p class="max-w-[70ch] pb-9 text-[16.5px] leading-relaxed text-ink-500">Yes &mdash; my day job is building systems that manage 15,000+ records for a university office. Inventory, staff accounts, multiple branches, payments, reporting: all doable, all scoped and priced separately. <a href="/work/" class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900">See the case studies</a>.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16">
+        <div class="grid w-full items-center gap-14 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <h3 class="display text-[clamp(2rem,5vw,3.25rem)] text-ink-900">Have a business<br />in mind?</h3>
+            <div class="mt-8 flex flex-wrap items-center gap-5">
+              <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label text-ink-500 transition-colors hover:text-ink-900">LinkedIn</a>
+              <a href="https://github.com/rockyru" rel="noopener" class="label text-ink-500 transition-colors hover:text-ink-900">GitHub</a>
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:text-right">
+            <a href="mailto:ruther.bergonia@gmail.com?subject=LocalBiz%20Digital%20Hub%20inquiry&body=Business%20name%3A%0ALocation%3A%0AWhat%20you%20do%3A%0AWhat%27s%20frustrating%20right%20now%3A%0A" class="group inline-flex flex-wrap items-baseline gap-x-3 gap-y-1 break-words text-[clamp(1.4rem,5vw,3.25rem)] font-bold tracking-[-0.03em] text-ink-900 transition-opacity hover:opacity-60 lg:justify-end">
+              ruther.bergonia@gmail.com
+              <span aria-hidden="true" class="inline-block text-[0.6em] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">&#8599;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="start" class="border-t rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
+      <div class="w-full">
+        <div class="mb-14 flex items-baseline gap-6">
+          <span class="label text-ink-900">+06</span>
+          <span class="label text-ink-500">Start here</span>
+        </div>
+
+        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Tell me about your business.</h2>
+
+        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
+          <p class="max-w-[54ch] text-[18px] leading-relaxed text-ink-500 lg:col-span-5">Send me what you do, where you are, and what&rsquo;s frustrating you right now. I&rsquo;ll reply with whether this is a fit, what it&rsquo;ll cost, and how long it takes. If it isn&rsquo;t worth building, I&rsquo;ll tell you that instead.</p>
+          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com?subject=LocalBiz%20Digital%20Hub%20inquiry&body=Business%20name%3A%0ALocation%3A%0AWhat%20you%20do%3A%0AWhat%27s%20frustrating%20right%20now%3A%0A" class="label label-lg rounded-full bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">Email me</a>
+            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg rounded-full border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a></div>
+        </div>
+
+        <div class="mt-28 border-t rule pt-10">
+          <div class="flex flex-wrap items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M137.82,134.44c-18.7,6.37-38.9,6.38-57.81.03l-.02-23.09c-18-9.92-39.81-9.91-57.78,0l-.02-32.26c18.63-6.3,38.91-6.4,57.79,0l.03-21.29c-18.01-9.94-39.84-9.93-57.81,0l-.02-32.26c18.6-6.32,38.93-6.4,57.79-.02v21.28c17.98,9.86,39.63,9.98,57.82.05v32.26c-18.9,6.33-39.08,6.33-57.82-.05v23.12c18.06,9.92,39.79,9.93,57.81.03l.03,32.23Z"/></svg></span>
+              <div>
+                <p class="label font-bold text-ink-900">Ruther Bergonia</p>
+                <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
+              </div>
+            </div>
+            <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+              <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
+              <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
+              <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
+            </nav>
+            <p class="label text-ink-300">© 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing wordmark: the name at display scale, trimmed to the
+           baseline so it sits on the page edge like a masthead. -->
+      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
+        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
+      </div>
+    </footer>
+
+    <button id="scrollTop" type="button" aria-label="Scroll back to top"
+      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="/script.js" defer></script>
+  </body>
+</html>
