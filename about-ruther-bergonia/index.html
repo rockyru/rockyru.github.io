@@ -84,6 +84,40 @@
         outline-offset: 3px;
       }
       ::selection { background: #111013; color: #fbfaf8; }
+
+      [id$="-heading"], footer[id] { scroll-margin-top: 96px; }
+
+      /* Side quick-nav: one line per numbered section, filled in by script.js.
+         Desktop-only (matches Tailwind's xl breakpoint) — there's no room
+         for it once the layout drops to a single column. */
+      #sectionNav { display: none; }
+      @media (min-width: 1280px) {
+        #sectionNav {
+          position: fixed;
+          top: 140px;
+          left: 20px;
+          z-index: 30;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      #sectionNav a:hover .side-nav-label,
+      #sectionNav a.is-active .side-nav-label {
+        opacity: 1;
+      }
+      #sectionNav a:hover .side-nav-line,
+      #sectionNav a.is-active .side-nav-line {
+        background-color: #111013;
+        width: 32px;
+      }
+      #sectionNav a {
+        display: flex;
+        align-items: center;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .side-nav-line, .side-nav-label { transition: none; }
+      }
     </style>
 
     <script type="application/ld+json">
@@ -156,6 +190,8 @@
         </div>
       </div>
     </nav>
+
+    <nav id="sectionNav" class="hidden xl:block" aria-label="Page sections"></nav>
 
     <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
       <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
