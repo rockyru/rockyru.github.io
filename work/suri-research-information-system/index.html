@@ -397,14 +397,18 @@
       <section class="grid grid-cols-12 border-b rule">
         <div class="border-b rule p-6 md:border-b-0 md:border-r">
           <div class="overflow-hidden rule">
-            <img
-              src="/images/suri-screen-dashboard.png"
-              alt="SURI project lifecycle view showing line item budget breakdown and spending against allocations"
-              class="block w-full"
-              loading="lazy"
-              width="1000"
-              height="2000"
-            />
+            <picture>
+              <source srcset="/images/suri-screen-dashboard.webp" type="image/webp" />
+              <img
+                src="/images/suri-screen-dashboard.png"
+                alt="SURI project lifecycle view showing line item budget breakdown and spending against allocations"
+                class="block w-full"
+                loading="lazy"
+                decoding="async"
+                width="1800"
+                height="1133"
+              />
+            </picture>
           </div>
           <!-- <p class="label mt-4 text-ink-300">Project lifecycle &amp; budget tracking</p> -->
         </div>

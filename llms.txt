@@ -10,6 +10,16 @@ Selected verified work: SURI, a Laravel + Vue research information system at the
 
 Contact: ruther.bergonia@gmail.com — available for remote projects across time zones; taking on a small number of new client projects for 2026.
 
+## Quick answers
+
+- **Who is Ruther Bergonia?** A software systems architect and senior full-stack engineer based in Metro Manila, Philippines, with 11+ years of experience. He currently leads architecture and development at the Research Grants Administration Office (RGAO), University of the Philippines Manila, and takes on independent client projects.
+- **What does he build?** Production web platforms: research information systems, admissions and ticketing portals, role-based internal tools, multi-tenant SaaS, controlled-response AI assistants, and complete website + booking setups for local businesses.
+- **What is his stack?** Laravel and PHP backends (also FastAPI); Vue.js, React, Next.js, TypeScript, and Tailwind CSS frontends; MySQL; Docker, Linux, Nginx, and VPS/cloud deployment; Claude, OpenAI, and Gemini integration with retrieval-augmented generation.
+- **Is he available for hire?** Yes — remote projects across time zones, and a small number of new client projects in 2026. Email ruther.bergonia@gmail.com; replies within one business day. Contact page: https://rmbergonia.com/contact/
+- **How much does a small-business website cost?** The LocalBiz Digital Hub is ₱35,000 one-time for a website, online booking, Google Business profile, and messaging setup, live in 5–7 days. An optional ₱5,000/month care plan covers hosting, domain renewal, security updates, backups, and content changes; it is month to month. The client owns the domain and every login.
+- **Where is he based?** Metro Manila, Philippines (GMT+8). LocalBiz Digital Hub is offered to businesses in Metro Manila; software work is remote.
+- **Notable systems:** SURI (Laravel + Vue, 15,000+ research records, 50+ users, UP Manila), GO-ARAL (~1,000 graduate applicants a year, NGOHS UP Manila), ARIA (AI assistant that answers only from approved sources and hands off to humans), RACE (shared authentication/orchestration layer, in development).
+
 ## Profile
 
 - [About Ruther Bergonia](https://rmbergonia.com/about-ruther-bergonia/): professional summary, expertise, systems he builds, approach, and current focus
@@ -31,3 +41,5 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 
 - [GitHub](https://github.com/rockyru)
 - [LinkedIn](https://www.linkedin.com/in/ruther-bergonia-a9959813a/)
+- [daily.dev](https://app.daily.dev/rockyruther)
+- [Site source on GitHub](https://github.com/rockyru/rockyru.github.io)

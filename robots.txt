@@ -1,13 +1,53 @@
 # robots.txt for https://rmbergonia.com
-# Allow search engines and AI search crawlers; opt out of GPTBot training crawls.
+# Everything is open: search engines, AI search/answer engines, and AI
+# training crawlers alike. The only pages kept out of indexes are the
+# fictional LocalBiz demo sites, and those carry their own noindex tag.
 
 User-agent: *
 Allow: /
 
-User-agent: OAI-SearchBot
+# Search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: DuckDuckBot
 Allow: /
 
+# AI answer engines and assistants (live browsing / citations)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+
+# AI training crawlers
 User-agent: GPTBot
-Disallow: /
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://rmbergonia.com/sitemap.xml
