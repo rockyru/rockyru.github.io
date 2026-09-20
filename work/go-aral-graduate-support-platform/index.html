@@ -222,23 +222,23 @@
         </p>
       </section>
 
-      <!-- META BAR -->
-      <section class="grid grid-cols-2 gap-8 border-b rule px-6 py-10 sm:px-10 md:grid-cols-4 xl:px-16">
-        <div>
+      <!-- META BAR — bordered tile grid matching the homepage's stat rhythm -->
+      <section class="grid grid-cols-2 border-b rule md:grid-cols-4">
+        <div class="border-b border-r rule p-8 sm:p-10 md:border-b-0">
           <span class="label block text-ink-300">Role</span>
-          <span class="mt-2 block text-[15px] font-bold text-ink-900">Senior ICT Assistant</span>
+          <span class="mt-3 block text-[15px] font-bold text-ink-900">Senior ICT Assistant</span>
         </div>
-        <div>
+        <div class="border-b rule p-8 sm:p-10 md:border-b-0 md:border-r">
           <span class="label block text-ink-300">Client</span>
-          <span class="mt-2 block text-[15px] font-bold text-ink-900">NGOHS · UP Manila</span>
+          <span class="mt-3 block text-[15px] font-bold text-ink-900">NGOHS &middot; UP Manila</span>
         </div>
-        <div>
+        <div class="border-r rule p-8 sm:p-10">
           <span class="label block text-ink-300">Focus</span>
-          <span class="mt-2 block text-[15px] font-bold text-ink-900">Portal / Ticketing / RBAC</span>
+          <span class="mt-3 block text-[15px] font-bold text-ink-900">Portal / Ticketing / RBAC</span>
         </div>
-        <div>
+        <div class="p-8 sm:p-10">
           <span class="label block text-ink-300">Period</span>
-          <span class="mt-2 block text-[15px] font-bold text-ink-900">2021 — 2025</span>
+          <span class="mt-3 block text-[15px] font-bold text-ink-900">2021 &mdash; 2025</span>
         </div>
       </section>
 
@@ -261,42 +261,66 @@
         </div>
       </section>
 
-      <!-- WHAT WAS BUILT -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="built-heading">
-        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-          <span class="label text-ink-900">+02</span>
-          <h2 id="built-heading" class="label text-ink-500">What was built</h2>
-        </div>
-        <p class="text-[16.5px] leading-relaxed text-ink-500">Two systems, designed to work together:</p>
-
-        <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
-          <div class="fade-up border-t-2 border-ink-900 pt-8">
-            <h3 class="display text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">GO-ARAL</h3>
-            <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">The applicant-facing application and ticketing portal — where graduate applicants apply and where their support requests become tracked tickets instead of lost emails.</p>
-          </div>
-          <div class="fade-up border-t-2 border-ink-900 pt-8">
-            <h3 class="display text-[clamp(1.4rem,2.8vw,1.95rem)] text-ink-900">DRMS</h3>
-            <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">The records system for graduate admissions — the office's internal source of truth for applicant records.</p>
+      <!-- WHAT WAS BUILT — tile grid matching the homepage's service-cards rhythm -->
+      <section class="border-b rule" aria-labelledby="built-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
+            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
+              <span class="label text-ink-900">+02</span>
+              <h2 id="built-heading" class="label text-ink-500">What was built</h2>
+            </div>
+            <p class="max-w-2xl text-[16.5px] leading-relaxed text-ink-500">Two systems, designed to work together.</p>
           </div>
         </div>
-
-        <p class="mt-14 text-[16.5px] leading-relaxed text-ink-500">
-          Ruther architected the APIs, database schemas, reporting systems, and role-based access control behind both, and led
-          deployment to a VPS, staff training, and post-deployment support.
-        </p>
+        <div class="grid grid-cols-1 border-t rule md:grid-cols-2">
+          <div class="fade-up border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+            <h3 class="display text-xl text-ink-900">GO-ARAL</h3>
+            <p class="mt-4 text-xs leading-relaxed text-ink-500">The applicant-facing application and ticketing portal &mdash; where graduate applicants apply and where their support requests become tracked tickets instead of lost emails.</p>
+          </div>
+          <div class="fade-up bg-ink-900 p-8">
+            <h3 class="display text-xl text-paper">DRMS</h3>
+            <p class="mt-4 text-xs leading-relaxed text-ink-300">The records system for graduate admissions &mdash; the office's internal source of truth for applicant records.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-t rule md:block"></div>
+          <div class="border-t rule p-8 sm:p-12 md:col-span-3 md:p-16">
+            <p class="text-[16.5px] leading-relaxed text-ink-500">
+              Ruther architected the APIs, database schemas, reporting systems, and role-based access control behind both, and led
+              deployment to a VPS, staff training, and post-deployment support.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <!-- OUTCOME -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="outcome-heading">
-        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-          <span class="label text-ink-900">+03</span>
-          <h2 id="outcome-heading" class="label text-ink-500">Outcome</h2>
+      <!-- OUTCOME — stat tiles + dark write-up tile, matching the homepage's team/facts grid -->
+      <section class="border-b rule" aria-labelledby="outcome-heading">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="hidden border-r rule md:block"></div>
+          <div class="border-b rule p-8 sm:p-12 md:col-span-3 md:p-16">
+            <div class="flex items-baseline gap-6">
+              <span class="label text-ink-900">+03</span>
+              <h2 id="outcome-heading" class="label text-ink-500">Outcome</h2>
+            </div>
+          </div>
         </div>
-        <div class="border-l-2 border-ink-900 bg-paper-raised p-8 sm:p-10">
-          <p class="text-[18px] leading-relaxed text-ink-700">
-            The systems support roughly 1,000 graduate applicants annually and around 200 support requests monthly — with admissions
-            records, reporting, and applicant support running through structured, role-controlled software instead of manual channels.
-          </p>
+        <div class="grid grid-cols-1 md:grid-cols-4">
+          <div class="fade-up flex min-h-[220px] flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+            <div class="text-4xl font-black tracking-tight text-ink-900">1,000</div>
+            <div class="label mt-1 text-ink-400">Applicants a year</div>
+          </div>
+          <div class="fade-up flex min-h-[220px] flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
+            <div class="text-4xl font-black tracking-tight text-ink-900">200</div>
+            <div class="label mt-1 text-ink-400">Support requests / month</div>
+          </div>
+          <div class="fade-up flex min-h-[220px] flex-col justify-between bg-ink-900 p-8 md:col-span-2">
+            <p class="text-sm leading-relaxed text-paper">
+              Admissions records, reporting, and applicant support now run through structured, role-controlled software instead of
+              manual channels.
+            </p>
+            <span class="label text-ink-300">Roughly 1,000 applicants annually, ~200 tickets a month.</span>
+          </div>
         </div>
       </section>
 
