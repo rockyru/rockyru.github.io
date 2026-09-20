@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate the LocalBiz Digital Hub demo sites under services/templates/.
 
+Full docs: tools/README.md
+
 One entry in INDUSTRIES per demo; one render function per design. Edit the
 data (prices, copy, hours) or a design, then:
 
