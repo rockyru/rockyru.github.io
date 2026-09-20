@@ -22,6 +22,11 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 - [ARIA: controlled-response AI support assistant](https://rmbergonia.com/work/aria-controlled-response-ai/): answers from approved sources, human handoff, tracked tickets
 - [RACE: platform orchestration layer](https://rmbergonia.com/work/race-platform-orchestration/): shared authentication and services beneath SURI and ARIA (in development)
 
+## Services
+
+- [LocalBiz Digital Hub](https://rmbergonia.com/services/): ₱35,000 one-time website + online booking + Google Business profile + messaging setup for local businesses in Metro Manila, live in 5–7 days; optional ₱5,000/month care plan
+- [LocalBiz templates](https://rmbergonia.com/services/templates/): six live demo sites, one per industry — dental clinic, salon & nails, café & restaurant, auto repair shop, gym & fitness studio, vet & pet grooming
+
 ## External profiles
 
 - [GitHub](https://github.com/rockyru)

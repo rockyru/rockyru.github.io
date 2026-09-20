@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bea’s Salon &amp; Nail Bar — Salon &amp; nails website template</title>
+    <meta name="description" content="Demo of the LocalBiz Digital Hub for a salon &amp; nails: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
+    <meta name="author" content="Ruther Bergonia" />
+    <!-- Demo of a fictional business: kept out of search on purpose. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://rmbergonia.com/services/templates/salon/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bea’s Salon &amp; Nail Bar — Salon &amp; nails website template" />
+    <meta property="og:description" content="Demo of the LocalBiz Digital Hub for a salon &amp; nails: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
+    <meta name="theme-color" content="#be185d" />
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+      :root { --brand: #be185d; --brand-dark: #9d174d; }
+      html { -webkit-font-smoothing: antialiased; }
+      [id] { scroll-margin-top: 110px; }
+      a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
+      body { background: #f4efe6; color: #17130f; font-family: Inter, "Helvetica Neue", sans-serif; }
+      .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+      .hair { border-color: #17130f; }
+      .field { display:block; width:100%; border:0; border-bottom:1px solid rgba(244,239,230,.4); background:transparent; padding:.7rem 0; font-size:17px; color:#f4efe6; border-radius:0; }
+      .field::placeholder { color: rgba(244,239,230,.4); } .field option { color:#17130f; }
+      .field:focus { outline:none; border-bottom-color:#f4efe6; }
+      .leader { display:flex; align-items:baseline; gap:.75rem; } .leader::after { content:""; order:2; flex:1; border-bottom:1px dotted rgba(23,19,15,.4); transform: translateY(-.35em); } .leader > :last-child { order:3; }
+      .btn { display:inline-flex; align-items:center; justify-content:center; padding:1rem 2rem; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; transition: all .2s; }
+      .btn-ink { background:#17130f; color:#f4efe6; } .btn-ink:hover { background: var(--brand); }
+      .btn-line { border:1px solid #17130f; color:#17130f; } .btn-line:hover { background:#17130f; color:#f4efe6; }
+      .btn-cream { background:#f4efe6; color:#17130f; } .btn-cream:hover { background: var(--brand); color:#fff; }
+    
+    </style>
+  </head>
+  <body>
+    <div class="fixed inset-x-0 top-0 z-50 bg-stone-900 text-white">
+      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-2 text-[12px] sm:px-8">
+        <p class="flex items-center gap-2 font-medium"><span class="block h-4 w-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span><span><span class="hidden sm:inline">Demo &middot; </span>LocalBiz Digital Hub &middot; Salon &amp; nails &middot; <span class="text-stone-400">Bea’s Salon &amp; Nail Bar is fictional</span></span></p>
+        <p class="flex items-center gap-4 font-semibold"><a href="/services/templates/" class="text-stone-400 underline-offset-4 hover:underline">All templates</a><a href="/services/#pricing" class="underline underline-offset-4">Get this for your business &mdash; &#8369;35,000 &rarr;</a></p>
+      </div>
+    </div>
+
+    <header class="fixed inset-x-0 top-[34px] z-40 border-b hair bg-[#f4efe6]/90 backdrop-blur-md">
+      <div class="flex items-center justify-between px-5 py-4 sm:px-8">
+        <a href="#main" class="serif text-[22px] italic">Bea’s Salon &amp; Nail Bar</a>
+        <nav class="hidden gap-8 text-[12px] uppercase tracking-[0.16em] md:flex"><a href="#services">Menu</a><a href="#about">Salon</a><a href="#location">Visit</a><a href="#faq">FAQ</a></nav>
+        <a href="#book" class="btn btn-ink !py-2.5 !px-5">Book a chair</a>
+      </div>
+    </header>
+
+    <main id="main" class="pt-[92px]">
+      <section class="px-5 pb-20 pt-20 sm:px-8 md:pb-32 md:pt-32">
+        <p class="text-[12px] uppercase tracking-[0.2em] text-stone-500">Hair · Nails · Lashes &middot; Quezon City</p>
+        <h1 class="serif mt-10 text-[clamp(3.5rem,13vw,13rem)] leading-[0.85] tracking-[-0.02em]">Bea’s<br /><span class="italic font-normal">Salon &amp; Nail Bar</span></h1>
+        <div class="mt-16 grid gap-10 border-t hair pt-10 md:grid-cols-12">
+          <p class="serif text-[clamp(1.5rem,2.8vw,2.4rem)] leading-tight md:col-span-7">Hair, nails, and lashes in Kamuning. Book a chair, skip the wait.</p>
+          <div class="md:col-span-5 md:pl-10"><p class="text-[16px] leading-relaxed text-stone-600">Six chairs, four nail stations, and stylists who have been here for years. Pick your service and your time, and your chair is ready when you walk in.</p><div class="mt-8 flex flex-wrap gap-3"><a href="#book" class="btn btn-ink">Book a chair</a><a href="tel:+639205550177" class="btn btn-line">Call</a></div></div>
+        </div>
+      </section>
+
+      <section id="services" class="border-t hair px-5 py-20 sm:px-8 md:py-32">
+        <div class="grid gap-12 md:grid-cols-12">
+          <div class="md:col-span-4"><p class="text-[12px] uppercase tracking-[0.2em] text-stone-500">Menu</p><h2 class="serif mt-6 text-[clamp(2.5rem,5vw,5rem)] leading-none">Services<br /><span class="italic">&amp; prices</span></h2><p class="mt-8 max-w-xs text-[15px] leading-relaxed text-stone-600">What you see here is what you pay at the counter. &ldquo;From&rdquo; means we check your hair first and quote before starting.</p></div>
+          <ul class="md:col-span-8 md:pt-4">
+<li class="leader py-4 text-[19px]"><span>Haircut &amp; blow-dry <span class="text-[13px] text-stone-500">45 min</span></span><span class="tabular-nums">₱350</span></li>
+<li class="leader py-4 text-[19px]"><span>Hair color (full) <span class="text-[13px] text-stone-500">2 hr</span></span><span class="tabular-nums">from ₱1,800</span></li>
+<li class="leader py-4 text-[19px]"><span>Brazilian blowout <span class="text-[13px] text-stone-500">2–3 hr</span></span><span class="tabular-nums">from ₱2,500</span></li>
+<li class="leader py-4 text-[19px]"><span>Rebond <span class="text-[13px] text-stone-500">3–4 hr</span></span><span class="tabular-nums">from ₱3,000</span></li>
+<li class="leader py-4 text-[19px]"><span>Gel manicure &amp; pedicure <span class="text-[13px] text-stone-500">75 min</span></span><span class="tabular-nums">₱750</span></li>
+<li class="leader py-4 text-[19px]"><span>Classic lash extensions <span class="text-[13px] text-stone-500">90 min</span></span><span class="tabular-nums">₱1,200</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" class="border-t hair px-5 py-20 sm:px-8 md:py-32">
+        <h2 class="serif max-w-3xl text-[clamp(2.5rem,5vw,5rem)] leading-none">Why regulars keep coming back</h2>
+        <div class="mt-20 grid gap-14 md:grid-cols-3">
+<div><p class="serif text-[64px] italic leading-none text-stone-400">1</p><h3 class="serif mt-4 text-[32px] leading-tight">Your stylist, every time</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-600">Book with the same person. Ate Bea, Jen, and Rico each have their own regulars.</p></div>
+<div><p class="serif text-[64px] italic leading-none text-stone-400">2</p><h3 class="serif mt-4 text-[32px] leading-tight">Real prices, posted</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-600">Rebond, color, and nail prices are on this page. What you see here is what you pay at the counter.</p></div>
+<div><p class="serif text-[64px] italic leading-none text-stone-400">3</p><h3 class="serif mt-4 text-[32px] leading-tight">Open till 8pm</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-600">Come after work. Last booking is 7:00 PM on weekdays.</p></div>
+        </div>
+      </section>
+
+      <section id="book" class="bg-[#17130f] px-5 py-20 text-[#f4efe6] sm:px-8 md:py-32">
+        <div class="grid gap-16 md:grid-cols-12">
+          <div class="md:col-span-5"><p class="text-[12px] uppercase tracking-[0.2em] text-stone-400">Reservations</p><h2 class="serif mt-6 text-[clamp(2.5rem,5vw,5rem)] leading-none">Book<br /><span class="italic">a chair.</span></h2><p class="mt-8 max-w-sm text-[16px] leading-relaxed text-stone-400">Pick your service, your stylist, and your time. Confirmation by text, usually within the hour.</p></div>
+          <div class="md:col-span-7">
+          <form id="bookingForm" class="" novalidate>
+            <div class="grid gap-x-8 gap-y-7 sm:grid-cols-2">
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">Your name<input type="text" name="name" required autocomplete="name" class="field" placeholder="Juan dela Cruz" /></label>
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">Mobile number<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" class="field" placeholder="0917 000 0000" /></label>
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400 sm:col-span-2">Service<select name="service" required class="field">
+                <option>Haircut &amp; blow-dry</option>
+                <option>Hair color</option>
+                <option>Brazilian blowout</option>
+                <option>Rebond</option>
+                <option>Gel mani-pedi</option>
+                <option>Lash extensions</option>
+              </select></label>
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">Preferred date<input type="date" name="date" required class="field" /></label>
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400">Preferred time<select name="time" required class="field"><option>Morning (9–12)</option><option>Afternoon (1–5)</option><option>Evening (after 5)</option></select></label>
+              <label class="block text-[11px] font-medium uppercase tracking-[0.16em] text-stone-400 sm:col-span-2">Notes <span class="font-normal normal-case tracking-normal opacity-60">(optional)</span><textarea name="notes" rows="2" class="field" placeholder="First visit, allergies, plate number, pet's name…"></textarea></label>
+            </div>
+            <button type="submit" class="btn btn-cream mt-12 w-full sm:w-auto">Send appointment request</button>
+            <p class="mt-4 text-[12.5px] text-stone-500">Demo &mdash; nothing is sent. On a live site this lands in the owner&rsquo;s email and phone instantly.</p>
+            <p id="bookingDone" class="mt-5 hidden text-[15px] font-semibold text-[#f4efe6]" role="status" aria-live="polite">Request received &mdash; on a live site the owner has it now and you&rsquo;d get a text back within the hour.</p>
+          </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="border-t hair px-5 py-20 sm:px-8 md:py-32">
+        <div class="grid gap-16 md:grid-cols-2">
+<figure><blockquote class="serif text-[clamp(1.6rem,3vw,2.4rem)] italic leading-tight">&ldquo;Booked Jen for color through the site, walked in at 2, walked out at 4. No waiting on the bench for once.&rdquo;</blockquote><figcaption class="mt-6 text-[12px] uppercase tracking-[0.16em] text-stone-500">Trisha M. &middot; sample review</figcaption></figure>
+<figure><blockquote class="serif text-[clamp(1.6rem,3vw,2.4rem)] italic leading-tight">&ldquo;The gel mani lasted three weeks. Prices are exactly what the website says.&rdquo;</blockquote><figcaption class="mt-6 text-[12px] uppercase tracking-[0.16em] text-stone-500">Karla P. &middot; sample review</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="location" class="grid border-t hair md:grid-cols-2">
+        <div class="px-5 py-20 sm:px-8 md:py-32">
+          <p class="text-[12px] uppercase tracking-[0.2em] text-stone-500">Visit</p>
+          <h2 class="serif mt-6 text-[clamp(2.5rem,5vw,5rem)] leading-none">Quezon City</h2>
+          <address class="mt-8 not-italic text-[16px] leading-relaxed text-stone-600">45 K-1st St., Kamuning, Quezon City<br />Beside 7-Eleven, two doors from Kamuning Bakery</address>
+          <ul class="mt-10">
+<li class="leader py-3 text-[16px]"><span>Monday – Saturday</span><span>10:00 AM – 8:00 PM</span></li>
+<li class="leader py-3 text-[16px]"><span>Sunday</span><span>10:00 AM – 6:00 PM</span></li>
+<li class="leader py-3 text-[16px]"><span>Holidays</span><span>Check Facebook for hours</span></li>
+          </ul>
+          <div class="mt-10 flex flex-wrap gap-3"><a href="tel:+639205550177" class="btn btn-ink">Call</a><a href="viber://chat?number=%2B639205550177" class="btn btn-line">Viber</a><a href="https://m.me/beassalonqc" rel="noopener" class="btn btn-line">Messenger</a><a href="https://www.google.com/maps/search/?api=1&query=K-1st+St,+Kamuning,+Quezon+City,+Metro+Manila" rel="noopener" class="btn btn-line">Directions</a></div>
+        </div>
+        <div class="border-t hair md:border-l md:border-t-0"><iframe title="Map to Bea’s Salon &amp; Nail Bar" src="https://www.google.com/maps?q=K-1st+St,+Kamuning,+Quezon+City,+Metro+Manila&output=embed" class="h-[380px] w-full grayscale md:h-full md:min-h-[600px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </section>
+
+      <section id="faq" class="border-t hair px-5 py-20 sm:px-8 md:py-32">
+        <div class="grid gap-10 md:grid-cols-12"><p class="text-[12px] uppercase tracking-[0.2em] text-stone-500 md:col-span-3">Questions</p><div class="md:col-span-9">
+<details class="group border-t hair py-6"><summary class="serif flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-tight">Can I request a specific stylist?<span class="text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-600">Yes — pick them in the booking form. If they are full that day, we will message you with the next slot.</p></details>
+<details class="group border-t hair py-6"><summary class="serif flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-tight">Do you take walk-ins?<span class="text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-600">Yes, but booked clients go first. On Saturdays the wait can be an hour.</p></details>
+<details class="group border-t hair py-6"><summary class="serif flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-tight">Do you do home service?<span class="text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-600">For bridal and events only. Message us for a quote.</p></details>
+        </div></div>
+      </section>
+    </main>
+
+    <footer class="border-t hair px-5 py-10 sm:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-6 text-[13px] text-stone-600"><p class="serif text-[20px] italic text-[#17130f]">Bea’s Salon &amp; Nail Bar</p><p class="">Demo site by <a href="/" class="underline underline-offset-4">Ruther Bergonia</a> &middot; <a href="/services/" class="underline underline-offset-4">LocalBiz Digital Hub</a></p></div>
+    </footer>
+    <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t bg-[#f4efe6]/95 border-[#17130f] p-3 backdrop-blur-md md:hidden">
+      <a href="tel:+639205550177" class="btn btn-line !py-3">Call</a>
+      <a href="#book" class="btn btn-ink !py-3">Book a chair</a>
+    </div>
+    <div class="h-16 md:hidden" aria-hidden="true"></div>
+
+    <script>
+      // Demo only: pretend to submit. A live site posts to the owner's inbox.
+      (function () {
+        var f = document.getElementById("bookingForm"), done = document.getElementById("bookingDone");
+        if (!f) return;
+        f.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          if (!f.reportValidity()) return;
+          done.classList.remove("hidden");
+          f.querySelector("button[type=submit]").disabled = true;
+          done.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+      })();
+    </script>
+  </body>
+</html>
