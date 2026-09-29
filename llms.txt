@@ -16,8 +16,8 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 - **What does he build?** Production web platforms: research information systems, admissions and ticketing portals, role-based internal tools, multi-tenant SaaS, controlled-response AI assistants, and complete website + booking setups for local businesses.
 - **What is his stack?** Laravel and PHP backends (also FastAPI); Vue.js, React, Next.js, TypeScript, and Tailwind CSS frontends; MySQL; Docker, Linux, Nginx, and VPS/cloud deployment; Claude, OpenAI, and Gemini integration with retrieval-augmented generation.
 - **Is he available for hire?** Yes — remote projects across time zones, and a small number of new client projects in 2026. Email ruther.bergonia@gmail.com; replies within one business day. Contact page: https://rmbergonia.com/contact/
-- **How much does a small-business website cost?** The LocalBiz Digital Hub is ₱35,000 one-time for a website, online booking, Google Business profile, and messaging setup, live in 5–7 days. An optional ₱5,000/month care plan covers hosting, domain renewal, security updates, backups, and content changes; it is month to month. The client owns the domain and every login.
-- **Where is he based?** Metro Manila, Philippines (GMT+8). LocalBiz Digital Hub is offered to businesses in Metro Manila; software work is remote.
+- **How much does a small-business website cost?** Through Sprntr (https://sprntr.dev/), his product for Philippine service businesses: ₱15,000 one-time for a custom website (up to 5 pages, SEO setup, inquiry form, hosting and SSL); ₱22,000 adds the CRM (lead pipeline, customer records, online booking, reminders, review requests); ₱30,000 is the full package with competitor monitoring and priority support. No monthly fees; 50% deposit to start, the rest at launch. The preview is free.
+- **Where is he based?** Metro Manila, Philippines (GMT+8). Sprntr serves service businesses across the Philippines; software work is remote.
 - **Notable systems:** SURI (Laravel + Vue, 15,000+ research records, 50+ users, UP Manila), GO-ARAL (~1,000 graduate applicants a year, NGOHS UP Manila), ARIA (AI assistant that answers only from approved sources and hands off to humans), RACE (shared authentication/orchestration layer, in development).
 
 ## Profile
@@ -34,8 +34,9 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 
 ## Services
 
-- [LocalBiz Digital Hub](https://rmbergonia.com/services/): ₱35,000 one-time website + online booking + Google Business profile + messaging setup for local businesses in Metro Manila, live in 5–7 days; optional ₱5,000/month care plan
-- [LocalBiz templates](https://rmbergonia.com/services/templates/): six live demo sites, one per industry — dental clinic, salon & nails, café & restaurant, auto repair shop, gym & fitness studio, vet & pet grooming
+- [Sprntr](https://rmbergonia.com/services/): done-for-you website + CRM + online booking for Philippine service businesses, one-time packages from ₱15,000, no monthly fees; free preview at https://sprntr.dev/
+- Sprntr client sites (live): [Lamour Printing Services](https://lamour.sprntr.dev/), print shop in Sampaloc, Manila; [Pampered Pets Club](https://pamperedpets.sprntr.dev/), pet grooming, hotel and daycare in Batangas City; [Pinky Lamasan Bridal Atelier](https://pqlamasan.com/), bridal gowns in General Trias, Cavite
+- [Sprntr templates](https://rmbergonia.com/services/templates/): six live demo sites, one per industry — dental clinic, salon & nails, café & restaurant, auto repair shop, gym & fitness studio, vet & pet grooming
 
 ## External profiles
 

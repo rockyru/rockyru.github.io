@@ -6,7 +6,7 @@
     <title>Ruther Bergonia — Software Systems Architect & Full-Stack Engineer, Manila</title>
     <meta
       name="description"
-      content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, and complete digital setups for local businesses from ₱35,000."
+      content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, and done-for-you websites and CRM for local businesses through Sprntr, from ₱15,000."
     />
     <meta name="author" content="Ruther Bergonia" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Ruther Bergonia — Systems That Hold Under Load" />
     <meta
       property="og:description"
-      content="Institutional platforms managing 15,000+ records in production. Complete digital setups for local businesses from ₱35,000."
+      content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000."
     />
     <meta property="og:image" content="https://rmbergonia.com/images/og-default.png" />
     <meta property="og:image:width" content="1200" />
@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Ruther Bergonia — Systems That Hold Under Load" />
     <meta
       name="twitter:description"
-      content="Institutional platforms managing 15,000+ records in production. Complete digital setups for local businesses from ₱35,000."
+      content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000."
     />
     <meta name="twitter:image" content="https://rmbergonia.com/images/og-default.png" />
 
@@ -191,16 +191,18 @@
         },
         {
           "@type": "Service",
-          "@id": "https://rmbergonia.com/services/#localbiz",
-          "name": "LocalBiz Digital Hub",
+          "@id": "https://rmbergonia.com/services/#sprntr",
+          "name": "Sprntr",
+          "url": "https://sprntr.dev/",
           "provider": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
-          "areaServed": { "@type": "City", "name": "Manila", "addressCountry": "PH" },
-          "description": "A complete digital setup for a local business: website, online booking, Google Business profile, and messaging \u2014 built and launched in 5 to 7 days.",
+          "areaServed": { "@type": "Country", "name": "Philippines" },
+          "description": "A done-for-you website connected to one workspace for inquiries, follow-up, and bookings, for Philippine service businesses. One-time packages, hosting included, no monthly fees.",
           "offers": {
-            "@type": "Offer",
-            "price": "35000",
+            "@type": "AggregateOffer",
+            "lowPrice": "15000",
+            "highPrice": "30000",
             "priceCurrency": "PHP",
-            "url": "https://rmbergonia.com/services/"
+            "url": "https://sprntr.dev/build"
           }
         }
       ]

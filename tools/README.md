@@ -1,77 +1,48 @@
-# tools/
+# Sprntr industry templates
 
-## `gen-templates.py` — LocalBiz Digital Hub demo sites
-
-Generates the six demo sites under `services/templates/<slug>/index.html`
-that the **Templates** section on `/services/` links to. Each demo is a
-fictional Metro Manila business showing the full LocalBiz deliverable
-(services & prices, booking form, click-to-call / Viber / Messenger, hours
-and map, reviews, FAQ) in a design built for that trade.
-
-The pages are **`noindex, nofollow`** on purpose and are not in
-`sitemap.xml`: the businesses, prices, and reviews are made up.
-
-### Run
+Generate the six fictional demo sites with Python 3:
 
 ```sh
 python3 tools/gen-templates.py
-npx tailwindcss@3 -c tailwind.config.js -i tailwind.source.css -o assets/tailwind.css --minify
 ```
 
-No dependencies beyond Python 3. The Tailwind rebuild is required after
-any run because the compiled stylesheet only includes classes it finds in
-the HTML (`tailwind.config.js` scans `services/**/*.html`).
+The generator is deterministic. Each page remains `noindex, nofollow`.
+The businesses, prices, and reviews are fictional. Forms validate locally;
+they never submit or create an appointment.
 
-Output is deterministic — running it twice with no changes produces no
-diff, so `git status` tells you whether an edit actually changed a page.
+## Editing
 
-### Layout of the script
+- `gen-templates.py`: business data, metadata, accessible booking form, and demo submission behavior.
+- `template-designs.py`: six separate page compositions, photography, section renderers, and mobile navigation.
+- `../assets/templates/industries.css`: shared basics followed by clearly marked industry styles and responsive layouts.
+- `../services/templates/index.html`: manually maintained gallery with preview images in `assets/templates/`.
 
-| Part | What it is |
-|---|---|
-| `INDUSTRIES` | One `dict` per demo. All the words, prices, hours, and colours live here. |
-| `head()`, `demo_bar()`, `form()`, `map_iframe()`, `mobile_bar()`, `footer_credit()`, `SCRIPT` | Shared pieces every design uses. Change the booking form here and all six pages pick it up. |
-| `dental()`, `salon()`, `cafe()`, `auto()`, `fitness()`, `pet()` | One render function per design. Each returns a full HTML document and carries its own `<style>` block and Google Fonts request. |
-| `RENDER` | Maps a slug to its render function. |
+Design directions:
 
-### The data fields
+| Industry | Composition |
+| --- | --- |
+| Dental | Four pages (landing, services, FAQs, contact): monochrome editorial type, expanding care rows, price tiles, smile gallery, drawer navigation |
+| Salon | Burgundy editorial masthead, asymmetric image and service list |
+| Café | Immersive photography, printed menu, coffee story |
+| Auto | Dark workshop, yellow signage, process-first layout and technical pricing |
+| Fitness | Lime campaign poster, schedule-first layout, membership cards |
+| Pet | Overlapping pet portraits, pastel care pathways, rounded surfaces |
 
-| Field | Used for |
-|---|---|
-| `slug` | Output folder and URL: `services/templates/<slug>/` |
-| `industry` | Demo bar and page title |
-| `name`, `tagline`, `hero_kicker`, `hero_body` | Hero. The salon design splits `name` on the first space (first word roman, rest italic); the café stacks `hero_kicker` split on ` · ` as the headline. |
-| `accent`, `accent_dark`, `tint` | CSS custom properties `--brand`, `--brand-dark`. The auto design overrides these to safety yellow. |
-| `city`, `address`, `landmark`, `map_q` | Hours & location section. `map_q` is the Google Maps query for the embed and the Directions link — keep it a street + area, not a fictional building. |
-| `phone`, `phone_tel`, `messenger`, `viber` | Call / message buttons. `phone_tel` is E.164 (`+63…`). |
-| `book_label`, `verb` | CTA text and the submit button ("Send *visit* request"). |
-| `about_title`, `about` | "Why us" heading and three `(title, body)` tuples. |
-| `services` | Six `(name, price, note)` tuples. Use `"from ₱…"` when the price depends on inspection. |
-| `booking_options` | `<option>`s in the booking form. The fitness design also shows the first five as "this week's schedule". |
-| `hours` | `(days, times)` tuples. The first row is the one shown in hero/facts strips. |
-| `reviews` | Two `(name, quote)` tuples, labelled "sample review" on the page. |
-| `faqs` | Three `(question, answer)` tuples. |
+Industry styling uses regular CSS, so design changes do not need a Tailwind
+rebuild. Existing shared form utilities use the checked-in Tailwind stylesheet.
+Photography loads from Unsplash; fonts load from Google Fonts. Both have local
+layout/color or font fallbacks. Gallery previews are local screenshots.
 
-### Adding an industry
+After editing, regenerate the pages and check desktop and narrow mobile sizes,
+anchor navigation, the mobile menu (including Escape), FAQ disclosures, invalid
+form submissions, and valid demo submissions. Schedule booking links preselect
+the corresponding class. All booking forms prevent past preferred dates.
 
-1. Add a dict to `INDUSTRIES` with a new `slug`.
-2. Either reuse a design (`RENDER["new-slug"] = dental`) or write a new
-   render function following the same shape: `head(...) + body + SCRIPT`.
-3. Run the two commands above.
-4. Add a card by hand to the grids in `services/index.html` (the
-   **Templates** section) and `services/templates/index.html` — those
-   cards are not generated.
+To add an industry, add its data, create its composition, register it in `RENDER`,
+and add a gallery card. Give it a deliberate layout rather than copying a whole
+existing page and changing its palette.
 
-### Changing a design
-
-Each render function's `css` string holds the design's tokens: body
-background, type family, `.field` (form inputs), `.btn*` variants. Layout
-uses Tailwind utilities inline. Keep sections full-width (`px-5 sm:px-8`,
-no `max-w-*` container) to match the rest of the set.
-
-### Demo behaviour
-
-The booking form does not post anywhere: `SCRIPT` intercepts submit,
-validates, and shows the "Request received" line. The note under the
-button says so. On a client's real site this is replaced with the
-email/notification handler.
+Dental-specific styling lives in `assets/templates/dental.css` and its navigation, care rows,
+booking form, and `?service=` preselect in `assets/templates/dental.js`. Its visual direction
+is inspired by Bogdan Nikitin / Nixtio’s Dental Clinic Website Design on Dribbble
+(shot 20034563), using original implementation and independent stock photography.

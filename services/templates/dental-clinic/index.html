@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marikina Smile Dental — Dental clinic website template</title>
-    <meta name="description" content="Demo of the LocalBiz Digital Hub for a dental clinic: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
+    <meta name="description" content="Demo of a Sprntr website for a dental clinic: services and prices, online booking, click-to-call, hours and map. From ₱15,000 one-time, no monthly fees." />
     <meta name="author" content="Ruther Bergonia" />
     <!-- Demo of a fictional business: kept out of search on purpose. -->
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://rmbergonia.com/services/templates/dental-clinic/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Marikina Smile Dental — Dental clinic website template" />
-    <meta property="og:description" content="Demo of the LocalBiz Digital Hub for a dental clinic: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
-    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:description" content="Demo of a Sprntr website for a dental clinic: services and prices, online booking, click-to-call, hours and map. From ₱15,000 one-time, no monthly fees." />
+    <meta name="theme-color" content="#111111" />
     <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <style>
       :root { --brand: #0f766e; --brand-dark: #115e59; }
@@ -24,182 +24,7 @@
       [id] { scroll-margin-top: 110px; }
       a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
-      body { background: #fff; color: #0f172a; font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
-      .hair { border-color: #e7e5e4; }
-      .field { display:block; width:100%; border:0; border-bottom:1px solid #d6d3d1; background:transparent; padding:.7rem 0; font-size:17px; color:#0f172a; border-radius:0; }
-      .field:focus { outline:none; border-bottom-color: var(--brand); }
-      .brand { color: var(--brand); }
-      .btn { display:inline-flex; align-items:center; justify-content:center; gap:.6rem; padding:1rem 1.75rem; font-size:14px; font-weight:600; letter-spacing:.02em; transition: background .2s, color .2s; }
-      .btn-solid { background: var(--brand); color:#fff; } .btn-solid:hover { background: var(--brand-dark); }
-      .btn-line { border:1px solid #0f172a; color:#0f172a; } .btn-line:hover { background:#0f172a; color:#fff; }
-    
+
     </style>
-  </head>
-  <body>
-    <div class="fixed inset-x-0 top-0 z-50 bg-stone-900 text-white">
-      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-2 text-[12px] sm:px-8">
-        <p class="flex items-center gap-2 font-medium"><span class="block h-4 w-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span><span><span class="hidden sm:inline">Demo &middot; </span>LocalBiz Digital Hub &middot; Dental clinic &middot; <span class="text-stone-400">Marikina Smile Dental is fictional</span></span></p>
-        <p class="flex items-center gap-4 font-semibold"><a href="/services/templates/" class="text-stone-400 underline-offset-4 hover:underline">All templates</a><a href="/services/#pricing" class="underline underline-offset-4">Get this for your business &mdash; &#8369;35,000 &rarr;</a></p>
-      </div>
-    </div>
-
-    <header class="fixed inset-x-0 top-[34px] z-40 border-b hair bg-white/90 backdrop-blur-md">
-      <div class="flex items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#main" class="text-[15px] font-semibold tracking-tight">Marikina Smile Dental</a>
-        <nav class="hidden gap-8 text-[14px] text-stone-500 md:flex"><a href="#services" class="hover:text-stone-900">Treatments</a><a href="#about" class="hover:text-stone-900">Clinic</a><a href="#location" class="hover:text-stone-900">Visit</a><a href="#faq" class="hover:text-stone-900">FAQ</a></nav>
-        <div class="flex items-center gap-6"><a href="tel:+639175550142" class="hidden text-[14px] font-medium sm:block">0917 555 0142</a><a href="#book" class="btn btn-solid !py-2.5 !px-5">Book a visit</a></div>
-      </div>
-    </header>
-
-    <main id="main" class="pt-[92px]">
-      <section class="px-5 pb-24 pt-24 sm:px-8 md:pb-40 md:pt-40">
-        <p class="brand text-[13px] font-semibold uppercase tracking-[0.18em]">Family &amp; cosmetic dentistry</p>
-        <h1 class="mt-8 max-w-[14ch] text-[clamp(2.8rem,8.5vw,8.5rem)] font-light leading-[0.98] tracking-[-0.03em]">Gentle dentistry for the whole family, five minutes from Riverbanks.</h1>
-        <div class="mt-16 grid gap-10 md:grid-cols-12">
-          <p class="max-w-md text-[18px] leading-relaxed text-stone-500 md:col-span-5">Cleanings, fillings, braces, and whitening in a clinic that runs on time. Walk-ins welcome; booked patients are seen first.</p>
-          <div class="flex flex-wrap gap-3 md:col-span-7 md:justify-end md:self-end"><a href="#book" class="btn btn-solid">Book a visit</a><a href="tel:+639175550142" class="btn btn-line">Call 0917 555 0142</a></div>
-        </div>
-      </section>
-
-      <section class="grid border-y hair md:grid-cols-3">
-        <div class="border-b hair p-8 md:border-b-0 md:border-r"><p class="text-[12px] uppercase tracking-[0.16em] text-stone-400">Hours</p><p class="mt-3 text-[18px] font-medium">Monday – Friday<br />9:00 AM – 6:00 PM</p></div>
-        <div class="border-b hair p-8 md:border-b-0 md:border-r"><p class="text-[12px] uppercase tracking-[0.16em] text-stone-400">Location</p><p class="mt-3 text-[18px] font-medium">Unit 2F, 118 J.P. Rizal St., Sta. Elena, Marikina City</p></div>
-        <div class="p-8"><p class="text-[12px] uppercase tracking-[0.16em] text-stone-400">Reach us</p><p class="mt-3 flex flex-wrap gap-x-6 text-[18px] font-medium"><a href="tel:+639175550142" class="hover:underline">Call</a><a href="viber://chat?number=%2B639175550142" class="hover:underline">Viber</a><a href="https://m.me/marikinasmile" rel="noopener" class="hover:underline">Messenger</a></p></div>
-      </section>
-
-      <section id="services" class="px-5 py-24 sm:px-8 md:py-40">
-        <div class="grid gap-10 md:grid-cols-12"><p class="brand text-[13px] font-semibold uppercase tracking-[0.18em] md:col-span-3">Treatments &amp; prices</p><h2 class="text-[clamp(2rem,4.5vw,4rem)] font-light leading-[1.02] tracking-[-0.03em] md:col-span-9">What you pay is what&rsquo;s written here.</h2></div>
-        <ul class="mt-20 border-b hair">
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">01</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Consultation &amp; check-up</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">20 min</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">₱500</p>
-          </li>
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">02</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Oral prophylaxis (cleaning)</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">45 min</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">₱1,200</p>
-          </li>
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">03</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Tooth-colored filling</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">per tooth</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">from ₱1,500</p>
-          </li>
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">04</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Tooth extraction</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">per tooth</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">from ₱1,500</p>
-          </li>
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">05</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Teeth whitening</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">90 min</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">₱8,000</p>
-          </li>
-          <li class="grid gap-2 border-t hair py-7 md:grid-cols-12 md:items-baseline">
-            <p class="text-[13px] text-stone-400 md:col-span-2">06</p>
-            <p class="text-[22px] font-medium tracking-tight md:col-span-6">Metal braces</p>
-            <p class="text-[14px] text-stone-500 md:col-span-2">installment available</p>
-            <p class="text-[22px] font-medium tabular-nums md:col-span-2 md:text-right">from ₱35,000</p>
-          </li>
-        </ul>
-      </section>
-
-      <section id="about" class="bg-stone-50 px-5 py-24 sm:px-8 md:py-40">
-        <h2 class="max-w-3xl text-[clamp(2rem,4.5vw,4rem)] font-light leading-[1.02] tracking-[-0.03em]">Why patients stay with us</h2>
-        <div class="mt-20 grid gap-12 md:grid-cols-3">
-          <div class="border-t hair pt-8"><p class="text-[13px] text-stone-400">01</p><h3 class="mt-4 text-[24px] font-medium tracking-tight">On-time appointments</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-500">Your slot is your slot. We book with gaps so you are not waiting an hour past your time.</p></div>
-          <div class="border-t hair pt-8"><p class="text-[13px] text-stone-400">02</p><h3 class="mt-4 text-[24px] font-medium tracking-tight">Prices before treatment</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-500">You see the cost on this page and on the chair before anything starts. No surprise add-ons.</p></div>
-          <div class="border-t hair pt-8"><p class="text-[13px] text-stone-400">03</p><h3 class="mt-4 text-[24px] font-medium tracking-tight">Same dentist every time</h3><p class="mt-4 text-[16px] leading-relaxed text-stone-500">Dr. Reyes and Dr. Tan see their own patients, so nobody re-explains their history.</p></div>
-        </div>
-      </section>
-
-      <section id="book" class="px-5 py-24 sm:px-8 md:py-40">
-        <div class="grid gap-16 md:grid-cols-12">
-          <div class="md:col-span-5"><p class="brand text-[13px] font-semibold uppercase tracking-[0.18em]">Online booking</p><h2 class="mt-6 text-[clamp(2rem,4.5vw,4rem)] font-light leading-[1.02] tracking-[-0.03em]">Book a visit.</h2><p class="mt-8 max-w-md text-[17px] leading-relaxed text-stone-500">Pick a treatment and a time. Your request reaches us the moment you send it; we confirm by text within the hour.</p></div>
-          <div class="md:col-span-7">
-          <form id="bookingForm" class="" novalidate>
-            <div class="grid gap-x-8 gap-y-7 sm:grid-cols-2">
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400">Your name<input type="text" name="name" required autocomplete="name" class="field" placeholder="Juan dela Cruz" /></label>
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400">Mobile number<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" class="field" placeholder="0917 000 0000" /></label>
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400 sm:col-span-2">Service<select name="service" required class="field">
-                <option>Consultation &amp; check-up</option>
-                <option>Cleaning</option>
-                <option>Filling</option>
-                <option>Extraction</option>
-                <option>Whitening</option>
-                <option>Braces consultation</option>
-              </select></label>
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400">Preferred date<input type="date" name="date" required class="field" /></label>
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400">Preferred time<select name="time" required class="field"><option>Morning (9–12)</option><option>Afternoon (1–5)</option><option>Evening (after 5)</option></select></label>
-              <label class="block text-[12px] font-medium uppercase tracking-[0.14em] text-stone-400 sm:col-span-2">Notes <span class="font-normal normal-case tracking-normal opacity-60">(optional)</span><textarea name="notes" rows="2" class="field" placeholder="First visit, allergies, plate number, pet's name…"></textarea></label>
-            </div>
-            <button type="submit" class="btn btn-solid mt-12 w-full sm:w-auto">Send visit request</button>
-            <p class="mt-4 text-[12.5px] text-stone-400">Demo &mdash; nothing is sent. On a live site this lands in the owner&rsquo;s email and phone instantly.</p>
-            <p id="bookingDone" class="mt-5 hidden text-[15px] font-semibold brand" role="status" aria-live="polite">Request received &mdash; on a live site the owner has it now and you&rsquo;d get a text back within the hour.</p>
-          </form>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" class="bg-stone-50 px-5 py-24 sm:px-8 md:py-40">
-        <p class="brand text-[13px] font-semibold uppercase tracking-[0.18em]">Patients</p>
-        <div class="mt-12 grid gap-12 md:grid-cols-2">
-<figure class="border-t hair pt-8"><blockquote class="text-[22px] font-light leading-snug tracking-tight">&ldquo;Booked online at 10pm, got a confirmation text in the morning. Cleaning was done by 11. Wala nang hintay.&rdquo;</blockquote><figcaption class="mt-6 text-[13px] text-stone-400">Ana L. &middot; Google review (sample)</figcaption></figure>
-<figure class="border-t hair pt-8"><blockquote class="text-[22px] font-light leading-snug tracking-tight">&ldquo;First clinic where they told me the price of the filling before sitting me down. Coming back for braces.&rdquo;</blockquote><figcaption class="mt-6 text-[13px] text-stone-400">Marco D. &middot; Google review (sample)</figcaption></figure>
-        </div>
-      </section>
-
-      <section id="location" class="grid md:grid-cols-2">
-        <div class="px-5 py-24 sm:px-8 md:py-40">
-          <p class="brand text-[13px] font-semibold uppercase tracking-[0.18em]">Visit</p>
-          <h2 class="mt-6 text-[clamp(2rem,4.5vw,4rem)] font-light leading-[1.02] tracking-[-0.03em]">Marikina City</h2>
-          <address class="mt-8 not-italic text-[17px] leading-relaxed text-stone-500">Unit 2F, 118 J.P. Rizal St., Sta. Elena, Marikina City<br />Above Mercury Drug, across from Marikina Sports Center</address>
-          <ul class="mt-10 border-b hair text-[16px]">
-<li class="flex justify-between border-t hair py-4"><span class="text-stone-500">Monday – Friday</span><span class="font-medium">9:00 AM – 6:00 PM</span></li>
-<li class="flex justify-between border-t hair py-4"><span class="text-stone-500">Saturday</span><span class="font-medium">9:00 AM – 4:00 PM</span></li>
-<li class="flex justify-between border-t hair py-4"><span class="text-stone-500">Sunday</span><span class="font-medium">Closed</span></li>
-          </ul>
-          <div class="mt-10 flex flex-wrap gap-3"><a href="tel:+639175550142" class="btn btn-solid">Call 0917 555 0142</a><a href="https://www.google.com/maps/search/?api=1&query=J.P.+Rizal+St,+Santa+Elena,+Marikina,+Metro+Manila" rel="noopener" class="btn btn-line">Directions</a></div>
-        </div>
-        <iframe title="Map to Marikina Smile Dental" src="https://www.google.com/maps?q=J.P.+Rizal+St,+Santa+Elena,+Marikina,+Metro+Manila&output=embed" class="h-[380px] w-full md:h-full md:min-h-[600px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-      </section>
-
-      <section id="faq" class="px-5 py-24 sm:px-8 md:py-40">
-        <div class="grid gap-10 md:grid-cols-12"><p class="brand text-[13px] font-semibold uppercase tracking-[0.18em] md:col-span-3">Questions</p><div class="md:col-span-9">
-          <details class="group border-t hair py-6"><summary class="flex cursor-pointer items-baseline justify-between gap-8 text-[20px] font-medium tracking-tight">Do you accept HMO?<span class="brand text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-500">Yes — Maxicare, Intellicare, and PhilCare for consultation and cleaning. Bring your card and a valid ID.</p></details>
-          <details class="group border-t hair py-6"><summary class="flex cursor-pointer items-baseline justify-between gap-8 text-[20px] font-medium tracking-tight">Can I bring my kids?<span class="brand text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-500">Yes. Dr. Tan handles pediatric patients and we have a Saturday morning block for families.</p></details>
-          <details class="group border-t hair py-6"><summary class="flex cursor-pointer items-baseline justify-between gap-8 text-[20px] font-medium tracking-tight">Do you offer installment for braces?<span class="brand text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-stone-500">Yes. A ₱10,000 down payment, then monthly during adjustment visits.</p></details>
-        </div></div>
-      </section>
-    </main>
-
-    <footer class="border-t hair px-5 py-10 sm:px-8">
-      <div class="flex flex-wrap items-center justify-between gap-6 text-[13px] text-stone-500"><p><span class="font-semibold text-stone-900">Marikina Smile Dental</span> &middot; Unit 2F, 118 J.P. Rizal St., Sta. Elena, Marikina City</p><p class="">Demo site by <a href="/" class="underline underline-offset-4">Ruther Bergonia</a> &middot; <a href="/services/" class="underline underline-offset-4">LocalBiz Digital Hub</a></p></div>
-    </footer>
-    <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t bg-white/95 border-stone-200 p-3 backdrop-blur-md md:hidden">
-      <a href="tel:+639175550142" class="btn btn-line !py-3">Call</a>
-      <a href="#book" class="btn btn-solid !py-3">Book a visit</a>
-    </div>
-    <div class="h-16 md:hidden" aria-hidden="true"></div>
-
-    <script>
-      // Demo only: pretend to submit. A live site posts to the owner's inbox.
-      (function () {
-        var f = document.getElementById("bookingForm"), done = document.getElementById("bookingDone");
-        if (!f) return;
-        f.addEventListener("submit", function (ev) {
-          ev.preventDefault();
-          if (!f.reportValidity()) return;
-          done.classList.remove("hidden");
-          f.querySelector("button[type=submit]").disabled = true;
-          done.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        });
-      })();
-    </script>
-  </body>
-</html>
+  <link rel="stylesheet" href="/assets/templates/industries.css" /><link rel="stylesheet" href="/assets/templates/dental.css" /></head>
+<body class="industry dental d-pages" data-page="landing"><a class="skip-link" href="#main">Skip to content</a><div class="demo-strip"><span>FICTIONAL DEMO · Dental clinic</span><a href="/services/templates/">All templates ↗</a></div><header class="site-header"><a class="wordmark" href="/services/templates/dental-clinic/" aria-label="Marikina Smile Dental home"><span class="d-logo">MARIKINA<br />SMILE<span>Family &amp; cosmetic dentistry</span></span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="d-navigation">Menu</button><a class="d-header-call" href="tel:+639175550142">Dental emergency? Call 0917 555 0142</a></header><nav id="d-navigation" class="d-navigation" aria-label="Main navigation" hidden><a href="/services/templates/dental-clinic/" aria-current="page"><span>01</span>Landing<span>↗</span></a><a href="/services/templates/dental-clinic/services/"><span>02</span>Services<span>↗</span></a><a href="/services/templates/dental-clinic/faqs/"><span>03</span>FAQs<span>↗</span></a><a href="/services/templates/dental-clinic/contact/"><span>04</span>Contact<span>↗</span></a><a class="d-nav-book" href="/services/templates/dental-clinic/contact/#book">Book a visit ↗</a></nav><main id="main" tabindex="-1"><section class="d-care-stage" aria-label="Welcome to Marikina Smile Dental"><div class="d-portrait"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Woman smiling confidently" width="1600" height="1200" fetchpriority="high" /></div><div class="d-care-rows"><div class="care-row"><button class="care-trigger" aria-expanded="false" aria-controls="care-0" id="care-button-0"><span>01</span>On-time appointments<span class="care-toggle" aria-hidden="true">+</span></button><div id="care-0" class="care-answer" role="region" aria-labelledby="care-button-0" hidden><p>Your slot is your slot. We book with gaps so you are not waiting an hour past your time.</p></div></div><div class="care-row"><button class="care-trigger" aria-expanded="false" aria-controls="care-1" id="care-button-1"><span>02</span>Prices before treatment<span class="care-toggle" aria-hidden="true">+</span></button><div id="care-1" class="care-answer" role="region" aria-labelledby="care-button-1" hidden><p>You see the cost on this page and on the chair before anything starts. No surprise add-ons.</p></div></div><div class="care-row"><button class="care-trigger" aria-expanded="false" aria-controls="care-2" id="care-button-2"><span>03</span>Same dentist every time<span class="care-toggle" aria-hidden="true">+</span></button><div id="care-2" class="care-answer" role="region" aria-labelledby="care-button-2" hidden><p>Dr. Reyes and Dr. Tan see their own patients, so nobody re-explains their history.</p></div></div></div><p class="d-intro">Gentle dentistry for the whole family, five minutes from Riverbanks.</p><div class="d-hero-title"><p>Family &amp; cosmetic dentistry · Marikina City</p><h1>Dental<br />Care</h1></div><div class="d-hero-cta"><h2>We believe in the power<br />of your smile.</h2><p>Free consultation on your first visit</p><a class="button " href="/services/templates/dental-clinic/contact/#book">Book Online <span aria-hidden="true">↗</span></a></div></section><section class="d-prices" aria-labelledby="prices-title"><div class="d-prices-heading"><h2 id="prices-title">Care &amp;<br />prices</h2><p>Every price is on the page before treatment starts. HMO accepted for consultation and cleaning.</p><a class="button " href="/services/templates/dental-clinic/services/">See all services <span aria-hidden="true">↗</span></a></div><ul><li><span>01</span><div><h3>Consultation &amp; check-up</h3><small>20 min</small></div><strong>₱500</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Consultation &amp; check-up">Book <span aria-hidden="true">↗</span></a></li><li><span>02</span><div><h3>Oral prophylaxis (cleaning)</h3><small>45 min</small></div><strong>₱1,200</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Cleaning">Book <span aria-hidden="true">↗</span></a></li><li><span>03</span><div><h3>Tooth-colored filling</h3><small>per tooth</small></div><strong>from ₱1,500</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Filling">Book <span aria-hidden="true">↗</span></a></li><li><span>04</span><div><h3>Tooth extraction</h3><small>per tooth</small></div><strong>from ₱1,500</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Extraction">Book <span aria-hidden="true">↗</span></a></li><li><span>05</span><div><h3>Teeth whitening</h3><small>90 min</small></div><strong>₱8,000</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Whitening">Book <span aria-hidden="true">↗</span></a></li><li><span>06</span><div><h3>Metal braces</h3><small>installment available</small></div><strong>from ₱35,000</strong><a href="/services/templates/dental-clinic/contact/#book" data-service="Braces consultation">Book <span aria-hidden="true">↗</span></a></li></ul></section><section class="d-reviews" aria-label="Sample patient reviews"><figure><blockquote>“Booked online at 10pm, got a confirmation text in the morning. Cleaning was done by 11. Wala nang hintay.”</blockquote><figcaption>Ana L. · sample review</figcaption></figure><figure><blockquote>“First clinic where they told me the price of the filling before sitting me down. Coming back for braces.”</blockquote><figcaption>Marco D. · sample review</figcaption></figure></section><section class="d-visit" aria-label="Visit the clinic"><div class="d-visit-photo"><img class="" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Bright, welcoming dental treatment room" width="1600" height="1200" loading=lazy /></div><div class="d-visit-hours"><h2>Open six<br />days a week</h2><dl><div><dt>Monday – Friday</dt><dd>9:00 AM – 6:00 PM</dd></div><div><dt>Saturday</dt><dd>9:00 AM – 4:00 PM</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl></div><div class="d-visit-where"><h2>Find us</h2><address>Unit 2F, 118 J.P. Rizal St., Sta. Elena, Marikina City<br /><span>Above Mercury Drug, across from Marikina Sports Center</span></address><p><a href="https://www.google.com/maps/search/?api=1&query=J.P.+Rizal+St,+Santa+Elena,+Marikina,+Metro+Manila">Get directions ↗</a><a href="tel:+639175550142">0917 555 0142 ↗</a></p></div></section></main><footer class="d-footer"><nav aria-label="Footer navigation"><a href="/services/templates/dental-clinic/" aria-current="page"><span>01</span>Landing<span>↗</span></a><a href="/services/templates/dental-clinic/services/"><span>02</span>Services<span>↗</span></a><a href="/services/templates/dental-clinic/faqs/"><span>03</span>FAQs<span>↗</span></a><a href="/services/templates/dental-clinic/contact/"><span>04</span>Contact<span>↗</span></a></nav><p>Marikina Smile Dental is a fictional clinic demo · Photography: Unsplash</p><a href="/services/templates/">All templates ↗</a></footer><div class="d-mobile-actions"><a href="tel:+639175550142">Call us</a><a href="/services/templates/dental-clinic/contact/#book">Book a visit</a></div><script src="/assets/templates/dental.js" defer></script></body></html>

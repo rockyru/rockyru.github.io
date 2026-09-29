@@ -27,10 +27,10 @@ render default "Ruther Bergonia" \
   "Laravel, Vue, React, Next.js and AI integration — production platforms for institutions and complete digital setups for local businesses. Metro Manila, Philippines." \
   "Metro Manila · PH" 84px "#111013"
 
-render services "LocalBiz Digital Hub" \
-  "Website, booking, Google profile. <span class=\"accent\">₱35,000.</span>" \
-  "A complete digital setup for a local business — live in 5 to 7 days. Optional ₱5,000/month care plan." \
-  "Metro Manila · PH" 80px "#0f766e"
+render services "Sprntr · sprntr.dev" \
+  "Move business faster. <span class=\"accent\">From ₱15,000.</span>" \
+  "A done-for-you website, inquiries, follow-up and bookings in one workspace. One-time packages, no monthly fees." \
+  "Philippines" 80px "#4d7c0f"
 
 render work "Case studies" \
   "Four systems. Still running." \

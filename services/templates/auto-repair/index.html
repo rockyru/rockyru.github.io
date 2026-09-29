@@ -4,102 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diego’s Auto Care — Auto repair shop website template</title>
-    <meta name="description" content="Demo of the LocalBiz Digital Hub for a auto repair shop: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
+    <meta name="description" content="Demo of a Sprntr website for a auto repair shop: services and prices, online booking, click-to-call, hours and map. From ₱15,000 one-time, no monthly fees." />
     <meta name="author" content="Ruther Bergonia" />
     <!-- Demo of a fictional business: kept out of search on purpose. -->
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://rmbergonia.com/services/templates/auto-repair/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Diego’s Auto Care — Auto repair shop website template" />
-    <meta property="og:description" content="Demo of the LocalBiz Digital Hub for a auto repair shop: services and prices, online booking, click-to-call, hours and map. ₱35,000 one-time, live in 5–7 days." />
-    <meta name="theme-color" content="#facc15" />
+    <meta property="og:description" content="Demo of a Sprntr website for a auto repair shop: services and prices, online booking, click-to-call, hours and map. From ₱15,000 one-time, no monthly fees." />
+    <meta name="theme-color" content="#1d4ed8" />
     <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Barlow+Condensed:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <style>
-      :root { --brand: #facc15; --brand-dark: #eab308; }
+      :root { --brand: #1d4ed8; --brand-dark: #1e40af; }
       html { -webkit-font-smoothing: antialiased; }
       [id] { scroll-margin-top: 110px; }
       a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
-      body { background: #0b0b0c; color: #f5f5f4; font-family: Inter, "Helvetica Neue", sans-serif; }
-      .cond { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
-      .rule { border-color: #2a2a2d; }
-      .y { color: var(--brand); }
-      .field { display:block; width:100%; border:1px solid #3a3a3e; background:#151517; padding:.85rem 1rem; font-size:16px; color:#f5f5f4; border-radius:0; }
-      .field:focus { outline:none; border-color: var(--brand); } .field option { color:#0b0b0c; }
-      .btn { display:inline-flex; align-items:center; justify-content:center; padding:1rem 1.75rem; font-family:"Barlow Condensed", sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; transition: all .2s; }
-      .btn-y { background: var(--brand); color:#0b0b0c; } .btn-y:hover { background:#fff; }
-      .btn-line { border:1px solid #f5f5f4; color:#f5f5f4; } .btn-line:hover { background:#f5f5f4; color:#0b0b0c; }
-    
+
     </style>
-  </head>
-  <body>
-    <div class="fixed inset-x-0 top-0 z-50 bg-white text-stone-900 border-b border-white/10">
-      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-2 text-[12px] sm:px-8">
-        <p class="flex items-center gap-2 font-medium"><span class="block h-4 w-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span><span><span class="hidden sm:inline">Demo &middot; </span>LocalBiz Digital Hub &middot; Auto repair shop &middot; <span class="text-stone-500">Diego’s Auto Care is fictional</span></span></p>
-        <p class="flex items-center gap-4 font-semibold"><a href="/services/templates/" class="text-stone-500 underline-offset-4 hover:underline">All templates</a><a href="/services/#pricing" class="underline underline-offset-4">Get this for your business &mdash; &#8369;35,000 &rarr;</a></p>
-      </div>
-    </div>
+  <link rel="stylesheet" href="/assets/templates/industries.css" /></head>
 
-    <header class="fixed inset-x-0 top-[34px] z-40 border-b rule bg-[#0b0b0c]/90 backdrop-blur-md">
-      <div class="flex items-center justify-between px-5 py-3.5 sm:px-8">
-        <a href="#main" class="cond text-[26px] leading-none">Diego’s Auto Care</a>
-        <nav class="cond hidden gap-8 text-[16px] text-stone-400 md:flex"><a href="#services" class="hover:text-white">Services</a><a href="#about" class="hover:text-white">How we work</a><a href="#location" class="hover:text-white">Shop</a><a href="#faq" class="hover:text-white">FAQ</a></nav>
-        <div class="flex items-center gap-5"><a href="tel:+639185550129" class="cond hidden text-[18px] sm:block">0918 555 0129</a><a href="#book" class="btn btn-y !py-2 !px-5 !text-[16px]">Book a service</a></div>
-      </div>
-    </header>
-
-    <main id="main" class="pt-[90px]">
-      <section class="px-5 pb-16 pt-16 sm:px-8 md:pb-28 md:pt-28">
-        <p class="cond y text-[16px] tracking-[0.08em]">PMS · Brakes · Aircon · Diagnostics</p>
-        <h1 class="cond mt-6 max-w-[16ch] text-[clamp(3.2rem,9.5vw,10rem)] leading-[0.85]">Honest diagnostics, clear quotes, and a text when your car is ready.</h1>
-        <div class="mt-14 grid gap-8 border-t rule pt-8 md:grid-cols-12">
-          <p class="max-w-lg text-[17px] leading-relaxed text-stone-400 md:col-span-7">Preventive maintenance, brakes, aircon, and electrical for Toyota, Mitsubishi, Honda, and Suzuki. Quote before we touch it, photo of the old parts when we&#x27;re done.</p>
-          <div class="flex flex-wrap gap-3 md:col-span-5 md:justify-end"><a href="#book" class="btn btn-y">Book a service</a><a href="tel:+639185550129" class="btn btn-line">Call</a></div>
-        </div>
-      </section>
-
-      <section class="grid border-y rule sm:grid-cols-2 md:grid-cols-4">
-        <div class="border-b rule p-6 sm:border-r md:border-b-0"><p class="cond text-[14px] text-stone-500">Open</p><p class="cond mt-1 text-[24px]">Monday – Saturday, 8:00 AM – 6:00 PM</p></div>
-        <div class="border-b rule p-6 md:border-b-0 md:border-r"><p class="cond text-[14px] text-stone-500">Where</p><p class="cond mt-1 text-[24px]">Caloocan City</p></div>
-        <div class="border-b rule p-6 sm:border-b-0 sm:border-r"><p class="cond text-[14px] text-stone-500">Quote</p><p class="cond mt-1 text-[24px]">Before any work</p></div>
-        <div class="p-6"><p class="cond text-[14px] text-stone-500">Message</p><p class="cond mt-1 flex gap-5 text-[24px]"><a href="viber://chat?number=%2B639185550129" class="y">Viber</a><a href="https://m.me/diegosautocare" rel="noopener" class="y">Messenger</a></p></div>
-      </section>
-
-      <section id="services" class="px-5 py-16 sm:px-8 md:py-28">
-        <h2 class="cond text-[clamp(2.5rem,7vw,7rem)] leading-none">Services <span class="text-stone-500">&amp;</span> prices</h2>
-        <ul class="mt-12 border-b rule">
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">01</p><p class="cond text-[30px] md:col-span-7">PMS (oil, filter, 21-point check)</p><p class="text-[14px] text-stone-400 md:col-span-2">1.5 hr</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">from ₱1,800</p></li>
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">02</p><p class="cond text-[30px] md:col-span-7">Brake pads (front pair)</p><p class="text-[14px] text-stone-400 md:col-span-2">2 hr</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">from ₱2,500</p></li>
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">03</p><p class="cond text-[30px] md:col-span-7">Aircon cleaning &amp; recharge</p><p class="text-[14px] text-stone-400 md:col-span-2">2 hr</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">from ₱2,000</p></li>
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">04</p><p class="cond text-[30px] md:col-span-7">Computer diagnostics</p><p class="text-[14px] text-stone-400 md:col-span-2">free with repair</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">₱800</p></li>
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">05</p><p class="cond text-[30px] md:col-span-7">Battery replacement</p><p class="text-[14px] text-stone-400 md:col-span-2">30 min</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">from ₱4,500</p></li>
-<li class="grid gap-2 border-t rule py-6 md:grid-cols-12 md:items-baseline"><p class="cond text-[14px] text-stone-500 md:col-span-1">06</p><p class="cond text-[30px] md:col-span-7">Wheel alignment</p><p class="text-[14px] text-stone-400 md:col-span-2">45 min</p><p class="cond y text-[30px] tabular-nums md:col-span-2 md:text-right">₱1,200</p></li>
-        </ul>
-        <p class="mt-6 text-[14px] text-stone-500">&ldquo;From&rdquo; means the part price depends on your model. You get the exact number on Messenger before we start.</p>
-      </section>
-
-      <section id="about" class="border-t rule px-5 py-16 sm:px-8 md:py-28">
-        <h2 class="cond text-[clamp(2.5rem,7vw,7rem)] leading-none">How the shop works</h2>
-        <div class="mt-14 grid gap-10 md:grid-cols-3">
-<div class="border-t rule pt-6 md:border-l md:border-t-0 md:pl-8"><p class="cond y text-[14px]">Rule 01</p><h3 class="cond mt-4 text-[34px] leading-none">Quote first, always</h3><p class="mt-5 text-[15.5px] leading-relaxed text-stone-400">You approve the price on Messenger or by text before any work starts. No &#x27;nadagdagan po&#x27;.</p></div>
-<div class="border-t rule pt-6 md:border-l md:border-t-0 md:pl-8"><p class="cond y text-[14px]">Rule 02</p><h3 class="cond mt-4 text-[34px] leading-none">Photos of what we replaced</h3><p class="mt-5 text-[15.5px] leading-relaxed text-stone-400">Old parts, new parts, side by side, sent to your phone. You know exactly what you paid for.</p></div>
-<div class="border-t rule pt-6 md:border-l md:border-t-0 md:pl-8"><p class="cond y text-[14px]">Rule 03</p><h3 class="cond mt-4 text-[34px] leading-none">Book a bay, not a queue</h3><p class="mt-5 text-[15.5px] leading-relaxed text-stone-400">Pick a morning or afternoon slot online. Your bay is held; you&#x27;re not fifth in line.</p></div>
-        </div>
-      </section>
-
-      <section id="book" class="border-t rule bg-[#111113] px-5 py-16 sm:px-8 md:py-28">
-        <div class="grid gap-14 md:grid-cols-12">
-          <div class="md:col-span-5"><p class="cond y text-[16px]">Book a bay</p><h2 class="cond mt-4 text-[clamp(2.5rem,7vw,7rem)] leading-none">Pick a slot.<br />We hold it.</h2><p class="mt-8 max-w-sm text-[16px] leading-relaxed text-stone-400">Morning or afternoon. Tell us the model and the problem; we confirm by text and quote before we touch anything.</p></div>
-          <div class="md:col-span-7">
-          <form id="bookingForm" class="" novalidate>
+<body class="industry auto"><a class="skip-link" href="#main">Skip to content</a>
+<div class="demo-strip"><span>FICTIONAL DEMO · Auto repair shop</span><a href="/services/templates/">All templates ↗</a></div>
+<header class="site-header"><a class="wordmark" href="#main" aria-label="Diego’s Auto Care">DIEGO’S<span class="brand-sub">AUTO CARE / CALOOCAN</span></a><nav aria-label="Main navigation"><a href="#services">Services + prices</a><a href="#about">The process</a><a href="#location">The shop</a></nav><a class="button " href="#book">Book a service <span aria-hidden="true">↗</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">☰</button></header>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="#services">Services + prices</a><a href="#about">The process</a><a href="#location">The shop</a><a href="#book">Book a service</a></nav>
+<main id="main"><section class="auto-hero"><div class="auto-copy"><p class="eyebrow">CALOOCAN’S NEIGHBORHOOD WORKSHOP</p><h1>LESS GUESSWORK.<br /><span>MORE GO.</span></h1><p>Know what’s wrong. Know what it costs.<br />Get back on the road with confidence.</p><a class="button " href="#book">Book your bay <span aria-hidden="true">↗</span></a><div class="auto-spec"><span>01 / INSPECT</span><span>02 / APPROVE</span><span>03 / REPAIR</span></div></div><img class="auto-photo" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Close-up of a vehicle engine during maintenance" width="1600" height="1200" fetchpriority=high /><div class="auto-photo-label">DIEGO’S AUTO CARE <span>PRECISION. WITHOUT THE PRETENSE.</span></div></section><div class="make-strip"><span>WE KNOW YOUR DRIVE</span><strong>TOYOTA</strong><strong>MITSUBISHI</strong><strong>HONDA</strong><strong>SUZUKI</strong></div><section id="about" class="section about"><div class="section-heading"><p class="eyebrow">A little more human</p><h2>NO SURPRISES.<br />JUST SOLUTIONS.</h2></div><div class="principles"><article><span class="index">01</span><h3>Quote first, always</h3><p>You approve the price on Messenger or by text before any work starts. No &#x27;nadagdagan po&#x27;.</p></article><article><span class="index">02</span><h3>Photos of what we replaced</h3><p>Old parts, new parts, side by side, sent to your phone. You know exactly what you paid for.</p></article><article><span class="index">03</span><h3>Book a bay, not a queue</h3><p>Pick a morning or afternoon slot online. Your bay is held; you&#x27;re not fifth in line.</p></article></div></section><section id="services" class="section services workshop"><div class="section-heading"><p class="eyebrow">Workshop service board</p><h2>THE WORK.<br /><span>THE PRICE.</span></h2></div><ul class="service-list"><li><span class="service-number">01</span><div><h3>PMS (oil, filter, 21-point check)</h3><p>1.5 hr</p></div><strong>from ₱1,800</strong><a href="#book" aria-label="Choose PMS (oil, filter, 21-point check)">↗</a></li><li><span class="service-number">02</span><div><h3>Brake pads (front pair)</h3><p>2 hr</p></div><strong>from ₱2,500</strong><a href="#book" aria-label="Choose Brake pads (front pair)">↗</a></li><li><span class="service-number">03</span><div><h3>Aircon cleaning &amp; recharge</h3><p>2 hr</p></div><strong>from ₱2,000</strong><a href="#book" aria-label="Choose Aircon cleaning &amp; recharge">↗</a></li><li><span class="service-number">04</span><div><h3>Computer diagnostics</h3><p>free with repair</p></div><strong>₱800</strong><a href="#book" aria-label="Choose Computer diagnostics">↗</a></li><li><span class="service-number">05</span><div><h3>Battery replacement</h3><p>30 min</p></div><strong>from ₱4,500</strong><a href="#book" aria-label="Choose Battery replacement">↗</a></li><li><span class="service-number">06</span><div><h3>Wheel alignment</h3><p>45 min</p></div><strong>₱1,200</strong><a href="#book" aria-label="Choose Wheel alignment">↗</a></li></ul></section><section id="book" class="section booking"><div><div class="section-heading"><p class="eyebrow">Let’s make it a date</p><h2>LET’S GET<br />IT SORTED.</h2><p>Choose your service. Add your vehicle’s make, model, year, and symptoms in the notes so we can prepare your bay.</p></div><p class="booking-phone">Prefer a conversation?<br /><a href="tel:+639185550129">0918 555 0129</a></p></div><div class="form-panel">          <form id="bookingForm" class="" novalidate>
             <div class="grid gap-x-8 gap-y-7 sm:grid-cols-2">
-              <label class="block cond text-[15px] text-stone-400">Your name<input type="text" name="name" required autocomplete="name" class="field" placeholder="Juan dela Cruz" /></label>
-              <label class="block cond text-[15px] text-stone-400">Mobile number<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" class="field" placeholder="0917 000 0000" /></label>
-              <label class="block cond text-[15px] text-stone-400 sm:col-span-2">Service<select name="service" required class="field">
+              <label class="block form-label">Your name<input type="text" name="name" required autocomplete="name" class="field" placeholder="Juan dela Cruz" /></label>
+              <label class="block form-label">Mobile number<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" class="field" placeholder="0917 000 0000" /></label>
+              <label class="block form-label sm:col-span-2">Service<select name="service" required class="field">
                 <option>PMS / oil change</option>
                 <option>Brakes</option>
                 <option>Aircon</option>
@@ -108,58 +45,23 @@
                 <option>Alignment</option>
                 <option>Other — describe below</option>
               </select></label>
-              <label class="block cond text-[15px] text-stone-400">Preferred date<input type="date" name="date" required class="field" /></label>
-              <label class="block cond text-[15px] text-stone-400">Preferred time<select name="time" required class="field"><option>Morning (9–12)</option><option>Afternoon (1–5)</option><option>Evening (after 5)</option></select></label>
-              <label class="block cond text-[15px] text-stone-400 sm:col-span-2">Notes <span class="font-normal normal-case tracking-normal opacity-60">(optional)</span><textarea name="notes" rows="2" class="field" placeholder="First visit, allergies, plate number, pet's name…"></textarea></label>
+              <label class="block form-label">Preferred date<input type="date" name="date" required class="field" /></label>
+              <label class="block form-label">Preferred time<select name="time" required class="field"><option>Morning</option><option>Afternoon</option></select></label>
+              <label class="block form-label sm:col-span-2">Notes <span class="font-normal normal-case tracking-normal opacity-60">(optional)</span><textarea name="notes" rows="2" class="field" placeholder="Vehicle make, model, year, and symptoms…"></textarea></label>
             </div>
-            <button type="submit" class="btn btn-y mt-10 w-full sm:w-auto">Send service slot request</button>
-            <p class="mt-4 text-[12.5px] text-stone-500">Demo &mdash; nothing is sent. On a live site this lands in the owner&rsquo;s email and phone instantly.</p>
-            <p id="bookingDone" class="mt-5 hidden text-[15px] font-semibold y" role="status" aria-live="polite">Request received &mdash; on a live site the owner has it now and you&rsquo;d get a text back within the hour.</p>
-          </form>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" class="border-t rule px-5 py-16 sm:px-8 md:py-28">
-        <div class="grid gap-12 md:grid-cols-2">
-<figure class="border-t rule pt-8"><p class="y cond text-[18px]">★★★★★</p><blockquote class="mt-4 text-[20px] leading-snug text-stone-200">&ldquo;Sent me the quote on Messenger, I said go, and got a photo of the worn pads an hour later. That&#x27;s it, that&#x27;s the review.&rdquo;</blockquote><figcaption class="cond mt-6 text-[14px] text-stone-500">Ronnie A. &middot; sample review</figcaption></figure>
-<figure class="border-t rule pt-8"><p class="y cond text-[18px]">★★★★★</p><blockquote class="mt-4 text-[20px] leading-snug text-stone-200">&ldquo;Booked a Saturday morning slot online. Car was ready by lunch. Price matched the website.&rdquo;</blockquote><figcaption class="cond mt-6 text-[14px] text-stone-500">Liza C. &middot; sample review</figcaption></figure>
-        </div>
-      </section>
-
-      <section id="location" class="grid border-t rule md:grid-cols-2">
-        <div class="px-5 py-16 sm:px-8 md:py-28">
-          <h2 class="cond text-[clamp(2.5rem,7vw,7rem)] leading-none">The shop</h2>
-          <address class="mt-8 not-italic text-[16px] leading-relaxed text-stone-400">1187 A. Mabini St., Grace Park, Caloocan City<br />Beside Petron, before the Grace Park LRT footbridge</address>
-          <ul class="mt-10 border-b rule">
-<li class="flex justify-between border-t rule py-4 text-[15px]"><span class="text-stone-400">Monday – Saturday</span><span class="text-right">8:00 AM – 6:00 PM</span></li>
-<li class="flex justify-between border-t rule py-4 text-[15px]"><span class="text-stone-400">Sunday</span><span class="text-right">Closed</span></li>
-<li class="flex justify-between border-t rule py-4 text-[15px]"><span class="text-stone-400">Emergency</span><span class="text-right">Call — we&#x27;ll tell you honestly if we can take it</span></li>
-          </ul>
-          <div class="mt-10 flex flex-wrap gap-3"><a href="tel:+639185550129" class="btn btn-y">Call 0918 555 0129</a><a href="https://www.google.com/maps/search/?api=1&query=A.+Mabini+St,+Grace+Park,+Caloocan,+Metro+Manila" rel="noopener" class="btn btn-line">Directions</a></div>
-        </div>
-        <div class="border-t rule md:border-l md:border-t-0"><iframe title="Map to Diego’s Auto Care" src="https://www.google.com/maps?q=A.+Mabini+St,+Grace+Park,+Caloocan,+Metro+Manila&output=embed" class="h-[380px] w-full invert-[.92] hue-rotate-180 md:h-full md:min-h-[600px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-      </section>
-
-      <section id="faq" class="border-t rule px-5 py-16 sm:px-8 md:py-28">
-        <div class="grid gap-10 md:grid-cols-12"><h2 class="cond text-[clamp(2rem,4vw,3.5rem)] leading-none md:col-span-3">FAQ</h2><div class="md:col-span-9">
-<details class="group border-t rule py-6"><summary class="cond flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-none">What brands do you service?<span class="y text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-400">Toyota, Mitsubishi, Honda, Suzuki, Nissan, and Hyundai. For others, message us with the model first.</p></details>
-<details class="group border-t rule py-6"><summary class="cond flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-none">Do you use original parts?<span class="y text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-400">Your choice — we quote both OEM and quality replacement, and tell you the difference.</p></details>
-<details class="group border-t rule py-6"><summary class="cond flex cursor-pointer items-baseline justify-between gap-8 text-[28px] leading-none">Can I wait for my car?<span class="y text-2xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-400">Yes for PMS and aircon. For bigger jobs we&#x27;ll text you when it&#x27;s ready.</p></details>
-        </div></div>
-      </section>
-    </main>
-
-    <footer class="border-t rule px-5 py-8 sm:px-8">
-      <div class="flex flex-wrap items-center justify-between gap-6 text-[13px] text-stone-500"><p class="cond text-[20px] text-white">Diego’s Auto Care</p><p class="">Demo site by <a href="/" class="underline underline-offset-4">Ruther Bergonia</a> &middot; <a href="/services/" class="underline underline-offset-4">LocalBiz Digital Hub</a></p></div>
-    </footer>
-    <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t bg-[#0b0b0c]/95 border-[#2a2a2d] p-3 backdrop-blur-md md:hidden">
-      <a href="tel:+639185550129" class="btn btn-line !py-3">Call</a>
-      <a href="#book" class="btn btn-y !py-3">Book a service</a>
-    </div>
-    <div class="h-16 md:hidden" aria-hidden="true"></div>
-
-    <script>
+            <button type="submit" class="button">Send service slot request</button>
+            <p class="mt-4 text-[12.5px] form-note">Demo only &mdash; no appointment is made and nothing is sent.</p>
+            <p id="bookingDone" class="mt-5 hidden text-[15px] font-semibold " role="status" aria-live="polite">Demo complete &mdash; your form is valid. Nothing was sent or booked.</p>
+          </form></div></section><section class="section reviews" aria-label="Sample customer reviews"><figure><span class="eyebrow">Kind words · sample review</span><blockquote>“Sent me the quote on Messenger, I said go, and got a photo of the worn pads an hour later. That&#x27;s it, that&#x27;s the review.”</blockquote><figcaption>— Ronnie A.</figcaption></figure><figure><span class="eyebrow">Kind words · sample review</span><blockquote>“Booked a Saturday morning slot online. Car was ready by lunch. Price matched the website.”</blockquote><figcaption>— Liza C.</figcaption></figure></section><section id="faq" class="section faq"><div class="section-heading"><p class="eyebrow">Good to know</p><h2>Before you visit.</h2></div><div><details><summary>What brands do you service?</summary><p>Toyota, Mitsubishi, Honda, Suzuki, Nissan, and Hyundai. For others, message us with the model first.</p></details><details><summary>Do you use original parts?</summary><p>Your choice — we quote both OEM and quality replacement, and tell you the difference.</p></details><details><summary>Can I wait for my car?</summary><p>Yes for PMS and aircon. For bigger jobs we&#x27;ll text you when it&#x27;s ready.</p></details></div></section><section id="location" class="section location"><div><div class="section-heading"><p class="eyebrow">In the neighborhood</p><h2>Caloocan City</h2></div><address>1187 A. Mabini St., Grace Park, Caloocan City<br /><span>Beside Petron, before the Grace Park LRT footbridge</span></address><dl class="hours"><div><dt>Monday – Saturday</dt><dd>8:00 AM – 6:00 PM</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div><div><dt>Emergency</dt><dd>Call — we&#x27;ll tell you honestly if we can take it</dd></div></dl><div class="contact-links"><a href="https://www.google.com/maps/search/?api=1&query=A.+Mabini+St,+Grace+Park,+Caloocan,+Metro+Manila">Get directions ↗</a><a href="https://m.me/diegosautocare">Messenger ↗</a><a href="viber://chat?number=%2B639185550129">Viber ↗</a></div></div><iframe title="Map to Diego’s Auto Care" src="https://www.google.com/maps?q=A.+Mabini+St,+Grace+Park,+Caloocan,+Metro+Manila&output=embed" class="location-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></section></main><footer class="site-footer"><div><p class="footer-name">Diego’s Auto Care</p><p>PMS · Brakes · Aircon · Diagnostics</p></div><div><p class="">Demo site by <a href="/" class="underline underline-offset-4">Ruther Bergonia</a> &middot; <a href="/services/" class="underline underline-offset-4">Sprntr</a></p><p>Fictional business · Sample prices & reviews · Photography: Unsplash</p><a href="/services/#pricing">Make this your business website ↗</a></div></footer>
+<div class="mobile-actions"><a href="tel:+639185550129">Call us</a><a class="button " href="#book">Book a service <span aria-hidden="true">↗</span></a></div>
+<script>
+const toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('.mobile-menu');
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));menu.hidden=open;toggle.setAttribute('aria-label',open?'Open navigation':'Close navigation');});
+menu.addEventListener('click',ev=>{if(ev.target.closest('a')){menu.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');}});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&!menu.hidden){menu.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');toggle.focus();}});
+document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{document.querySelector('[name=service]').value=a.dataset.service;}));
+const date=document.querySelector('[name=date]'); const today=new Date();date.min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+</script>    <script>
       // Demo only: pretend to submit. A live site posts to the owner's inbox.
       (function () {
         var f = document.getElementById("bookingForm"), done = document.getElementById("bookingDone");

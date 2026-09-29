@@ -1,7 +1,7 @@
 # robots.txt for https://rmbergonia.com
 # Everything is open: search engines, AI search/answer engines, and AI
 # training crawlers alike. The only pages kept out of indexes are the
-# fictional LocalBiz demo sites, and those carry their own noindex tag.
+# fictional Sprntr demo sites, and those carry their own noindex tag.
 
 User-agent: *
 Allow: /
