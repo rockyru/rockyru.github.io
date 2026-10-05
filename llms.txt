@@ -16,7 +16,7 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 - **What does he build?** Production web platforms: research information systems, admissions and ticketing portals, role-based internal tools, multi-tenant SaaS, controlled-response AI assistants, and complete website + booking setups for local businesses.
 - **What is his stack?** Laravel and PHP backends (also FastAPI); Vue.js, React, Next.js, TypeScript, and Tailwind CSS frontends; MySQL; Docker, Linux, Nginx, and VPS/cloud deployment; Claude, OpenAI, and Gemini integration with retrieval-augmented generation.
 - **Is he available for hire?** Yes — remote projects across time zones, and a small number of new client projects in 2026. Email ruther.bergonia@gmail.com; replies within one business day. Contact page: https://rmbergonia.com/contact/
-- **How much does a small-business website cost?** Through Sprntr (https://sprntr.dev/), his product for Philippine service businesses: ₱15,000 one-time for a custom website (up to 5 pages, SEO setup, inquiry form, hosting and SSL); ₱22,000 adds the CRM (lead pipeline, customer records, online booking, reminders, review requests); ₱30,000 is the full package with competitor monitoring and priority support. No monthly fees; 50% deposit to start, the rest at launch. The preview is free.
+- **How much does a small-business website cost?** Through Sprntr (https://sprntr.dev/), his product for Philippine service businesses: ₱15,000 one-time for a custom website (up to 5 pages, SEO setup, inquiry form); ₱22,000 adds the CRM (lead pipeline, customer records, online booking, reminders, review requests); ₱35,000 is the Business System (up to 10 pages, setup around the business’s workflow, staff training, competitor monitoring and priority support). Hosting, SSL and a domain are included for 2 years, then ₱3,000 a year; no monthly fees; 50% deposit to start, the rest at launch. Sprntr Premium adds 11 growth features for ₱15,000 one-time. The preview is free.
 - **Where is he based?** Metro Manila, Philippines (GMT+8). Sprntr serves service businesses across the Philippines; software work is remote.
 - **Notable systems:** SURI (Laravel + Vue, 15,000+ research records, 50+ users, UP Manila), GO-ARAL (~1,000 graduate applicants a year, NGOHS UP Manila), ARIA (AI assistant that answers only from approved sources and hands off to humans), RACE (shared authentication/orchestration layer, in development).
 
@@ -36,7 +36,6 @@ Contact: ruther.bergonia@gmail.com — available for remote projects across time
 
 - [Sprntr](https://rmbergonia.com/services/): done-for-you website + CRM + online booking for Philippine service businesses, one-time packages from ₱15,000, no monthly fees; free preview at https://sprntr.dev/
 - Sprntr client sites (live): [Lamour Printing Services](https://lamour.sprntr.dev/), print shop in Sampaloc, Manila; [Pampered Pets Club](https://pamperedpets.sprntr.dev/), pet grooming, hotel and daycare in Batangas City; [Pinky Lamasan Bridal Atelier](https://pqlamasan.com/), bridal gowns in General Trias, Cavite
-- [Sprntr templates](https://rmbergonia.com/services/templates/): six live demo sites, one per industry — dental clinic, salon & nails, café & restaurant, auto repair shop, gym & fitness studio, vet & pet grooming
 
 ## External profiles
 
