@@ -4,7 +4,7 @@ Source for [rmbergonia.com](https://rmbergonia.com/) — the portfolio of **Ruth
 
 - [About](https://rmbergonia.com/about-ruther-bergonia/) · [Case studies](https://rmbergonia.com/work/) · [Services](https://rmbergonia.com/services/) · [Contact](https://rmbergonia.com/contact/)
 - Selected work: [SURI](https://rmbergonia.com/work/suri-research-information-system/) (research information system, UP Manila, 15,000+ records), [GO-ARAL](https://rmbergonia.com/work/go-aral-graduate-support-platform/) (graduate admissions & ticketing), [ARIA](https://rmbergonia.com/work/aria-controlled-response-ai/) (controlled-response AI assistant), [RACE](https://rmbergonia.com/work/race-platform-orchestration/) (platform orchestration layer)
-- [Sprntr](https://rmbergonia.com/services/) ([sprntr.dev](https://sprntr.dev/)): done-for-you website, CRM and booking for local businesses, from ₱15,000 — with [six live demo designs](https://rmbergonia.com/services/templates/)
+- [Sprntr](https://rmbergonia.com/services/) ([sprntr.dev](https://sprntr.dev/)): done-for-you website, CRM and booking for local businesses, from ₱15,000
 - Machine-readable summary: [llms.txt](https://rmbergonia.com/llms.txt)
 
 ## Stack
@@ -14,9 +14,6 @@ Static HTML on GitHub Pages behind Cloudflare. Tailwind v3 compiled to `assets/t
 ```sh
 # after editing any HTML
 npx tailwindcss@3 -c tailwind.config.js -i tailwind.source.css -o assets/tailwind.css --minify
-
-# regenerate the Sprntr demo sites (see tools/README.md)
-python3 tools/gen-templates.py
 
 # re-render the Open Graph cards in images/og-*.png
 tools/og/build.sh
