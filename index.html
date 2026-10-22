@@ -178,7 +178,7 @@
     .proof-card .d { font-size: 12.5px; line-height: 1.45; }
     .proof-card:hover { background: #000; color: #fff; }
     .proof-card:hover .k { opacity: 1; }
-    .chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
     .chip { text-align: left; padding: 14px 16px; border: 1px solid #000; background: #fff; text-decoration: none; display: block; }
     .chip .t { font-weight: 600; font-size: 14px; display: block; }
     .chip .d { font-size: 13px; }
@@ -292,6 +292,7 @@
     }
     @media (max-width: 860px) {
       .chips, .proof { grid-template-columns: 1fr; }
+      .chip .d { display: none; }
       .msg.user .bubble { max-width: 90%; }
       .thread-inner { padding: 20px 16px; }
       .composer-wrap { padding: 8px 16px 14px; }
@@ -390,6 +391,7 @@
   const AI_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/chat' : '/api/chat';
   const CONTACT_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/contact' : '/api/contact';
   const USAGE_MARK = '\x1E';
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const fmt = n => Number(n).toLocaleString('en-US');
   let exhausted = false;
   const DEFAULT_PLACEHOLDER = matchMedia('(max-width: 600px)').matches ? 'Ask Ru Bot anything about Ruther…' : 'Ask Ru Bot about my work, stack, services, or availability…';
@@ -466,7 +468,7 @@
         `I lead its architecture and development and own it through production: deployments, production database architecture, release management. Authentication and role-based access are treated as architecture, not features, because SURI is built to join the wider ecosystem through TRACE.`,
       ],
       rich: () => cards(['suri']) + stats([['15,000+', 'records managed'], ['50+', 'active users'], ['Seconds', 'reporting, down from days']]) + tags(['Laravel', 'Vue.js', 'MySQL', 'REST API', 'RBAC', 'Approval workflows']) + btns([{ label: 'Read the case study', href: '/work/suri-research-information-system/', primary: true }]),
-      follow: ['What is TRACE?', 'Tell me about ARIA', 'Show all projects'] },
+      follow: [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?', 'Show all projects'] },
 
     { id: 'aral', group: 'cases', label: 'GO-ARAL', icon: 'doc', match: /\b(go-?aral|aral|graduate|ngohs|ticketing|drms|admissions?)\b/i,
       text: [
@@ -483,7 +485,7 @@
         `When an AI speaks for a university office, a confidently wrong answer is worse than no answer. The hard part wasn't the model; it was the refusal behaviour. ARIA says it doesn't know rather than inventing an answer. This page works the same way.`,
       ],
       rich: () => cards(['aria']) + tags(['Claude', 'RAG', 'Vector search', 'Laravel', 'Human handoff', 'Tracked tickets']) + btns([{ label: 'Read the case study', href: '/work/aria-controlled-response-ai/', primary: true }]),
-      follow: ['What is TRACE?', 'What is Alamat?', 'What AI tools do you use?'] },
+      follow: [{ q: 'How does ARIA decide when not to answer?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'] },
 
     { id: 'race', group: 'cases', label: 'TRACE', icon: 'doc', match: /\bt?race\b|orchestration/i,
       text: [
@@ -628,8 +630,10 @@
   const SUGGESTIONS = [
     { t: 'Explore production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
     { t: 'View technical expertise', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
-    { t: 'Download résumé', d: 'PDF, one page', href: '/assets/ruther-bergonia-resume.pdf', ext: true },
+    { t: 'Evaluate Ruther for a role', d: 'Evidence-based fit check, recruiter mode', q: 'Evaluate Ruther for a senior full-stack developer role (Laravel, Vue, systems architecture). Be specific about evidence from his work, and say what the site does not show.', ai: true },
+    { t: 'How he builds', d: 'Approach, principles, process', q: 'How do you build?', id: 'approach' },
     { t: 'Discuss a project', d: 'Send Ruther a message from here', q: 'Send a message from here', id: 'compose' },
+    { t: 'Download résumé', d: 'PDF, one page', href: '/assets/ruther-bergonia-resume.pdf', ext: true },
   ];
   // Proof at a glance: visible before any conversation, each opens its write-up in-chat.
   const PROOF = `<div class="proof">
@@ -673,7 +677,7 @@
         ${PROOF}
         <div class="chips">${SUGGESTIONS.map(s => s.href
           ? `<a class="chip" href="${s.href}" ${s.ext ? 'target="_blank" rel="noopener"' : ''}><span class="t">${s.t}</span><span class="d muted">${s.d}</span></a>`
-          : `<button class="chip" data-q="${s.q}" data-id="${s.id}"><span class="t">${s.t}</span><span class="d muted">${s.d}</span></button>`).join('')}</div>
+          : `<button class="chip" data-q="${esc(s.q)}" ${s.id ? `data-id="${s.id}"` : ''} ${s.ai ? 'data-ai="1"' : ''}><span class="t">${s.t}</span><span class="d muted">${s.d}</span></button>`).join('')}</div>
       </div>`;
   }
   const scrollDown = () => { thread.scrollTop = thread.scrollHeight; };
@@ -697,9 +701,26 @@
   }
   function addFollowups(body, list) {
     const f = document.createElement('div'); f.className = 'followups';
-    // Follow-ups that match a scripted answer carry its id, so clicking them never calls the model.
-    f.innerHTML = list.map(q => { const i = INTENTS.find(x => x.match.test(q)); return `<button class="followup" data-q="${q}" ${i ? `data-id="${i.id}"` : ''}>${q}</button>`; }).join('');
+    // Plain strings that match a scripted answer carry its id (free). {q, ai:true} goes to the model on purpose.
+    f.innerHTML = list.map(item => {
+      const q = typeof item === 'string' ? item : item.q;
+      const i = typeof item === 'string' ? INTENTS.find(x => x.match.test(q)) : null;
+      return `<button class="followup" data-q="${esc(q)}" ${i ? `data-id="${i.id}"` : ''} ${typeof item !== 'string' && item.ai ? 'data-ai="1"' : ''}>${esc(q)}</button>`;
+    }).join('');
     body.appendChild(f);
+  }
+  // Context-aware follow-ups after a model answer, picked from what was asked.
+  function followupsFor(q) {
+    const t = q.toLowerCase();
+    if (/\b(hire|hiring|role|position|fit|candidate|recruit|job|interview|evaluate|team)\b/.test(t)) return ['Send a message from here', { q: 'What are the gaps or risks in hiring Ruther for this?', ai: true }, 'Tell me about your experience', 'Download résumé'];
+    if (/\bsuri\b/.test(t)) return [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?'];
+    if (/\baria\b/.test(t)) return [{ q: 'How does ARIA decide when not to answer?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'];
+    if (/\b(go-?aral|drms|ngohs)\b/.test(t)) return [{ q: 'What did GO-ARAL change for the office?', ai: true }, 'Tell me about SURI'];
+    if (/\btrace\b/.test(t)) return [{ q: 'Why build TRACE instead of connecting systems one by one?', ai: true }, 'Tell me about SURI'];
+    if (/\b(sprntr|website|crm|booking|price|cost)\b/.test(t)) return ["What's included in Sprntr?", 'Sprntr FAQ', 'Send a message from here'];
+    if (/\b(cntxt|practice|bpo)\b/.test(t)) return ['What is CNTXTQRY?', 'Show all projects', 'Are you available for hire?'];
+    if (/\b(stack|laravel|vue|react|docker|capabilit|skill)\b/.test(t)) return ['How do you build?', 'What have you built?', { q: 'Which of these has Ruther used in production, and where?', ai: true }];
+    return ['What have you built?', 'What does Sprntr cost?', 'Are you available for hire?'];
   }
 
   // Scripted answer, streamed word by word.
@@ -732,7 +753,6 @@
   }
 
   // Minimal, safe markdown: paragraphs, bullets, **bold**, [links](url), bare URLs.
-  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   function inline(s) {
     s = esc(s);
     s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -794,7 +814,7 @@
     live.innerHTML = md(text);
     const src = document.createElement('div'); src.className = 'source muted'; src.textContent = 'Ru Bot · from site content';
     body.appendChild(src);
-    addFollowups(body, ['What have you built?', 'What does Sprntr cost?', 'Are you available for hire?']);
+    addFollowups(body, followupsFor(question));
     history.push({ role: 'assistant', content: text.slice(0, 1500) });
     scrollDown();
     return true;
@@ -890,16 +910,16 @@
     scrollDown();
   }
 
-  async function ask(q, id) {
+  async function ask(q, id, forceAI) {
     q = q.trim(); if (!q || busy) return;
     busy = true; send.disabled = true; input.value = ''; autosize();
     addUser(q);
-    const scripted = id ? INTENTS.find(i => i.id === id) : null;
+    const scripted = !forceAI && id ? INTENTS.find(i => i.id === id) : null;
     document.querySelectorAll('.topic').forEach(t => t.classList.toggle('active', !!scripted && t.dataset.id === scripted.id));
     if (compose) await composeStep(q);
     else if (scripted && scripted.id === 'compose') await startCompose();
     else if (scripted) await addScripted(scripted);
-    else if (COMPOSE_RE.test(q)) await startCompose();
+    else if (!forceAI && COMPOSE_RE.test(q)) await startCompose();
     else if (exhausted) await botSay(`You've used up your Ru Bot budget, so I can't answer typed questions right now. The topics on the left still work, and you can always email me.`, btns([{ label: 'Email ' + EMAIL, href: 'mailto:' + EMAIL, primary: true }]));
     else {
       const ok = await addAI(q);
@@ -922,7 +942,8 @@
       return;
     }
     const b = e.target.closest('button[data-q]'); if (!b) return;
-    closeSidebar(); ask(b.dataset.q, b.dataset.id);
+    if (b.dataset.q === 'Download résumé') { window.open('/assets/ruther-bergonia-resume.pdf', '_blank', 'noopener'); return; }
+    closeSidebar(); ask(b.dataset.q, b.dataset.id, b.dataset.ai === '1');
   });
   $('#composer').addEventListener('submit', e => { e.preventDefault(); ask(input.value); });
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
