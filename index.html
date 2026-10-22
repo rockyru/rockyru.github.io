@@ -285,10 +285,10 @@
       .scrim.show { display: block; }
       .icon-btn.menu-btn { display: grid; }
     }
+    .drawer-links { display: none; }
+    @media (max-width: 1199px) { .drawer-links { display: block; } }
     @media (max-width: 899px) {
-      .rail { top: auto; right: 12px; bottom: 104px; transform: none; flex-direction: row; padding: 4px; }
-      .rail .sep { width: 1px; height: auto; margin: 2px 4px; }
-      .icon-btn[data-tip]::after { display: none; }
+      .rail { display: none; }
     }
     @media (max-width: 860px) {
       .chips, .proof { grid-template-columns: 1fr; }
@@ -297,6 +297,9 @@
       .composer-wrap { padding: 8px 16px 14px; }
       .topbar { padding: 10px 12px; min-height: 60px; }
       .status { display: none; }
+      .hero { padding-top: 24px; }
+      .hero p { font-size: 14px; }
+      .hint { font-size: 11px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -329,6 +332,16 @@
       <nav class="topics" id="topics"></nav>
       <div class="section-label">Case studies</div>
       <nav class="topics" id="cases"></nav>
+      <div class="drawer-links">
+        <div class="section-label">Links</div>
+        <nav class="topics">
+          <a class="topic" href="mailto:ruther.bergonia@gmail.com">Email</a>
+          <a class="topic" href="https://github.com/rockyru" target="_blank" rel="noopener">GitHub</a>
+          <a class="topic" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="topic" href="https://app.daily.dev/rockyruther" target="_blank" rel="noopener">daily.dev</a>
+          <a class="topic" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </nav>
+      </div>
     </aside>
     <div class="scrim" id="scrim"></div>
 
@@ -355,7 +368,7 @@
         <div class="composer-box">
         <form class="composer" id="composer">
           <button class="tool-btn" id="composeBtn" type="button" aria-label="Send Ruther a message" title="Send Ruther a message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button>
-          <textarea id="input" rows="1" placeholder="Ask Ru Bot about my work, stack, services, or availability…" aria-label="Message"></textarea>
+          <textarea id="input" rows="1" placeholder="Ask Ru Bot anything about Ruther…" aria-label="Message"></textarea>
           <div class="ring" id="ring" tabindex="0" aria-label="Token budget used" role="img">
             <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="track" cx="18" cy="18" r="15.5"/><circle class="fill" cx="18" cy="18" r="15.5"/></svg>
             <div class="ring-tip" id="ringTip" role="tooltip"></div>
@@ -379,7 +392,7 @@
   const USAGE_MARK = '\x1E';
   const fmt = n => Number(n).toLocaleString('en-US');
   let exhausted = false;
-  const DEFAULT_PLACEHOLDER = 'Ask Ru Bot about my work, stack, services, or availability…';
+  const DEFAULT_PLACEHOLDER = matchMedia('(max-width: 600px)').matches ? 'Ask Ru Bot anything about Ruther…' : 'Ask Ru Bot about my work, stack, services, or availability…';
   function showBudget(u) {
     if (!u || !u.limit) return;
     const used = Math.min(u.limit, u.used || 0), left = u.limit - used;
@@ -922,7 +935,7 @@
   $('#composeBtn').addEventListener('click', () => { if (busy) return; if (!compose) { addUser('Send a message from here'); startCompose(); } input.focus(); });
   scrim.addEventListener('click', closeSidebar);
 
-  renderTopics(); renderEmpty(); loadUsage();
+  renderTopics(); renderEmpty(); loadUsage(); input.placeholder = DEFAULT_PLACEHOLDER;
   const qp = new URLSearchParams(location.search).get('q');
   if (qp) ask(qp); else if (matchMedia('(min-width: 900px)').matches) input.focus();
 })();

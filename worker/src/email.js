@@ -11,8 +11,9 @@ const MONO = "SFMono-Regular,Menlo,Consolas,'Courier New',monospace";
 const INK = "#000000", GREY = "#6B6B6B", LABEL = "#A3A3A3", RULE = "#E3E3E0", ROW = "#F3F3F1", PAPER = "#EDEDEA";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const manila = d => d.toLocaleString("en-PH", { timeZone: "Asia/Manila", dateStyle: "medium", timeStyle: "short" }) + " PHT";
-const dateOnly = d => d.toLocaleDateString("en-US", { timeZone: "Asia/Manila", month: "2-digit", day: "2-digit", year: "numeric" });
+const manila = d => manilaLong(d);
+const dateOnly = d => d.toLocaleDateString("en-GB", { timeZone: "Asia/Manila", day: "numeric", month: "long", year: "numeric" }); // 22 October 2026
+const manilaLong = d => `${dateOnly(d)}, ${d.toLocaleTimeString("en-PH", { timeZone: "Asia/Manila", hour: "numeric", minute: "2-digit" })} PHT`;
 
 export const paragraphs = text => String(text).trim().split(/\n\s*\n/)
   .map(p => `<p style="margin:0 0 10px;font-size:14px;line-height:1.75;">${esc(p).replace(/\n/g, "<br>")}</p>`).join("");
