@@ -171,8 +171,15 @@
     .hero p { margin: 0 auto; max-width: 540px; }
     .hero nav { margin-top: 18px; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; }
     .hero nav a { text-decoration: underline; text-underline-offset: 3px; }
-    .chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 28px; }
-    .chip { text-align: left; padding: 14px 16px; border: 1px solid #000; background: #fff; }
+    .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 26px; }
+    .proof-card { text-align: left; padding: 14px 14px 16px; border: 1px solid #000; background: #fff; display: flex; flex-direction: column; gap: 4px; width: 100%; }
+    .proof-card .k { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; opacity: .72; }
+    .proof-card .v { font-size: 16px; font-weight: 800; letter-spacing: -0.02em; }
+    .proof-card .d { font-size: 12.5px; line-height: 1.45; }
+    .proof-card:hover { background: #000; color: #fff; }
+    .proof-card:hover .k { opacity: 1; }
+    .chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+    .chip { text-align: left; padding: 14px 16px; border: 1px solid #000; background: #fff; text-decoration: none; display: block; }
     .chip .t { font-weight: 600; font-size: 14px; display: block; }
     .chip .d { font-size: 13px; }
     .chip:hover { background: #000; color: #fff; }
@@ -284,7 +291,7 @@
       .icon-btn[data-tip]::after { display: none; }
     }
     @media (max-width: 860px) {
-      .chips { grid-template-columns: 1fr; }
+      .chips, .proof { grid-template-columns: 1fr; }
       .msg.user .bubble { max-width: 90%; }
       .thread-inner { padding: 20px 16px; }
       .composer-wrap { padding: 8px 16px 14px; }
@@ -336,7 +343,13 @@
 
     <main class="main">
       <section class="thread" id="thread" aria-live="polite">
-        <div class="thread-inner" id="threadInner"></div>
+        <div class="thread-inner" id="threadInner">
+          <article class="hero" aria-label="Summary for readers without JavaScript">
+            <h1>Ruther Bergonia: software systems architect and senior full-stack engineer, Metro Manila</h1>
+            <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (shared authentication and orchestration layer). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, and <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
+            <p><a href="/about-ruther-bergonia/">About</a> · <a href="/work/">Case studies</a> · <a href="/services/">Services</a> · <a href="/contact/">Contact</a> · <a href="/assets/ruther-bergonia-resume.pdf">Résumé (PDF)</a> · <a href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a></p>
+          </article>
+        </div>
       </section>
       <div class="composer-wrap">
         <div class="composer-box">
@@ -600,11 +613,17 @@
   };
 
   const SUGGESTIONS = [
-    { t: 'Who are you?', d: 'Background and what I do', q: 'Who are you?', id: 'about' },
-    { t: 'What have you built?', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
-    { t: 'What are your capabilities?', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
-    { t: 'Are you available for hire?', d: 'Remote, always open', q: 'Are you available for hire?', id: 'contact' },
+    { t: 'Explore production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
+    { t: 'View technical expertise', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
+    { t: 'Download résumé', d: 'PDF, one page', href: '/assets/ruther-bergonia-resume.pdf', ext: true },
+    { t: 'Discuss a project', d: 'Send Ruther a message from here', q: 'Send a message from here', id: 'compose' },
   ];
+  // Proof at a glance: visible before any conversation, each opens its write-up in-chat.
+  const PROOF = `<div class="proof">
+    <button class="proof-card" type="button" data-q="Tell me about SURI" data-id="suri"><span class="k">Research system of record</span><span class="v">SURI · UP Manila</span><span class="d">50+ users, reporting in seconds instead of days. Laravel + Vue + MySQL, operated in production.</span></button>
+    <button class="proof-card" type="button" data-q="Tell me about GO-ARAL" data-id="aral"><span class="k">Admissions &amp; ticketing</span><span class="v">GO-ARAL · NGOHS</span><span class="d">~1,000 applicants a year, ~200 tickets a month, APIs, schema and RBAC owned end to end.</span></button>
+    <button class="proof-card" type="button" data-q="What is CNTXTQRY?" data-id="cntxt"><span class="k">Shipped SaaS product</span><span class="v">CNTXTQRY</span><span class="d">AI practice tool for customer-service rehearsal, live with free and paid plans.</span></button>
+  </div>`;
 
   const ICONS = {
     user: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
@@ -637,8 +656,11 @@
       <div class="hero">
         <div class="mark">${MARK}</div>
         <h1>Hi, I'm Ru Bot. Ask me anything about Ruther.</h1>
-        <p class="muted">I'm Ruther Bergonia's stand-in on this site and I answer as him: software systems architect and senior full-stack engineer in Metro Manila, building production systems for institutions and SaaS teams, and done-for-you websites for local businesses through Sprntr. Everything I say comes from his real portfolio.</p>
-        <div class="chips">${SUGGESTIONS.map(s => `<button class="chip" data-q="${s.q}" data-id="${s.id}"><span class="t">${s.t}</span><span class="d muted">${s.d}</span></button>`).join('')}</div>
+        <p class="muted">I'm Ruther Bergonia's AI portfolio assistant and I answer as him: software systems architect and senior full-stack engineer in Metro Manila. I can walk you through the production systems he's architected, how he approaches engineering, and how to work with him.</p>
+        ${PROOF}
+        <div class="chips">${SUGGESTIONS.map(s => s.href
+          ? `<a class="chip" href="${s.href}" ${s.ext ? 'target="_blank" rel="noopener"' : ''}><span class="t">${s.t}</span><span class="d muted">${s.d}</span></a>`
+          : `<button class="chip" data-q="${s.q}" data-id="${s.id}"><span class="t">${s.t}</span><span class="d muted">${s.d}</span></button>`).join('')}</div>
       </div>`;
   }
   const scrollDown = () => { thread.scrollTop = thread.scrollHeight; };

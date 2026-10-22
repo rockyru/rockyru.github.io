@@ -20,6 +20,7 @@
 
 import Anthropic from "@anthropic-ai/sdk";
 import KNOWLEDGE from "../knowledge.md";
+import { contactEmail, confirmationEmail } from "./email.js";
 
 const MAX_MESSAGES = 6;          // history window sent to the model
 const MAX_MESSAGE_CHARS = 600;   // per message
@@ -120,7 +121,7 @@ function originAllowed(origin, env) {
   return Boolean(origin) && allowed.includes(origin);
 }
 
-async function handleContact(request, env, cors, url) {
+async function handleContact(request, env, cors, url, ctx) {
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
   if (!originAllowed(request.headers.get("Origin"), env)) return json({ error: "Forbidden" }, 403, cors);
   if (!env.SIGNING_SECRET) return json({ error: "Contact not configured" }, 503, cors);
@@ -152,17 +153,22 @@ async function handleContact(request, env, cors, url) {
   if (links > MAX_LINKS) return json({ error: "Too many links for a first message. Email directly instead." }, 400, cors);
 
   const country = request.headers.get("CF-IPCountry") || "";
-  const text = `${message}\n\n—\nFrom: ${name} <${email}>\nVia: Ru Bot on rmbergonia.com\nIP: ${ip} ${country}`;
-  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const html = `<p style="white-space:pre-wrap;font-family:sans-serif">${esc(message)}</p><hr><p style="font-family:sans-serif;font-size:13px;color:#555">From: ${esc(name)} &lt;${esc(email)}&gt;<br>Via: Ru Bot on rmbergonia.com<br>IP: ${esc(ip)} ${esc(country)}</p>`;
+  const mail = contactEmail({ name, email, message, ip, country });
   try {
     await env.EMAIL.send({
       to: env.CONTACT_TO || "ruther.bergonia@gmail.com",
       from: { email: env.CONTACT_FROM || "rubot@rmbergonia.com", name: "Ru Bot" },
       replyTo: { email, name },
-      subject: `[rmbergonia.com] ${name}: ${message.slice(0, 60).replace(/\s+/g, " ")}${message.length > 60 ? "…" : ""}`,
-      text, html,
+      subject: mail.subject, text: mail.text, html: mail.html,
     });
+    // Confirmation to the visitor. Best effort: a bad address must not fail the request.
+    const ack = confirmationEmail({ name });
+    ctx.waitUntil(env.EMAIL.send({
+      to: { email, name },
+      from: { email: env.CONTACT_FROM || "rubot@rmbergonia.com", name: "Ruther Bergonia" },
+      replyTo: { email: env.CONTACT_TO || "ruther.bergonia@gmail.com", name: "Ruther Bergonia" },
+      subject: ack.subject, text: ack.text, html: ack.html,
+    }).catch(err => console.warn("confirmation send failed", err?.code, err?.message)));
     return json({ ok: true }, 200, cors);
   } catch (err) {
     console.error("contact send failed", err?.code, err?.message);
@@ -208,7 +214,7 @@ export default {
     const cors = corsHeaders(origin, env);
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
-    if (url.pathname.startsWith("/api/contact")) return handleContact(request, env, cors, url);
+    if (url.pathname.startsWith("/api/contact")) return handleContact(request, env, cors, url, ctx);
 
     if (url.pathname.endsWith("/health")) {
       return json({ ok: Boolean(env.ANTHROPIC_API_KEY), model: env.CLAUDE_MODEL }, 200, cors);
