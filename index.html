@@ -367,7 +367,7 @@
         <div class="thread-inner" id="threadInner">
           <article class="hero" aria-label="Summary for readers without JavaScript">
             <h1>Ruther Bergonia: software systems architect and senior full-stack engineer, Metro Manila</h1>
-            <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (shared authentication and orchestration layer). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, and <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
+            <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (research-team workspace built on SURI's API, in development). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, and <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
             <p><a href="/about-ruther-bergonia/">About</a> · <a href="/work/">Case studies</a> · <a href="/services/">Services</a> · <a href="/contact/">Contact</a> · <a href="/assets/ruther-bergonia-resume.pdf">Résumé (PDF)</a> · <a href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a></p>
           </article>
         </div>
@@ -432,7 +432,7 @@
     suri:  { t: 'SURI', d: 'Research information system, UP Manila. 50+ users, reporting in seconds instead of days.', m: 'Laravel · Vue · MySQL', img: '/images/suri-screen-dashboard.webp', url: '/work/suri-research-information-system/' },
     aral:  { t: 'GO-ARAL', d: 'Graduate application & ticketing portal, NGOHS. ~1,000 applicants a year, ~200 tickets a month.', m: 'Laravel · Vue · MySQL', img: '/images/aral.png', url: '/work/go-aral-graduate-support-platform/' },
     aria:  { t: 'ARIA', d: 'Controlled-response AI assistant. Approved sources only, human handoff, tracked tickets.', m: 'Claude · RAG · Laravel', img: '/images/og-work.png', url: '/work/aria-controlled-response-ai/' },
-    race:  { t: 'TRACE', d: 'Shared authentication and services beneath SURI and ARIA. In development.', m: 'Docker · API design', img: '/images/trace.png', url: '/work/race-platform-orchestration/' },
+    race:  { t: 'TRACE', d: 'Workspace for research teams on SURI\'s records: tasks, milestones, files, budget, procurement. In development.', m: 'Vue 3 · Laravel', img: '/images/trace.png', url: '/work/race-platform-orchestration/' },
     cntxt: { t: 'CNTXTQRY', d: 'AI practice tool for customer-service conversations. Chat, email and voice rehearsal with scored feedback.', m: 'Product · Live', img: '/images/cntxtqry.jpg', url: 'https://cntxtqry.com/', ext: true },
     estim: { t: 'Construction Estimating Academy', d: 'Online training platform: self-paced courses, live webinars, template store, verifiable certificates.', m: 'Client · Live', img: '/images/estimatingacademy.jpg', url: 'https://estimatingacademy.org/', ext: true },
     lamour: { t: 'Lamour Printing Services', d: 'Print shop in Sampaloc, Manila. Sprntr\'s first pilot customer.', m: 'Sprntr client', word: 'Print', url: 'https://lamour.sprntr.dev/', ext: true },
@@ -494,12 +494,12 @@
       rich: () => cards(['aria']) + tags(['Claude', 'RAG', 'Keyword retrieval', 'Laravel', 'Human handoff', 'Tracked tickets']) + btns([{ label: 'Read the case study', href: '/work/aria-controlled-response-ai/', primary: true }]),
       follow: [{ q: 'How does ARIA decide when not to answer?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'] },
 
-    { id: 'race', group: 'cases', label: 'TRACE', icon: 'doc', match: /\bt?race\b|orchestration/i,
+    { id: 'race', group: 'cases', label: 'TRACE', icon: 'doc', match: /\bt?race\b|workspace for research|research team/i,
       text: [
-        `<strong>TRACE</strong> is the orchestration layer I'm developing beneath SURI and ARIA. Institutional software accumulates one system at a time, each with its own login and user store. TRACE is the generalization of that lesson: shared authentication so users move between platforms without re-authenticating, shared services built once and reused, and defined integration paths so joining the ecosystem is a supported path rather than a custom project.`,
-        `It's in active development. SURI and ARIA are its first tenants, and the architecture is being extracted from systems already running in production rather than designed in the abstract.`,
+        `<strong>TRACE</strong> (Transformative Research Assistant for Collaboration and Engagement) is the workspace I'm building for research teams at UP Manila: projects, tasks, milestones, deliverables, files, notes, budget, procurement and payroll, on the same Laravel API and the same research records as SURI. Research assistants and principal investigators work in TRACE; the office keeps its system of record.`,
+        `A project in TRACE is a SURI research record, membership is the authorization primitive, sign-in is invite-only with a token scoped to TRACE, and budget or procurement edits go through SURI's own services and audit log. Vue 3 and TypeScript in front, Laravel behind, a Cloudflare Worker serving the build. It's in active development since July 2026 with a staging build in use.`,
       ],
-      rich: () => cards(['race']) + tags(['Shared authentication', 'Shared services', 'Integration', 'Docker', 'API design', 'Laravel']) + btns([{ label: 'Read the case study', href: '/work/race-platform-orchestration/', primary: true }]),
+      rich: () => cards(['race']) + tags(['Vue 3', 'TypeScript', 'Laravel', 'Sanctum', 'Cloudflare', 'Vitest · Playwright']) + btns([{ label: 'Read the case study', href: '/work/race-platform-orchestration/', primary: true }]),
       follow: ['Tell me about SURI', 'Show all projects'] },
 
     { id: 'alamat', hidden: true, match: /\balamat\b|exam reviewer/i,
@@ -732,8 +732,8 @@
       list = [{ q: 'How does ARIA decide when not to answer?', ai: true }, { q: 'Why not use a general chatbot for ARIA?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'];
     else if (/\b(go-?aral|drms|ngohs|admission|applicant)\b/.test(t))
       list = [{ q: 'What did GO-ARAL change for the office?', ai: true }, { q: 'What did you own on GO-ARAL end to end?', ai: true }, 'Tell me about SURI'];
-    else if (/\btrace\b/.test(qt) || /\b(orchestration|shared auth|single sign)/.test(t))
-      list = [{ q: 'Why build TRACE instead of connecting systems one by one?', ai: true }, { q: 'What does TRACE provide today?', ai: true }, 'Tell me about SURI', 'Tell me about ARIA'];
+    else if (/\btrace\b/.test(qt) || /\b(research team|workspace|research assistant)/.test(t))
+      list = [{ q: 'Why build TRACE on SURI\'s API instead of a separate app?', ai: true }, { q: 'What does TRACE provide today, and what is not built yet?', ai: true }, 'Tell me about SURI', 'Tell me about ARIA'];
     else if (/\b(sprntr|website|crm|booking|price|cost|package|quote)\b/.test(t))
       list = ["What's included in Sprntr?", 'How does the Sprntr process work?', 'Sprntr FAQ', 'Send a message from here'];
     else if (/\b(cntxt|practice|bpo|rehears)/.test(t))

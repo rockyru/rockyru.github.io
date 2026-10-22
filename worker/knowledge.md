@@ -36,7 +36,7 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 
 ## What he does (About page)
 
-- Systems architecture: API-first service design, cross-system authentication, database architecture, platform orchestration (e.g. TRACE beneath UP Manila's research platforms).
+- Systems architecture: API-first service design, cross-system authentication, database architecture, platforms that share one set of records (e.g. TRACE, the research-team workspace built on SURI's API at UP Manila).
 - Full-stack development: Laravel and PHP backends with Vue, React, and Next.js frontends (e.g. SURI).
 - AI integration: controlled-response assistants built on approved sources with human handoff. This is the approach behind ARIA and the exam reviewer Alamat. Principle: AI should reduce operational risk, not add it.
 - Infrastructure: Docker, Linux, and Nginx administration, VPS deployment, release management, production database architecture.
@@ -58,7 +58,7 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 
 ## Career timeline
 
-- 2025 — now: Systems architect, RGAO, UP Manila (position title: Senior Administrative Assistant II). Leads architecture and development of SURI (50+ users, reporting in seconds instead of days). Building TRACE, the shared orchestration layer. ARIA runs in the same ecosystem.
+- 2025 — now: Systems architect, RGAO, UP Manila (position title: Senior Administrative Assistant II). Leads architecture and development of SURI (50+ users, reporting in seconds instead of days). Building TRACE, the research-team workspace on the same API and records. ARIA runs in the same ecosystem.
 - 2025 — now: Independent contractor, SaaS architecture. Architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.
 - 2021 — 2025: Senior ICT Assistant, NGOHS (National Graduate Office for the Health Sciences), UP Manila. Built and ran DRMS and GO-ARAL: ~1,000 applicants a year, ~200 support requests a month. Owned the APIs, database schema, RBAC, and reporting behind both.
 - 2021 — 2022: Full-stack developer, LMQ Tech (freelance, remote, US client). Built an ELK Stack operations dashboard with ticketing and reporting. Also managed servers, databases, and infrastructure.
@@ -97,7 +97,7 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 - Problem: research administration offices field a constant stream of inquiries, most answerable from existing policies, guidelines, and records. Answering by hand consumes staff time; leaving them unanswered erodes trust. A generic chatbot is the wrong fix: when an AI speaks for a university office, a confidently wrong answer is worse than no answer.
 - Three rules of the controlled-response architecture: (1) Approved sources only, via RAG, not open-ended model knowledge. (2) Human handoff for anything outside scope. (3) Tracked follow-up: inquiries that need follow-up become tickets, nothing disappears into a chat log.
 - The hard part was not the model; it was the refusal behaviour. It says it doesn't know rather than inventing an answer.
-- Powered by Claude. Operates in the same ecosystem as SURI; TRACE sits beneath both.
+- Powered by Claude. Operates in the same ecosystem as SURI; TRACE, the research-team workspace, sits on the same API.
 - Engineering notes (as of 2026; there are two ARIA surfaces):
   - Public assistant: on the office's Next.js 16 site, Anthropic SDK, Claude Haiku 4.5, streamed, low temperature, hard output cap; only the last six messages are sent, each trimmed; per-IP rate limit.
   - Retrieval: keyword-scored retrieval over the office's own content (one chunk per FAQ, downloadable file and page; length-normalised term frequency with a title boost; top six; each windowed around the query). No embeddings or vector database, by design: small controlled corpus and encrypted sensitive fields upstream.
@@ -107,13 +107,18 @@ As a systems partner he scopes, builds, and stands behind software that has to k
   - Staff assistant inside SURI: Laravel service on Claude Sonnet 4.6 with seven read-only tools (worklist, documents, SURI records, analytics, bibliometrics, ranking, email drafting) returning totals, breakdowns and samples of at most 15 rows. Each tool maps to a permission; tools the user cannot run are not offered to the model; the tool loop is capped. Session context gives the model who is asking, where they are in the app and the office's current counts.
   - Audit and retention: one audit row per turn stores hashes and lengths of prompt and reply (not text), tokens, latency, tool calls, referenced records and a prompt-injection heuristic flag. Verbatim capture needs the feature on, per-turn consent and an identified user, and is purged after 30 days; rows kept two years. Reading the log is permission-gated and itself audited; retention and purge run as scheduled commands.
 
-### TRACE — platform orchestration layer (in development)
+### TRACE — collaboration workspace for research teams (in development)
 - URL: https://rmbergonia.com/work/race-platform-orchestration/
-- Role: Systems Architect. Type: orchestration layer. Sits beneath SURI and ARIA. Status: in development, 2025 — present. Stack mentions: Docker, API design, Laravel.
-- What it is: the architecture layer beneath SURI and ARIA providing shared authentication, shared services, and integration capabilities so future research platforms join one ecosystem instead of becoming another silo. Keeps separate research systems behaving like one product: shared identity, shared vocabulary, one place to reason about what changed and why.
-- Problem: institutional software accumulates one system at a time, each with its own login, user store, and no way to talk to others. Every new platform makes the next integration harder. TRACE is the generalization of that lesson.
-- Provides: (1) Shared authentication: one identity layer, users move between platforms without re-authenticating, new platforms don't build their own user stores. (2) Shared services: common capabilities built once and reused. (3) Integration capabilities: defined ways for platforms to exchange data and workflows.
-- Status: active development. SURI and ARIA are its first tenants; the architecture is being extracted from systems already in production rather than designed in the abstract.
+- Full name: Transformative Research Assistant for Collaboration and Engagement. Grew out of RACE (Research Assistant Coordination Engine), a project-management app for research assistants; renamed TRACE in October 2026 when the scope widened to the whole research team.
+- Role: Systems Architect (he builds it alongside SURI). Users: research assistants and principal investigators of UP Manila research projects, with RGAO handlers overseeing. Status: in active development since July 2026, staging test build in use, no production deployment yet.
+- What it is: a Vue 3 workspace for research teams that runs on the same Laravel API and the same research records as SURI. The office keeps its system of record in SURI; the team does its work in TRACE.
+- Problem: SURI gave the office a system of record, but nothing in the data linked an assistant to a project ("my projects" was guesswork), and tasks, deadlines, deliverables and phase documents lived in chat threads, spreadsheets and inboxes.
+- Provides: (1) Personal view: Today, my tasks, my projects, an inbox with read acknowledgements, and Learning (RGAO's orientation courses, TUKLAS, now live inside TRACE). (2) Project workspace: overview, tasks, timeline, deliverables, files, team, activity feed, shared notes with comments, metrics, scoped to project members. (3) Office files: research documents, line-item budget, procurement and monthly payroll submissions, the same records SURI handlers see, edited through the same rules.
+- Phase sync: a project in TRACE is a SURI research record; when a project moves to a new phase in SURI, TRACE creates one task per document that phase requires.
+- Design decisions: no second database (every TRACE table hangs off SURI's research record; budget lines, procurement stages, disbursements and payroll reuse SURI's own models and services); membership is the authorization primitive (an assignment row links a person to a project, every request checks membership, any member sees the whole team's work; writes blocked on projects the office does not manage); invite-only sign-in (admin or the project's handler issues an email-bound single-use link valid 14 days; Google sign-in returns a Sanctum bearer token scoped to TRACE, which can never act as a SURI role); safe concurrent edits (tasks carry an integer version; a write without one is rejected, a stale one is refused); one task model (tasks, milestones and deliverables are one table with a kind, dates and dependencies).
+- Engineering notes: frontend Vue 3.5, Vite, TypeScript strict, Pinia, vue-router, Tailwind 4, no component library, three layers (pure TypeScript domain, stores that run on mock data or the live API, views), refreshes on window focus. Backend: Laravel routes under api/v1/race guarded by Sanctum plus a TRACE-only token ability; workspace tables for tasks, notes, comments, files, events and read state; budget, procurement, disbursement and payroll endpoints reuse SURI's services, the managed-project middleware and the shared audit log. Tests: 15 Vitest files (about 94 cases) and 4 Playwright specs against a mocked API, run on every push and pull request; backend 10 feature test files (about 106 cases). Deployment: a Cloudflare Worker serving the built static assets with single-page fallback, staging only. A mobile companion (Expo, React Native) is scaffolded with PKCE sign-in.
+- Not yet built: email notifications, AI features, production deployment. Say so when asked.
+- ARIA and TRACE are not integrated with each other; both sit on SURI's API.
 
 ### GO-ARAL — graduate application & ticketing portal (NGOHS, UP Manila)
 - URL: https://rmbergonia.com/work/go-aral-graduate-support-platform/
