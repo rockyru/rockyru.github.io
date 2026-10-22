@@ -1,0 +1,16 @@
+{
+  "name": "rmbergonia-chat-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret": "wrangler secret put ANTHROPIC_API_KEY"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

@@ -1,136 +1,34 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruther Bergonia — Software Systems Architect & Full-Stack Engineer, Manila</title>
-    <meta
-      name="description"
-      content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, and done-for-you websites and CRM for local businesses through Sprntr, from ₱15,000."
-    />
-    <meta name="author" content="Ruther Bergonia" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://rmbergonia.com/" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruther Bergonia — Software Systems Architect & Full-Stack Engineer, Manila</title>
+  <meta name="description" content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, Sprntr websites and CRM for local businesses from ₱15,000, and CNTXTQRY. Ask the site anything." />
+  <meta name="author" content="Ruther Bergonia" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://rmbergonia.com/" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ruther Bergonia" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://rmbergonia.com/" />
-    <meta property="og:title" content="Ruther Bergonia — Systems That Hold Under Load" />
-    <meta
-      property="og:description"
-      content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000."
-    />
-    <meta property="og:image" content="https://rmbergonia.com/images/og-default.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ruther Bergonia — software systems architect and senior full-stack engineer, Metro Manila" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ruther Bergonia" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://rmbergonia.com/" />
+  <meta property="og:title" content="Ruther Bergonia — Systems That Hold Under Load" />
+  <meta property="og:description" content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
+  <meta property="og:image" content="https://rmbergonia.com/images/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ruther Bergonia — software systems architect and senior full-stack engineer, Metro Manila" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ruther Bergonia — Systems That Hold Under Load" />
+  <meta name="twitter:description" content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
+  <meta name="twitter:image" content="https://rmbergonia.com/images/og-default.png" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ruther Bergonia — Systems That Hold Under Load" />
-    <meta
-      name="twitter:description"
-      content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000."
-    />
-    <meta name="twitter:image" content="https://rmbergonia.com/images/og-default.png" />
-
-    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-
-    <style>
-      html { -webkit-font-smoothing: antialiased; }
-      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-      /* Display type: oversized, tight, MIXED CASE — the editorial register.
-         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
-      .display {
-        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 800;
-        letter-spacing: -0.035em;
-        line-height: 0.95;
-        text-wrap: balance;
-      }
-      /* Page-title scale: the one place type is allowed to dominate. */
-      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
-
-      /* Micro-labels. Structural, never decorative — they name a section
-         or number a real sequence. */
-      .label {
-        font-family: Inter, "Helvetica Neue", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      /* Nav and buttons carry a touch more weight than section eyebrows. */
-      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
-      .rule { border-color: #e3e0da; }
-      p.leading-relaxed { text-align: justify; }
-
-      /* Editorial two-column row: label left, prose right. */
-      .row-label { font-family: Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-
-      .js .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity .7s ease-out, transform .7s ease-out;
-      }
-      .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-      /* FAQ disclosure: the + rotates to an x when open. */
-      .faq-item[open] .faq-icon { transform: rotate(45deg); }
-
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        .js .fade-up { opacity: 1; transform: none; transition: none; }
-        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-      }
-
-      a:focus-visible, button:focus-visible, summary:focus-visible {
-        outline: 2px solid #111013;
-        outline-offset: 3px;
-      }
-      ::selection { background: #111013; color: #fbfaf8; }
-
-      [id$="-heading"], footer[id] { scroll-margin-top: 96px; }
-
-      /* Side quick-nav: one line per numbered section, filled in by script.js.
-         Desktop-only (matches Tailwind's xl breakpoint) — there's no room
-         for it once the layout drops to a single column. */
-      #sectionNav { display: none; }
-      @media (min-width: 1280px) {
-        #sectionNav {
-          position: fixed;
-          top: 140px;
-          left: 20px;
-          z-index: 30;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      #sectionNav a:hover .side-nav-label,
-      #sectionNav a.is-active .side-nav-label {
-        opacity: 1;
-      }
-      #sectionNav a:hover .side-nav-line,
-      #sectionNav a.is-active .side-nav-line {
-        background-color: #111013;
-        width: 32px;
-      }
-      #sectionNav a {
-        display: flex;
-        align-items: center;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .side-nav-line, .side-nav-label { transition: none; }
-      }
-    </style>
-
-    <script type="application/ld+json">
+  <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -208,440 +106,745 @@
       ]
     }
     </script>
-  </head>
+  <style>
+    :root {
+      --bg: #ffffff; --panel: #ffffff; --line: #000000; --ink: #000000;
+      --accent: #000000; --accent-ink: #ffffff; --sidebar-w: 280px;
+    }
+    * { box-sizing: border-box; border-radius: 0 !important; }
+    *:not(.composer) { box-shadow: none !important; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; color: var(--ink);
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(0,0,0,.11) 1px, transparent 1.2px);
+      background-size: 22px 22px; background-position: 11px 11px;
+      font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; font-size: 15px; line-height: 1.55;
+    }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    ::selection { background: #000; color: #fff; }
+    :focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+    .muted { opacity: .72; }
 
-  <body class="bg-paper font-body text-ink-900 antialiased">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
-    
-    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
-      
-      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
-        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
-          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
+    .app { height: 100dvh; display: flex; flex-direction: column; }
+    .float { position: fixed; z-index: 30; background: #fff; border: 1px solid #000; }
+
+    /* Left panel */
+    .sidebar { left: 24px; top: 88px; bottom: 24px; width: 260px; border: 0; background: transparent; display: flex; flex-direction: column; padding: 14px 12px; gap: 8px; min-height: 0; overflow: auto; }
+    .new-chat { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px; border: 1px solid #000; background: #fff; font-weight: 500; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 14px 10px 6px; }
+    .topics { display: flex; flex-direction: column; gap: 2px; }
+    .topic { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 9px 10px; font-size: 14px; text-decoration: none; }
+    .topic .ico { width: 16px; height: 16px; flex: none; }
+    .topic:hover, .topic.active, .new-chat:hover { background: #000; color: #fff; }
+
+    /* Header */
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 24px; min-height: 72px; }
+    .topbar .left { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand svg { width: 28px; height: 28px; }
+    .brand .name { font-weight: 700; letter-spacing: -0.01em; }
+    .brand .sub { font-size: 12px; }
+    .topbar .right { display: flex; align-items: center; gap: 14px; }
+    .status { display: flex; align-items: center; gap: 8px; font-size: 13px; white-space: nowrap; }
+    .dot { width: 7px; height: 7px; background: #000; }
+
+    /* Right rail */
+    .rail { right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 4px; padding: 8px; }
+    .rail .sep { height: 1px; background: #000; margin: 4px 2px; }
+    .icon-btn { width: 38px; height: 38px; display: grid; place-items: center; position: relative; }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .icon-btn:hover { background: #000; color: #fff; }
+    .icon-btn[data-tip]::after { content: attr(data-tip); position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%); background: #000; color: #fff; font-size: 12px; font-weight: 500; padding: 5px 9px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .15s; }
+    .icon-btn:hover[data-tip]::after { opacity: 1; }
+    .icon-btn.menu-btn { display: none; }
+
+    /* Thread */
+    .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; flex: 1; }
+    .thread { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
+    .thread-inner { max-width: 680px; margin: 0 auto; padding: 32px 20px 24px; display: flex; flex-direction: column; gap: 22px; }
+    .hero { text-align: center; padding: 48px 0 12px; }
+    .hero .mark { width: 56px; height: 56px; margin: 0 auto 18px; }
+    .hero h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 10px; text-wrap: balance; }
+    .hero p { margin: 0 auto; max-width: 540px; }
+    .hero nav { margin-top: 18px; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; }
+    .hero nav a { text-decoration: underline; text-underline-offset: 3px; }
+    .chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 28px; }
+    .chip { text-align: left; padding: 14px 16px; border: 1px solid #000; background: #fff; }
+    .chip .t { font-weight: 600; font-size: 14px; display: block; }
+    .chip .d { font-size: 13px; }
+    .chip:hover { background: #000; color: #fff; }
+
+    .msg { display: flex; gap: 12px; animation: rise .35s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .msg.user { justify-content: flex-end; }
+    .msg.user .bubble { background: #000; color: #fff; padding: 11px 16px; max-width: 78%; white-space: pre-wrap; }
+    .avatar { width: 32px; height: 32px; flex: none; background: #000; color: #fff; display: grid; place-items: center; margin-top: 2px; }
+    .avatar svg { width: 18px; height: 18px; }
+    .msg.bot .body { min-width: 0; flex: 1; }
+    .body p { margin: 0 0 10px; } .body p:last-child { margin-bottom: 0; }
+    .body strong { font-weight: 600; }
+    .body a { text-decoration: underline; text-underline-offset: 3px; }
+    .body ul { margin: 6px 0 10px; padding-left: 20px; } .body li { margin: 3px 0; }
+    .body h4 { margin: 12px 0 4px; font-size: 14px; font-weight: 700; }
+    .source { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; margin-top: 10px; }
+
+    .typing { display: inline-flex; gap: 4px; padding: 10px 0; }
+    .typing i { width: 6px; height: 6px; background: #000; animation: blink 1.2s infinite ease-in-out; }
+    .typing i:nth-child(2) { animation-delay: .2s; } .typing i:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+    .cursor::after { content: "▍"; animation: blink 1s infinite; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+    .card { display: block; width: 100%; text-align: left; padding: 0; text-decoration: none !important; border: 1px solid #000; background: #fff; overflow: hidden; }
+    .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); }
+    .card-word { aspect-ratio: 16/9; display: flex; align-items: flex-end; padding: 14px; background: #000; color: #fff; font-weight: 800; font-size: 20px; letter-spacing: -0.03em; line-height: 1.05; }
+    .card .cb { padding: 10px 12px 12px; }
+    .card .ct { font-weight: 600; font-size: 14px; }
+    .card .cd { font-size: 12.5px; margin-top: 2px; }
+    .card .cm { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 8px; font-weight: 600; }
+    .card:hover { background: #000; color: #fff; }
+    .card:hover .card-word { background: #fff; color: #000; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; }
+    .tag { font-size: 12.5px; padding: 5px 10px; border: 1px solid #000; background: #fff; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 4px; }
+    .stat { border: 1px solid #000; padding: 12px; background: #fff; }
+    .stat b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
+    .stat span { font-size: 12px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; font-size: 13.5px; font-weight: 500; text-decoration: none !important; border: 1px solid #000; background: #fff; }
+    .btn:hover { background: #000; color: #fff; }
+    .btn.primary { background: #000; color: #fff; }
+    .btn.primary:hover { background: #fff; color: #000; }
+    .followups { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .followup { font-size: 13px; padding: 7px 12px; border: 1px solid #000; background: #fff; }
+    .followup:hover { background: #000; color: #fff; }
+    .timeline { border-left: 2px solid #000; margin: 12px 0 4px 6px; padding-left: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .tl { position: relative; }
+    .tl::before { content: ""; position: absolute; left: -23px; top: 6px; width: 10px; height: 10px; background: #000; }
+    .tl .y { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+    .tl .r { font-weight: 600; }
+    .tl .o { font-size: 13.5px; }
+    .faq dt { font-weight: 600; margin-top: 10px; } .faq dd { margin: 2px 0 0; }
+
+    /* Composer */
+    .composer-wrap { padding: 8px 20px 18px; }
+    /* Chatbox: green border with a slow pulsing glow, faster while typing. */
+    .composer-box { position: relative; max-width: 680px; margin: 0 auto; }
+    .composer {
+      position: relative; display: flex; align-items: flex-end; gap: 8px;
+      padding: 8px 8px 8px 8px; border: 1px solid #22c55e; background: #fff;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .composer:focus-within { animation-duration: 1.8s; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 1px rgba(34,197,94,.15), 0 0 8px rgba(34,197,94,.25); }
+      50%      { box-shadow: 0 0 0 2px rgba(34,197,94,.45), 0 0 28px rgba(34,197,94,.75); }
+    }
+    .tool-btn { width: 36px; height: 36px; display: grid; place-items: center; flex: none; border: 1px solid #000; background: #fff; }
+    .tool-btn:hover { background: #000; color: #fff; }
+    .tool-btn svg { width: 16px; height: 16px; }
+    .box { border: 1px solid #000; background: #fff; padding: 12px 14px; margin: 10px 0; }
+    .box .k { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin: 6px 0 2px; }
+    .box p { margin: 0 0 6px; }
+    .composer textarea { flex: 1; resize: none; border: 0; background: transparent; color: #000; font: inherit; line-height: 1.5; max-height: 240px; overflow-y: auto; padding: 6px 0; outline: none; }
+    .send { width: 36px; height: 36px; background: #000; color: #fff; border: 1px solid #000; display: grid; place-items: center; flex: none; }
+    .send:disabled { opacity: .35; cursor: default; }
+    .send svg { width: 16px; height: 16px; }
+    .hint { max-width: 680px; margin: 8px auto 0; text-align: center; font-size: 12px; }
+
+    .scrim { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 40; }
+    @media (max-width: 1199px) {
+      .sidebar { inset: 0 auto 0 0; width: var(--sidebar-w); background: #fff; border-right: 1px solid #000; z-index: 50; transform: translateX(-100%); transition: transform .25s ease; top: 0; }
+      .sidebar.open { transform: none; }
+      .scrim.show { display: block; }
+      .icon-btn.menu-btn { display: grid; }
+    }
+    @media (max-width: 899px) {
+      .rail { top: auto; right: 12px; bottom: 104px; transform: none; flex-direction: row; padding: 4px; }
+      .rail .sep { width: 1px; height: auto; margin: 2px 4px; }
+      .icon-btn[data-tip]::after { display: none; }
+    }
+    @media (max-width: 860px) {
+      .chips { grid-template-columns: 1fr; }
+      .msg.user .bubble { max-width: 90%; }
+      .thread-inner { padding: 20px 16px; }
+      .composer-wrap { padding: 8px 16px 14px; }
+      .topbar { padding: 10px 12px; min-height: 60px; }
+      .status { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .thread { scroll-behavior: auto; }
+      .composer { animation: none; box-shadow: 0 0 0 1px rgba(34,197,94,.3), 0 0 14px rgba(34,197,94,.45); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="left">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <a class="brand" href="/" style="text-decoration:none">
+          <svg viewBox="0 0 160 160" fill="currentColor" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg>
+          <div><div class="name">Ruther Bergonia</div><div class="sub muted">Systems architect · Manila</div></div>
         </a>
-        <div class="flex items-center gap-6 sm:gap-10">
-          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
-          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
-          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
-          <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
-          <a href="/contact/" class="label label-lg  bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
-        </div>
       </div>
+      <div class="right">
+        <a class="btn primary" href="mailto:ruther.bergonia@gmail.com">Email me</a>
+      </div>
+    </header>
+
+    <aside class="sidebar float" id="sidebar" aria-label="Topics">
+      <button class="new-chat" id="newChat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        New conversation
+      </button>
+      <div class="section-label">Topics</div>
+      <nav class="topics" id="topics"></nav>
+      <div class="section-label">Case studies</div>
+      <nav class="topics" id="cases"></nav>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <nav class="rail float" aria-label="Tools">
+      <a class="icon-btn" href="mailto:ruther.bergonia@gmail.com" aria-label="Email" data-tip="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      <div class="sep"></div>
+      <a class="icon-btn" href="https://github.com/rockyru" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+      <a class="icon-btn" href="https://app.daily.dev/rockyruther" target="_blank" rel="noopener" aria-label="daily.dev" data-tip="daily.dev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 12h8M12 8v8"/></svg></a>
+      <a class="icon-btn" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)" data-tip="Resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></a>
     </nav>
 
-    <nav id="sectionNav" class="hidden xl:block" aria-label="Page sections"></nav>
-
-    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
-      <!-- ══ HERO — exact copy of the reference's HeroSection: 4-col grid,
-           col 1 empty spacer, cols 2-3 headline, col 4 discipline tags
-           top-right. Every cell keeps the reference's own border rules. ══ -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="hidden min-h-[160px] border-r rule md:block"></div>
-        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
-          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">Scope.<br />Build.<br />Integrate. <br/> Operate.</h1>
-          <p class="label mt-4 text-ink-500">Software, built with method.</p>
-        </div>
-        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
-          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
-            <div>Product Engineering</div>
-            <div>Systems Architecture</div>
-            <div>Integration &amp; AI</div>
-            <div>Cloud &amp; Deployment</div>
-            <div>ACCESS &amp; AUDIT</div>
-            
-            
-          </div>
-        </div>
+    <main class="main">
+      <section class="thread" id="thread" aria-live="polite">
+        <div class="thread-inner" id="threadInner"></div>
       </section>
-
-      <!-- ══ HERO VISUAL BANNER — availability callout, portrait photo
-           block, empty col 4, matching HeroVisualBanner 1:2:1 rhythm ══ -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="flex flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-          <div class="space-y-3">
-            <p class="text-xs font-normal leading-relaxed text-ink-500">
-              Always available for your <br/>software engineering needs.<br />
-              <span class="font-semibold text-ink-900">Replies within a day.</span>
-            </p>
-            <a href="#contact" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">Start a project</a>
-          </div>
+      <div class="composer-wrap">
+        <div class="composer-box">
+        <form class="composer" id="composer">
+          <button class="tool-btn" id="composeBtn" type="button" aria-label="Send Ruther a message" title="Send Ruther a message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button>
+          <textarea id="input" rows="1" placeholder="Ask Ru Bot about my work, stack, services, or availability…" aria-label="Message"></textarea>
+          <button class="send" id="send" type="submit" aria-label="Send" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </button>
+        </form>
         </div>
-        <div class="relative min-h-[340px] overflow-hidden border-b rule bg-ink-900 md:col-span-2 md:aspect-auto md:border-b-0 md:border-r">
-          <span class="pointer-events-none absolute -bottom-10 -right-10 h-[65%] w-[65%] text-ink-700 opacity-60" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
-
-      <!-- ══ LEISTUNGEN — statement, matching ServicesOverview: empty col 1,
-           eyebrow + headline spanning cols 2-4 ══ -->
-      <section class="border-b rule" aria-labelledby="leistungen-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+01</span>
-            <h2 id="leistungen-heading" class="label text-ink-500">What I build</h2>
-          </div>
-            <h2 class="display max-w-3xl text-2xl leading-[1.2] text-ink-900 sm:text-3xl md:text-[38px]">
-              As your systems partner, I scope, build, and stand behind software that has to keep working.
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ SERVICE CARDS — nav/CTA cell + 3-up service tiles, matching
-           ServiceCardsGrid's 4-col row exactly ══ -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
-          <!-- <div class="flex items-center gap-2">
-            <button aria-label="Previous service" class="flex h-8 w-8 items-center justify-center rounded-full border border-ink-300 text-ink-500 transition-colors hover:border-ink-900" type="button">&larr;</button>
-            <button aria-label="Next service" class="flex h-8 w-8 items-center justify-center rounded-full border border-ink-300 text-ink-500 transition-colors hover:border-ink-900" type="button">&rarr;</button>
-          </div> -->
-          <div class="mt-12">
-            <a href="/services/" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">See services</a>
-          </div>
-        </div>
-        <div class="fade-up flex flex-col justify-between bg-paper p-8">
-              <div>
-                <h3 class="mb-6 text-base font-bold text-ink-900">Software Engineering</h3>
-                <p class="text-xs leading-relaxed text-ink-500">
-                  Laravel, Vue 3, React, TypeScript, Tailwind CSS
-                </p>
-              </div>
-            </div>
-            <div class="fade-up flex flex-col justify-between  p-8">
-              <div>
-                <h3 class="mb-6 text-base font-bold text-black">Infrastructure &amp; Cloud</h3>
-                <p class="text-xs leading-relaxed text-ink-300">
-                  Docker, Nginx, MySQL, PostgreSQL, Redis, AWS, DigitalOcean, Cloudflare
-                </p>
-              </div>
-            </div>
-            <div class="fade-up flex flex-col justify-between bg-paper p-8">
-              <div>
-                <h3 class="mb-6 text-base font-bold text-ink-900">Integrations &amp; AI</h3>
-                <p class="text-xs leading-relaxed text-ink-500">
-                 REST APIs, system integrations, OAuth/SSO, AI & LLM integrations, automation.
-                </p>
-              </div>
-            </div>
-      </section>
-
-      <!-- ══ TESTIMONIALS INTRO — matching TestimonialsIntro: empty col 1,
-           eyebrow + headline spanning cols 2-4 ══ -->
-      <section class="border-b rule" aria-labelledby="glimpse-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+02</span>
-            <h2 id="glimpse-heading" class="label text-ink-500">Selected work.</h2>
-          </div>
-            <h2 class="display text-3xl text-ink-900 md:text-5xl">Things <br />I have built <br />&amp; shipped.</h2>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ GOVERNMENT WORK — RGAO/UP Manila case studies, own grid so
-           they read as a distinct body of work from the freelance one below ══ -->
-      <section class="border-b rule">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="border-b rule px-8 pt-8 sm:px-12 sm:pt-12 md:col-span-3 md:px-16 md:pt-16">
-            <span class="label text-ink-400">Government &middot; UP Manila, RGAO</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3">
-          <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
-            <span class="text-2xl font-black tracking-widest text-ink-200">Government</span>
-          </div>
-          <div class="fade-up flex min-h-[280px] flex-col justify-between bg-ink-900 p-8">
-            <div class="font-serif text-3xl text-paper">&ldquo;</div>
-            <div>
-              <div class="text-xs font-bold text-paper">Senior Adminstrative Assistant II</div>
-              <div class="label mt-1 text-ink-300">UP Manila, Research Grants Adminstration Office</div>
-            </div>
-          </div>
-          <a href="/work/suri-research-information-system/" class="group fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8 transition-colors hover:bg-paper-raised">
-            <div>
-              <span class="label text-ink-300">Case study &middot; 01</span>
-              <h3 class="display mt-3 text-3xl text-ink-900">SURI</h3>
-            </div>
-            <p class="text-xs leading-relaxed text-ink-500">The system of record for RGAO &mdash; 15,000+ records replacing fragmented spreadsheets across multiple offices.</p>
-            <span class="label mt-6 text-ink-900 transition-colors group-hover:text-ink-500">Read <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a href="/work/aria-controlled-response-ai/" class="group fade-up flex min-h-[280px] flex-col justify-between bg-ink-900 p-8 transition-colors hover:bg-ink-700">
-            <div>
-              <span class="label text-ink-400">Case study &middot; 02</span>
-              <h3 class="display mt-3 text-3xl text-paper">ARIA</h3>
-            </div>
-            <p class="text-xs leading-relaxed text-ink-300">Our AI assistant that answers only from approved institutional sources &mdash; and says it doesn&rsquo;t know rather than inventing an answer.</p>
-            <span class="label mt-6 text-paper transition-colors group-hover:text-ink-300">Read <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a href="/work/go-aral-graduate-support-platform/" class="group fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8 transition-colors hover:bg-paper-raised">
-            <div>
-              <span class="label text-ink-300">Case study &middot; 04</span>
-              <h3 class="display mt-3 text-3xl text-ink-900">GO-ARAL</h3>
-            </div>
-            <p class="text-xs leading-relaxed text-ink-500">Graduate applications and support requests tracked end to end &mdash; nothing depends on remembering which email thread it was in.</p>
-            <span class="label mt-6 text-ink-900 transition-colors group-hover:text-ink-500">Read <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a href="/work/race-platform-orchestration/" class="group fade-up flex min-h-[280px] flex-col justify-between bg-ink-900 p-8 transition-colors hover:bg-ink-700">
-            <div>
-              <span class="label text-ink-400">Case study &middot; 03</span>
-              <h3 class="display mt-3 text-3xl text-paper">RACE</h3>
-            </div>
-            <p class="text-xs leading-relaxed text-ink-300">Keeps a university&rsquo;s separate research systems behaving like one product &mdash; shared identity, shared vocabulary.</p>
-            <span class="label mt-6 text-paper transition-colors group-hover:text-ink-300">Read <span aria-hidden="true">&rarr;</span></span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ══ FREELANCE WORK — independent client work, kept apart from the
-           institutional case studies above ══ -->
-      <section class="border-b rule">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="border-b rule px-8 pt-8 sm:px-12 sm:pt-12 md:col-span-3 md:px-16 md:pt-16">
-            <span class="label text-ink-400">Freelance &middot; Independent contractor</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
-            <span class="text-2xl font-black tracking-widest text-ink-200">Freelance</span>
-          </div>
-          <div class="fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8">
-            <p class="my-4 text-xs leading-relaxed text-ink-600">
-              Aside from my day job, I also do freelance work. I have been engaged to some local and international clients to build their web applications and manage servers, databases, and other infrastructure.
-            </p>
-            <div>
-              <div class="text-xs font-bold text-ink-900">Independent Contractor</div>
-              <div class="label mt-1 text-ink-300">2018&mdash;Present</div>
-            </div>
-          </div>
-          <div class="fade-up flex min-h-[280px] items-center justify-center bg-paper p-10">
-            <span class="text-2xl font-black tracking-widest text-ink-200">
-              SaaS Platform <br />
-              Real Property Management <br />
-              Logs Monitoring <br />
-              Targeted Advertisement
-            </span>
-          </div>
-          <div class="fade-up flex min-h-[280px] flex-col justify-between bg-paper p-8">
-            <p class="my-4 text-xs leading-relaxed text-ink-600">
-              I managed servers, databases, and other infrastructure for these clients as part of the engagement.
-            </p>
-            <div>
-              <div class="text-xs font-bold text-ink-900">LMQ Tech</div>
-              <div class="label mt-1 text-ink-300">Remote, US client &middot; 2021&mdash;2022</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ WORK CTA — quiet link to the full case-study index, so the
-           4-tile teaser above always has a way to see everything ══ -->
-      <section class="border-b rule">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="flex items-center justify-between gap-6 p-8 sm:p-12 md:col-span-3 md:p-16">
-            <p class="label text-ink-500">See all case studies</p>
-            <a href="/work/" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">View work <span aria-hidden="true">&rarr;</span></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ COMPANY OVERVIEW — headline + right-aligned meta tags,
-           matching CompanyOverview exactly ══ -->
-      <section class="border-b rule" aria-labelledby="company-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+03</span>
-            <h2 id="company-heading" class="label text-ink-500">Skills &amp; Experience</h2>
-          </div>
-            <h2 class="display max-w-[18ch] text-3xl leading-tight text-ink-900 sm:text-4xl md:text-[44px]">Built <br />through<br />experience.</h2>
-          </div>
-          <div class="flex flex-col items-start justify-start space-y-1 p-8 text-[10px] font-bold uppercase tracking-widest text-ink-400 md:items-end">
-            <div>Since 2021</div>
-            <div>6 platforms live</div>
-            <div>Metro Manila, PH</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ TEAM/FACTS GRID — three 4-col rows: photo / dark-content /
-           photo / rotated-stat, matching TeamGrid's rhythm row-for-row,
-           with color blocks replacing every headshot ══ -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2015 &mdash; 2017</span>
-              <span class="label mr-2 rotate-180 text-ink-500">Balibago Waterworks System, Inc.</span>
-            </div>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-ink-900 p-8">
-              <h3 class="text-2xl font-bold text-paper">Where I started.</h3>
-              <p class="max-w-xs text-xs leading-relaxed text-ink-300">I worked on their internal application for Job Order Requests Queueing, built with Laravel and Vue. I also managed their servers and database, and helped field-test the mobile app for water meter reading and billing.</p>
-            </div>
-            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2018 &mdash; 2020</span>
-              <span class="label mr-2 rotate-180 text-ink-500">Crosshair Technologies Solutions Inc.</span>
-            </div>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col items-center justify-center bg-paper p-8">
-              <div class="flex items-center gap-3" style="writing-mode: vertical-rl;">
-                <span class="label rotate-180 text-ink-400">Career started</span>
-                <span class="rotate-180 text-6xl font-extrabold tracking-tighter md:text-7xl text-ink-900">2015</span>
-              </div>
-            </div>
-            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-ink-900" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-700"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2021 &mdash; 2025</span>
-              <span class="label mr-2 rotate-180 text-white">NGOHS &middot; UP Manila</span>
-            </div>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-paper p-8">
-              <h3 class="text-2xl font-bold text-ink-900">What I do now.</h3>
-              <p class="max-w-xs text-xs leading-relaxed text-ink-500">I lead architecture and development at UP Manila &mdash; DRMS and GO-ARAL for NGOHS (2021&ndash;2025), then SURI at RGAO since 2025. Alongside NGOHS, I built an ELK Stack ops dashboard for LMQ Tech, a US client, in 2021&ndash;2022. I also run <a href="https://sprntr.dev/" rel="noopener" class="underline underline-offset-4 hover:text-ink-900">Sprntr</a>, done-for-you websites and CRM for local businesses.</p>
-            </div>
-            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-ink-900" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-700"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2021 &mdash; 2022</span>
-              <span class="label mr-2 rotate-180 text-white">LMQ Tech (freelance, remote)</span>
-            </div>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col justify-center bg-paper p-8 items-center text-center">
-              <div class="text-5xl font-black tracking-tight md:text-6xl text-ink-900">2025</div>
-              <div class="label mt-1 text-ink-400">RGAO &middot; Systems architect</div>
-            </div>
-            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2025 &mdash; now</span>
-              <span class="label mr-2 rotate-180 text-ink-500">RGAO &middot; UP Manila</span>
-            </div>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col justify-between bg-ink-900 p-8">
-              <h3 class="text-2xl font-bold text-paper">Why it matters.</h3>
-              <p class="max-w-xs text-xs leading-relaxed text-ink-300">Because software today is more than a switch you flip on and off. Because bad planning gets expensive. And because reliability in a system isn&rsquo;t negotiable.</p>
-            </div>
-            <div class="fade-up flex min-h-[360px] flex-col justify-end bg-paper p-8">
-              <div class="text-5xl font-black tracking-tight md:text-6xl text-ink-900">15,000+</div>
-              <div class="label mt-1 text-ink-400">Records live</div>
-            </div>
-            <div class="relative flex min-h-[360px] flex-col justify-end overflow-hidden bg-paper-sunk" aria-hidden="true">
-              <span class="pointer-events-none absolute -bottom-6 -right-6 h-[70%] w-[70%] text-ink-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              <div class="absolute bottom-6 right-3 flex items-center gap-3 text-ink-900" style="writing-mode: vertical-rl;">
-              <span class="rotate-180 text-xs font-bold">2025 &mdash; now</span>
-              <span class="label mr-2 rotate-180 text-ink-500">SaaS architecture (freelance)</span>
-            </div>
-            </div>
-      </section>
-
-      <!-- ══ KONTAKT — sidebar note + calling card, matching ContactSection ══ -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4" id="kontakt">
-        <div class="flex items-end border-b rule p-8 md:border-b-0 md:border-r">
-          <span class="label text-ink-400">Reach me directly</span>
-        </div>
-        <div class="flex flex-col border-r rule md:col-span-2">
-          <div class="border-b rule p-8 sm:p-12" aria-labelledby="kontakt-heading">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+04</span>
-            <h2 id="kontakt-heading" class="label text-ink-500">Contact</h2>
-          </div>
-            <h2 class="display text-3xl text-ink-900 sm:text-4xl">Get in<br />touch.</h2>
-          </div>
-          <div class="p-8 sm:p-12">
-            <div class="border rule bg-paper-raised p-8 sm:p-10">
-              <div class="flex items-start justify-between gap-6">
-                <div>
-                  <p class="display text-xl text-ink-900 sm:text-2xl">Ruther Bergonia</p>
-                  <p class="label mt-2 text-ink-500">Systems architect</p>
-                </div>
-                <span class="block h-8 w-auto shrink-0 text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              </div>
-              <div class="mt-10 space-y-3 border-t rule pt-8 text-sm font-medium text-ink-500">
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">M</span>
-                  <a href="mailto:ruther.bergonia@gmail.com" class="transition-colors hover:text-ink-900">ruther.bergonia@gmail.com</a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">L</span>
-                  <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="transition-colors hover:text-ink-900">linkedin.com/in/ruther-bergonia</a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">G</span>
-                  <a href="https://github.com/rockyru" rel="noopener" class="transition-colors hover:text-ink-900">github.com/rockyru</a>
-                </div>
-              </div>
-              <p class="label mt-8 border-t rule pt-6 text-ink-300">Metro Manila, PH</p>
-            </div>
-          </div>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
+        <div class="hint muted" id="hint">Ru Bot answers from this site's content only. Enter to send, Shift+Enter for a new line.</div>
+      </div>
     </main>
+  </div>
 
-    <footer id="contact" class="border-t rule">
-      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-        <div class="mb-14 flex items-baseline gap-6">
-          <span class="label text-ink-900">+05</span>
-          <span class="label text-ink-500">Start here</span>
-        </div>
+<script>
+(() => {
+  // ── Config ──────────────────────────────────────────────────────
+  const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const AI_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/chat' : '/api/chat';
+  const CONTACT_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/contact' : '/api/contact';
+  const COMPOSE_RE = /\b(send (you |him |ruther |me )?(an? )?(e-?mail|message)|e-?mail (you|him|ruther)|message (you|him|ruther)|leave (you )?(a )?(message|note)|contact form|get in touch|write to you|i want to hire|hire you)\b/i;
+  let compose = null; // { step: 'name'|'email'|'message'|'review', name, email, message }
+  const EMAIL = 'ruther.bergonia@gmail.com';
 
-        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Tell me what&rsquo;s breaking.</h2>
+  // ── Work catalogue ─────────────────────────────────────────────
+  const WORK = {
+    suri:  { t: 'SURI', d: 'Research information system, UP Manila. 15,000+ records, 50+ users, reporting in seconds.', m: 'Laravel · Vue · MySQL', img: '/images/suri-screen-dashboard.webp', url: '/work/suri-research-information-system/' },
+    aral:  { t: 'GO-ARAL', d: 'Graduate application & ticketing portal, NGOHS. ~1,000 applicants a year, ~200 tickets a month.', m: 'Laravel · Vue · MySQL', img: '/images/aral.png', url: '/work/go-aral-graduate-support-platform/' },
+    aria:  { t: 'ARIA', d: 'Controlled-response AI assistant. Approved sources only, human handoff, tracked tickets.', m: 'Claude · RAG · Laravel', img: '/images/og-work.png', url: '/work/aria-controlled-response-ai/' },
+    race:  { t: 'TRACE', d: 'Shared authentication and services beneath SURI and ARIA. In development.', m: 'Docker · API design', img: '/images/trace.png', url: '/work/race-platform-orchestration/' },
+    cntxt: { t: 'CNTXTQRY', d: 'AI practice tool for customer-service conversations. Chat, email and voice rehearsal with scored feedback.', m: 'Product · Live', img: '/images/cntxtqry.jpg', url: 'https://cntxtqry.com/', ext: true },
+    estim: { t: 'Construction Estimating Academy', d: 'Online training platform: self-paced courses, live webinars, template store, verifiable certificates.', m: 'Client · Live', img: '/images/estimatingacademy.jpg', url: 'https://estimatingacademy.org/', ext: true },
+    lamour: { t: 'Lamour Printing Services', d: 'Print shop in Sampaloc, Manila. Sprntr\'s first pilot customer.', m: 'Sprntr client', word: 'Stickers, labels, standees, invitations.', url: 'https://lamour.sprntr.dev/', ext: true },
+    pets:  { t: 'Pampered Pets Club', d: 'Grooming, hotel and daycare in Batangas City, with a "Book a visit" flow.', m: 'Sprntr client', word: 'Book a visit.', url: 'https://pamperedpets.sprntr.dev/', ext: true },
+    bridal: { t: 'Pinky Lamasan Bridal Atelier', d: 'Bridal gowns in General Trias, Cavite. Editorial site plus inventory, reservations, orders and payments.', m: 'Sprntr client', word: 'Ready-to-wear & custom gowns.', url: 'https://pqlamasan.com/', ext: true },
+  };
+  const cardBody = w => `${w.img ? `<img src="${w.img}" alt="" loading="lazy">` : `<div class="card-word">${w.word}</div>`}<div class="cb"><div class="ct">${w.t}</div><div class="cd">${w.d}</div><div class="cm">${w.m}</div></div>`;
+  const card = (w, k) => w.ext
+    ? `<a class="card" href="${w.url}" target="_blank" rel="noopener">${cardBody(w)}</a>`
+    : `<button class="card" type="button" data-q="Tell me about ${w.t}" data-id="${k}">${cardBody(w)}</button>`;
+  const cards = keys => `<div class="cards">${keys.map(k => card(WORK[k], k)).join('')}</div>`;
+  const tags = list => `<div class="tags">${list.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+  const btns = list => `<div class="btn-row">${list.map(b => b.id
+    ? `<button class="btn ${b.primary ? 'primary' : ''}" type="button" data-q="${b.q || b.label}" data-id="${b.id}">${b.label}</button>`
+    : `<a class="btn ${b.primary ? 'primary' : ''}" href="${b.href}" ${b.ext ? 'target="_blank" rel="noopener"' : ''}>${b.label}</a>`).join('')}</div>`;
+  const stats = list => `<div class="stat-row">${list.map(s => `<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>`;
 
-        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
-          <p class="text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
-            Email is fastest. Tell me what you're trying to build, what's currently breaking, or where the workflow falls apart. I'll tell you what I'd investigate first.
-          </p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
-            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
-            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
-        </div>
-      </div>
+  // ── Scripted answers (mirror worker/knowledge.md) ──────────────
+  const INTENTS = [
+    { id: 'about', label: 'About me', icon: 'user',
+      match: /\b(who|about|yourself|intro|background|bio|are you|what do you do)\b/i,
+      text: [
+        `I'm <strong>Ruther Bergonia</strong>, a software systems architect and senior full-stack engineer in Metro Manila. I've been shipping production software since 2015, 11+ years and six platforms live.`,
+        `By day I lead architecture and development at the Research Grants Administration Office at UP Manila: SURI, ARIA, and the TRACE layer beneath them. Alongside that I take on a small number of client projects, and I run two products, Sprntr and CNTXTQRY.`,
+        `My motto: <strong>Scope. Build. Integrate. Operate.</strong> Software, built with method. I replace spreadsheets and manual workflows with secure, role-based platforms that keep working under real load.`,
+      ],
+      rich: () => stats([['11+', 'years building'], ['6', 'platforms live'], ['Always', 'open for projects']]) + btns([{ label: 'How I build', id: 'approach', q: 'How do you build?' }, { label: 'My capabilities', id: 'stack', q: 'What are your capabilities?' }, { label: 'Career track', id: 'experience', q: 'Tell me about your experience' }]),
+      follow: ['What have you built?', 'What are your capabilities?', 'How do you build?', 'Are you available for hire?'] },
 
-      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
-        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
-          <div class="flex items-center gap-4">
-            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-            <div>
-              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-            </div>
-          </div>
-          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
-            <a href="https://sprntr.dev/" rel="noopener" class="label text-ink-500 transition-colors hover:text-ink-900">Sprntr</a>
-            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
-            <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
-          </nav>
-          <p class="label text-ink-300">© 2026</p>
-        </div>
-      </div>
+    { id: 'work', label: 'Selected work', icon: 'grid',
+      match: /\b(work|projects?|built|portfolio|case stud(y|ies)|systems?|shipped)\b/i,
+      text: [`Four systems in production for UP Manila, each solving a real operational problem, plus the products and client platforms I run or built.`],
+      rich: () => cards(['suri', 'aral', 'aria', 'race', 'cntxt', 'estim']) + btns([{ label: 'All case studies', href: '/work/' }]),
+      follow: ['Tell me about SURI', 'How does ARIA stay accurate?', 'What is TRACE?', 'Show me client sites'] },
 
-      <!-- Closing wordmark: the name at display scale, trimmed to the
-           baseline so it sits on the page edge like a masthead. -->
-      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
-        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
-      </div>
-    </footer>
+    { id: 'suri', group: 'cases', label: 'SURI', icon: 'doc', match: /\bsuri\b/i,
+      text: [
+        `<strong>SURI</strong>, the System for UPM Research Intelligence, is the research information system of record at UP Manila's Research Grants Administration Office. It's an API-first Laravel + Vue.js platform on MySQL that unifies research registration, document management, approval workflows, and reporting.`,
+        `Before SURI those workflows ran by hand across spreadsheets and disconnected tools, across multiple offices with their own permissions and their own idea of what a "project" means. Now one platform manages 15,000+ records for 50+ users, and reports that took days run in seconds.`,
+        `I lead its architecture and development and own it through production: deployments, production database architecture, release management. Authentication and role-based access are treated as architecture, not features, because SURI is built to join the wider ecosystem through TRACE.`,
+      ],
+      rich: () => cards(['suri']) + stats([['15,000+', 'records managed'], ['50+', 'active users'], ['Seconds', 'reporting, down from days']]) + tags(['Laravel', 'Vue.js', 'MySQL', 'REST API', 'RBAC', 'Approval workflows']) + btns([{ label: 'Read the case study', href: '/work/suri-research-information-system/', primary: true }]),
+      follow: ['What is TRACE?', 'Tell me about ARIA', 'Show all projects'] },
 
-    <button id="scrollTop" type="button" aria-label="Scroll back to top"
-      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
-      <span aria-hidden="true">↑</span>
-    </button>
+    { id: 'aral', group: 'cases', label: 'GO-ARAL', icon: 'doc', match: /\b(go-?aral|aral|graduate|ngohs|ticketing|drms|admissions?)\b/i,
+      text: [
+        `<strong>GO-ARAL</strong> is the application and ticketing portal at the National Graduate Office for the Health Sciences (NGOHS), UP Manila. I built it from 2021 to 2025 as Senior ICT Assistant, alongside <strong>DRMS</strong>, the internal admissions records system.`,
+        `Applicants apply through GO-ARAL and their support requests become tracked tickets instead of lost emails. DRMS is the office's source of truth for applicant records. I architected the APIs, database schemas, reporting, and role-based access control behind both, led the VPS deployment, trained staff, and stayed on for support.`,
+        `That's where the pattern behind my institutional work took shape: APIs and schemas first, access control as a first-class design concern, own the deployment, stay through training.`,
+      ],
+      rich: () => cards(['aral']) + stats([['~1,000', 'applicants a year'], ['~200', 'support requests a month'], ['2021–25', 'period']]) + btns([{ label: 'Read the case study', href: '/work/go-aral-graduate-support-platform/', primary: true }]),
+      follow: ['Tell me about SURI', 'Show all projects'] },
 
-    <script>document.documentElement.classList.add("js");</script>
-    <script src="/script.js" defer></script>
-  </body>
+    { id: 'aria', group: 'cases', label: 'ARIA', icon: 'doc', match: /\b(aria|ai assistant|chatbot|rag|controlled|accurate|hallucinat)\b/i,
+      text: [
+        `<strong>ARIA</strong> is a controlled-response AI support assistant for research inquiries, powered by Claude with retrieval-augmented generation. It follows three rules: answer only from approved institutional sources, hand anything outside scope to a human rather than guess, and turn inquiries that need follow-up into tracked tickets so nothing disappears into a chat log.`,
+        `When an AI speaks for a university office, a confidently wrong answer is worse than no answer. The hard part wasn't the model; it was the refusal behaviour. ARIA says it doesn't know rather than inventing an answer. This page works the same way.`,
+      ],
+      rich: () => cards(['aria']) + tags(['Claude', 'RAG', 'Vector search', 'Laravel', 'Human handoff', 'Tracked tickets']) + btns([{ label: 'Read the case study', href: '/work/aria-controlled-response-ai/', primary: true }]),
+      follow: ['What is TRACE?', 'What is Alamat?', 'What AI tools do you use?'] },
+
+    { id: 'race', group: 'cases', label: 'TRACE', icon: 'doc', match: /\bt?race\b|orchestration/i,
+      text: [
+        `<strong>TRACE</strong> is the orchestration layer I'm developing beneath SURI and ARIA. Institutional software accumulates one system at a time, each with its own login and user store. TRACE is the generalization of that lesson: shared authentication so users move between platforms without re-authenticating, shared services built once and reused, and defined integration paths so joining the ecosystem is a supported path rather than a custom project.`,
+        `It's in active development. SURI and ARIA are its first tenants, and the architecture is being extracted from systems already running in production rather than designed in the abstract.`,
+      ],
+      rich: () => cards(['race']) + tags(['Shared authentication', 'Shared services', 'Integration', 'Docker', 'API design', 'Laravel']) + btns([{ label: 'Read the case study', href: '/work/race-platform-orchestration/', primary: true }]),
+      follow: ['Tell me about SURI', 'Show all projects'] },
+
+    { id: 'alamat', hidden: true, match: /\balamat\b|exam reviewer/i,
+      text: [`<strong>Alamat</strong> is an exam reviewer built with the same controlled-response approach as ARIA: it answers from approved material and hands off when something falls outside its scope. There's no separate case study for it yet.`],
+      follow: ['Tell me about ARIA', 'Show all projects'] },
+
+    { id: 'stack', label: 'Capabilities', icon: 'layers',
+      match: /\b(stack|tech|technolog|capabilit|skills?|languages?|frameworks?|laravel|vue|react|next|php|tools?|database|mysql|postgres|redis|docker|nginx|aws|cloud|ai tools|openai|claude|gemini)\b/i,
+      text: [`I pick proven tools and go deep on them. The full list from the About page:`],
+      rich: () => `<h4>Backend</h4><p>PHP, Laravel, FastAPI, REST API design, MySQL, relational database design, authentication & authorization, role-based access control, workflow automation, reporting engines.</p>
+        <h4>Frontend</h4><p>Vue.js, React, Next.js, TypeScript, Tailwind CSS, progressive web apps, offline-first architectures, responsive and accessible interfaces.</p>
+        <h4>AI</h4><p>Claude & OpenAI integration, Gemini, retrieval-augmented generation, controlled-response architectures, prompt engineering, AI-assisted workflow automation.</p>
+        <h4>Infrastructure</h4><p>Docker, Linux server administration, Nginx, VPS & cloud deployment, CI/CD, release management, production database architecture. Also PostgreSQL, Redis, AWS, DigitalOcean, Cloudflare.</p>
+        <h4>Integrations</h4><p>REST APIs, system integrations, OAuth/SSO, AI & LLM integrations, automation.</p>` + tags(['Laravel', 'Vue 3', 'React', 'Next.js', 'TypeScript', 'Tailwind', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Nginx', 'AWS', 'Cloudflare', 'Claude', 'OpenAI']),
+      follow: ['How do you build?', 'What have you built?', 'Are you available for hire?'] },
+
+    { id: 'approach', hidden: true, match: /\b(how do you (build|work)|approach|process|method|philosophy|engagement|usually look|principles?)\b/i,
+      text: [
+        `<strong>Systems should grow instead of being rebuilt.</strong> API-first services, clean separation between platforms, and authentication designed for an ecosystem rather than a single app.`,
+        `<strong>Continuity is built in from the start.</strong> Documentation, version-controlled code, and reproducible infrastructure another engineer could pick up without starting over.`,
+        `<strong>AI follows the same discipline.</strong> The assistant answers from approved sources and hands off to a human when something falls outside its scope, rather than guessing. AI should reduce operational risk, not add it.`,
+        `In practice: tell me what's breaking. I'll give you an honest read on whether I'm the right fit and how I'd approach it. If a spreadsheet is genuinely fine for now, I'll say that.`,
+      ],
+      follow: ['Are you available for hire?', 'What should I include in an email?', 'What have you built?'] },
+
+    { id: 'experience', label: 'Experience', icon: 'clock',
+      match: /\b(experience|career|history|timeline|years|resume|cv|jobs?|worked|employ|rgao|balibago|crosshair|lmq)\b/i,
+      text: [`Career started in 2015. The track so far:`],
+      rich: () => `<div class="timeline">
+        <div class="tl"><div class="y">2025 — now</div><div class="r">Systems architect · RGAO, UP Manila</div><div class="o">Leads architecture and development of SURI (15,000+ records, 50+ users), building TRACE, ARIA in the same ecosystem. Position title: Senior Administrative Assistant II.</div></div>
+        <div class="tl"><div class="y">2025 — now</div><div class="r">Independent contractor · SaaS architecture</div><div class="o">Architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.</div></div>
+        <div class="tl"><div class="y">2021 — 2025</div><div class="r">Senior ICT Assistant · NGOHS, UP Manila</div><div class="o">Built and ran DRMS and GO-ARAL: ~1,000 applicants a year, ~200 support requests a month. Owned the APIs, schema, RBAC and reporting.</div></div>
+        <div class="tl"><div class="y">2021 — 2022</div><div class="r">Full-stack developer · LMQ Tech (freelance, remote US client)</div><div class="o">ELK Stack operations dashboard with ticketing and reporting; managed servers, databases and infrastructure.</div></div>
+        <div class="tl"><div class="y">2018 — 2020</div><div class="r">Crosshair Technologies Solutions Inc.</div><div class="o">A demographic-targeted advertising platform on AWS.</div></div>
+        <div class="tl"><div class="y">2018 — present</div><div class="r">Freelance · Independent contractor</div><div class="o">Web applications plus servers, databases and infrastructure for local and international clients: SaaS platform, real property management, logs monitoring, targeted advertisement.</div></div>
+        <div class="tl"><div class="y">2015 — 2017</div><div class="r">Balibago Waterworks System, Inc.</div><div class="o">Where it started: an internal Job Order Requests Queueing app in Laravel and Vue, server and database management, field-testing the mobile app for water meter reading and billing, and the company site.</div></div>
+      </div>` + btns([{ label: 'Download resume (PDF)', href: '/assets/ruther-bergonia-resume.pdf', ext: true, primary: true }, { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ruther-bergonia-a9959813a/', ext: true }]),
+      follow: ['What have you built?', 'What do you do as a freelancer?', 'Are you available for hire?'] },
+
+    { id: 'freelance', hidden: true, match: /\bfreelanc|independent contractor|side (work|projects)|clients? (do you|have you)/i,
+      text: [
+        `Aside from my day job I've done freelance work since 2018 for local and international clients: building their web applications and managing servers, databases, and infrastructure.`,
+        `Project types so far: a SaaS platform, real property management, logs monitoring (the ELK Stack ops dashboard for LMQ Tech, a US client, 2021–2022), and targeted advertisement. Right now I'm architecting a multi-tenant SaaS platform for digital advertising catalogs.`,
+      ],
+      follow: ['Are you available for hire?', 'Show me client sites'] },
+
+    { id: 'services', label: 'Services & products', icon: 'briefcase',
+      match: /\b(services?|sprntr|price|pricing|cost|how much|website|small business|crm|booking|packages?|rates?|monthly|domain|hosting)\b/i,
+      text: [
+        `Two tracks. For institutions, SaaS teams, and operational organizations, I do systems architecture and full-stack builds on a project basis: scoped, priced honestly, and supported after launch.`,
+        `For Philippine service businesses there's <strong>Sprntr</strong>: a website we build for you, connected to one workspace for inquiries, follow-up, and bookings. Pay once, no monthly fees. Hosting, SSL and your domain are included for 2 years, then ₱3,000 a year. Half to start, the rest at launch, by GCash, Maya, card, or QR Ph. The preview is free.`,
+        `I also run <strong>CNTXTQRY</strong>, an AI practice tool where BPO applicants and virtual assistants rehearse customer-service conversations and get scored feedback.`,
+      ],
+      rich: () => stats([['₱15,000', 'Website: up to 5 pages, SEO, inquiry form'], ['₱22,000', 'Website + CRM: pipeline, booking, reminders'], ['₱35,000', 'Business System: 10 pages, training, priority support']]) +
+        `<p style="margin-top:10px">Add-ons: extra pages ₱1,500 each, rush launch in 3 business days ₱3,000, Sprntr Premium ₱15,000 one-time with 11 growth features. Need inventory, multiple branches or payments? That's Sprntr Custom, from ₱50,000.</p>` +
+        btns([{ label: 'Sprntr packages', href: '/services/', primary: true }, { label: 'Free preview at sprntr.dev', href: 'https://sprntr.dev/', ext: true }, { label: 'CNTXTQRY', href: 'https://cntxtqry.com/', ext: true }]),
+      follow: ["What's included in Sprntr?", 'How does the Sprntr process work?', 'Sprntr FAQ', 'What is CNTXTQRY?'] },
+
+    { id: 'sprntr-included', hidden: true, match: /included|what do (i|we) get|features of sprntr|inquir|reminder|messenger/i,
+      text: [`What's included in Sprntr:`],
+      rich: () => `<h4>Website</h4><ul><li>Custom site, up to 5 pages, built by the Sprntr team, phone-first</li><li>SEO setup: titles, descriptions, sitemap, Search Console</li><li>Hosting, SSL and your domain for 2 years, plus a free yourbusiness.sprntr.dev address</li></ul>
+        <h4>Inquiries</h4><ul><li>Every inquiry lands in one pipeline; your team is emailed the moment it arrives</li><li>Customer records with full history; reply by email from the lead's record</li><li>Messenger chats as leads (awaiting Meta approval)</li><li>If one waits 30 minutes without a reply, your team gets a nudge during opening hours</li></ul>
+        <h4>Booking</h4><ul><li>Customers book open slots based on your hours, closed dates and Philippine holidays; you confirm or decline</li><li>Shared calendar, Google Meet links, reminder emails the day before, one review request after each visit</li><li>A results email on the 1st of every month</li></ul>
+        <h4>Support</h4><ul><li>Free preview before you pay; walkthrough call, then your changes, then launch</li><li>Up to 3 staff sign-ins with Google accounts; up to 10 content edits included</li><li>You own your customer data; ask for a full export any time. hello@sprntr.dev replies within a business day</li></ul>`,
+      follow: ['What does Sprntr cost?', 'How does the Sprntr process work?', 'Show me client sites'] },
+
+    { id: 'sprntr-process', hidden: true, match: /preview|launch|how (does|do) (the )?(sprntr )?process|steps|deposit|how long/i,
+      text: [`From preview to launch in four steps:`],
+      rich: () => `<ul><li><strong>1. Tell us about your business.</strong> Fill in the preview form on sprntr.dev: what you do, where you are, what the site should do for you. Two minutes.</li>
+        <li><strong>2. Free preview.</strong> We build a preview of your website and workspace from your logo, photos, services and prices, usually in about 5 business days. No cost, no commitment.</li>
+        <li><strong>3. Walkthrough and changes.</strong> A call, then your changes. Pay the 50% deposit only when you decide to go ahead.</li>
+        <li><strong>4. Live.</strong> Launch once you approve it, or within 3 business days with rush launch. Pay the balance, then invite your team.</li></ul>` + btns([{ label: 'Get a free preview', href: 'https://sprntr.dev/', ext: true, primary: true }]),
+      follow: ['What does Sprntr cost?', 'Sprntr FAQ'] },
+
+    { id: 'sprntr-faq', hidden: true, match: /\bfaq\b|facebook page|own domain|monthly fee|really free|more than this/i,
+      text: [`Questions business owners actually ask:`],
+      rich: () => `<dl class="faq">
+        <dt>Is the preview really free?</dt><dd>Yes. You only pay if you decide to go live.</dd>
+        <dt>Is there a monthly fee?</dt><dd>No. You pay once. Hosting and your domain are included for 2 years, then ₱3,000 a year. Up to 10 content edits are included too.</dd>
+        <dt>Can I keep my own domain?</dt><dd>Yes. We connect one you own or register a new one in your business's name. It's yours, transferable whenever you ask, plus a free sprntr.dev address.</dd>
+        <dt>I already have a Facebook page. Why do I need this?</dt><dd>Keep it; they do different jobs. The website is what people find when they search Google, and its inquiries land in an organized pipeline instead of getting buried in chat.</dd>
+        <dt>Does it connect to Messenger?</dt><dd>Yes, pending Meta's approval for customer Pages. Text reminders already work using prepaid SMS credits.</dd>
+        <dt>Can you do more than this?</dt><dd>Yes. Inventory, multiple branches, payments, reporting: all doable, scoped and priced separately as Sprntr Custom.</dd></dl>`,
+      follow: ['What does Sprntr cost?', 'Show me client sites'] },
+
+    { id: 'clients', label: 'Clients', icon: 'users',
+      match: /\b(clients?|live sites?|examples?|customers?|who have you worked (with|for)|estimating|academy|lamour|pampered|pets|bridal|lamasan)\b/i,
+      text: [`Real businesses, live now. Open one; they're the real thing, not demos.`],
+      rich: () => cards(['estim', 'lamour', 'pets', 'bridal']) + `<p style="margin-top:10px"><strong>Construction Estimating Academy</strong> is an online training platform I built: self-paced courses with project-based lessons on real drawings, live Zoom webinars, a store of estimating templates, corporate training, and certificates of completion with numbers that can be verified online. The three Sprntr sites are a print shop, a pet grooming business, and a bridal atelier with a custom system for gown inventory, reservations, orders and payments.</p>`,
+      follow: ['What does Sprntr cost?', 'Are you available for hire?', 'What have you built?'] },
+
+    { id: 'cntxt', hidden: true, match: /\b(cntxt|cntxtqry|context ?query|practice tool|bpo|mock assessment|virtual assistant|customer service|rehearse)\b/i,
+      text: [
+        `<strong>CNTXTQRY</strong> is my own product: an AI practice tool for customer-service conversations. "Rehearse the hard conversations. Before they happen." You rehearse chat, email and voice scenarios with an AI customer, like a billing dispute, a cancellation or a damaged-item complaint, and an AI judge scores five skills: empathy, discovery, accuracy, resolution and communication, weighted into a score out of 100. Feedback quotes your own words, with coaching tips and printable reports.`,
+        `It's built for Filipino BPO applicants preparing for mock assessments and virtual assistants preparing for client work. VAs can upload a client's SOP to generate practice scenarios, and agency workspaces get coach review. Scoring is coaching, not an official assessment, and it can't promise job placement.`,
+      ],
+      rich: () => cards(['cntxt']) + stats([['Free', '3 sessions a month, no card'], ['₱149', 'Job-hunt pass, 7 days, 10 sessions'], ['₱499', 'Pro per month, or ₱4,990 a year']]) + tags(['Chat · Email · Voice', 'AI judge', 'SOP upload', 'Printable reports', 'QR Ph', 'No auto-renew']) + btns([{ label: 'Try CNTXTQRY', href: 'https://cntxtqry.com/', primary: true, ext: true }]),
+      follow: ['Show all projects', 'What AI tools do you use?', 'How do I contact you?'] },
+
+    { id: 'contact', label: 'Hire / contact', icon: 'mail',
+      match: /\b(contact|hire|hiring|available|availability|email|reach|talk|call|book|work with|remote|open for work|start a project)\b/i,
+      text: [
+        `Yes, always. I take remote projects across time zones from Manila (GMT+8), and I'm open to new client work right now.`,
+        `Email is fastest. Tell me what you're trying to build, what's currently breaking, or where the workflow falls apart, and I'll tell you what I'd investigate first. Replies within one business day.`,
+      ],
+      rich: () => btns([{ label: EMAIL, href: 'mailto:' + EMAIL, primary: true }, { label: 'Contact page', href: '/contact/' }, { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ruther-bergonia-a9959813a/', ext: true }, { label: 'GitHub', href: 'https://github.com/rockyru', ext: true }]),
+      follow: ['Send a message from here', 'What should I include in an email?', 'What have you built?'] },
+
+    { id: 'compose', hidden: true, match: COMPOSE_RE, text: [] },
+
+    { id: 'include', hidden: true, match: /include in (an |the )?email|what (should|do) i (send|include|tell)|first email|brief/i,
+      text: [`Three things make the first email useful:`],
+      rich: () => `<ul><li>What you're building, or what's currently breaking.</li><li>Rough timeline and, if you have one, a budget range.</li><li>Any existing systems this needs to work with.</li></ul><p>For a local business website, skip the email and use the free preview form at sprntr.dev instead.</p>` + btns([{ label: 'Email ' + EMAIL, href: 'mailto:' + EMAIL, primary: true }]),
+      follow: ['Send a message from here', 'Are you available for hire?', 'What does Sprntr cost?'] },
+
+    { id: 'location', hidden: true, match: /\b(where|based|location|manila|philippines|timezone|time zone|gmt)\b/i,
+      text: [`Metro Manila, Philippines, GMT+8. Software work is remote across time zones, and I'm always open to new projects. Sprntr serves service businesses across the Philippines.`],
+      follow: ['Are you available for hire?'] },
+
+    { id: 'site', hidden: true, match: /this (site|page|website)|how (does|is) this (built|made|work)|chat ui|classic|ru ?bot|your name|who am i talking/i,
+      text: [`I'm Ru Bot, Ruther's stand-in. This homepage is a chat interface over my portfolio. Topics and suggested questions are answered from scripted content; typed questions go to a Claude model running in a Cloudflare Worker that is only allowed to answer from the site's own content, the same controlled-response idea as ARIA. Case studies and topics are on the left.`],
+      follow: ['Tell me about ARIA', 'Who are you?'] },
+
+    { id: 'hello', hidden: true, match: /^\s*(hi|hello|hey|yo|kumusta|good (morning|afternoon|evening))\b/i,
+      text: [`Hey! I'm Ru Bot, Ruther's stand-in here. Ask me anything about my work, stack, services, clients, or availability, or pick a topic on the left.`],
+      follow: ['Who are you?', 'What have you built?', 'Are you available for hire?'] },
+  ];
+
+  const FALLBACK = {
+    text: [`That's outside what this site covers, so I won't guess. I can answer about my work, capabilities, experience, services, clients, and how to reach me. For anything else, email me and I'll answer for real.`],
+    rich: () => btns([{ label: 'Email ' + EMAIL, href: 'mailto:' + EMAIL, primary: true }]),
+    follow: ['Who are you?', 'What have you built?', 'Send a message from here', 'Are you available for hire?'],
+  };
+
+  const SUGGESTIONS = [
+    { t: 'Who are you?', d: 'Background and what I do', q: 'Who are you?', id: 'about' },
+    { t: 'What have you built?', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
+    { t: 'What are your capabilities?', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
+    { t: 'Are you available for hire?', d: 'Remote, always open', q: 'Are you available for hire?', id: 'contact' },
+  ];
+
+  const ICONS = {
+    user: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    grid: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>',
+    layers: '<path d="M12 2l10 5-10 5L2 7z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/>',
+    briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>',
+    clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/>',
+    users: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+  };
+  const ico = name => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]}</svg>`;
+  const MARK = document.querySelector('.brand svg').outerHTML;
+
+  // ── DOM ────────────────────────────────────────────────────────
+  const $ = s => document.querySelector(s);
+  const thread = $('#thread'), inner = $('#threadInner'), input = $('#input'), send = $('#send');
+  const sidebar = $('#sidebar'), scrim = $('#scrim');
+  let busy = false;
+  const history = []; // {role, content} for the AI
+
+  function renderTopics() {
+    const btn = i => `<button class="topic" data-q="${i.label}" data-id="${i.id}">${ico(i.icon)}${i.label}</button>`;
+    $('#topics').innerHTML = INTENTS.filter(i => !i.hidden && !i.group).map(btn).join('');
+    $('#cases').innerHTML = INTENTS.filter(i => i.group === 'cases').map(btn).join('');
+  }
+  function renderEmpty() {
+    history.length = 0;
+    inner.innerHTML = `
+      <div class="hero">
+        <div class="mark">${MARK}</div>
+        <h1>Hi, I'm Ru Bot. Ask me anything about Ruther.</h1>
+        <p class="muted">I'm Ruther Bergonia's stand-in on this site and I answer as him: software systems architect and senior full-stack engineer in Metro Manila, building production systems for institutions and SaaS teams, and done-for-you websites for local businesses through Sprntr. Everything I say comes from his real portfolio.</p>
+        <div class="chips">${SUGGESTIONS.map(s => `<button class="chip" data-q="${s.q}" data-id="${s.id}"><span class="t">${s.t}</span><span class="d muted">${s.d}</span></button>`).join('')}</div>
+      </div>`;
+  }
+  const scrollDown = () => { thread.scrollTop = thread.scrollHeight; };
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function addUser(text) {
+    const hero = inner.querySelector('.hero'); if (hero) hero.remove();
+    const el = document.createElement('div');
+    el.className = 'msg user'; el.innerHTML = `<div class="bubble"></div>`;
+    el.querySelector('.bubble').textContent = text;
+    inner.appendChild(el); scrollDown();
+    history.push({ role: 'user', content: text });
+  }
+  function botShell() {
+    const el = document.createElement('div');
+    el.className = 'msg bot';
+    el.innerHTML = `<div class="avatar">${MARK.replace('<svg', '<svg style="width:18px;height:18px"')}</div><div class="body"><div class="typing"><i></i><i></i><i></i></div></div>`;
+    inner.appendChild(el); scrollDown();
+    return el.querySelector('.body');
+  }
+  function addFollowups(body, list) {
+    const f = document.createElement('div'); f.className = 'followups';
+    // Follow-ups that match a scripted answer carry its id, so clicking them never calls the model.
+    f.innerHTML = list.map(q => { const i = INTENTS.find(x => x.match.test(q)); return `<button class="followup" data-q="${q}" ${i ? `data-id="${i.id}"` : ''}>${q}</button>`; }).join('');
+    body.appendChild(f);
+  }
+
+  // Scripted answer, streamed word by word.
+  async function addScripted(intent) {
+    const body = botShell();
+    await sleep(reduced ? 50 : 500);
+    body.innerHTML = '';
+    let plain = '';
+    for (const para of intent.text) {
+      const p = document.createElement('p'); p.className = 'cursor'; body.appendChild(p);
+      if (reduced) p.innerHTML = para;
+      else {
+        const tokens = para.split(/(<[^>]+>|\s+)/).filter(Boolean);
+        let out = '';
+        for (const tk of tokens) { out += tk; p.innerHTML = out; if (!/^<|^\s+$/.test(tk)) { scrollDown(); await sleep(14 + Math.random() * 24); } }
+      }
+      p.classList.remove('cursor');
+      plain += p.textContent + '\n';
+    }
+    if (intent.rich) {
+      const wrap = document.createElement('div');
+      wrap.innerHTML = typeof intent.rich === 'function' ? intent.rich() : intent.rich;
+      wrap.style.animation = 'rise .35s ease both';
+      body.appendChild(wrap);
+      plain += wrap.textContent;
+    }
+    if (intent.follow) addFollowups(body, intent.follow);
+    history.push({ role: 'assistant', content: plain.trim().slice(0, 1500) });
+    scrollDown();
+  }
+
+  // Minimal, safe markdown: paragraphs, bullets, **bold**, [links](url), bare URLs.
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function inline(s) {
+    s = esc(s);
+    s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*|mailto:[^\s)]+)\)/g, (m, t, u) => `<a href="${u}" ${/^https?:/.test(u) ? 'target="_blank" rel="noopener"' : ''}>${t}</a>`);
+    s = s.replace(/(^|[\s(])((https?:\/\/)[^\s<)]+)/g, (m, pre, u) => `${pre}<a href="${u}" target="_blank" rel="noopener">${u.replace(/^https?:\/\//, '')}</a>`);
+    s = s.replace(/(^|[\s(])([\w.+-]+@[\w-]+\.[\w.]+)/g, (m, pre, e) => `${pre}<a href="mailto:${e}">${e}</a>`);
+    return s;
+  }
+  function md(text) {
+    const blocks = text.trim().split(/\n\s*\n/);
+    return blocks.map(b => {
+      const lines = b.split('\n');
+      if (lines.every(l => /^\s*[-*•]\s+/.test(l))) return `<ul>${lines.map(l => `<li>${inline(l.replace(/^\s*[-*•]\s+/, ''))}</li>`).join('')}</ul>`;
+      if (/^#{1,4}\s/.test(lines[0])) return `<h4>${inline(lines[0].replace(/^#+\s*/, ''))}</h4>` + (lines.length > 1 ? `<p>${inline(lines.slice(1).join(' '))}</p>` : '');
+      return `<p>${lines.map(inline).join('<br>')}</p>`;
+    }).join('');
+  }
+
+  // AI answer, streamed from the Worker. Returns false if the Worker is unreachable.
+  async function addAI(question) {
+    const body = botShell();
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 45000);
+    let res;
+    try {
+      res = await fetch(AI_ENDPOINT, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ctrl.signal,
+        body: JSON.stringify({ messages: history.slice(-6) }),
+      });
+    } catch (e) { clearTimeout(timer); body.parentElement.remove(); return false; }
+    if (!res.ok || !res.body) { clearTimeout(timer); body.parentElement.remove(); return false; }
+
+    const reader = res.body.getReader(); const dec = new TextDecoder();
+    let text = ''; body.innerHTML = '';
+    const live = document.createElement('div'); live.className = 'cursor'; body.appendChild(live);
+    try {
+      for (;;) {
+        const { value, done } = await reader.read(); if (done) break;
+        text += dec.decode(value, { stream: true });
+        live.innerHTML = md(text); scrollDown();
+      }
+    } catch (e) { /* stream cut; show what we have */ }
+    clearTimeout(timer);
+    live.classList.remove('cursor');
+    if (!text.trim()) { body.parentElement.remove(); return false; }
+    live.innerHTML = md(text);
+    const src = document.createElement('div'); src.className = 'source muted'; src.textContent = 'Ru Bot · from site content';
+    body.appendChild(src);
+    addFollowups(body, ['What have you built?', 'What does Sprntr cost?', 'Are you available for hire?']);
+    history.push({ role: 'assistant', content: text.slice(0, 1500) });
+    scrollDown();
+    return true;
+  }
+
+  const resolve = q => INTENTS.find(i => i.match.test(q)) || FALLBACK;
+
+  // ── Send-a-message flow, handled entirely in the chat ─────────────
+  async function botSay(html, extraHtml) {
+    const body = botShell();
+    await sleep(reduced ? 30 : 350);
+    body.innerHTML = `<p>${html}</p>` + (extraHtml || '');
+    history.push({ role: 'assistant', content: body.textContent.trim().slice(0, 500) });
+    scrollDown();
+  }
+  const escT = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  async function fetchToken() {
+    try {
+      const r = await fetch(CONTACT_ENDPOINT + '/token', { cache: 'no-store' });
+      const d = await r.json();
+      if (compose) { compose.token = d.token || ''; compose.siteKey = d.turnstileSiteKey || ''; }
+      if (d.turnstileSiteKey && !document.getElementById('cf-turnstile')) {
+        const sc = document.createElement('script'); sc.id = 'cf-turnstile'; sc.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; sc.async = true; document.head.appendChild(sc);
+      }
+    } catch (e) { /* Worker unreachable: sending will fall back to the mailto link */ }
+  }
+  function turnstileToken(siteKey) {
+    return new Promise(resolve => {
+      if (!siteKey || !window.turnstile) return resolve('');
+      const holder = document.createElement('div'); holder.style.cssText = 'position:fixed;left:-9999px;top:0'; document.body.appendChild(holder);
+      try {
+        window.turnstile.render(holder, { sitekey: siteKey, size: 'invisible', callback: t => { resolve(t); holder.remove(); }, 'error-callback': () => { resolve(''); holder.remove(); } });
+      } catch (e) { resolve(''); holder.remove(); }
+      setTimeout(() => resolve(''), 15000);
+    });
+  }
+  async function startCompose() {
+    compose = { step: 'name', name: '', email: '', message: '', token: '', siteKey: '' };
+    fetchToken();
+    input.placeholder = 'Your name…';
+    await botSay(`Sure, I'll pass it straight to Ruther's inbox. First, <strong>what's your name?</strong> <span class="muted">(type "cancel" any time)</span>`);
+  }
+  async function composeStep(text) {
+    if (/^\s*(cancel|stop|never ?mind|nvm)\s*$/i.test(text)) {
+      compose = null; input.placeholder = 'Ask Ru Bot about my work, stack, services, or availability…';
+      return botSay(`No problem, message cancelled. Anything else you'd like to know?`);
+    }
+    if (compose.step === 'name') {
+      compose.name = text.slice(0, 80); compose.step = 'email'; input.placeholder = 'Your email address…';
+      return botSay(`Thanks, ${escT(compose.name)}. <strong>What email should Ruther reply to?</strong>`);
+    }
+    if (compose.step === 'email') {
+      if (!EMAIL_RE.test(text.trim())) return botSay(`That doesn't look like an email address. Try again, like name@example.com.`);
+      compose.email = text.trim(); compose.step = 'message'; input.placeholder = 'Your message…';
+      return botSay(`Got it. <strong>What would you like to tell him?</strong> What you're building or what's breaking, a rough timeline, and a budget range if you have one. Shift+Enter for a new line.`);
+    }
+    if (compose.step === 'message') {
+      if (text.trim().length < 10) return botSay(`A little more detail would help. What are you building, or what's breaking?`);
+      compose.message = text.trim().slice(0, 3000); compose.step = 'review'; input.placeholder = 'Type "send" to send, or "edit" to change it…';
+      return botSay(`Here's what I'll send:`, `<div class="box review"><div class="k">From</div><p>${escT(compose.name)} &lt;${escT(compose.email)}&gt;</p><div class="k">Message</div><p style="white-space:pre-wrap">${escT(compose.message)}</p></div><div class="btn-row"><button class="btn primary" type="button" data-compose="send">Send to Ruther</button><button class="btn" type="button" data-compose="edit">Edit message</button><button class="btn" type="button" data-compose="cancel">Cancel</button></div>`);
+    }
+    if (compose.step === 'review') {
+      if (/^\s*(send|yes|ok|okay|go)\s*$/i.test(text)) return sendCompose();
+      if (/^\s*(edit|change|redo)\s*$/i.test(text)) { compose.step = 'message'; input.placeholder = 'Your message…'; return botSay(`Okay, type the message again.`); }
+      return botSay(`Type <strong>send</strong> to send it, <strong>edit</strong> to rewrite the message, or <strong>cancel</strong>.`);
+    }
+  }
+  async function sendCompose() {
+    const c = compose; if (!c) return;
+    document.querySelectorAll('[data-compose]').forEach(b => { b.disabled = true; });
+    const body = botShell();
+    let ok = false, err = '';
+    try {
+      if (!c.token) await fetchToken();
+      const turnstile = await turnstileToken(c.siteKey);
+      const res = await fetch(CONTACT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: c.name, email: c.email, message: c.message, website: '', token: c.token, turnstile }) });
+      const data = await res.json().catch(() => ({}));
+      ok = res.ok && data.ok; err = data.error || '';
+    } catch (e) { err = 'network'; }
+    body.innerHTML = '';
+    if (ok) {
+      body.innerHTML = `<p><strong>Sent.</strong> Ruther reads every message himself and replies within one business day, to ${escT(c.email)}.</p>`;
+      compose = null; input.placeholder = 'Ask Ru Bot about my work, stack, services, or availability…';
+      addFollowups(body, ['What have you built?', 'What does Sprntr cost?']);
+    } else {
+      const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent('From ' + c.name + ' via rmbergonia.com')}&body=${encodeURIComponent(c.message + '\n\n' + c.name + ' <' + c.email + '>')}`;
+      body.innerHTML = `<p>I couldn't send that from here${err && err !== 'network' ? ' (' + escT(err) + ')' : ''}. Your message is still below, so you can send it from your own email app instead.</p>` + btns([{ label: 'Open in your email app', href: mailto, primary: true }]) + `<div class="btn-row"><button class="btn" type="button" data-compose="send">Try again</button><button class="btn" type="button" data-compose="cancel">Cancel</button></div>`;
+    }
+    scrollDown();
+  }
+
+  async function ask(q, id) {
+    q = q.trim(); if (!q || busy) return;
+    busy = true; send.disabled = true; input.value = ''; autosize();
+    addUser(q);
+    const scripted = id ? INTENTS.find(i => i.id === id) : null;
+    document.querySelectorAll('.topic').forEach(t => t.classList.toggle('active', !!scripted && t.dataset.id === scripted.id));
+    if (compose) await composeStep(q);
+    else if (scripted && scripted.id === 'compose') await startCompose();
+    else if (scripted) await addScripted(scripted);
+    else if (COMPOSE_RE.test(q)) await startCompose();
+    else {
+      const ok = await addAI(q);
+      if (!ok) {
+        history.pop?.(); // the AI turn never happened; keep history aligned
+        history.push({ role: 'user', content: q });
+        await addScripted(resolve(q));
+      }
+    }
+    busy = false; input.focus();
+  }
+
+  // ── Events ─────────────────────────────────────────────────────
+  document.addEventListener('click', e => {
+    const c = e.target.closest('[data-compose]');
+    if (c && compose) {
+      if (c.dataset.compose === 'send') sendCompose();
+      else if (c.dataset.compose === 'edit') { compose.step = 'message'; input.placeholder = 'Your message…'; botSay('Okay, type the message again.'); input.focus(); }
+      else { compose = null; input.placeholder = 'Ask Ru Bot about my work, stack, services, or availability…'; botSay('Message cancelled.'); }
+      return;
+    }
+    const b = e.target.closest('button[data-q]'); if (!b) return;
+    closeSidebar(); ask(b.dataset.q, b.dataset.id);
+  });
+  $('#composer').addEventListener('submit', e => { e.preventDefault(); ask(input.value); });
+  input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
+  function autosize() { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 240) + 'px'; send.disabled = !input.value.trim(); }
+  input.addEventListener('input', autosize);
+  $('#newChat').addEventListener('click', () => { renderEmpty(); closeSidebar(); document.querySelectorAll('.topic').forEach(t => t.classList.remove('active')); input.focus(); });
+  const openSidebar = () => { sidebar.classList.add('open'); scrim.classList.add('show'); };
+  const closeSidebar = () => { sidebar.classList.remove('open'); scrim.classList.remove('show'); };
+  $('#menuBtn').addEventListener('click', openSidebar);
+  $('#composeBtn').addEventListener('click', () => { if (busy) return; if (!compose) { addUser('Send a message from here'); startCompose(); } input.focus(); });
+  scrim.addEventListener('click', closeSidebar);
+
+  renderTopics(); renderEmpty();
+  const qp = new URLSearchParams(location.search).get('q');
+  if (qp) ask(qp); else if (matchMedia('(min-width: 900px)').matches) input.focus();
+})();
+</script>
+</body>
 </html>

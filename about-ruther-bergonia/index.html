@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,97 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-
-    <style>
-      html { -webkit-font-smoothing: antialiased; }
-      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-      /* Display type: oversized, tight, MIXED CASE — the editorial register.
-         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
-      .display {
-        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 800;
-        letter-spacing: -0.035em;
-        line-height: 0.95;
-        text-wrap: balance;
-      }
-      /* Page-title scale: the one place type is allowed to dominate. */
-      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
-
-      /* Micro-labels. Structural, never decorative — they name a section
-         or number a real sequence. */
-      .label {
-        font-family: Inter, "Helvetica Neue", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      /* Nav and buttons carry a touch more weight than section eyebrows. */
-      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
-      .rule { border-color: #e3e0da; }
-      p.leading-relaxed { text-align: justify; }
-
-      /* Editorial two-column row: label left, prose right. */
-      .row-label { font-family: Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-
-      .js .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity .7s ease-out, transform .7s ease-out;
-      }
-      .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-      /* FAQ disclosure: the + rotates to an x when open. */
-      .faq-item[open] .faq-icon { transform: rotate(45deg); }
-
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        .js .fade-up { opacity: 1; transform: none; transition: none; }
-        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-      }
-
-      a:focus-visible, button:focus-visible, summary:focus-visible {
-        outline: 2px solid #111013;
-        outline-offset: 3px;
-      }
-      ::selection { background: #111013; color: #fbfaf8; }
-
-      [id$="-heading"], footer[id] { scroll-margin-top: 96px; }
-
-      /* Side quick-nav: one line per numbered section, filled in by script.js.
-         Desktop-only (matches Tailwind's xl breakpoint) — there's no room
-         for it once the layout drops to a single column. */
-      #sectionNav { display: none; }
-      @media (min-width: 1280px) {
-        #sectionNav {
-          position: fixed;
-          top: 140px;
-          left: 20px;
-          z-index: 30;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      #sectionNav a:hover .side-nav-label,
-      #sectionNav a.is-active .side-nav-label {
-        opacity: 1;
-      }
-      #sectionNav a:hover .side-nav-line,
-      #sectionNav a.is-active .side-nav-line {
-        background-color: #111013;
-        width: 32px;
-      }
-      #sectionNav a {
-        display: flex;
-        align-items: center;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .side-nav-line, .side-nav-label { transition: none; }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css" />
 
     <script type="application/ld+json">
     {
@@ -199,264 +109,88 @@
     }
     </script>
   </head>
+  <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><svg viewBox="0 0 160 160" fill="currentColor" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg><div><div class="name">Ruther Bergonia</div><div class="sub muted">Systems architect · Manila</div></div></a>
+  <div class="right">
+    <a class="btn" href="/">Ask Ru Bot</a>
+    <a class="btn primary" href="mailto:ruther.bergonia@gmail.com">Email me</a>
+  </div>
+</header>
+<nav class="rail" aria-label="Tools">
+  <a class="icon-btn" href="/" aria-label="Chat with Ru Bot" data-tip="Chat with Ru Bot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+  <a class="icon-btn" href="mailto:ruther.bergonia@gmail.com" aria-label="Email" data-tip="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  <div class="sep"></div>
+  <a class="icon-btn" href="https://github.com/rockyru" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+  <a class="icon-btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+  <a class="icon-btn" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)" data-tip="Resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></a>
+</nav>
 
-  <body class="bg-paper font-body text-ink-900 antialiased">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+<main class="page" id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>About</span></nav>
+<p class="eyebrow">About</p>
+<h1>One engineer. End to end.</h1>
+<p class="lead">From the first schema to the running server. I'm a software systems architect and senior full-stack engineer in Metro Manila. Replies within a day.</p>
+<div class="stat-row">
+  <div class="stat"><b>11+</b><span>years experience</span></div>
+  <div class="stat"><b>Metro Manila</b><span>Philippines · GMT+8</span></div>
+  <div class="stat"><b>Always open</b><span>for new projects</span></div>
+</div>
 
-    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
-      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
-        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
-          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
-        </a>
-        <div class="flex items-center gap-6 sm:gap-10">
-          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
-          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
-          <a href="/about-ruther-bergonia/" class="label hidden text-ink-900 underline decoration-ink-900 decoration-2 underline-offset-[6px] sm:block" aria-current="page">About</a>
-          <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
-          <a href="/contact/" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700">Contact <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </nav>
+<section class="section">
+  <div class="num">01 · What I do</div>
+  <div class="grid2">
+    <div class="box"><h3>Systems architecture</h3><p>API-first service design, cross-system authentication, database architecture, and platform orchestration, like the <a href="/work/race-platform-orchestration/">TRACE</a> orchestration layer beneath UP Manila's research platforms.</p></div>
+    <div class="box"><h3>Full-stack development</h3><p>Laravel and PHP backends with Vue, React, and Next.js frontends, proven in <a href="/work/suri-research-information-system/">SURI</a>, a Laravel + Vue platform managing 15,000+ research records for 50+ users.</p></div>
+    <div class="box"><h3>AI integration</h3><p>Controlled-response assistants built on approved sources with human handoff, the approach behind <a href="/work/aria-controlled-response-ai/">ARIA</a> and the exam reviewer Alamat. AI should reduce operational risk, not add it.</p></div>
+    <div class="box"><h3>Infrastructure</h3><p>Docker, Linux, and Nginx administration, VPS deployment, release management, and production database architecture for systems an office depends on daily.</p></div>
+  </div>
+</section>
 
-    <nav id="sectionNav" class="hidden xl:block" aria-label="Page sections"></nav>
+<section class="section">
+  <div class="num">02 · Career track</div>
+  <div class="timeline">
+    <div class="tl"><div class="y">2025 — now</div><div class="r">Systems architect · RGAO, UP Manila</div><div class="o">I lead architecture and development of SURI, the research information system of record: 15,000+ records, 50+ users, reporting that runs in seconds instead of days. I'm also building TRACE, the shared orchestration layer beneath the university's research platforms.</div></div>
+    <div class="tl"><div class="y">2025 — now</div><div class="r">Independent contractor · SaaS architecture</div><div class="o">I'm architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.</div></div>
+    <div class="tl"><div class="y">2021 — 2025</div><div class="r">Senior ICT Assistant · NGOHS, UP Manila</div><div class="o">I built and ran DRMS and GO-ARAL for the National Graduate Office for the Health Sciences: ~1,000 applicants a year, ~200 support requests a month, owning the APIs, database schema, RBAC, and reporting behind both.</div></div>
+    <div class="tl"><div class="y">2021 — 2022</div><div class="r">Full-stack developer · LMQ Tech (freelance, remote)</div><div class="o">Alongside NGOHS, I built an ELK Stack operations dashboard with ticketing and reporting for a US-based client.</div></div>
+    <div class="tl"><div class="y">2018 — 2020</div><div class="r">Crosshair Technologies Solutions Inc.</div><div class="o">A demographic-targeted advertising platform on AWS.</div></div>
+    <div class="tl"><div class="y">2015 — 2017</div><div class="r">Balibago Waterworks System, Inc.</div><div class="o">Where I started: a company site and the internal Job Order Requests Queueing application in Laravel and Vue, server and database management, and field-testing the mobile app for water meter reading and billing.</div></div>
+  </div>
+  <div class="btn-row"><a class="btn primary" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a><a class="btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener">LinkedIn</a></div>
+</section>
 
-    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
-      <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
-        <ol class="flex items-center gap-2">
-          <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
-          <li aria-hidden="true" class="label text-ink-300">/</li>
-          <li><span class="label text-ink-900">About</span></li>
-        </ol>
-      </nav>
+<section class="section">
+  <div class="num">03 · Technical capabilities</div>
+  <div class="grid2">
+    <div class="box"><h3>Backend</h3><p>PHP, Laravel, FastAPI, REST API design, MySQL, relational database design, authentication &amp; authorization, role-based access control, workflow automation, reporting engines.</p></div>
+    <div class="box"><h3>Frontend</h3><p>Vue.js, React, Next.js, TypeScript, Tailwind CSS, progressive web apps, offline-first architectures, responsive, accessible interfaces.</p></div>
+    <div class="box"><h3>AI</h3><p>Claude &amp; OpenAI integration, Gemini, retrieval-augmented generation, controlled-response architectures, prompt engineering, AI-assisted workflow automation.</p></div>
+    <div class="box"><h3>Infrastructure</h3><p>Docker, Linux server administration, Nginx, VPS &amp; cloud deployment, CI/CD, release management, production database architecture. Also PostgreSQL, Redis, AWS, DigitalOcean, Cloudflare.</p></div>
+  </div>
+</section>
 
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="hidden min-h-[160px] border-r rule md:block"></div>
-        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
-          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">One engineer.<br />End to end.</h1>
-          <p class="label mt-4 text-ink-500">From the first schema to the running server.</p>
-        </div>
-        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
-          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
-            <div>11+ Years experience</div>
-            <div>Metro Manila, PH</div>
-            <div>Open for work</div>
-          </div>
-        </div>
-      </section>
+<section class="section">
+  <div class="num">04 · How I build</div>
+  <p><strong>Systems should grow instead of being rebuilt.</strong> API-first services, clean separation between platforms, and authentication designed for an ecosystem rather than a single app.</p>
+  <p><strong>Continuity is built in from the start.</strong> Documentation, version-controlled code, and reproducible infrastructure another engineer could pick up without starting over.</p>
+  <p><strong>AI features follow the same discipline.</strong> The assistant answers from approved sources and hands off to a human when something falls outside its scope, rather than guessing.</p>
+</section>
 
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="flex flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-          <div class="space-y-3">
-            <p class="text-xs font-normal leading-relaxed text-ink-500">
-              I&rsquo;m a software systems architect and <br/>senior full-stack engineer in Metro Manila.<br />
-              <span class="font-semibold text-ink-900">Replies within a day.</span>
-            </p>
-            <a href="#contact" class="label inline-block bg-ink-900 px-5 py-2.5 font-bold text-paper transition-colors hover:bg-ink-700">Start a project</a>
-          </div>
-        </div>
-        <div class="relative min-h-[340px] overflow-hidden border-b rule bg-ink-900 md:col-span-2 md:aspect-auto md:border-b-0 md:border-r">
-          <span class="pointer-events-none absolute -bottom-10 -right-10 h-[65%] w-[65%] text-ink-700 opacity-60" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
+<div class="cta">
+  <p class="eyebrow">Start here</p>
+  <h2>Tell me what's breaking.</h2>
+  <p>Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right fit, and how I'd approach it. Replies within one business day.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/rockyru" rel="noopener">GitHub</a></div>
+</div>
 
-      <!-- WHAT I DO -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="expertise-heading">
-        <div class="w-full">
-          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+01</span>
-            <h2 id="expertise-heading" class="label text-ink-500">What I do</h2>
-          </div>
+</main>
+<footer class="foot">
+  <div><strong>Ruther Bergonia</strong> · Systems architect · Metro Manila</div>
+  <nav><a href="/">Ru Bot</a><a href="/work/">Work</a><a href="/services/">Services</a><a href="/about-ruther-bergonia/">About</a><a href="/contact/">Contact</a><a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">CV</a></nav>
+  <div>© 2026</div>
+</footer>
 
-          <div class="border-t rule">
-            <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
-              <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">Systems architecture</h3>
-              <p class="text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">API-first service design, cross-system authentication, database architecture, and platform orchestration &mdash; like the RACE orchestration layer beneath UP Manila's research platforms.</p>
-            </div>
-            <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
-              <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">Full-stack development</h3>
-              <p class="text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">Laravel and PHP backends with Vue, React, and Next.js frontends &mdash; proven in SURI, a Laravel + Vue platform managing 15,000+ research records for 50+ users.</p>
-            </div>
-            <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
-              <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">AI integration</h3>
-              <p class="text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">Controlled-response assistants built on approved sources with human handoff &mdash; the approach behind ARIA and the exam reviewer Alamat. AI should reduce operational risk, not add it.</p>
-            </div>
-            <div class="fade-up grid gap-x-10 gap-y-4 border-b rule py-14 md:grid-cols-12">
-              <h3 class="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink-900 md:col-span-4">Infrastructure</h3>
-              <p class="text-[16.5px] leading-relaxed text-ink-500 md:col-span-7 md:col-start-5">Docker, Linux, and Nginx administration, VPS deployment, release management, and production database architecture for systems an office depends on daily.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CAREER TRACK -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="track-heading">
-        <div class="w-full">
-          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+02</span>
-            <h2 id="track-heading" class="label text-ink-500">Career track</h2>
-          </div>
-
-          <ol class="border-t rule">
-            <li class="fade-up grid gap-4 border-b rule py-12 md:grid-cols-12 md:gap-10">
-              <p class="label text-ink-900 md:col-span-2">2025 &mdash; now</p>
-              <div class="md:col-span-10">
-                <h3 class="display text-[clamp(1.3rem,2.6vw,1.8rem)] text-ink-900">Systems architect &middot; RGAO, UP Manila</h3>
-                <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">I lead architecture and development of SURI, the research information system of record &mdash; 15,000+ records, 50+ users, reporting that runs in seconds instead of days. I&rsquo;m also building RACE, the shared orchestration layer beneath the university&rsquo;s research platforms.</p>
-              </div>
-            </li>
-            <li class="fade-up grid gap-4 border-b rule py-12 md:grid-cols-12 md:gap-10">
-              <p class="label text-ink-900 md:col-span-2">2025 &mdash; now</p>
-              <div class="md:col-span-10">
-                <h3 class="display text-[clamp(1.3rem,2.6vw,1.8rem)] text-ink-900">Independent contractor &middot; SaaS architecture</h3>
-                <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">I&rsquo;m architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.</p>
-              </div>
-            </li>
-            <li class="fade-up grid gap-4 border-b rule py-12 md:grid-cols-12 md:gap-10">
-              <p class="label text-ink-900 md:col-span-2">2021 &mdash; 2025</p>
-              <div class="md:col-span-10">
-                <h3 class="display text-[clamp(1.3rem,2.6vw,1.8rem)] text-ink-900">Senior ICT Assistant &middot; NGOHS, UP Manila</h3>
-                <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">I built and ran DRMS and GO-ARAL for the National Graduate Office for the Health Sciences &mdash; ~1,000 applicants a year, ~200 support requests a month &mdash; owning the APIs, database schema, RBAC, and reporting behind both.</p>
-              </div>
-            </li>
-            <li class="fade-up grid gap-4 border-b rule py-12 md:grid-cols-12 md:gap-10">
-              <p class="label text-ink-900 md:col-span-2">2021 &mdash; 2022</p>
-              <div class="md:col-span-10">
-                <h3 class="display text-[clamp(1.3rem,2.6vw,1.8rem)] text-ink-900">Full-stack developer &middot; LMQ Tech (freelance, remote)</h3>
-                <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">Alongside NGOHS, I built an ELK Stack operations dashboard with ticketing and reporting for a US-based client.</p>
-              </div>
-            </li>
-            <li class="fade-up grid gap-4 border-b rule py-12 md:grid-cols-12 md:gap-10">
-              <p class="label text-ink-900 md:col-span-2">2015 &mdash; 2020</p>
-              <div class="md:col-span-10">
-                <h3 class="display text-[clamp(1.3rem,2.6vw,1.8rem)] text-ink-900">Earlier &middot; Crosshair Technologies, Balibago Waterworks</h3>
-                <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">A demographic-targeted ad platform on AWS at Crosshair Technologies, and my first software work &mdash; a company site and internal job-order system &mdash; at Balibago Waterworks.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- STACK -->
-      <section class="border-b rule" aria-labelledby="stack-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-0">
-              <span class="label text-ink-900">+03</span>
-              <h2 id="stack-heading" class="label text-ink-500">Technical capabilities</h2>
-            </div>
-          </div>
-          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
-            <div>
-              <h3 class="mb-6 text-base font-bold text-ink-900">Backend</h3>
-              <p class="text-xs leading-relaxed text-ink-500">PHP, Laravel, FastAPI, REST API design, MySQL, relational database design, authentication &amp; authorization, role-based access control, workflow automation, reporting engines</p>
-            </div>
-          </div>
-          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
-            <div>
-              <h3 class="mb-6 text-base font-bold text-ink-900">Frontend</h3>
-              <p class="text-xs leading-relaxed text-ink-500">Vue.js, React, Next.js, TypeScript, Tailwind CSS, progressive web apps, offline-first architectures, responsive, accessible interfaces</p>
-            </div>
-          </div>
-          <div class="fade-up flex flex-col justify-between p-8">
-            <div>
-              <h3 class="mb-6 text-base font-bold text-ink-900">AI</h3>
-              <p class="text-xs leading-relaxed text-ink-500">Claude &amp; OpenAI integration, Gemini, retrieval-augmented generation, controlled-response architectures, prompt engineering, AI-assisted workflow automation</p>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 border-t rule md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="fade-up flex flex-col justify-between border-b rule p-8 md:border-b-0 md:border-r">
-            <div>
-              <h3 class="mb-6 text-base font-bold text-ink-900">Infrastructure</h3>
-              <p class="text-xs leading-relaxed text-ink-500">Docker, Linux server administration, Nginx, VPS &amp; cloud deployment, CI/CD, release management, production database architecture</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HOW I BUILD -->
-      <section class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16" aria-labelledby="approach-heading">
-        <div class="w-full">
-          <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-            <span class="label text-ink-900">+04</span>
-            <h2 id="approach-heading" class="label text-ink-500">How I build</h2>
-          </div>
-
-          <div class="grid gap-14 lg:grid-cols-12 lg:gap-16">
-            <p class="display text-[clamp(1.5rem,3.4vw,2.6rem)] leading-[1.18] text-ink-900 lg:col-span-7">
-              Systems should grow instead of being rebuilt. API-first services, clean
-              separation between platforms, and authentication designed for an
-              ecosystem rather than a single app.
-            </p>
-            <div class="space-y-7 lg:col-span-4 lg:col-start-9">
-              <p class="text-[16.5px] leading-relaxed text-ink-500">
-                I build continuity in from the start &mdash; documentation,
-                version-controlled code, and reproducible infrastructure another
-                engineer could pick up without starting over.
-              </p>
-              <p class="text-[16.5px] leading-relaxed text-ink-500">
-                AI features follow the same discipline: the assistant answers from
-                approved sources and hands off to a human when something falls outside
-                its scope, rather than guessing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="contact" class="border-t rule">
-      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-        <div class="mb-14 flex items-baseline gap-6">
-          <span class="label text-ink-900">+05</span>
-          <span class="label text-ink-500">Start here</span>
-        </div>
-
-        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Tell me what&rsquo;s breaking.</h2>
-
-        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
-          <p class="text-[18px] leading-relaxed text-ink-500 lg:col-span-5">Tell me what you&rsquo;re building and what&rsquo;s getting in the way. I&rsquo;ll come back with an honest read on whether I&rsquo;m the right fit &mdash; and how I&rsquo;d approach it. Replies within one business day.</p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
-            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
-            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
-        </div>
-      </div>
-
-      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
-        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
-          <div class="flex items-center gap-4">
-            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-            <div>
-              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-            </div>
-          </div>
-          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
-            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
-            <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
-          </nav>
-          <p class="label text-ink-300">© 2026</p>
-        </div>
-      </div>
-
-      <!-- Closing wordmark: the name at display scale, trimmed to the
-           baseline so it sits on the page edge like a masthead. -->
-      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
-        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
-      </div>
-    </footer>
-
-    <button id="scrollTop" type="button" aria-label="Scroll back to top"
-      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
-      <span aria-hidden="true">↑</span>
-    </button>
-
-    <script>document.documentElement.classList.add("js");</script>
-    <script src="/script.js" defer></script>
   </body>
 </html>

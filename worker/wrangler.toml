@@ -1,0 +1,54 @@
+# Cloudflare Worker that answers questions on rmbergonia.com from the site's
+# own content only. The Anthropic key is a Worker secret, never in the frontend:
+#   npx wrangler secret put ANTHROPIC_API_KEY
+name = "rmbergonia-chat"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+# The knowledge file is bundled into the Worker as a string.
+rules = [{ type = "Text", globs = ["**/*.md"], fallthrough = true }]
+
+# Serve the Worker on the site's own path so the page can call /api/chat.
+# Requires the rmbergonia.com zone on this Cloudflare account.
+routes = [
+  { pattern = "rmbergonia.com/api/chat*", zone_name = "rmbergonia.com" },
+  { pattern = "rmbergonia.com/api/contact*", zone_name = "rmbergonia.com" }
+]
+
+# Cloudflare Email Sending: lets the chat send Ruther an email. The domain must be
+# onboarded once:  npx wrangler email sending enable rmbergonia.com
+[[send_email]]
+name = "EMAIL"
+
+
+[vars]
+CLAUDE_MODEL = "claude-haiku-5-5"   # cheapest current model; the system prompt is cached
+ALLOWED_ORIGINS = "https://rmbergonia.com,https://www.rmbergonia.com,http://127.0.0.1:8080,http://localhost:8080"
+CONTACT_TO = "ruther.bergonia@gmail.com"
+CONTACT_FROM = "rubot@rmbergonia.com"
+# TURNSTILE_SITE_KEY = "0x4AAAAAAA..."   # optional, see Secrets below
+
+# Per-IP rate limits (Workers Rate Limiting API). The code treats them as optional.
+[[unsafe.bindings]]
+name = "CHAT_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }      # per IP
+
+[[unsafe.bindings]]
+name = "GLOBAL_LIMITER"
+type = "ratelimit"
+namespace_id = "1003"
+simple = { limit = 60, period = 60 }      # all visitors combined
+
+[[unsafe.bindings]]
+name = "CONTACT_LIMITER"
+type = "ratelimit"
+namespace_id = "1002"
+simple = { limit = 3, period = 60 }
+
+# Secrets (set with `npx wrangler secret put NAME`):
+#   ANTHROPIC_API_KEY  - Claude
+#   SIGNING_SECRET     - random string for the contact flow's HMAC tokens
+#   TURNSTILE_SECRET   - optional; pair with TURNSTILE_SITE_KEY below to add Cloudflare Turnstile

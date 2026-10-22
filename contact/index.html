@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,60 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-
-    <style>
-      html { -webkit-font-smoothing: antialiased; }
-      body { background: #ffffff; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-      /* Display type: oversized, tight, MIXED CASE — the editorial register.
-         Uppercase reads as UI chrome; the peg's page titles are sentence case. */
-      .display {
-        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 800;
-        letter-spacing: -0.035em;
-        line-height: 0.95;
-        text-wrap: balance;
-      }
-      /* Page-title scale: the one place type is allowed to dominate. */
-      .display-xl { font-weight: 800; letter-spacing: -0.045em; line-height: 0.88; }
-
-      /* Micro-labels. Structural, never decorative — they name a section
-         or number a real sequence. */
-      .label {
-        font-family: Inter, "Helvetica Neue", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      /* Nav and buttons carry a touch more weight than section eyebrows. */
-      .label-lg { font-size: 13px; letter-spacing: 0.12em; }
-      .rule { border-color: #e3e0da; }
-      p.leading-relaxed { text-align: justify; }
-
-      /* Editorial two-column row: label left, prose right. */
-      .row-label { font-family: Inter, "Helvetica Neue", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-
-      .js .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity .7s ease-out, transform .7s ease-out;
-      }
-      .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        .js .fade-up { opacity: 1; transform: none; transition: none; }
-        * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-      }
-
-      a:focus-visible, button:focus-visible, summary:focus-visible {
-        outline: 2px solid #111013;
-        outline-offset: 3px;
-      }
-      ::selection { background: #111013; color: #fbfaf8; }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css" />
 
     <script type="application/ld+json">
     {
@@ -114,159 +61,63 @@
     }
     </script>
   </head>
+  <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><svg viewBox="0 0 160 160" fill="currentColor" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg><div><div class="name">Ruther Bergonia</div><div class="sub muted">Systems architect · Manila</div></div></a>
+  <div class="right">
+    <a class="btn" href="/">Ask Ru Bot</a>
+    <a class="btn primary" href="mailto:ruther.bergonia@gmail.com">Email me</a>
+  </div>
+</header>
+<nav class="rail" aria-label="Tools">
+  <a class="icon-btn" href="/" aria-label="Chat with Ru Bot" data-tip="Chat with Ru Bot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+  <a class="icon-btn" href="mailto:ruther.bergonia@gmail.com" aria-label="Email" data-tip="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  <div class="sep"></div>
+  <a class="icon-btn" href="https://github.com/rockyru" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+  <a class="icon-btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+  <a class="icon-btn" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)" data-tip="Resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></a>
+</nav>
 
-  <body class="bg-paper font-body text-ink-900 antialiased">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper">Skip to content</a>
+<main class="page" id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Contact</span></nav>
+<p class="eyebrow">Contact</p>
+<h1>Tell me what's breaking.</h1>
+<p class="lead">Email is fastest. Tell me what you're trying to build, what's currently breaking, or where the workflow falls apart. I'll come back with an honest read on whether I'm the right fit, and how I'd approach it. Replies within one business day.</p>
 
-    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
-      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
-        <a href="/" class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60" aria-label="Ruther Bergonia — home">
-          <span class="block h-6 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
-        </a>
-        <div class="flex items-center gap-6 sm:gap-10">
-          <a href="/work/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Work</a>
-          <a href="/services/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">Services</a>
-          <a href="/about-ruther-bergonia/" class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">About</a>
-          <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block">CV</a>
-          <a href="/contact/" class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700" aria-current="page">Contact <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </nav>
+<section class="section">
+  <div class="num">01 · Reach me directly</div>
+  <div class="grid2">
+    <a class="box" href="mailto:ruther.bergonia@gmail.com" style="text-decoration:none"><div class="k">Email</div><h3>ruther.bergonia@gmail.com</h3></a>
+    <a class="box" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" style="text-decoration:none"><div class="k">LinkedIn</div><h3>linkedin.com/in/ruther-bergonia</h3></a>
+    <a class="box" href="https://github.com/rockyru" rel="noopener" style="text-decoration:none"><div class="k">GitHub</div><h3>github.com/rockyru</h3></a>
+    <div class="box"><div class="k">Location</div><h3>Metro Manila, PH</h3><p>GMT+8 · remote across time zones</p></div>
+  </div>
+</section>
 
-    <main id="main" class="mx-auto max-w-[1440px] border-x rule pt-20">
-      <nav aria-label="Breadcrumb" class="border-b rule px-6 py-6 sm:px-10 xl:px-16">
-        <ol class="flex items-center gap-2">
-          <li><a href="/" class="label text-ink-300 transition-colors hover:text-ink-900">Home</a></li>
-          <li aria-hidden="true" class="label text-ink-300">/</li>
-          <li><span class="label text-ink-900">Contact</span></li>
-        </ol>
-      </nav>
+<section class="section">
+  <div class="num">02 · What to include</div>
+  <div class="steps">
+    <div class="step"><p>What you're building, or what's currently breaking.</p></div>
+    <div class="step"><p>Rough timeline and, if you have one, a budget range.</p></div>
+    <div class="step"><p>Any existing systems this needs to work with.</p></div>
+  </div>
+  <p>Local business looking for a website? Skip the email and get a <a href="https://sprntr.dev/" rel="noopener">free Sprntr preview</a> instead.</p>
+</section>
 
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="hidden min-h-[160px] border-r rule md:block"></div>
-        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
-          <h1 class="display display-xl max-w-md text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">Tell me what&rsquo;s breaking.</h1>
-          <p class="label mt-4 text-ink-500">Replies within one business day.</p>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
+<div class="cta">
+  <p class="eyebrow">Start here</p>
+  <h2>Let's start the conversation.</h2>
+  <p>Email is fastest. I'll tell you what I'd investigate first.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a><a class="btn" href="/?q=Are%20you%20available%20for%20hire%3F">Ask Ru Bot</a></div>
+</div>
 
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="flex items-end border-b rule p-8 md:border-b-0 md:border-r">
-          <span class="label text-ink-400">Reach me directly</span>
-        </div>
-        <div class="flex flex-col border-r rule md:col-span-2">
-          <div class="border-b rule p-8 sm:p-12">
-            <p class="text-[18px] leading-relaxed text-ink-500">
-              Email is fastest. Tell me what you&rsquo;re trying to build, what&rsquo;s currently breaking, or where the workflow falls apart. I&rsquo;ll come back with an honest read on whether I&rsquo;m the right fit &mdash; and how I&rsquo;d approach it.
-            </p>
-          </div>
-          <div class="p-8 sm:p-12">
-            <div class="border rule bg-paper-raised p-8 sm:p-10">
-              <div class="flex items-start justify-between gap-6">
-                <div>
-                  <p class="display text-xl text-ink-900 sm:text-2xl">Ruther Bergonia</p>
-                  <p class="label mt-2 text-ink-500">Systems architect</p>
-                </div>
-                <span class="block h-8 w-auto shrink-0 text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-              </div>
-              <div class="mt-10 space-y-3 border-t rule pt-8 text-sm font-medium text-ink-500">
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">M</span>
-                  <a href="mailto:ruther.bergonia@gmail.com" class="transition-colors hover:text-ink-900">ruther.bergonia@gmail.com</a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">L</span>
-                  <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="transition-colors hover:text-ink-900">linkedin.com/in/ruther-bergonia</a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="font-mono text-xs text-ink-300">G</span>
-                  <a href="https://github.com/rockyru" rel="noopener" class="transition-colors hover:text-ink-900">github.com/rockyru</a>
-                </div>
-              </div>
-              <p class="label mt-8 border-t rule pt-6 text-ink-300">Metro Manila, PH</p>
-            </div>
-          </div>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
+</main>
+<footer class="foot">
+  <div><strong>Ruther Bergonia</strong> · Systems architect · Metro Manila</div>
+  <nav><a href="/">Ru Bot</a><a href="/work/">Work</a><a href="/services/">Services</a><a href="/about-ruther-bergonia/">About</a><a href="/contact/">Contact</a><a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">CV</a></nav>
+  <div>© 2026</div>
+</footer>
 
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="flex items-end border-b rule p-8 md:border-b-0 md:border-r">
-          <span class="label text-ink-400">What to include</span>
-        </div>
-        <div class="border-r rule p-8 sm:p-12 md:col-span-2">
-          <ul class="space-y-6">
-            <li class="flex gap-4">
-              <span class="label mt-1 text-ink-300">01</span>
-              <p class="text-[16.5px] leading-relaxed text-ink-500">What you&rsquo;re building, or what&rsquo;s currently breaking.</p>
-            </li>
-            <li class="flex gap-4">
-              <span class="label mt-1 text-ink-300">02</span>
-              <p class="text-[16.5px] leading-relaxed text-ink-500">Rough timeline and, if you have one, a budget range.</p>
-            </li>
-            <li class="flex gap-4">
-              <span class="label mt-1 text-ink-300">03</span>
-              <p class="text-[16.5px] leading-relaxed text-ink-500">Any existing systems this needs to work with.</p>
-            </li>
-          </ul>
-        </div>
-        <div class="hidden md:block"></div>
-      </section>
-    </main>
-
-    <footer id="contact-footer" class="border-t rule">
-      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-        <div class="mb-14 flex items-baseline gap-6">
-          <span class="label text-ink-900">+02</span>
-          <span class="label text-ink-500">Start here</span>
-        </div>
-
-        <h2 class="display display-xl text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Let&rsquo;s start the conversation.</h2>
-
-        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
-          <p class="text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
-            Email is fastest. Tell me what you're trying to build, what's currently breaking, or where the workflow falls apart. I'll tell you what I'd investigate first.
-          </p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end"><a href="mailto:ruther.bergonia@gmail.com" class="label label-lg  bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700">ruther.bergonia@gmail.com</a>
-            <a href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">LinkedIn</a>
-            <a href="https://github.com/rockyru" rel="noopener" class="label label-lg  border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper">GitHub</a></div>
-        </div>
-      </div>
-
-      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
-        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
-          <div class="flex items-center gap-4">
-            <span class="block h-7 w-auto text-ink-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="currentColor" class="h-full w-auto" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg></span>
-            <div>
-              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-            </div>
-          </div>
-          <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
-            <a href="/work/" class="label text-ink-500 transition-colors hover:text-ink-900">Work</a>
-            <a href="/services/" class="label text-ink-500 transition-colors hover:text-ink-900">Services</a>
-            <a href="/about-ruther-bergonia/" class="label text-ink-500 transition-colors hover:text-ink-900">About</a>
-            <a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" download class="label text-ink-500 transition-colors hover:text-ink-900">CV</a>
-          </nav>
-          <p class="label text-ink-300">© 2026</p>
-        </div>
-      </div>
-
-      <!-- Closing wordmark: the name at display scale, trimmed to the
-           baseline so it sits on the page edge like a masthead. -->
-      <div class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16" aria-hidden="true">
-        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">Ruther Bergonia</p>
-      </div>
-    </footer>
-
-    <button id="scrollTop" type="button" aria-label="Scroll back to top"
-      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper">
-      <span aria-hidden="true">↑</span>
-    </button>
-
-    <script>document.documentElement.classList.add("js");</script>
-    <script src="/script.js" defer></script>
   </body>
 </html>

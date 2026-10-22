@@ -1,8 +1,5 @@
 <!doctype html>
-<html
-  lang="en"
-  class="scroll-smooth"
->
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -97,123 +94,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="/assets/tailwind.css"
-    />
-
-    <style>
-      html {
-        -webkit-font-smoothing: antialiased;
-      }
-      body {
-        background: #ffffff;
-        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-
-      .display {
-        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 800;
-        letter-spacing: -0.035em;
-        line-height: 0.95;
-        text-wrap: balance;
-      }
-      .display-xl {
-        font-weight: 800;
-        letter-spacing: -0.045em;
-        line-height: 0.88;
-      }
-
-      .label {
-        font-family: Inter, "Helvetica Neue", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      .label-lg {
-        font-size: 13px;
-        letter-spacing: 0.12em;
-      }
-      .rule {
-        border-color: #e3e0da;
-      }
-      p.leading-relaxed {
-        text-align: justify;
-      }
-
-      .js .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.7s ease-out,
-          transform 0.7s ease-out;
-      }
-      .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        .js .fade-up {
-          opacity: 1;
-          transform: none;
-          transition: none;
-        }
-        * {
-          animation-duration: 0.01ms !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
-
-      a:focus-visible,
-      button:focus-visible,
-      summary:focus-visible {
-        outline: 2px solid #111013;
-        outline-offset: 3px;
-      }
-      ::selection {
-        background: #111013;
-        color: #fbfaf8;
-      }
-
-      [id$="-heading"], footer[id] { scroll-margin-top: 96px; }
-
-      /* Side quick-nav: one line per numbered section, filled in by script.js.
-         Desktop-only (matches Tailwind's xl breakpoint) — there's no room
-         for it once the layout drops to a single column. */
-      #sectionNav { display: none; }
-      @media (min-width: 1280px) {
-        #sectionNav {
-          position: fixed;
-          top: 140px;
-          left: 20px;
-          z-index: 30;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      #sectionNav a:hover .side-nav-label,
-      #sectionNav a.is-active .side-nav-label {
-        opacity: 1;
-      }
-      #sectionNav a:hover .side-nav-line,
-      #sectionNav a.is-active .side-nav-line {
-        background-color: #111013;
-        width: 32px;
-      }
-      #sectionNav a {
-        display: flex;
-        align-items: center;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .side-nav-line, .side-nav-label { transition: none; }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css" />
 
     <script type="application/ld+json">
       {
@@ -263,472 +144,96 @@
       }
     </script>
   </head>
+  <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><svg viewBox="0 0 160 160" fill="currentColor" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg><div><div class="name">Ruther Bergonia</div><div class="sub muted">Systems architect · Manila</div></div></a>
+  <div class="right">
+    <a class="btn" href="/">Ask Ru Bot</a>
+    <a class="btn primary" href="mailto:ruther.bergonia@gmail.com">Email me</a>
+  </div>
+</header>
+<nav class="rail" aria-label="Tools">
+  <a class="icon-btn" href="/" aria-label="Chat with Ru Bot" data-tip="Chat with Ru Bot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+  <a class="icon-btn" href="mailto:ruther.bergonia@gmail.com" aria-label="Email" data-tip="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  <div class="sep"></div>
+  <a class="icon-btn" href="https://github.com/rockyru" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+  <a class="icon-btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+  <a class="icon-btn" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)" data-tip="Resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></a>
+</nav>
 
-  <body class="bg-paper font-body text-ink-900 antialiased">
-    <a
-      href="#main"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-paper"
-      >Skip to content</a
-    >
+<main class="page" id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/work/">Work</a><span>/</span><span>SURI</span></nav>
+<p class="eyebrow">Case study · Research information system</p>
+<h1>One platform for university research.</h1>
+<p class="lead">SURI (System for UPM Research Intelligence) is an API-first Laravel and Vue.js platform at the University of the Philippines Manila that unifies research registration, document management, reporting, and approval workflows, managing 15,000+ records across 50+ users and replacing manual spreadsheet compilation with reporting that runs in seconds.</p>
+<div class="pill-row"><span class="pill">Laravel</span><span class="pill">Vue.js</span><span class="pill">MySQL</span><span class="pill">REST API</span><span class="pill">RBAC</span></div>
+<div class="stat-row four">
+  <div class="stat sm"><b>Lead Engineer / Systems Architect</b><span>Role</span></div>
+  <div class="stat sm"><b>RGAO · UP Manila</b><span>Client</span></div>
+  <div class="stat sm"><b>Laravel / Vue.js / MySQL</b><span>Stack</span></div>
+  <div class="stat sm"><b>In production · 2025</b><span>Status</span></div>
+</div>
+<figure><img src="/images/suri-screen-dashboard.webp" alt="SURI dashboard: research records, budgets and reports in one view"><figcaption>SURI dashboard</figcaption></figure>
 
-    <nav class="fixed inset-x-0 top-0 z-40 border-b rule bg-paper/90 backdrop-blur-md">
-      <div class="mx-auto flex w-full max-w-[1440px] items-center justify-between border-x rule px-6 py-5 sm:px-10">
-        <a
-          href="/"
-          class="flex items-center gap-3 text-ink-900 transition-opacity hover:opacity-60"
-          aria-label="Ruther Bergonia — home"
-        >
-          <span class="block h-6 w-auto text-ink-900"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 160 160"
-              fill="currentColor"
-              class="h-full w-auto"
-              aria-hidden="true"
-            >
-              <path
-                d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"
-              /></svg
-          ></span>
-          <span class="label label-lg font-bold text-ink-900">Ruther Bergonia</span>
-        </a>
-        <div class="flex items-center gap-6 sm:gap-10">
-          <a
-            href="/work/"
-            class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block"
-            >Work</a
-          >
-          <a
-            href="/services/"
-            class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block"
-            >Services</a
-          >
-          <a
-            href="/about-ruther-bergonia/"
-            class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block"
-            >About</a
-          >
-          <a
-            href="/assets/ruther-bergonia-resume.pdf"
-            target="_blank"
-            rel="noopener"
-            download
-            class="label hidden text-ink-500 transition-colors hover:text-ink-900 sm:block"
-            >CV</a
-          >
-          <a
-            href="/contact/"
-            class="label label-lg bg-ink-900 px-5 py-3 font-bold text-paper transition-colors hover:bg-ink-700"
-            >Contact <span aria-hidden="true">→</span></a
-          >
-        </div>
-      </div>
-    </nav>
+<section class="section">
+  <div class="num">01 · The problem</div>
+  <p>Research administration at a university generates a constant stream of registrations, documents, approvals, and reports. Before SURI, these workflows at the Research Grants Administration Office (RGAO) ran by hand, compiled manually across spreadsheets and disconnected tools, across multiple offices, each with its own permissions and its own idea of what a "project" means.</p>
+  <p>Manual compilation doesn't just cost time. It fragments the record of the university's research activity, makes reporting a recurring project instead of a query, and leaves approval workflows without a single system of record.</p>
+</section>
 
-    <nav id="sectionNav" class="hidden xl:block" aria-label="Page sections"></nav>
+<section class="section">
+  <div class="num">02 · What SURI does</div>
+  <p>SURI consolidates the research lifecycle into one platform serving 50+ users and 15,000+ research records.</p>
+  <div class="grid2">
+    <div class="box"><div class="k">01</div><h3>Research registration</h3><p>Final registration, management, and funding records for university research.</p></div>
+    <div class="box"><div class="k">02</div><h3>Document management</h3><p>Research documents handled inside the platform instead of scattered files.</p></div>
+    <div class="box"><div class="k">03</div><h3>Approval workflows</h3><p>Workflows that previously ran by hand, tracked and automated end to end.</p></div>
+    <div class="box"><div class="k">04</div><h3>Reporting</h3><p>Reports that once required manual spreadsheet compilation now run in seconds.</p></div>
+  </div>
+  <div class="grid2">
+    <figure style="margin:0"><img src="/images/suri-screen-budget.png" alt="SURI budget tracking screen" loading="lazy"><figcaption>Budget tracking</figcaption></figure>
+    <figure style="margin:0"><img src="/images/suri-screen-reports.png" alt="SURI reports screen" loading="lazy"><figcaption>Reports in seconds</figcaption></figure>
+  </div>
+</section>
 
-    <main
-      id="main"
-      class="mx-auto max-w-[1440px] border-x rule pt-20"
-    >
-      <nav
-        aria-label="Breadcrumb"
-        class="border-b rule px-6 py-6 sm:px-10 xl:px-16"
-      >
-        <ol class="flex items-center gap-2">
-          <li>
-            <a
-              href="/"
-              class="label text-ink-300 transition-colors hover:text-ink-900"
-              >Home</a
-            >
-          </li>
-          <li
-            aria-hidden="true"
-            class="label text-ink-300"
-          >
-            /
-          </li>
-          <li>
-            <a
-              href="/work/"
-              class="label text-ink-300 transition-colors hover:text-ink-900"
-              >Work</a
-            >
-          </li>
-          <li
-            aria-hidden="true"
-            class="label text-ink-300"
-          >
-            /
-          </li>
-          <li><span class="label text-ink-900">SURI</span></li>
-        </ol>
-      </nav>
+<section class="section">
+  <div class="num">03 · Architecture and design decisions</div>
+  <p>SURI is built API-first on Laravel with a Vue.js frontend and a MySQL database. The API-first decision matters because SURI does not live alone: it is designed to join a broader ecosystem of research systems, with authentication and role-based access control treated as architecture, not features.</p>
+  <p>The next step of that work is <a href="/work/race-platform-orchestration/">TRACE</a>, the orchestration layer in development beneath SURI and <a href="/work/aria-controlled-response-ai/">ARIA</a>, which extracts shared authentication and shared services so future platforms join the ecosystem instead of becoming new silos.</p>
+</section>
 
-      <!-- HERO -->
-      <section class="grid grid-cols-1 border-b rule md:grid-cols-4">
-        <div class="hidden min-h-[160px] border-r rule md:block"></div>
-        <div class="flex flex-col justify-center border-r rule p-8 sm:p-12 md:col-span-2 md:p-16">
-          <h1 class="display display-xl max-w-lg text-4xl leading-[1.08] text-ink-900 sm:text-5xl md:text-[54px]">
-            One platform<br />for university research.
-          </h1>
-          <p class="label mt-4 text-ink-500">Research information system</p>
-        </div>
-        <div class="flex flex-col items-start justify-start p-6 md:items-end md:p-8">
-          <div class="space-y-1 text-left text-[10px] font-bold uppercase tracking-widest text-ink-400 md:text-right">
-            <div>Laravel</div>
-            <div>Vue.js</div>
-            <div>MySQL</div>
-          </div>
-        </div>
-      </section>
+<section class="section">
+  <div class="num">04 · Deployment and operations</div>
+  <p>I lead SURI's architecture and development and own it through production: deployments, production database architecture, and release management. The platform runs live for the university's research administration. This is operated software, not a prototype.</p>
+</section>
 
-      <!-- INTRO -->
-      <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
-        <p class="text-[18px] leading-relaxed text-ink-500 sm:text-[20px]">
-          SURI (System for UPM Research Intelligence) is an API-first Laravel and Vue.js platform at the University of the Philippines
-          Manila that unifies research registration, document management, reporting, and approval workflows — managing 15,000+ records
-          across 50+ users, and replacing manual spreadsheet compilation with reporting that runs in seconds.
-        </p>
-      </section>
+<section class="section">
+  <div class="num">05 · Outcome</div>
+  <div class="stat-row">
+    <div class="stat"><b>15,000+</b><span>records managed</span></div>
+    <div class="stat"><b>50+</b><span>active users</span></div>
+    <div class="stat"><b>Seconds</b><span>reporting, down from days</span></div>
+  </div>
+  <p>One platform now manages 15,000+ research records for 50+ users, unifying registration, document management, reporting, and approval workflows that previously ran by hand.</p>
+  <p class="note"><strong>Written by</strong> Ruther Bergonia, Software Systems Architect &amp; Senior Full-Stack Engineer, Metro Manila. I architected and built SURI end to end. <a href="/about-ruther-bergonia/">More about me</a>.</p>
+  <h3>Related case studies</h3>
+  <div class="related"><a href="/work/aria-controlled-response-ai/"><span>ARIA: a controlled-response AI assistant for research inquiries</span><span>→</span></a><a href="/work/race-platform-orchestration/"><span>TRACE: platform orchestration for the research ecosystem</span><span>→</span></a></div>
+</section>
 
-      <!-- PRODUCT SHOT -->
-      <section class="grid grid-cols-12 border-b rule">
-        <div class="border-b rule p-6 md:border-b-0 md:border-r">
-          <div class="overflow-hidden rule">
-            <picture>
-              <source srcset="/images/suri-screen-dashboard.webp" type="image/webp" />
-              <img
-                src="/images/suri-screen-dashboard.png"
-                alt="SURI project lifecycle view showing line item budget breakdown and spending against allocations"
-                class="block w-full"
-                loading="lazy"
-                decoding="async"
-                width="1800"
-                height="1133"
-              />
-            </picture>
-          </div>
-          <!-- <p class="label mt-4 text-ink-300">Project lifecycle &amp; budget tracking</p> -->
-        </div>
-      </section>
+<div class="cta">
+  <p class="eyebrow">Start here</p>
+  <h2>Have a system worth building properly?</h2>
+  <p>Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right fit, and how I'd approach it. Replies within one business day.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener">LinkedIn</a></div>
+</div>
 
-      <!-- META BAR — bordered tile grid matching the homepage's stat rhythm -->
-      <section class="grid grid-cols-2 border-b rule md:grid-cols-4">
-        <div class="border-b border-r rule p-8 sm:p-10 md:border-b-0">
-          <span class="label block text-ink-300">Role</span>
-          <span class="mt-3 block text-[15px] font-bold text-ink-900">Lead Engineer / Systems Architect</span>
-        </div>
-        <div class="border-b rule p-8 sm:p-10 md:border-b-0 md:border-r">
-          <span class="label block text-ink-300">Client</span>
-          <span class="mt-3 block text-[15px] font-bold text-ink-900">RGAO &middot; UP Manila</span>
-        </div>
-        <div class="border-r rule p-8 sm:p-10">
-          <span class="label block text-ink-300">Stack</span>
-          <span class="mt-3 block text-[15px] font-bold text-ink-900">Laravel / Vue.js / MySQL</span>
-        </div>
-        <div class="p-8 sm:p-10">
-          <span class="label block text-ink-300">Status</span>
-          <span class="mt-3 block text-[15px] font-bold text-ink-900">In Production &middot; 2025</span>
-        </div>
-      </section>
+</main>
+<footer class="foot">
+  <div><strong>Ruther Bergonia</strong> · Systems architect · Metro Manila</div>
+  <nav><a href="/">Ru Bot</a><a href="/work/">Work</a><a href="/services/">Services</a><a href="/about-ruther-bergonia/">About</a><a href="/contact/">Contact</a><a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">CV</a></nav>
+  <div>© 2026</div>
+</footer>
 
-      <!-- THE PROBLEM -->
-      <section
-        class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16"
-        aria-labelledby="problem-heading"
-      >
-        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-          <span class="label text-ink-900">+01</span>
-          <h2
-            id="problem-heading"
-            class="label text-ink-500"
-          >
-            The problem
-          </h2>
-        </div>
-        <div class="space-y-6 text-[16.5px] leading-relaxed text-ink-500">
-          <p>
-            Research administration at a university generates a constant stream of registrations, documents, approvals, and reports. Before
-            SURI, these workflows at the Research Grants Administration Office (RGAO) of the University of the Philippines Manila ran by
-            hand — compiled manually across spreadsheets and disconnected tools.
-          </p>
-          <p>
-            Manual compilation doesn't just cost time. It fragments the record of the university's research activity, makes reporting a
-            recurring project instead of a query, and leaves approval workflows without a single system of record.
-          </p>
-        </div>
-      </section>
-
-      <!-- WHAT SURI DOES — tile grid matching the homepage's service-cards rhythm -->
-      <section class="border-b rule" aria-labelledby="does-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="p-8 sm:p-12 md:col-span-3 md:p-16">
-            <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-              <span class="label text-ink-900">+02</span>
-              <h2 id="does-heading" class="label text-ink-500">What SURI does</h2>
-            </div>
-            <p class="max-w-2xl text-[16.5px] leading-relaxed text-ink-500">
-              SURI consolidates the research lifecycle into one platform serving 50+ users and 15,000+ research records.
-            </p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 border-t rule md:grid-cols-4">
-          <div class="fade-up border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-            <span class="label text-ink-300">01</span>
-            <h3 class="display mt-4 text-xl text-ink-900">Research registration</h3>
-            <p class="mt-4 text-xs leading-relaxed text-ink-500">Final registration, management, and funding records for university research.</p>
-          </div>
-          <div class="fade-up border-b rule bg-ink-900 p-8 md:border-b-0 md:border-r">
-            <span class="label text-ink-400">02</span>
-            <h3 class="display mt-4 text-xl text-paper">Document management</h3>
-            <p class="mt-4 text-xs leading-relaxed text-ink-300">Research documents handled inside the platform instead of scattered files.</p>
-          </div>
-          <div class="fade-up border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-            <span class="label text-ink-300">03</span>
-            <h3 class="display mt-4 text-xl text-ink-900">Approval workflows</h3>
-            <p class="mt-4 text-xs leading-relaxed text-ink-500">Workflows that previously ran by hand, tracked and automated end to end.</p>
-          </div>
-          <div class="fade-up bg-ink-900 p-8">
-            <span class="label text-ink-400">04</span>
-            <h3 class="display mt-4 text-xl text-paper">Reporting</h3>
-            <p class="mt-4 text-xs leading-relaxed text-ink-300">Reports that once required manual spreadsheet compilation now run in seconds.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ARCHITECTURE -->
-      <section
-        class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16"
-        aria-labelledby="architecture-heading"
-      >
-        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-          <span class="label text-ink-900">+03</span>
-          <h2
-            id="architecture-heading"
-            class="label text-ink-500"
-          >
-            Architecture &amp; design decisions
-          </h2>
-        </div>
-        <div class="space-y-6 text-[16.5px] leading-relaxed text-ink-500">
-          <p>
-            SURI is built API-first on Laravel with a Vue.js frontend and a MySQL database. The API-first decision matters because SURI does
-            not live alone: it is designed to join a broader ecosystem of research systems, with authentication and role-based access
-            control treated as architecture, not features.
-          </p>
-          <p>
-            The next step of that work is
-            <a
-              href="/work/race-platform-orchestration/"
-              class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900"
-              >RACE</a
-            >, the orchestration layer in development beneath SURI and
-            <a
-              href="/work/aria-controlled-response-ai/"
-              class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900"
-              >ARIA</a
-            >, which extracts shared authentication and shared services so future platforms join the ecosystem instead of becoming new
-            silos.
-          </p>
-        </div>
-      </section>
-
-      <!-- DEPLOYMENT -->
-      <section
-        class="border-b rule px-6 py-24 sm:px-10 sm:py-36 xl:px-16"
-        aria-labelledby="deployment-heading"
-      >
-        <div class="mb-14 flex items-baseline gap-6 sm:mb-16">
-          <span class="label text-ink-900">+04</span>
-          <h2
-            id="deployment-heading"
-            class="label text-ink-500"
-          >
-            Deployment &amp; operations
-          </h2>
-        </div>
-        <p class="text-[16.5px] leading-relaxed text-ink-500">
-          I lead SURI's architecture and development and own it through production: deployments, production database architecture, and
-          release management. The platform runs live for the university's research administration — this is operated software, not a
-          prototype.
-        </p>
-      </section>
-
-      <!-- OUTCOME — stat tiles + dark write-up tile, matching the homepage's team/facts grid -->
-      <section class="border-b rule" aria-labelledby="outcome-heading">
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="hidden border-r rule md:block"></div>
-          <div class="border-b rule p-8 sm:p-12 md:col-span-3 md:p-16">
-            <div class="flex items-baseline gap-6">
-              <span class="label text-ink-900">+05</span>
-              <h2 id="outcome-heading" class="label text-ink-500">Outcome</h2>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4">
-          <div class="fade-up flex min-h-[220px] flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-            <div class="text-4xl font-black tracking-tight text-ink-900">15,000+</div>
-            <div class="label mt-1 text-ink-400">Records managed</div>
-          </div>
-          <div class="fade-up flex min-h-[220px] flex-col justify-end border-b rule bg-paper p-8 md:border-b-0 md:border-r">
-            <div class="text-4xl font-black tracking-tight text-ink-900">50+</div>
-            <div class="label mt-1 text-ink-400">Active users</div>
-          </div>
-          <div class="fade-up flex min-h-[220px] flex-col justify-between bg-ink-900 p-8 md:col-span-2">
-            <p class="text-sm leading-relaxed text-paper">
-              One platform now manages 15,000+ research records for 50+ users, unifying registration, document management, reporting, and
-              approval workflows that previously ran by hand.
-            </p>
-            <span class="label text-ink-300">Reporting that took days now runs in seconds.</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- WRITTEN BY -->
-      <section class="border-b rule px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
-        <span class="label text-ink-300">Written by</span>
-        <p class="mt-4 text-[16.5px] leading-relaxed text-ink-500">
-          <strong class="font-semibold text-ink-900">Ruther Bergonia</strong> — Software Systems Architect &amp; Senior Full-Stack Engineer,
-          Metro Manila, Philippines. I architected and built SURI end to end.
-          <a
-            href="/about-ruther-bergonia/"
-            class="text-ink-900 underline decoration-ink-300 underline-offset-4 transition-colors hover:decoration-ink-900"
-            >More about Ruther Bergonia</a
-          >.
-        </p>
-      </section>
-
-      <!-- RELATED -->
-      <section class="px-6 py-14 sm:px-10 sm:py-20 xl:px-16">
-        <span class="label text-ink-300">Related case studies</span>
-        <div class="mt-6 flex flex-col gap-4">
-          <a
-            href="/work/aria-controlled-response-ai/"
-            class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500"
-            >ARIA: a controlled-response AI assistant for research inquiries <span aria-hidden="true">→</span></a
-          >
-          <a
-            href="/work/race-platform-orchestration/"
-            class="display text-[clamp(1.2rem,2.4vw,1.6rem)] text-ink-900 transition-colors hover:text-ink-500"
-            >RACE: platform orchestration for the research ecosystem <span aria-hidden="true">→</span></a
-          >
-        </div>
-      </section>
-    </main>
-
-    <footer
-      id="contact"
-      class="border-t rule"
-    >
-      <div class="mx-auto max-w-[1440px] border-x rule px-6 pb-8 pt-24 sm:px-10 sm:pt-36 xl:px-16">
-        <div class="mb-14 flex items-baseline gap-6">
-          <span class="label text-ink-900">+06</span>
-          <span class="label text-ink-500">Start here</span>
-        </div>
-
-        <h2 class="display display-xl max-w-[16ch] text-[clamp(2.5rem,7.5vw,6rem)] text-ink-900">Have a system worth building properly?</h2>
-
-        <div class="mt-16 grid gap-12 border-t rule pt-14 lg:grid-cols-12">
-          <p class="text-[18px] leading-relaxed text-ink-500 lg:col-span-5">
-            Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right fit —
-            and how I'd approach it. Replies within one business day.
-          </p>
-          <div class="flex flex-wrap gap-3 self-start lg:col-span-6 lg:col-start-7 lg:justify-end">
-            <a
-              href="mailto:ruther.bergonia@gmail.com"
-              class="label label-lg bg-ink-900 px-7 py-[18px] font-bold text-paper transition-colors hover:bg-ink-700"
-              >ruther.bergonia@gmail.com</a
-            >
-            <a
-              href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/"
-              rel="noopener"
-              class="label label-lg border border-ink-900 px-7 py-[18px] font-bold text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper"
-              >LinkedIn</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="border-t rule px-6 pt-10 sm:px-10 xl:px-16">
-        <div class="flex flex-wrap items-center justify-between gap-6 pb-8">
-          <div class="flex items-center gap-4">
-            <span class="block h-7 w-auto text-ink-900"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 160 160"
-                fill="currentColor"
-                class="h-full w-auto"
-                aria-hidden="true"
-              >
-                <path
-                  d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"
-                /></svg
-            ></span>
-            <div>
-              <p class="label font-bold text-ink-900">Ruther Bergonia</p>
-              <p class="label mt-1 text-ink-300">Systems architect · Metro Manila</p>
-            </div>
-          </div>
-          <nav
-            class="flex flex-wrap gap-x-6 gap-y-2"
-            aria-label="Footer"
-          >
-            <a
-              href="/work/"
-              class="label text-ink-500 transition-colors hover:text-ink-900"
-              >Work</a
-            >
-            <a
-              href="/services/"
-              class="label text-ink-500 transition-colors hover:text-ink-900"
-              >Services</a
-            >
-            <a
-              href="/about-ruther-bergonia/"
-              class="label text-ink-500 transition-colors hover:text-ink-900"
-              >About</a
-            >
-            <a
-              href="/assets/ruther-bergonia-resume.pdf"
-              target="_blank"
-              rel="noopener"
-              download
-              class="label text-ink-500 transition-colors hover:text-ink-900"
-              >CV</a
-            >
-          </nav>
-          <p class="label text-ink-300">© 2026</p>
-        </div>
-      </div>
-
-      <div
-        class="mt-20 overflow-hidden px-6 sm:mt-28 sm:px-10 xl:px-16"
-        aria-hidden="true"
-      >
-        <p class="display block w-full whitespace-nowrap text-[clamp(2rem,11.2vw,16rem)] leading-[1.05] tracking-[-0.055em] text-ink-900">
-          Ruther Bergonia
-        </p>
-      </div>
-    </footer>
-
-    <button
-      id="scrollTop"
-      type="button"
-      aria-label="Scroll back to top"
-      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border rule bg-paper-raised text-ink-900 opacity-0 shadow-sm transition-all duration-300 pointer-events-none translate-y-3 hover:bg-ink-900 hover:text-paper"
-    >
-      <span aria-hidden="true">↑</span>
-    </button>
-
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
-    <script
-      src="/script.js"
-      defer
-    ></script>
   </body>
 </html>
