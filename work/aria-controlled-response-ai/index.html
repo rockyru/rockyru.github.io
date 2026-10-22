@@ -110,7 +110,7 @@
 <p class="eyebrow">Case study · Controlled-response AI assistant</p>
 <h1>AI that knows when not to answer.</h1>
 <p class="lead">ARIA is an AI-assisted support platform designed to answer research inquiries from approved information sources, routing anything outside its scope to a human rather than guessing, and automatically creating tracked tickets for follow-up.</p>
-<div class="pill-row"><span class="pill">AI integration</span><span class="pill">Support automation</span><span class="pill">Claude · RAG</span><span class="pill">Vector search</span><span class="pill">Laravel</span></div>
+<div class="pill-row"><span class="pill">AI integration</span><span class="pill">Support automation</span><span class="pill">Claude · RAG</span><span class="pill">Keyword retrieval</span><span class="pill">Laravel</span></div>
 <div class="stat-row four">
   <div class="stat sm"><b>Architect &amp; Developer</b><span>Role</span></div>
   <div class="stat sm"><b>Research support</b><span>Domain</span></div>
@@ -136,7 +136,21 @@
 </section>
 
 <section class="section">
-  <div class="num">03 · Where ARIA fits</div>
+  <div class="num">03 · Engineering notes</div>
+  <p>For engineers and technical recruiters: how ARIA is actually built, as of 2026. There are two surfaces.</p>
+  <ul>
+    <li><strong>Public assistant.</strong> Runs on the office's Next.js 16 site with the Anthropic SDK and Claude Haiku 4.5, streamed, with a low temperature and a hard cap on output. Only the last six messages are sent, each trimmed, and requests are rate-limited per IP.</li>
+    <li><strong>Retrieval.</strong> Keyword-scored retrieval over the office's own content: one chunk per FAQ, downloadable file and page, scored by length-normalised term frequency with a title boost, top six, each windowed around the query. No embeddings or vector database, on purpose: the corpus is small, fully controlled, and the sensitive fields upstream are encrypted.</li>
+    <li><strong>Grounding.</strong> The system prompt is a cached facts block plus a per-query context block, and the model may answer only from those. Links in the reply are checked against an allowlist built from the facts and the retrieved chunks; anything else is stripped while streaming.</li>
+    <li><strong>Handoff.</strong> When the assistant cannot answer, or the visitor asks for a person, the reply ends with a marker that opens a ticket form. The ticket is created in SURI's help desk with a year-numbered reference, the transcript attached, and an acknowledgement email carrying a reply token. If SURI is unreachable, the ticket falls back to email with a local reference.</li>
+    <li><strong>Privacy.</strong> Conversations live only in the visitor's browser session. Both the public and the staff AI features sit behind environment flags that default to off.</li>
+    <li><strong>Staff assistant inside SURI.</strong> A Laravel service on Claude Sonnet 4.6 with seven read-only tools (worklist, documents, SURI records, analytics, bibliometrics, ranking, email drafting) that return totals, breakdowns and samples of at most 15 rows. Each tool maps to a permission; tools the user cannot run are not offered to the model at all, and the tool loop is capped. Session context tells the model who is asking, where they are in the app and the office's current counts.</li>
+    <li><strong>Audit and retention.</strong> One audit row per turn stores hashes and lengths of prompt and reply rather than text, tokens, latency, tool calls, referenced records and a prompt-injection heuristic flag. Verbatim capture requires the feature on, per-turn consent and an identified user, and is purged after 30 days; rows are kept two years. Reading the log is permission-gated and itself audited. Retention and purge run as scheduled commands.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <div class="num">04 · Where ARIA fits</div>
   <p>ARIA operates in the same research-platform ecosystem as <a href="/work/suri-research-information-system/">SURI</a>, the research information system at UP Manila. Beneath both, <a href="/work/race-platform-orchestration/">TRACE</a> is being developed as the shared orchestration layer, shared authentication, shared services, and integration capabilities, so assistant, platform, and future systems behave as one ecosystem.</p>
   <p class="note"><strong>Written by</strong> Ruther Bergonia, Software Systems Architect &amp; Senior Full-Stack Engineer, Metro Manila. I designed ARIA's controlled-response architecture. <a href="/about-ruther-bergonia/">More about me</a>.</p>
   <h3>Related case studies</h3>

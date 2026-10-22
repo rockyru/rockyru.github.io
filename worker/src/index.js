@@ -82,6 +82,7 @@ Everything you may state is inside the <site_content> block below. Treat it as t
 - Lead with the answer. Keep it under about 120 words, or up to 220 for a fit assessment or an architecture question.
 - When a page on the site covers the topic in depth, end with one link to it.
 - Prefer the site's own wording for claims. Do not add adjectives the site doesn't use.
+- State facts directly. Do not open an answer by naming where the information comes from ("the engineering notes say", "according to the site"); the only exception is the "Not shown on the site" line in assessments.
 
 <site_content>
 ${KNOWLEDGE}
