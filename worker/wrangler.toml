@@ -27,7 +27,14 @@ CLAUDE_MODEL = "claude-haiku-5-5"   # cheapest current model; the system prompt 
 ALLOWED_ORIGINS = "https://rmbergonia.com,https://www.rmbergonia.com,http://127.0.0.1:8080,http://localhost:8080"
 CONTACT_TO = "ruther.bergonia@gmail.com"
 CONTACT_FROM = "rubot@rmbergonia.com"
+TOKEN_BUDGET = "250000"      # tokens per visitor IP; cache reads count, like Claude's own limits
+BUDGET_WINDOW_HOURS = "720"  # resets 30 days after an IP's first use; "0" = never resets
 # TURNSTILE_SITE_KEY = "0x4AAAAAAA..."   # optional, see Secrets below
+
+# Per-IP token budget storage.
+[[kv_namespaces]]
+binding = "USAGE"
+id = "baafc2be05ca40f3a62ed722622913a7"
 
 # Per-IP rate limits (Workers Rate Limiting API). The code treats them as optional.
 [[unsafe.bindings]]

@@ -333,7 +333,7 @@
           </button>
         </form>
         </div>
-        <div class="hint muted" id="hint">Ru Bot answers from this site's content only. Enter to send, Shift+Enter for a new line.</div>
+        <div class="hint muted" id="hint">Ru Bot answers from this site's content only. Enter to send, Shift+Enter for a new line. <span id="budget"></span></div>
       </div>
     </main>
   </div>
@@ -344,6 +344,15 @@
   const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   const AI_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/chat' : '/api/chat';
   const CONTACT_ENDPOINT = LOCAL ? 'http://127.0.0.1:8787/api/contact' : '/api/contact';
+  const USAGE_MARK = '\x1E';
+  const fmt = n => Number(n).toLocaleString('en-US');
+  function showBudget(u) {
+    if (!u || !u.limit) return;
+    const left = Math.max(0, u.limit - u.used);
+    const pct = Math.round(left / u.limit * 100);
+    const reset = u.resetAt ? ` Resets ${new Date(u.resetAt).toLocaleDateString([], { month: 'short', day: 'numeric' })}.` : '';
+    $('#budget').textContent = `Ru Bot budget: ${fmt(left)} of ${fmt(u.limit)} tokens left (${pct}%).${reset}`;
+  }
   const COMPOSE_RE = /\b(send (you |him |ruther |me )?(an? )?(e-?mail|message)|e-?mail (you|him|ruther)|message (you|him|ruther)|leave (you )?(a )?(message|note)|contact form|get in touch|write to you|i want to hire|hire you)\b/i;
   let compose = null; // { step: 'name'|'email'|'message'|'review', name, email, message }
   const EMAIL = 'ruther.bergonia@gmail.com';
@@ -684,6 +693,17 @@
         body: JSON.stringify({ messages: history.slice(-6) }),
       });
     } catch (e) { clearTimeout(timer); body.parentElement.remove(); return false; }
+    if (res.status === 429) {
+      clearTimeout(timer);
+      const d = await res.json().catch(() => ({}));
+      if (d.error === 'budget') {
+        showBudget(d);
+        body.innerHTML = `<p><strong>You've used up your Ru Bot budget</strong> (${fmt(d.limit)} tokens). The topics on the left still work, and you can always email me. ${d.resetAt ? 'It resets ' + new Date(d.resetAt).toLocaleDateString() + '.' : ''}</p>` + btns([{ label: 'Email ' + EMAIL, href: 'mailto:' + EMAIL, primary: true }]);
+        history.push({ role: 'assistant', content: 'Budget used up.' });
+        scrollDown(); return true;
+      }
+      body.parentElement.remove(); return false;
+    }
     if (!res.ok || !res.body) { clearTimeout(timer); body.parentElement.remove(); return false; }
 
     const reader = res.body.getReader(); const dec = new TextDecoder();
@@ -693,11 +713,13 @@
       for (;;) {
         const { value, done } = await reader.read(); if (done) break;
         text += dec.decode(value, { stream: true });
-        live.innerHTML = md(text); scrollDown();
+        live.innerHTML = md(text.split(USAGE_MARK)[0]); scrollDown();
       }
     } catch (e) { /* stream cut; show what we have */ }
     clearTimeout(timer);
     live.classList.remove('cursor');
+    const mark = text.indexOf(USAGE_MARK);
+    if (mark >= 0) { try { showBudget(JSON.parse(text.slice(mark + 1))); } catch (e) {} text = text.slice(0, mark); }
     if (!text.trim()) { body.parentElement.remove(); return false; }
     live.innerHTML = md(text);
     const src = document.createElement('div'); src.className = 'source muted'; src.textContent = 'Ru Bot · from site content';

@@ -3,6 +3,8 @@
 // POST /api/chat  { messages: [{ role: "user" | "assistant", content: string }] }
 //   -> streams plain-text answer chunks (text/plain; charset=utf-8)
 // GET  /api/chat/health -> { ok, model }
+// GET  /api/chat/usage  -> { used, limit, resetAt } for the caller's IP
+// The streamed answer ends with "\x1E{json}" carrying the updated usage.
 // POST /api/contact { name, email, message, website? } -> { ok } ; emails Ruther via Email Sending
 //
 // GET  /api/contact/token -> { token, turnstileSiteKey } ; signed, time-stamped token the client must echo back
@@ -22,6 +24,31 @@ import KNOWLEDGE from "../knowledge.md";
 const MAX_MESSAGES = 6;          // history window sent to the model
 const MAX_MESSAGE_CHARS = 600;   // per message
 const MAX_OUTPUT_TOKENS = 450;   // answers are meant to be short
+const windowMs = env => (Number(env.BUDGET_WINDOW_HOURS) || 0) * 60 * 60 * 1000; // 0 = lifetime
+const USAGE_MARK = "\x1E";       // ASCII record separator: splits answer text from the usage JSON
+
+// Per-IP token budget, persisted in KV across chats (and forever, unless a window is set).
+// Counts every token the request used (uncached input, cache writes, cache reads, output).
+async function readUsage(env, ip) {
+  const limit = Number(env.TOKEN_BUDGET) || 100000;
+  const empty = { used: 0, resetAt: 0, limit };
+  if (!env.USAGE) return empty;
+  try {
+    const rec = await env.USAGE.get("u:" + ip, "json");
+    if (!rec || (rec.resetAt && Date.now() > rec.resetAt)) return empty;
+    return { used: rec.used, resetAt: rec.resetAt || 0, limit };
+  } catch { return empty; }
+}
+async function addUsage(env, ip, prev, tokens) {
+  if (!env.USAGE) return prev;
+  const win = windowMs(env);
+  const resetAt = win ? (prev.resetAt || Date.now() + win) : 0;
+  const next = { used: prev.used + tokens, resetAt };
+  const opts = win ? { expirationTtl: Math.max(60, Math.ceil((resetAt - Date.now()) / 1000)) } : {};
+  try { await env.USAGE.put("u:" + ip, JSON.stringify(next), opts); } catch (e) { console.warn("usage write failed", e?.message); }
+  return { ...next, limit: prev.limit };
+}
+const usagePayload = u => ({ used: u.used, limit: u.limit, resetAt: u.resetAt || null });
 
 const SYSTEM = `You are Ru Bot, the assistant on rmbergonia.com, the portfolio of Ruther Bergonia, a software systems architect in Metro Manila. You are Ruther's stand-in: you speak as Ruther in the first person ("I"), in a plain, direct, friendly voice. Short sentences. No hype. If asked your name or what you are, say you're Ru Bot, Ruther's stand-in on this site, and that you answer from the site's content.
 
@@ -175,7 +202,7 @@ function sanitize(messages) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin");
     const cors = corsHeaders(origin, env);
@@ -185,6 +212,10 @@ export default {
 
     if (url.pathname.endsWith("/health")) {
       return json({ ok: Boolean(env.ANTHROPIC_API_KEY), model: env.CLAUDE_MODEL }, 200, cors);
+    }
+    if (url.pathname.endsWith("/usage")) {
+      const ip = request.headers.get("CF-Connecting-IP") || "anon";
+      return json(usagePayload(await readUsage(env, ip)), 200, { ...cors, "Cache-Control": "no-store" });
     }
     if (request.method !== "POST") return json({ error: "Method not allowed" }, 405, cors);
     if (!originAllowed(origin, env)) return json({ error: "Forbidden" }, 403, cors);
@@ -199,6 +230,12 @@ export default {
     if (env.GLOBAL_LIMITER) {
       const { success } = await env.GLOBAL_LIMITER.limit({ key: "claude" });
       if (!success) return json({ error: "Ru Bot is busy right now. Try again in a minute." }, 429, cors);
+    }
+
+    const ip = request.headers.get("CF-Connecting-IP") || "anon";
+    const usage = await readUsage(env, ip);
+    if (usage.used >= usage.limit) {
+      return json({ error: "budget", message: "You've used up your Ru Bot budget.", ...usagePayload(usage) }, 429, cors);
     }
 
     let body;
@@ -231,6 +268,9 @@ export default {
           const final = await stream.finalMessage();
           const u = final.usage || {};
           console.log(`usage model=${final.model} in=${u.input_tokens} cache_write=${u.cache_creation_input_tokens} cache_read=${u.cache_read_input_tokens} out=${u.output_tokens}`);
+          const spent = (u.input_tokens || 0) + (u.cache_creation_input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.output_tokens || 0);
+          const after = await addUsage(env, ip, usage, spent);
+          controller.enqueue(encoder.encode(USAGE_MARK + JSON.stringify(usagePayload(after))));
           if (final.stop_reason === "refusal") {
             controller.enqueue(encoder.encode("I can't answer that here. Email me at ruther.bergonia@gmail.com."));
           } else if (final.stop_reason === "max_tokens") {
