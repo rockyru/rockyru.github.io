@@ -85,9 +85,9 @@ ${preview ? `<div style="display:none;max-height:0;overflow:hidden;opacity:0;">$
         <tr>
           <td valign="top" class="stack side" style="width:138px;padding:18px 12px 26px 0;border-top:1px solid ${RULE};">
             <p style="margin:0 0 9px;font-family:${MONO};font-size:10px;line-height:1;letter-spacing:0.5px;">${String(i + 1).padStart(2, "0")}</p>
-            <p style="margin:0;font-size:19px;line-height:1.2;font-weight:500;letter-spacing:-0.2px;">${esc(heading)}</p>
+            <p style="margin:0;font-size:19px;line-height:1.3;font-weight:500;letter-spacing:-0.2px;">${esc(heading)}</p>
           </td>
-          <td valign="top" class="stack main" style="padding:18px 0 26px;border-top:1px solid ${RULE};font-size:14px;line-height:1.75;">${html}</td>
+          <td valign="top" class="stack main" style="padding:39px 0 26px;border-top:1px solid ${RULE};font-size:14px;line-height:1.75;">${html}</td>
         </tr>`).join("")}
       </table>
     </td></tr>
