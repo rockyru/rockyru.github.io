@@ -229,6 +229,8 @@ export default {
             }
           }
           const final = await stream.finalMessage();
+          const u = final.usage || {};
+          console.log(`usage model=${final.model} in=${u.input_tokens} cache_write=${u.cache_creation_input_tokens} cache_read=${u.cache_read_input_tokens} out=${u.output_tokens}`);
           if (final.stop_reason === "refusal") {
             controller.enqueue(encoder.encode("I can't answer that here. Email me at ruther.bergonia@gmail.com."));
           } else if (final.stop_reason === "max_tokens") {
