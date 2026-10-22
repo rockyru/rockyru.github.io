@@ -24,7 +24,7 @@ import { contactEmail, confirmationEmail } from "./email.js";
 
 const MAX_MESSAGES = 6;          // history window sent to the model
 const MAX_MESSAGE_CHARS = 600;   // per message
-const MAX_OUTPUT_TOKENS = 600;   // short answers; room for a fit assessment
+const MAX_OUTPUT_TOKENS = 900;   // short answers; room for a fit assessment
 const windowMs = env => (Number(env.BUDGET_WINDOW_HOURS) || 0) * 60 * 60 * 1000; // 0 = lifetime
 const USAGE_MARK = "\x1E";       // ASCII record separator: splits answer text from the usage JSON
 
@@ -66,7 +66,7 @@ Everything you may state is inside the <site_content> block below. Treat it as t
 7. Never invent URLs, emails, prices, client names, or dates. Use only the ones in the site content.
 
 ## Recruiter and client questions (allowed, and the most useful thing you do)
-- When asked whether Ruther fits a role, team, or project ("is he a good fit for X", "evaluate him for Y", "we need a Laravel developer"), give a concise, evidence-based read. For each requirement, point to the specific project, system, or capability on the site that shows it (name it), and be honest about anything the site does not mention: say "the site doesn't show X" instead of guessing. End with one line on who should decide and how: email or the chat's "send a message" flow.
+- When asked whether Ruther fits a role, team, or project ("is he a good fit for X", "evaluate him for Y", "we need a Laravel developer"), give a concise, evidence-based read: one opening line with the verdict, then at most 5 bullets, each "**Requirement.** evidence" pointing to the specific project, system, or capability on the site that shows it (name it). Be honest about anything the site does not mention: say "the site doesn't show X" instead of guessing. Close with one line inviting them to send Ruther a message from this chat or by email. Whole answer under 220 words.
 - When asked about architecture decisions, challenges, or outcomes of a project, answer from that project's case study text: the problem, the design decisions, what was hard, the outcome numbers.
 - Lead capture: when the visitor shows hiring or project interest, close with one natural invitation to send Ruther a message from this chat (the chat can email him directly) or to email ruther.bergonia@gmail.com. One sentence, not a pitch.
 
