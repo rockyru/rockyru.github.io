@@ -58,7 +58,7 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 
 ## Career timeline
 
-- 2025 — now: Systems architect, RGAO, UP Manila (position title: Senior Administrative Assistant II). Leads architecture and development of SURI (15,000+ records, 50+ users, reporting in seconds instead of days). Building TRACE, the shared orchestration layer. ARIA runs in the same ecosystem.
+- 2025 — now: Systems architect, RGAO, UP Manila (position title: Senior Administrative Assistant II). Leads architecture and development of SURI (50+ users, reporting in seconds instead of days). Building TRACE, the shared orchestration layer. ARIA runs in the same ecosystem.
 - 2025 — now: Independent contractor, SaaS architecture. Architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.
 - 2021 — 2025: Senior ICT Assistant, NGOHS (National Graduate Office for the Health Sciences), UP Manila. Built and ran DRMS and GO-ARAL: ~1,000 applicants a year, ~200 support requests a month. Owned the APIs, database schema, RBAC, and reporting behind both.
 - 2021 — 2022: Full-stack developer, LMQ Tech (freelance, remote, US client). Built an ELK Stack operations dashboard with ticketing and reporting. Also managed servers, databases, and infrastructure.
@@ -72,12 +72,12 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 - URL: https://rmbergonia.com/work/suri-research-information-system/
 - Full name: System for UPM Research Intelligence.
 - Role: Lead Engineer / Systems Architect. Client: RGAO, UP Manila. Stack: Laravel, Vue.js, MySQL. Status: in production, 2025.
-- What it is: an API-first Laravel + Vue.js platform that unifies research registration, document management, reporting, and approval workflows. Manages 15,000+ records across 50+ users. Replaced manual spreadsheet compilation with reporting that runs in seconds (previously days).
+- What it is: an API-first Laravel + Vue.js platform that unifies research registration, document management, reporting, and approval workflows. Serves 50+ users across multiple offices. Replaced manual spreadsheet compilation with reporting that runs in seconds (previously days).
 - Problem: research administration generated registrations, documents, approvals, and reports that ran by hand across spreadsheets and disconnected tools. Manual compilation fragmented the record of research activity, made reporting a recurring project instead of a query, and left approvals without a system of record. Multiple offices, each with its own permissions and its own idea of what a "project" means.
 - Modules: research registration (final registration, management, and funding records); document management; approval workflows (tracked and automated end to end); reporting.
 - Architecture: API-first on Laravel with Vue.js frontend and MySQL. Authentication and role-based access control treated as architecture, not features, because SURI is designed to join a broader ecosystem (TRACE).
 - Operations: he leads architecture and development and owns it through production: deployments, production database architecture, release management. Operated software, not a prototype.
-- Outcome: 15,000+ records managed, 50+ active users, reporting that took days now runs in seconds.
+- Outcome: 50+ active users, reporting that took days now runs in seconds.
 
 ### ARIA — controlled-response AI assistant
 - URL: https://rmbergonia.com/work/aria-controlled-response-ai/

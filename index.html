@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruther Bergonia — Software Systems Architect & Full-Stack Engineer, Manila</title>
-  <meta name="description" content="Ruther Bergonia builds production software in Metro Manila — institutional platforms managing 15,000+ records, Sprntr websites and CRM for local businesses from ₱15,000, and CNTXTQRY. Ask the site anything." />
+  <meta name="description" content="Ruther Bergonia builds production software in Metro Manila — institutional platforms in daily use at universities and offices, Sprntr websites and CRM for local businesses from ₱15,000, and CNTXTQRY. Ask the site anything." />
   <meta name="author" content="Ruther Bergonia" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://rmbergonia.com/" />
@@ -14,14 +14,14 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://rmbergonia.com/" />
   <meta property="og:title" content="Ruther Bergonia — Systems That Hold Under Load" />
-  <meta property="og:description" content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
+  <meta property="og:description" content="Institutional platforms in production for universities and offices. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
   <meta property="og:image" content="https://rmbergonia.com/images/og-default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Ruther Bergonia — software systems architect and senior full-stack engineer, Metro Manila" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ruther Bergonia — Systems That Hold Under Load" />
-  <meta name="twitter:description" content="Institutional platforms managing 15,000+ records in production. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
+  <meta name="twitter:description" content="Institutional platforms in production for universities and offices. Sprntr: websites, inquiries and bookings for local businesses from ₱15,000." />
   <meta name="twitter:image" content="https://rmbergonia.com/images/og-default.png" />
 
   <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
@@ -165,23 +165,24 @@
     .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; flex: 1; }
     .thread { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
     .thread-inner { max-width: 680px; margin: 0 auto; padding: 32px 20px 24px; display: flex; flex-direction: column; gap: 22px; }
-    .hero { text-align: center; padding: 48px 0 12px; }
-    .hero .mark { width: 56px; height: 56px; margin: 0 auto 18px; }
+    .hero { text-align: center; padding: 6px 0 4px; }
+    .hero .mark { width: 46px; height: 46px; margin: 0 auto 14px; }
     .hero h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 10px; text-wrap: balance; }
-    .hero p { margin: 0 auto; max-width: 540px; }
+    .hero p { margin: 0 auto; max-width: 500px; font-size: 14.5px; }
     .hero nav { margin-top: 18px; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; }
     .hero nav a { text-decoration: underline; text-underline-offset: 3px; }
-    .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 26px; }
-    .proof-card { text-align: left; padding: 14px 14px 16px; border: 1px solid #000; background: #fff; display: flex; flex-direction: column; gap: 4px; width: 100%; }
-    .proof-card .k { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; opacity: .72; }
-    .proof-card .v { font-size: 16px; font-weight: 800; letter-spacing: -0.02em; }
-    .proof-card .d { font-size: 12.5px; line-height: 1.45; }
+    .proof { display: flex; justify-content: center; margin: 22px auto 0; max-width: 620px; border-top: 1px solid #000; border-bottom: 1px solid #000; }
+    .proof-card { flex: 1 1 0; min-width: 0; text-align: center; padding: 10px 12px; background: #fff; display: flex; flex-direction: column; gap: 2px; }
+    .proof-card + .proof-card { border-left: 1px solid rgba(0,0,0,.2); }
+    .proof-card .k { display: none; }
+    .proof-card .v { font-size: 13.5px; font-weight: 700; letter-spacing: -0.01em; }
+    .proof-card .d { font-size: 12px; line-height: 1.4; opacity: .72; }
     .proof-card:hover { background: #000; color: #fff; }
-    .proof-card:hover .k { opacity: 1; }
-    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
-    .chip { text-align: left; padding: 14px 16px; border: 1px solid #000; background: #fff; text-decoration: none; display: block; }
-    .chip .t { font-weight: 600; font-size: 14px; display: block; }
-    .chip .d { font-size: 13px; }
+    .proof-card:hover .d { opacity: 1; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+    .chip { padding: 7px 12px; border: 1px solid #000; background: #fff; text-decoration: none; display: inline-block; font-size: 13px; }
+    .chip .t { font-weight: 500; }
+    .chip .d { display: none; }
     .chip:hover { background: #000; color: #fff; }
 
     .msg { display: flex; gap: 12px; animation: rise .35s ease both; }
@@ -204,23 +205,27 @@
     @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
     .cursor::after { content: "▍"; animation: blink 1s infinite; }
 
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 12px 0 4px; }
-    .card { display: block; width: 100%; text-align: left; padding: 0; text-decoration: none !important; border: 1px solid #000; background: #fff; overflow: hidden; }
-    .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); }
-    .card-word { aspect-ratio: 16/9; display: flex; align-items: flex-end; padding: 14px; background: #000; color: #fff; font-weight: 800; font-size: 20px; letter-spacing: -0.03em; line-height: 1.05; }
-    .card .cb { padding: 10px 12px 12px; }
+    .cards { display: flex; flex-direction: column; margin: 10px 0 2px; border-top: 1px solid #000; }
+    .card { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 8px 8px 8px 0; text-decoration: none !important; border: 0; border-bottom: 1px solid rgba(0,0,0,.18); background: #fff; }
+    .card img, .card-word { width: 80px; aspect-ratio: 16/9; flex: none; border: 1px solid #000; }
+    .card img { object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); }
+    .card-word { display: grid; place-items: center; background: #000; color: #fff; font-weight: 800; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+    .card .cb { min-width: 0; flex: 1; }
     .card .ct { font-weight: 600; font-size: 14px; }
-    .card .cd { font-size: 12.5px; margin-top: 2px; }
-    .card .cm { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 8px; font-weight: 600; }
+    .card .cd { font-size: 12.5px; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card .cm { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; flex: none; opacity: .7; }
+    .cards.single .cd { display: none; }
     .card:hover { background: #000; color: #fff; }
-    .card:hover .card-word { background: #fff; color: #000; }
+    .card:hover .cd, .card:hover .cm { opacity: 1; }
+    .card:hover img, .card:hover .card-word { border-color: #fff; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; }
-    .tag { font-size: 12.5px; padding: 5px 10px; border: 1px solid #000; background: #fff; }
-    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 4px; }
-    .stat { border: 1px solid #000; padding: 12px; background: #fff; }
-    .stat b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
-    .stat span { font-size: 12px; }
+    .tags { font-size: 12.5px; margin: 8px 0 2px; opacity: .75; line-height: 1.6; }
+    .tag + .tag::before { content: " · "; }
+    .facts { display: flex; flex-wrap: wrap; gap: 2px 0; margin: 10px 0 2px; font-size: 13px; }
+    .facts span + span::before { content: "·"; margin: 0 8px; opacity: .5; }
+    .facts b { font-weight: 700; }
+    .facts.col { flex-direction: column; gap: 3px; }
+    .facts.col span + span::before { content: none; }
     .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; font-size: 13.5px; font-weight: 500; text-decoration: none !important; border: 1px solid #000; background: #fff; }
     .btn:hover { background: #000; color: #fff; }
@@ -291,14 +296,16 @@
       .rail { display: none; }
     }
     @media (max-width: 860px) {
-      .chips, .proof { grid-template-columns: 1fr; }
-      .chip .d { display: none; }
+      .proof { flex-direction: column; }
+      .proof-card + .proof-card { border-left: 0; border-top: 1px solid rgba(0,0,0,.2); }
+      .card .cm { display: none; }
+      .card .cd { white-space: normal; }
       .msg.user .bubble { max-width: 90%; }
       .thread-inner { padding: 20px 16px; }
       .composer-wrap { padding: 8px 16px 14px; }
       .topbar { padding: 10px 12px; min-height: 60px; }
       .status { display: none; }
-      .hero { padding-top: 24px; }
+      .hero { padding-top: 4px; }
       .hero p { font-size: 14px; }
       .hint { font-size: 11px; }
     }
@@ -422,26 +429,26 @@
 
   // ── Work catalogue ─────────────────────────────────────────────
   const WORK = {
-    suri:  { t: 'SURI', d: 'Research information system, UP Manila. 15,000+ records, 50+ users, reporting in seconds.', m: 'Laravel · Vue · MySQL', img: '/images/suri-screen-dashboard.webp', url: '/work/suri-research-information-system/' },
+    suri:  { t: 'SURI', d: 'Research information system, UP Manila. 50+ users, reporting in seconds instead of days.', m: 'Laravel · Vue · MySQL', img: '/images/suri-screen-dashboard.webp', url: '/work/suri-research-information-system/' },
     aral:  { t: 'GO-ARAL', d: 'Graduate application & ticketing portal, NGOHS. ~1,000 applicants a year, ~200 tickets a month.', m: 'Laravel · Vue · MySQL', img: '/images/aral.png', url: '/work/go-aral-graduate-support-platform/' },
     aria:  { t: 'ARIA', d: 'Controlled-response AI assistant. Approved sources only, human handoff, tracked tickets.', m: 'Claude · RAG · Laravel', img: '/images/og-work.png', url: '/work/aria-controlled-response-ai/' },
     race:  { t: 'TRACE', d: 'Shared authentication and services beneath SURI and ARIA. In development.', m: 'Docker · API design', img: '/images/trace.png', url: '/work/race-platform-orchestration/' },
     cntxt: { t: 'CNTXTQRY', d: 'AI practice tool for customer-service conversations. Chat, email and voice rehearsal with scored feedback.', m: 'Product · Live', img: '/images/cntxtqry.jpg', url: 'https://cntxtqry.com/', ext: true },
     estim: { t: 'Construction Estimating Academy', d: 'Online training platform: self-paced courses, live webinars, template store, verifiable certificates.', m: 'Client · Live', img: '/images/estimatingacademy.jpg', url: 'https://estimatingacademy.org/', ext: true },
-    lamour: { t: 'Lamour Printing Services', d: 'Print shop in Sampaloc, Manila. Sprntr\'s first pilot customer.', m: 'Sprntr client', word: 'Stickers, labels, standees, invitations.', url: 'https://lamour.sprntr.dev/', ext: true },
-    pets:  { t: 'Pampered Pets Club', d: 'Grooming, hotel and daycare in Batangas City, with a "Book a visit" flow.', m: 'Sprntr client', word: 'Book a visit.', url: 'https://pamperedpets.sprntr.dev/', ext: true },
-    bridal: { t: 'Pinky Lamasan Bridal Atelier', d: 'Bridal gowns in General Trias, Cavite. Editorial site plus inventory, reservations, orders and payments.', m: 'Sprntr client', word: 'Ready-to-wear & custom gowns.', url: 'https://pqlamasan.com/', ext: true },
+    lamour: { t: 'Lamour Printing Services', d: 'Print shop in Sampaloc, Manila. Sprntr\'s first pilot customer.', m: 'Sprntr client', word: 'Print', url: 'https://lamour.sprntr.dev/', ext: true },
+    pets:  { t: 'Pampered Pets Club', d: 'Grooming, hotel and daycare in Batangas City, with a "Book a visit" flow.', m: 'Sprntr client', word: 'Pets', url: 'https://pamperedpets.sprntr.dev/', ext: true },
+    bridal: { t: 'Pinky Lamasan Bridal Atelier', d: 'Bridal gowns in General Trias, Cavite. Editorial site plus inventory, reservations, orders and payments.', m: 'Sprntr client', word: 'Bridal', url: 'https://pqlamasan.com/', ext: true },
   };
   const cardBody = w => `${w.img ? `<img src="${w.img}" alt="" loading="lazy">` : `<div class="card-word">${w.word}</div>`}<div class="cb"><div class="ct">${w.t}</div><div class="cd">${w.d}</div><div class="cm">${w.m}</div></div>`;
   const card = (w, k) => w.ext
     ? `<a class="card" href="${w.url}" target="_blank" rel="noopener">${cardBody(w)}</a>`
     : `<button class="card" type="button" data-q="Tell me about ${w.t}" data-id="${k}">${cardBody(w)}</button>`;
-  const cards = keys => `<div class="cards">${keys.map(k => card(WORK[k], k)).join('')}</div>`;
+  const cards = keys => `<div class="cards${keys.length === 1 ? ' single' : ''}">${keys.map(k => card(WORK[k], k)).join('')}</div>`;
   const tags = list => `<div class="tags">${list.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
   const btns = list => `<div class="btn-row">${list.map(b => b.id
     ? `<button class="btn ${b.primary ? 'primary' : ''}" type="button" data-q="${b.q || b.label}" data-id="${b.id}">${b.label}</button>`
     : `<a class="btn ${b.primary ? 'primary' : ''}" href="${b.href}" ${b.ext ? 'target="_blank" rel="noopener"' : ''}>${b.label}</a>`).join('')}</div>`;
-  const stats = list => `<div class="stat-row">${list.map(s => `<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>`;
+  const stats = (list, col) => `<div class="facts${col ? ' col' : ''}">${list.map(s => `<span><b>${s[0]}</b> ${s[1]}</span>`).join('')}</div>`;
 
   // ── Scripted answers (mirror worker/knowledge.md) ──────────────
   const INTENTS = [
@@ -464,10 +471,10 @@
     { id: 'suri', group: 'cases', label: 'SURI', icon: 'doc', match: /\bsuri\b/i,
       text: [
         `<strong>SURI</strong>, the System for UPM Research Intelligence, is the research information system of record at UP Manila's Research Grants Administration Office. It's an API-first Laravel + Vue.js platform on MySQL that unifies research registration, document management, approval workflows, and reporting.`,
-        `Before SURI those workflows ran by hand across spreadsheets and disconnected tools, across multiple offices with their own permissions and their own idea of what a "project" means. Now one platform manages 15,000+ records for 50+ users, and reports that took days run in seconds.`,
+        `Before SURI those workflows ran by hand across spreadsheets and disconnected tools, across multiple offices with their own permissions and their own idea of what a "project" means. Now one platform serves 50+ users across those offices, and reports that took days run in seconds.`,
         `I lead its architecture and development and own it through production: deployments, production database architecture, release management. Authentication and role-based access are treated as architecture, not features, because SURI is built to join the wider ecosystem through TRACE.`,
       ],
-      rich: () => cards(['suri']) + stats([['15,000+', 'records managed'], ['50+', 'active users'], ['Seconds', 'reporting, down from days']]) + tags(['Laravel', 'Vue.js', 'MySQL', 'REST API', 'RBAC', 'Approval workflows']) + btns([{ label: 'Read the case study', href: '/work/suri-research-information-system/', primary: true }]),
+      rich: () => cards(['suri']) + stats([['50+', 'active users'], ['Seconds', 'reporting, down from days'], ['API-first', 'Laravel + Vue, RBAC']]) + tags(['Laravel', 'Vue.js', 'MySQL', 'REST API', 'RBAC', 'Approval workflows']) + btns([{ label: 'Read the case study', href: '/work/suri-research-information-system/', primary: true }]),
       follow: [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?', 'Show all projects'] },
 
     { id: 'aral', group: 'cases', label: 'GO-ARAL', icon: 'doc', match: /\b(go-?aral|aral|graduate|ngohs|ticketing|drms|admissions?)\b/i,
@@ -522,7 +529,7 @@
       match: /\b(experience|career|history|timeline|years|resume|cv|jobs?|worked|employ|rgao|balibago|crosshair|lmq)\b/i,
       text: [`Career started in 2015. The track so far:`],
       rich: () => `<div class="timeline">
-        <div class="tl"><div class="y">2025 — now</div><div class="r">Systems architect · RGAO, UP Manila</div><div class="o">Leads architecture and development of SURI (15,000+ records, 50+ users), building TRACE, ARIA in the same ecosystem. Position title: Senior Administrative Assistant II.</div></div>
+        <div class="tl"><div class="y">2025 — now</div><div class="r">Systems architect · RGAO, UP Manila</div><div class="o">Leads architecture and development of SURI (50+ users, reporting in seconds), building TRACE, ARIA in the same ecosystem. Position title: Senior Administrative Assistant II.</div></div>
         <div class="tl"><div class="y">2025 — now</div><div class="r">Independent contractor · SaaS architecture</div><div class="o">Architecting a multi-tenant SaaS platform for digital advertising catalogs, with clean tenant isolation from the schema up.</div></div>
         <div class="tl"><div class="y">2021 — 2025</div><div class="r">Senior ICT Assistant · NGOHS, UP Manila</div><div class="o">Built and ran DRMS and GO-ARAL: ~1,000 applicants a year, ~200 support requests a month. Owned the APIs, schema, RBAC and reporting.</div></div>
         <div class="tl"><div class="y">2021 — 2022</div><div class="r">Full-stack developer · LMQ Tech (freelance, remote US client)</div><div class="o">ELK Stack operations dashboard with ticketing and reporting; managed servers, databases and infrastructure.</div></div>
@@ -546,7 +553,7 @@
         `For Philippine service businesses there's <strong>Sprntr</strong>: a website we build for you, connected to one workspace for inquiries, follow-up, and bookings. Pay once, no monthly fees. Hosting, SSL and your domain are included for 2 years, then ₱3,000 a year. Half to start, the rest at launch, by GCash, Maya, card, or QR Ph. The preview is free.`,
         `I also run <strong>CNTXTQRY</strong>, an AI practice tool where BPO applicants and virtual assistants rehearse customer-service conversations and get scored feedback.`,
       ],
-      rich: () => stats([['₱15,000', 'Website: up to 5 pages, SEO, inquiry form'], ['₱22,000', 'Website + CRM: pipeline, booking, reminders'], ['₱35,000', 'Business System: 10 pages, training, priority support']]) +
+      rich: () => stats([['₱15,000', 'Website: up to 5 pages, SEO, inquiry form'], ['₱22,000', 'Website + CRM: pipeline, booking, reminders'], ['₱35,000', 'Business System: 10 pages, training, priority support']], true) +
         `<p style="margin-top:10px">Add-ons: extra pages ₱1,500 each, rush launch in 3 business days ₱3,000, Sprntr Premium ₱15,000 one-time with 11 growth features. Need inventory, multiple branches or payments? That's Sprntr Custom, from ₱50,000.</p>` +
         btns([{ label: 'Sprntr packages', href: '/services/', primary: true }, { label: 'Free preview at sprntr.dev', href: 'https://sprntr.dev/', ext: true }, { label: 'CNTXTQRY', href: 'https://cntxtqry.com/', ext: true }]),
       follow: ["What's included in Sprntr?", 'How does the Sprntr process work?', 'Sprntr FAQ', 'What is CNTXTQRY?'] },
@@ -589,7 +596,7 @@
         `<strong>CNTXTQRY</strong> is my own product: an AI practice tool for customer-service conversations. "Rehearse the hard conversations. Before they happen." You rehearse chat, email and voice scenarios with an AI customer, like a billing dispute, a cancellation or a damaged-item complaint, and an AI judge scores five skills: empathy, discovery, accuracy, resolution and communication, weighted into a score out of 100. Feedback quotes your own words, with coaching tips and printable reports.`,
         `It's built for Filipino BPO applicants preparing for mock assessments and virtual assistants preparing for client work. VAs can upload a client's SOP to generate practice scenarios, and agency workspaces get coach review. Scoring is coaching, not an official assessment, and it can't promise job placement.`,
       ],
-      rich: () => cards(['cntxt']) + stats([['Free', '3 sessions a month, no card'], ['₱149', 'Job-hunt pass, 7 days, 10 sessions'], ['₱499', 'Pro per month, or ₱4,990 a year']]) + tags(['Chat · Email · Voice', 'AI judge', 'SOP upload', 'Printable reports', 'QR Ph', 'No auto-renew']) + btns([{ label: 'Try CNTXTQRY', href: 'https://cntxtqry.com/', primary: true, ext: true }]),
+      rich: () => cards(['cntxt']) + stats([['Free', '3 sessions a month, no card'], ['₱149', 'Job-hunt pass, 7 days, 10 sessions'], ['₱499', 'Pro per month, or ₱4,990 a year']], true) + tags(['Chat · Email · Voice', 'AI judge', 'SOP upload', 'Printable reports', 'QR Ph', 'No auto-renew']) + btns([{ label: 'Try CNTXTQRY', href: 'https://cntxtqry.com/', primary: true, ext: true }]),
       follow: ['Show all projects', 'What AI tools do you use?', 'How do I contact you?'] },
 
     { id: 'contact', label: 'Hire / contact', icon: 'mail',
@@ -628,18 +635,18 @@
   };
 
   const SUGGESTIONS = [
-    { t: 'Explore production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
-    { t: 'View technical expertise', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
-    { t: 'Evaluate Ruther for a role', d: 'Evidence-based fit check, recruiter mode', q: 'Evaluate Ruther for a senior full-stack developer role (Laravel, Vue, systems architecture). Be specific about evidence from his work, and say what the site does not show.', ai: true },
+    { t: 'Production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
+    { t: 'Technical expertise', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
+    { t: 'Evaluate for a role', d: 'Evidence-based fit check, recruiter mode', q: 'Evaluate Ruther for a senior full-stack developer role (Laravel, Vue, systems architecture). Be specific about evidence from his work, and say what the site does not show.', ai: true },
     { t: 'How he builds', d: 'Approach, principles, process', q: 'How do you build?', id: 'approach' },
-    { t: 'Discuss a project', d: 'Send Ruther a message from here', q: 'Send a message from here', id: 'compose' },
+    { t: 'Send a message', d: 'Send Ruther a message from here', q: 'Send a message from here', id: 'compose' },
     { t: 'Download résumé', d: 'PDF, one page', href: '/assets/ruther-bergonia-resume.pdf', ext: true },
   ];
   // Proof at a glance: visible before any conversation, each opens its write-up in-chat.
   const PROOF = `<div class="proof">
-    <button class="proof-card" type="button" data-q="Tell me about SURI" data-id="suri"><span class="k">Research system of record</span><span class="v">SURI · UP Manila</span><span class="d">50+ users, reporting in seconds instead of days. Laravel + Vue + MySQL, operated in production.</span></button>
-    <button class="proof-card" type="button" data-q="Tell me about GO-ARAL" data-id="aral"><span class="k">Admissions &amp; ticketing</span><span class="v">GO-ARAL · NGOHS</span><span class="d">~1,000 applicants a year, ~200 tickets a month, APIs, schema and RBAC owned end to end.</span></button>
-    <button class="proof-card" type="button" data-q="What is CNTXTQRY?" data-id="cntxt"><span class="k">Shipped SaaS product</span><span class="v">CNTXTQRY</span><span class="d">AI practice tool for customer-service rehearsal, live with free and paid plans.</span></button>
+    <button class="proof-card" type="button" data-q="Tell me about SURI" data-id="suri"><span class="k">Research system of record</span><span class="v">SURI · UP Manila</span><span class="d">50+ users, reports in seconds</span></button>
+    <button class="proof-card" type="button" data-q="Tell me about GO-ARAL" data-id="aral"><span class="k">Admissions &amp; ticketing</span><span class="v">GO-ARAL · NGOHS</span><span class="d">~1,000 applicants a year</span></button>
+    <button class="proof-card" type="button" data-q="What is CNTXTQRY?" data-id="cntxt"><span class="k">Shipped SaaS product</span><span class="v">CNTXTQRY</span><span class="d">Live SaaS, free and paid</span></button>
   </div>`;
 
   const ICONS = {
@@ -673,7 +680,7 @@
       <div class="hero">
         <div class="mark">${MARK}</div>
         <h1>Hi, I'm Ru Bot. Ask me anything about Ruther.</h1>
-        <p class="muted">I'm Ruther Bergonia's AI portfolio assistant and I answer as him: software systems architect and senior full-stack engineer in Metro Manila. I can walk you through the production systems he's architected, how he approaches engineering, and how to work with him.</p>
+        <p class="muted">Ruther Bergonia's portfolio assistant, answering as him. Ask about the systems he's built, how he works, and how to hire him.</p>
         ${PROOF}
         <div class="chips">${SUGGESTIONS.map(s => s.href
           ? `<a class="chip" href="${s.href}" ${s.ext ? 'target="_blank" rel="noopener"' : ''}><span class="t">${s.t}</span><span class="d muted">${s.d}</span></a>`
@@ -691,6 +698,7 @@
     el.querySelector('.bubble').textContent = text;
     inner.appendChild(el); scrollDown();
     history.push({ role: 'user', content: text });
+    asked.add(text.toLowerCase());
   }
   function botShell() {
     const el = document.createElement('div');
@@ -710,18 +718,39 @@
     body.appendChild(f);
   }
   // Context-aware follow-ups after a model answer, picked from what was asked.
-  function followupsFor(q) {
-    const t = q.toLowerCase();
-    if (/\b(hire|hiring|role|position|fit|candidate|recruit|job|interview|evaluate|team)\b/.test(t)) return ['Send a message from here', { q: 'What are the gaps or risks in hiring Ruther for this?', ai: true }, 'Tell me about your experience', 'Download résumé'];
-    if (/\bsuri\b/.test(t)) return [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?'];
-    if (/\baria\b/.test(t)) return [{ q: 'How does ARIA decide when not to answer?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'];
-    if (/\b(go-?aral|drms|ngohs)\b/.test(t)) return [{ q: 'What did GO-ARAL change for the office?', ai: true }, 'Tell me about SURI'];
-    if (/\btrace\b/.test(t)) return [{ q: 'Why build TRACE instead of connecting systems one by one?', ai: true }, 'Tell me about SURI'];
-    if (/\b(sprntr|website|crm|booking|price|cost)\b/.test(t)) return ["What's included in Sprntr?", 'Sprntr FAQ', 'Send a message from here'];
-    if (/\b(cntxt|practice|bpo)\b/.test(t)) return ['What is CNTXTQRY?', 'Show all projects', 'Are you available for hire?'];
-    if (/\b(stack|laravel|vue|react|docker|capabilit|skill)\b/.test(t)) return ['How do you build?', 'What have you built?', { q: 'Which of these has Ruther used in production, and where?', ai: true }];
-    return ['What have you built?', 'What does Sprntr cost?', 'Are you available for hire?'];
+  // Context-aware follow-ups: read the question and the answer, skip what was already asked, max four.
+  const asked = new Set();
+  function followupsFor(q, answer = '') {
+    const qt = q.toLowerCase();
+    const t = qt + ' ' + answer.slice(0, 1500).toLowerCase();
+    let list;
+    if (/\b(hire|hiring|role|position|fit|candidate|recruit|job|interview|evaluate|team|senior|lead|vacancy|resume|résumé|cv)\b/.test(qt))
+      list = [{ q: 'What are the gaps or risks in hiring Ruther for this?', ai: true }, { q: 'What would you ask Ruther in a technical interview, based on his work?', ai: true }, 'Send a message from here', 'Download résumé'];
+    else if (/\bsuri\b/.test(qt))
+      list = [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?', 'Are you available for hire?'];
+    else if (/\baria\b/.test(qt) || /\b(rag|retrieval|hallucinat|refus)/.test(t))
+      list = [{ q: 'How does ARIA decide when not to answer?', ai: true }, { q: 'Why not use a general chatbot for ARIA?', ai: true }, 'What is TRACE?', 'What AI tools do you use?'];
+    else if (/\b(go-?aral|drms|ngohs|admission|applicant)\b/.test(t))
+      list = [{ q: 'What did GO-ARAL change for the office?', ai: true }, { q: 'What did you own on GO-ARAL end to end?', ai: true }, 'Tell me about SURI'];
+    else if (/\btrace\b/.test(qt) || /\b(orchestration|shared auth|single sign)/.test(t))
+      list = [{ q: 'Why build TRACE instead of connecting systems one by one?', ai: true }, { q: 'What does TRACE provide today?', ai: true }, 'Tell me about SURI', 'Tell me about ARIA'];
+    else if (/\b(sprntr|website|crm|booking|price|cost|package|quote)\b/.test(t))
+      list = ["What's included in Sprntr?", 'How does the Sprntr process work?', 'Sprntr FAQ', 'Send a message from here'];
+    else if (/\b(cntxt|practice|bpo|rehears)/.test(t))
+      list = ['What is CNTXTQRY?', { q: 'What does CNTXTQRY cost?', ai: true }, 'Show all projects', 'Are you available for hire?'];
+    else if (/\b(stack|laravel|vue|react|next\.?js|docker|nginx|mysql|capabilit|skill|typescript|infra)/.test(qt))
+      list = [{ q: 'Which of these has Ruther used in production, and where?', ai: true }, 'How do you build?', 'What have you built?', 'Evaluate Ruther for a senior full-stack role'];
+    else if (/\b(experience|career|timeline|years|background|history|worked)\b/.test(t))
+      list = ['What have you built?', { q: 'What did you do before UP Manila?', ai: true }, 'Are you available for hire?', 'Download résumé'];
+    else if (/\b(contact|email|reach|message|available|availability|remote|time ?zone|rate)\b/.test(t))
+      list = ['Send a message from here', 'Are you available for hire?', 'What have you built?'];
+    else if (/\b(approach|build|process|method|principle|document)/.test(t))
+      list = ['Tell me about SURI', { q: 'How do you keep a system maintainable after launch?', ai: true }, 'What have you built?'];
+    else
+      list = ['What have you built?', 'What does Sprntr cost?', 'Are you available for hire?', 'Tell me about ARIA'];
+    return list.filter(i => !asked.has((typeof i === 'string' ? i : i.q).toLowerCase())).slice(0, 4);
   }
+
 
   // Scripted answer, streamed word by word.
   async function addScripted(intent) {
@@ -747,7 +776,7 @@
       body.appendChild(wrap);
       plain += wrap.textContent;
     }
-    if (intent.follow) addFollowups(body, intent.follow);
+    if (intent.follow) addFollowups(body, intent.follow.filter(i => !asked.has((typeof i === 'string' ? i : i.q).toLowerCase())).slice(0, 4));
     history.push({ role: 'assistant', content: plain.trim().slice(0, 1500) });
     scrollDown();
   }
@@ -814,7 +843,7 @@
     live.innerHTML = md(text);
     const src = document.createElement('div'); src.className = 'source muted'; src.textContent = 'Ru Bot · from site content';
     body.appendChild(src);
-    addFollowups(body, followupsFor(question));
+    addFollowups(body, followupsFor(question, text));
     history.push({ role: 'assistant', content: text.slice(0, 1500) });
     scrollDown();
     return true;
