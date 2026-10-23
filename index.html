@@ -669,6 +669,31 @@
   const sidebar = $('#sidebar'), scrim = $('#scrim');
   let busy = false;
   const history = []; // {role, content} for the AI
+  let activeId = null;
+
+  // The conversation survives a trip to a case study and back: it lives in this tab's sessionStorage.
+  const CONVO_KEY = 'rubot.convo';
+  function save() {
+    try {
+      if (inner.querySelector('.hero')) { sessionStorage.removeItem(CONVO_KEY); return; }
+      sessionStorage.setItem(CONVO_KEY, JSON.stringify({ html: inner.innerHTML, history, asked: [...asked], active: activeId }));
+    } catch (e) {}
+  }
+  function restore() {
+    try {
+      const data = JSON.parse(sessionStorage.getItem(CONVO_KEY) || 'null');
+      if (!data || !data.html) return false;
+      inner.innerHTML = data.html;
+      inner.querySelectorAll('.cursor').forEach(el => el.classList.remove('cursor'));
+      inner.querySelectorAll('[data-compose]').forEach(el => el.closest('.btn-row, p, div')?.remove());
+      history.push(...(data.history || []));
+      (data.asked || []).forEach(a => asked.add(a));
+      activeId = data.active || null;
+      document.querySelectorAll('.topic').forEach(t => t.classList.toggle('active', t.dataset.id === activeId));
+      requestAnimationFrame(() => { thread.scrollTop = thread.scrollHeight; });
+      return true;
+    } catch (e) { return false; }
+  }
 
   function renderTopics() {
     const btn = i => `<button class="topic" data-q="${i.label}" data-id="${i.id}">${ico(i.icon)}${i.label}</button>`;
@@ -870,7 +895,7 @@
     await sleep(reduced ? 30 : 350);
     body.innerHTML = `<p>${html}</p>` + (extraHtml || '');
     history.push({ role: 'assistant', content: body.textContent.trim().slice(0, 500) });
-    scrollDown();
+    scrollDown(); save();
   }
   const escT = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -949,7 +974,7 @@
       const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent('From ' + c.name + ' via rmbergonia.com')}&body=${encodeURIComponent(c.message + '\n\n' + c.name + ' <' + c.email + '>')}`;
       body.innerHTML = `<p>I couldn't send that from here${err && err !== 'network' ? ' (' + escT(err) + ')' : ''}. Your message is still below, so you can send it from your own email app instead.</p>` + btns([{ label: 'Open in your email app', href: mailto, primary: true }]) + `<div class="btn-row"><button class="btn" type="button" data-compose="send">Try again</button><button class="btn" type="button" data-compose="cancel">Cancel</button></div>`;
     }
-    scrollDown();
+    scrollDown(); save();
   }
 
   async function ask(q, id, forceAI) {
@@ -957,6 +982,7 @@
     busy = true; send.disabled = true; input.value = ''; autosize();
     addUser(q);
     const scripted = !forceAI && id ? INTENTS.find(i => i.id === id) : null;
+    activeId = scripted ? scripted.id : null;
     document.querySelectorAll('.topic').forEach(t => t.classList.toggle('active', !!scripted && t.dataset.id === scripted.id));
     if (compose) await composeStep(q);
     else if (scripted && scripted.id === 'compose') await startCompose();
@@ -971,7 +997,7 @@
         await addScripted(resolve(q));
       }
     }
-    busy = false; input.focus();
+    busy = false; input.focus(); save();
   }
 
   // ── Events ─────────────────────────────────────────────────────
@@ -991,14 +1017,14 @@
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
   function autosize() { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 240) + 'px'; send.disabled = exhausted || !input.value.trim(); }
   input.addEventListener('input', autosize);
-  $('#newChat').addEventListener('click', () => { renderEmpty(); closeSidebar(); document.querySelectorAll('.topic').forEach(t => t.classList.remove('active')); input.focus(); });
+  $('#newChat').addEventListener('click', () => { renderEmpty(); save(); activeId = null; closeSidebar(); document.querySelectorAll('.topic').forEach(t => t.classList.remove('active')); input.focus(); });
   const openSidebar = () => { sidebar.classList.add('open'); scrim.classList.add('show'); };
   const closeSidebar = () => { sidebar.classList.remove('open'); scrim.classList.remove('show'); };
   $('#menuBtn').addEventListener('click', openSidebar);
   $('#composeBtn').addEventListener('click', () => { if (busy) return; if (!compose) { addUser('Send a message from here'); startCompose(); } input.focus(); });
   scrim.addEventListener('click', closeSidebar);
 
-  renderTopics(); renderEmpty(); loadUsage(); input.placeholder = DEFAULT_PLACEHOLDER;
+  renderTopics(); if (!restore()) renderEmpty(); loadUsage(); input.placeholder = DEFAULT_PLACEHOLDER;
   const qp = new URLSearchParams(location.search).get('q');
   if (qp) ask(qp); else if (matchMedia('(min-width: 900px)').matches) input.focus();
 })();
