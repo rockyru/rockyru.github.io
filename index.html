@@ -454,10 +454,10 @@
   // ── Scripted answers (mirror worker/knowledge.md) ──────────────
   const INTENTS = [
     { id: 'about', label: 'About me', icon: 'user',
-      match: /\b(who|about|yourself|intro|background|bio|are you|what do you do)\b/i,
+      match: /\b(who are you|who is ruther|about (you|yourself|ruther|him)|yourself|introduc|intro|background|bio|what do you do)\b/i,
       text: [
         `I'm <strong>Ruther Bergonia</strong>, a software systems architect and senior full-stack engineer in Metro Manila. I've been shipping production software since 2015, 11+ years and six platforms live.`,
-        `By day I lead architecture and development at the Research Grants Administration Office at UP Manila: SURI, ARIA, and the TRACE layer beneath them. Alongside that I take on a small number of client projects, and I run two products, Sprntr and CNTXTQRY.`,
+        `By day I lead architecture and development at the Research Grants Administration Office at UP Manila: SURI, ARIA, and TRACE, the research-team workspace on SURI's API. Alongside that I take on a small number of client projects, and I run two products, Sprntr and CNTXTQRY.`,
         `My motto: <strong>Scope. Build. Integrate. Operate.</strong> Software, built with method. I replace spreadsheets and manual workflows with secure, role-based platforms that keep working under real load.`,
       ],
       rich: () => stats([['11+', 'years building'], ['6', 'platforms live'], ['Always', 'open for projects']]) + btns([{ label: 'How I build', id: 'approach', q: 'How do you build?' }, { label: 'My capabilities', id: 'stack', q: 'What are your capabilities?' }, { label: 'Career track', id: 'experience', q: 'Tell me about your experience' }]),
@@ -708,13 +708,25 @@
     inner.appendChild(el); scrollDown();
     return el.querySelector('.body');
   }
+  // Follow-up chips that have a scripted answer, by exact text. Anything else goes to the model.
+  // (The intent regexes are tuned for typed questions and are too loose to route chips: "Are you available
+  // for hire?" would land on "about" because of "are you".)
+  const CHIP_ROUTES = {
+    'Who are you?': 'about',
+    'What have you built?': 'work', 'Show all projects': 'work',
+    'Tell me about SURI': 'suri', 'Tell me about ARIA': 'aria', 'How does ARIA stay accurate?': 'aria', 'What is TRACE?': 'race',
+    'What are your capabilities?': 'stack', 'What AI tools do you use?': 'stack',
+    'How do you build?': 'approach', 'Tell me about your experience': 'experience', 'What do you do as a freelancer?': 'freelance',
+    'What does Sprntr cost?': 'services', "What's included in Sprntr?": 'sprntr-included', 'How does the Sprntr process work?': 'sprntr-process', 'Sprntr FAQ': 'sprntr-faq',
+    'Show me client sites': 'clients', 'What is CNTXTQRY?': 'cntxt',
+    'Are you available for hire?': 'contact', 'How do I contact you?': 'contact', 'Send a message from here': 'compose', 'What should I include in an email?': 'include',
+  };
   function addFollowups(body, list) {
     const f = document.createElement('div'); f.className = 'followups';
-    // Plain strings that match a scripted answer carry its id (free). {q, ai:true} goes to the model on purpose.
     f.innerHTML = list.map(item => {
       const q = typeof item === 'string' ? item : item.q;
-      const i = typeof item === 'string' ? INTENTS.find(x => x.match.test(q)) : null;
-      return `<button class="followup" data-q="${esc(q)}" ${i ? `data-id="${i.id}"` : ''} ${typeof item !== 'string' && item.ai ? 'data-ai="1"' : ''}>${esc(q)}</button>`;
+      const id = typeof item === 'string' ? CHIP_ROUTES[q] : null;
+      return `<button class="followup" data-q="${esc(q)}" ${id ? `data-id="${id}"` : ''} ${typeof item !== 'string' && item.ai ? 'data-ai="1"' : ''}>${esc(q)}</button>`;
     }).join('');
     body.appendChild(f);
   }
