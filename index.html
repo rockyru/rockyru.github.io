@@ -6,6 +6,8 @@
   <title>Ruther Bergonia — Software Systems Architect & Full-Stack Engineer, Manila</title>
   <meta name="description" content="Ruther Bergonia builds production software in Metro Manila — institutional platforms in daily use at universities and offices, Sprntr websites and CRM for local businesses from ₱15,000, and CNTXTQRY. Ask the site anything." />
   <meta name="author" content="Ruther Bergonia" />
+  <meta name="geo.region" content="PH-00" />
+  <meta name="geo.placename" content="Metro Manila, Philippines" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://rmbergonia.com/" />
 
@@ -88,6 +90,20 @@
           }
         },
         {
+          "@type": "WebApplication",
+          "@id": "https://rmbergonia.com/#ru-bot",
+          "name": "Ru Bot",
+          "url": "https://rmbergonia.com/",
+          "applicationCategory": "Portfolio assistant",
+          "operatingSystem": "Web",
+          "browserRequirements": "Requires JavaScript",
+          "isAccessibleForFree": true,
+          "image": "https://rmbergonia.com/images/rubot.svg",
+          "description": "Ruther Bergonia's portfolio assistant. It answers questions about his work, stack, experience, services and availability, speaking as him, using only the content of rmbergonia.com.",
+          "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
+          "isPartOf": { "@id": "https://rmbergonia.com/#website" }
+        },
+        {
           "@type": "Service",
           "@id": "https://rmbergonia.com/services/#sprntr",
           "name": "Sprntr",
@@ -127,6 +143,9 @@
     ::selection { background: #000; color: #fff; }
     :focus-visible { outline: 2px solid #000; outline-offset: 2px; }
     .muted { opacity: .72; }
+    /* The static summary stays in the DOM for crawlers and screen readers; the chat is the visible UI. */
+    .js .summary { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+    .hero .greet { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 10px; text-wrap: balance; }
 
     .app { height: 100dvh; display: flex; flex-direction: column; }
     .float { position: fixed; z-index: 30; background: #fff; border: 1px solid #000; }
@@ -341,7 +360,7 @@
     }
   </style>
 </head>
-<body>
+<body class="js">
   <div class="app">
     <header class="topbar">
       <div class="left">
@@ -390,7 +409,7 @@
     <main class="main">
       <section class="thread" id="thread" aria-live="polite">
         <div class="thread-inner" id="threadInner">
-          <article class="hero" aria-label="Summary for readers without JavaScript">
+          <article class="summary" id="summary" aria-label="Summary of this site">
             <h1>Ruther Bergonia: software systems architect and senior full-stack engineer, Metro Manila</h1>
             <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (research-team workspace built on SURI's API, in development). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, and <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
             <p><a href="/about-ruther-bergonia/">About</a> · <a href="/work/">Case studies</a> · <a href="/services/">Services</a> · <a href="/contact/">Contact</a> · <a href="/assets/ruther-bergonia-resume.pdf">Résumé (PDF)</a> · <a href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a></p>
@@ -728,12 +747,13 @@
     $('#topics').innerHTML = INTENTS.filter(i => !i.hidden && !i.group).map(btn).join('');
     $('#cases').innerHTML = INTENTS.filter(i => i.group === 'cases').map(btn).join('');
   }
+  const SUMMARY = (document.getElementById('summary') || { outerHTML: '' }).outerHTML;
   function renderEmpty() {
     history.length = 0;
-    inner.innerHTML = `
+    inner.innerHTML = SUMMARY + `
       <div class="hero">
         <div class="mark">${RUBOT('idle')}</div>
-        <h1>Hi, I'm Ru Bot. Ask me anything about Ruther.</h1>
+        <p class="greet">Hi, I'm Ru Bot. Ask me anything about Ruther.</p>
         <p class="muted">Ruther Bergonia's portfolio assistant, answering as him. Ask about the systems he's built, how he works, and how to hire him.</p>
         ${PROOF}
         <div class="chips">${SUGGESTIONS.map(s => s.href

@@ -23,11 +23,11 @@ Contact: ruther.bergonia@gmail.com — always available for remote projects acro
 ## Profile
 
 - [About Ruther Bergonia](https://rmbergonia.com/about-ruther-bergonia/): professional summary, expertise, systems he builds, approach, and current focus
-- [Portfolio homepage](https://rmbergonia.com/): chat-style interface that answers questions from the site's own content; topics cover about, work, capabilities, experience, services, clients, contact
+- [Portfolio homepage](https://rmbergonia.com/): Ru Bot, a chat assistant that answers questions from the site's own content, speaking as Ruther; topics cover about, work, capabilities, experience, services, clients, contact, plus recruiter-style fit assessments
 
 ## Case studies
 
-- [SURI: research information system for UP Manila](https://rmbergonia.com/work/suri-research-information-system/): API-first Laravel + Vue platform — 15,000+ records, 50+ users, reporting in seconds
+- [SURI: research information system for UP Manila](https://rmbergonia.com/work/suri-research-information-system/): API-first Laravel + Vue platform — 50+ users, reporting in seconds instead of days
 - [GO-ARAL: graduate application & ticketing portal](https://rmbergonia.com/work/go-aral-graduate-support-platform/): ~1,000 applicants annually at NGOHS, UP Manila
 - [ARIA: controlled-response AI support assistant](https://rmbergonia.com/work/aria-controlled-response-ai/): answers from approved sources, human handoff, tracked tickets
 - [TRACE: research team workspace](https://rmbergonia.com/work/race-platform-orchestration/): projects, tasks, milestones, files, budget and procurement for research teams, on SURI's API and records (in development)
