@@ -166,7 +166,7 @@
     .thread { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
     .thread-inner { max-width: 680px; margin: 0 auto; padding: 32px 20px 24px; display: flex; flex-direction: column; gap: 22px; }
     .hero { text-align: center; padding: 6px 0 4px; }
-    .hero .mark { width: 46px; height: 46px; margin: 0 auto 14px; }
+    .hero .mark { width: 56px; height: 56px; margin: 0 auto 10px; }
     .hero h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 10px; text-wrap: balance; }
     .hero p { margin: 0 auto; max-width: 500px; font-size: 14.5px; }
     .hero nav { margin-top: 18px; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; }
@@ -189,8 +189,30 @@
     @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     .msg.user { justify-content: flex-end; }
     .msg.user .bubble { background: #000; color: #fff; padding: 11px 16px; max-width: 78%; white-space: pre-wrap; }
-    .avatar { width: 32px; height: 32px; flex: none; background: #000; color: #fff; display: grid; place-items: center; margin-top: 2px; }
-    .avatar svg { width: 18px; height: 18px; }
+    .avatar { width: 32px; height: 32px; flex: none; display: grid; place-items: center; margin-top: 0; }
+    .avatar svg { width: 32px; height: 32px; }
+    .hero .mark svg { width: 100%; height: 100%; }
+    /* Ru Bot mascot: a speech bubble with a face. States: idle | thinking | talking | happy */
+    .rubot { display: block; overflow: visible; }
+    .rubot .rb-body { fill: #000; }
+    .rubot .rb-eye { fill: #fff; transform-box: fill-box; transform-origin: center; animation: rb-blink 5.5s infinite; }
+    .rubot .rb-eye.r { animation-delay: .05s; }
+    .rubot .rb-mouth { fill: #fff; transform-box: fill-box; transform-origin: center top; transform: scaleY(0); }
+    .rubot .rb-dots rect { fill: #000; opacity: 0; }
+    .rubot .rb-happy path { fill: none; stroke: #fff; stroke-width: 5; opacity: 0; }
+    .rubot[data-state="thinking"] { animation: rb-bob 1.2s ease-in-out infinite; }
+    .rubot[data-state="thinking"] .rb-eye { animation: none; transform: translate(5px, -4px) scaleY(.55); }
+    .rubot[data-state="thinking"] .rb-mouth { transform: scaleY(.35); }
+    .rubot[data-state="thinking"] .rb-dots rect { animation: rb-dot 1.2s infinite; }
+    .rubot[data-state="thinking"] .rb-dots rect:nth-child(2) { animation-delay: .2s; }
+    .rubot[data-state="thinking"] .rb-dots rect:nth-child(3) { animation-delay: .4s; }
+    .rubot[data-state="talking"] .rb-mouth { animation: rb-talk .32s steps(2, jump-none) infinite; }
+    .rubot[data-state="happy"] .rb-eye, .rubot[data-state="happy"] .rb-mouth { opacity: 0; animation: none; }
+    .rubot[data-state="happy"] .rb-happy path { opacity: 1; }
+    @keyframes rb-blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.08); } }
+    @keyframes rb-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes rb-dot { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+    @keyframes rb-talk { from { transform: scaleY(.3); } to { transform: scaleY(1); } }
     .msg.bot .body { min-width: 0; flex: 1; }
     .body p { margin: 0 0 10px; } .body p:last-child { margin-bottom: 0; }
     .body strong { font-weight: 600; }
@@ -313,6 +335,8 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       .thread { scroll-behavior: auto; }
+      .rubot, .rubot * { animation: none !important; }
+      .rubot[data-state="talking"] .rb-mouth { transform: scaleY(1); }
       .composer { animation: none; box-shadow: 0 0 0 1px rgba(34,197,94,.3), 0 0 14px rgba(34,197,94,.45); }
     }
   </style>
@@ -662,6 +686,9 @@
   };
   const ico = name => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]}</svg>`;
   const MARK = document.querySelector('.brand svg').outerHTML;
+  const RUBOT = (state = 'idle') => `<svg class="rubot" data-state="${state}" viewBox="0 0 100 100" aria-hidden="true"><path class="rb-body" d="M14 14h72v60H40L26 88V74H14z"/><rect class="rb-eye l" x="36" y="36" width="9" height="18"/><rect class="rb-eye r" x="55" y="36" width="9" height="18"/><rect class="rb-mouth" x="42" y="58" width="16" height="9"/><g class="rb-dots"><rect x="80" y="4" width="4" height="4"/><rect x="88" y="0" width="6" height="6"/><rect x="95" y="9" width="3" height="3"/></g><g class="rb-happy"><path d="M34 44l7-7 7 7"/><path d="M53 44l7-7 7 7"/><path d="M38 56q12 12 24 0"/></g></svg>`;
+  // Set the mascot's face on a bot message, given its .body element.
+  const face = (body, state) => { const f = body?.parentElement?.querySelector('.rubot'); if (f) f.dataset.state = state; };
 
   // ── DOM ────────────────────────────────────────────────────────
   const $ = s => document.querySelector(s);
@@ -685,6 +712,7 @@
       if (!data || !data.html) return false;
       inner.innerHTML = data.html;
       inner.querySelectorAll('.cursor').forEach(el => el.classList.remove('cursor'));
+      inner.querySelectorAll('.rubot').forEach(el => { el.dataset.state = 'idle'; });
       inner.querySelectorAll('[data-compose]').forEach(el => el.closest('.btn-row, p, div')?.remove());
       history.push(...(data.history || []));
       (data.asked || []).forEach(a => asked.add(a));
@@ -704,7 +732,7 @@
     history.length = 0;
     inner.innerHTML = `
       <div class="hero">
-        <div class="mark">${MARK}</div>
+        <div class="mark">${RUBOT('idle')}</div>
         <h1>Hi, I'm Ru Bot. Ask me anything about Ruther.</h1>
         <p class="muted">Ruther Bergonia's portfolio assistant, answering as him. Ask about the systems he's built, how he works, and how to hire him.</p>
         ${PROOF}
@@ -729,7 +757,7 @@
   function botShell() {
     const el = document.createElement('div');
     el.className = 'msg bot';
-    el.innerHTML = `<div class="avatar">${MARK.replace('<svg', '<svg style="width:18px;height:18px"')}</div><div class="body"><div class="typing"><i></i><i></i><i></i></div></div>`;
+    el.innerHTML = `<div class="avatar">${RUBOT('thinking')}</div><div class="body"><div class="typing"><i></i><i></i><i></i></div></div>`;
     inner.appendChild(el); scrollDown();
     return el.querySelector('.body');
   }
@@ -794,7 +822,7 @@
   async function addScripted(intent) {
     const body = botShell();
     await sleep(reduced ? 50 : 500);
-    body.innerHTML = '';
+    body.innerHTML = ''; face(body, 'talking');
     let plain = '';
     for (const para of intent.text) {
       const p = document.createElement('p'); p.className = 'cursor'; body.appendChild(p);
@@ -816,7 +844,7 @@
     }
     if (intent.follow) addFollowups(body, intent.follow.filter(i => !asked.has((typeof i === 'string' ? i : i.q).toLowerCase())).slice(0, 4));
     history.push({ role: 'assistant', content: plain.trim().slice(0, 1500) });
-    scrollDown();
+    face(body, 'idle'); scrollDown();
   }
 
   // Minimal, safe markdown: paragraphs, bullets, **bold**, [links](url), bare URLs.
@@ -857,14 +885,14 @@
         showBudget(d);
         body.innerHTML = `<p><strong>You've used up your Ru Bot budget</strong> (${fmt(d.limit)} tokens). The topics on the left still work, and you can always email me. ${d.resetAt ? 'It resets ' + new Date(d.resetAt).toLocaleDateString() + '.' : ''}</p>` + btns([{ label: 'Email ' + EMAIL, href: 'mailto:' + EMAIL, primary: true }]);
         history.push({ role: 'assistant', content: 'Budget used up.' });
-        scrollDown(); return true;
+        face(body, 'idle'); scrollDown(); return true;
       }
       body.parentElement.remove(); return false;
     }
     if (!res.ok || !res.body) { clearTimeout(timer); body.parentElement.remove(); return false; }
 
     const reader = res.body.getReader(); const dec = new TextDecoder();
-    let text = ''; body.innerHTML = '';
+    let text = ''; body.innerHTML = ''; face(body, 'talking');
     const live = document.createElement('div'); live.className = 'cursor'; body.appendChild(live);
     try {
       for (;;) {
@@ -883,7 +911,7 @@
     body.appendChild(src);
     addFollowups(body, followupsFor(question, text));
     history.push({ role: 'assistant', content: text.slice(0, 1500) });
-    scrollDown();
+    face(body, 'idle'); scrollDown();
     return true;
   }
 
@@ -895,6 +923,7 @@
     await sleep(reduced ? 30 : 350);
     body.innerHTML = `<p>${html}</p>` + (extraHtml || '');
     history.push({ role: 'assistant', content: body.textContent.trim().slice(0, 500) });
+    face(body, 'talking'); setTimeout(() => face(body, 'idle'), 900);
     scrollDown(); save();
   }
   const escT = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -970,7 +999,9 @@
       body.innerHTML = `<p><strong>Sent.</strong> Ruther reads every message himself and replies within one business day, to ${escT(c.email)}.</p>`;
       compose = null; input.placeholder = DEFAULT_PLACEHOLDER; setExhausted(exhausted);
       addFollowups(body, ['What have you built?', 'What does Sprntr cost?']);
+      face(body, 'happy');
     } else {
+      face(body, 'idle');
       const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent('From ' + c.name + ' via rmbergonia.com')}&body=${encodeURIComponent(c.message + '\n\n' + c.name + ' <' + c.email + '>')}`;
       body.innerHTML = `<p>I couldn't send that from here${err && err !== 'network' ? ' (' + escT(err) + ')' : ''}. Your message is still below, so you can send it from your own email app instead.</p>` + btns([{ label: 'Open in your email app', href: mailto, primary: true }]) + `<div class="btn-row"><button class="btn" type="button" data-compose="send">Try again</button><button class="btn" type="button" data-compose="cancel">Cancel</button></div>`;
     }
