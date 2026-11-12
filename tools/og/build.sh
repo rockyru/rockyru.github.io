@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # Renders the 1200×630 Open Graph cards in images/og-*.png with headless Chrome.
-# Usage: tools/og/build.sh   (run from anywhere; needs Google Chrome installed)
+# Usage: tools/og/build.sh [name]   (run from anywhere; needs Google Chrome installed; name renders one card)
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 root="$(cd "$here/../.." && pwd)"
 chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 tmp="$(mktemp -d)"
+only="${1:-}"
 
 render() { # name kicker title sub foot size accent
+  [ -n "$only" ] && [ "$only" != "$1" ] && return 0
   local out="$root/images/og-$1.png"
   python3 - "$here/card.html" "$tmp/$1.html" "$2" "$3" "$4" "$5" "$6" "$7" <<'PY'
 import sys
@@ -36,5 +38,10 @@ render work "Case studies" \
   "Four systems. Still running." \
   "SURI, GO-ARAL, ARIA and RACE — Laravel + Vue platforms managing 15,000+ records for UP Manila, plus a controlled-response AI assistant." \
   "2021 — 2026" 84px "#111013"
+
+render rbuilds "Case study · Own tool" \
+  "An AI engineering team, with a human at every gate." \
+  "RBUILDS runs Claude agents as Coder, Reviewer, QA, Security and DevOps on my repos. I approve the plans, the outbound commands and the merges." \
+  "macOS · iOS · watchOS" 72px "#111013"
 
 rm -rf "$tmp"

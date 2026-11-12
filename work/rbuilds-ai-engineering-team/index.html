@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RBUILDS Case Study: An AI Software Engineering Team with Human Approval Gates | Ruther Bergonia</title>
+    <meta
+      name="description"
+      content="How Ruther Bergonia built RBUILDS, a macOS app that runs a team of Claude agents (Coder, Reviewer, QA, Security, DevOps) on his repositories, with a human approving plans, outbound commands and merges."
+    />
+    <meta name="author" content="Ruther Bergonia" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://rmbergonia.com/work/rbuilds-ai-engineering-team/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Ruther Bergonia" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://rmbergonia.com/work/rbuilds-ai-engineering-team/" />
+    <meta property="og:title" content="RBUILDS Case Study: An AI Software Engineering Team with Human Approval Gates" />
+    <meta
+      property="og:description"
+      content="A macOS app that runs Claude agents as a software team on isolated branches, with a human approving plans, outbound commands and merges."
+    />
+
+    <!-- Twitter / X -->
+    <meta property="og:image" content="https://rmbergonia.com/images/og-rbuilds.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="RBUILDS: an AI engineering team, with a human at every gate" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RBUILDS Case Study: An AI Software Engineering Team with Human Approval Gates" />
+    <meta
+      name="twitter:description"
+      content="A macOS app that runs Claude agents as a software team on isolated branches, with a human approving plans, outbound commands and merges."
+    />
+    <meta name="twitter:image" content="https://rmbergonia.com/images/og-rbuilds.png" />
+
+    <link rel="icon" href="/assets/rmb-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/site.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/#article",
+          "headline": "RBUILDS Case Study: An AI Software Engineering Team with Human Approval Gates",
+          "description": "How Ruther Bergonia built RBUILDS, a macOS app that runs a team of Claude agents (Coder, Reviewer, QA, Security, DevOps) on his repositories, with a human approving plans, outbound commands and merges.",
+          "inLanguage": "en",
+          "dateModified": "2026-11-12",
+          "image": "https://rmbergonia.com/images/og-rbuilds.png",
+          "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" },
+          "mainEntityOfPage": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/",
+          "keywords": "RBUILDS, AI agents, AI software engineering team, Claude Agent SDK, human in the loop, approval gates, git worktrees, SwiftUI, RealityKit, developer tools",
+          "about": { "@id": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/#app" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/#app",
+          "name": "RBUILDS",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "macOS, iOS, watchOS",
+          "description": "A macOS app that runs an AI software engineering team (Coder, Reviewer, QA, Security, DevOps, Researcher, PM) on the Claude Agent SDK, with a human approving plans, outbound commands and merges. Own tool, in daily use, not for sale.",
+          "author": { "@id": "https://rmbergonia.com/#ruther-bergonia" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmbergonia.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://rmbergonia.com/work/" },
+            { "@type": "ListItem", "position": 3, "name": "RBUILDS AI Software Engineering Team", "item": "https://rmbergonia.com/work/rbuilds-ai-engineering-team/" }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://rmbergonia.com/#ruther-bergonia",
+          "name": "Ruther Bergonia",
+          "url": "https://rmbergonia.com/",
+          "jobTitle": "Software Systems Architect & Senior Full-Stack Engineer",
+          "sameAs": [
+            "https://github.com/rockyru",
+            "https://www.linkedin.com/in/ruther-bergonia-a9959813a/"
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/"><svg viewBox="0 0 160 160" fill="currentColor" aria-hidden="true"><path d="M147.22,124.99l.2,22.96-67.4.05-.3-38.21c-5.07,20.91-20.84,36.39-42.43,38-8.19.61-16.08.05-24.72.14l.47-91.57c.12-23.5,19.87-43.14,43.16-43.97,16.52-.59,31.84-.62,48.27.03,23.3.91,41.54,20.86,42.74,43.68.44,8.32.15,15.7.14,24.03l-38.03.34c21.38,4.78,37.72,22.19,37.91,44.54ZM93.69,100.97c4.42-.69,7.11-4.16,6.97-8.38l.05-33.99-33.37.2c-4.77-.18-7.94,3.21-8.36,7.83l.03,34.22,34.68.12Z"/></svg><div><div class="name">Ruther Bergonia</div><div class="sub muted">Systems architect · Manila</div></div></a>
+  <div class="right">
+    <a class="btn" href="/">Ask Ru Bot</a>
+    <a class="btn primary" href="mailto:ruther.bergonia@gmail.com">Email me</a>
+  </div>
+</header>
+<nav class="rail" aria-label="Tools">
+  <a class="icon-btn" href="/" aria-label="Chat with Ru Bot" data-tip="Chat with Ru Bot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+  <a class="icon-btn" href="mailto:ruther.bergonia@gmail.com" aria-label="Email" data-tip="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  <div class="sep"></div>
+  <a class="icon-btn" href="https://github.com/rockyru" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
+  <a class="icon-btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+  <a class="icon-btn" href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)" data-tip="Resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></a>
+</nav>
+
+<main class="page" id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/work/">Work</a><span>/</span><span>RBUILDS</span></nav>
+<p class="eyebrow">Case study · AI software engineering team</p>
+<h1>An AI engineering team, with a human at every gate.</h1>
+<p class="lead">RBUILDS is a macOS app that runs a small team of Claude agents on my repositories: a Coder, a Reviewer, QA, Security and DevOps, plus a Researcher and a PM. I act as the CEO. The agents plan, build, review and ship on their own; I approve the plans, any command that reaches outside my Mac, and every merge.</p>
+<p class="note">My own tool, in daily use, not for sale. This page was itself planned, built and tested by RBUILDS, as ticket T-49, and I approved it before it went live.</p>
+<div class="pill-row"><span class="pill">AI agents</span><span class="pill">Claude Agent SDK</span><span class="pill">Human in the loop</span><span class="pill">SwiftUI · RealityKit</span><span class="pill">TypeScript</span></div>
+<div class="stat-row four">
+  <div class="stat sm"><b>Architect &amp; Developer</b><span>Role</span></div>
+  <div class="stat sm"><b>macOS · iOS · watchOS</b><span>Platform</span></div>
+  <div class="stat sm"><b>Claude Agent SDK</b><span>AI</span></div>
+  <div class="stat sm"><b>In daily use</b><span>Status</span></div>
+</div>
+
+<section class="section">
+  <div class="num">01 · The problem</div>
+  <p>I look after many repositories on my own: institutional platforms, client sites, my own products. AI coding agents are fast at the work in between, but one agent with an open terminal and nobody checking is a risk. It can change the wrong branch, skip the tests, or ship something nobody reviewed.</p>
+  <p>What I wanted was the structure of a real team: separate roles, a review before anything merges, and a person who signs off on the decisions that are hard to undo.</p>
+</section>
+
+<section class="section">
+  <div class="num">02 · The design decision: a team with gates</div>
+  <p>RBUILDS gives every ticket the same path a small engineering team would follow, and puts me at three gates.</p>
+  <div class="steps">
+    <div class="step"><h3>Plans before code</h3><p>On plan-first tickets the Coder reads the code and writes a plan. Nothing changes until I approve it, or we talk it over and it gets revised.</p></div>
+    <div class="step"><h3>Outbound commands</h3><p>Any command that reaches outside my Mac, such as a deploy or a publish, pauses until I approve that exact command.</p></div>
+    <div class="step"><h3>Merges</h3><p>The team opens a pull request. Nothing merges until I confirm it.</p></div>
+  </div>
+  <p>Everything between those gates the team does on its own. It's the same stance as <a href="/work/aria-controlled-response-ai/">ARIA</a>: AI should reduce operational risk, not add it.</p>
+</section>
+
+<section class="section">
+  <div class="num">03 · How a ticket flows</div>
+  <div class="steps">
+    <div class="step"><h3>Ticket</h3><p>I write the ticket. It gets its own git branch in an isolated worktree, so tickets never touch each other or my main checkout.</p></div>
+    <div class="step"><h3>Plan and build</h3><p>The Coder plans if asked, then builds and commits. If it hits a decision that's mine, it asks me mid-run and waits for the answer instead of guessing.</p></div>
+    <div class="step"><h3>Review, QA, Security</h3><p>Each checks the change in turn. Findings send it back to the Coder for another round.</p></div>
+    <div class="step"><h3>Pull request</h3><p>DevOps pushes the branch and opens a pull request, then the ticket lands on my desk.</p></div>
+    <div class="step"><h3>Merge</h3><p>I approve the merge. After it, DevOps checks that the change is actually live.</p></div>
+  </div>
+  <p>Research tickets run in their own lane: the Researcher reads the code and the web and writes a report, and never waits behind a build. A report I like becomes a build ticket.</p>
+</section>
+
+<section class="section">
+  <div class="num">04 · Engineering notes</div>
+  <p>For engineers and technical recruiters: how RBUILDS is built, as of November 2026. It changes often.</p>
+  <ul>
+    <li><strong>The app.</strong> Native SwiftUI on macOS. A 3D office built with RealityKit, where each agent's desk shows its live status. Around it: a tickets board, a chat panel with the PM, a document viewer for plans and reports, and a built-in terminal.</li>
+    <li><strong>Companions.</strong> iPhone and Apple Watch apps with push notifications, so I can follow tickets, answer the team's questions and approve or reject from my phone or wrist.</li>
+    <li><strong>The runner.</strong> TypeScript on Node, built on the Claude Agent SDK, with a local SQLite store. It runs the agents and keeps the apps updated.</li>
+    <li><strong>Roles as permissions.</strong> Each role gets its own tools and instructions. Reviewer, Security and DevOps are read-only on the code; the Researcher only reads.</li>
+    <li><strong>Guardrails.</strong> Every tool call an agent makes goes through a pre-tool hook. Some commands are forbidden outright, whoever approves, because they would break a ticket's isolation or skip the merge gate. Commands that reach outside the Mac wait for my approval of that exact command. The guardrails are pure functions with their own unit tests in Vitest.</li>
+    <li><strong>Isolation and parallel work.</strong> Every ticket runs in its own worktree and branch, so several tickets can run at once without stepping on each other.</li>
+    <li><strong>Cost control.</strong> Each agent run has a USD cap, and a daily usage guard stops new work when it's reached.</li>
+  </ul>
+  <p>What's deliberately not on this page: the exact command rules, the prompts, and how the phone and watch connect. Publishing those would be a map for getting around the guardrails.</p>
+</section>
+
+<section class="section">
+  <div class="num">05 · Where RBUILDS fits</div>
+  <p>RBUILDS is my AI-agents work, alongside <a href="/work/aria-controlled-response-ai/">ARIA</a>, the assistant that knows when not to answer, and Ru Bot, the chat on <a href="/">this site's homepage</a>, which answers only from the site's own content. The same rule runs through all three: the AI does the work, and a person stays in charge of anything that's hard to undo.</p>
+  <p class="note"><strong>Written by</strong> Ruther Bergonia, Software Systems Architect &amp; Senior Full-Stack Engineer, Metro Manila. I designed and built RBUILDS. <a href="/about-ruther-bergonia/">More about me</a>.</p>
+  <h3>Related case studies</h3>
+  <div class="related"><a href="/work/aria-controlled-response-ai/"><span>ARIA: a controlled-response AI assistant</span><span>→</span></a><a href="/work/suri-research-information-system/"><span>SURI: a research information system for UP Manila</span><span>→</span></a></div>
+</section>
+
+<div class="cta">
+  <p class="eyebrow">Start here</p>
+  <h2>Have a system worth building properly?</h2>
+  <p>Tell me what you're building and what's getting in the way. I'll come back with an honest read on whether I'm the right fit, and how I'd approach it. Replies within one business day.</p>
+  <div class="btn-row"><a class="btn primary" href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/ruther-bergonia-a9959813a/" rel="noopener">LinkedIn</a></div>
+</div>
+
+</main>
+<footer class="foot">
+  <div><strong>Ruther Bergonia</strong> · Systems architect · Metro Manila</div>
+  <nav><a href="/">Ru Bot</a><a href="/work/">Work</a><a href="/services/">Services</a><a href="/about-ruther-bergonia/">About</a><a href="/contact/">Contact</a><a href="/assets/ruther-bergonia-resume.pdf" target="_blank" rel="noopener">CV</a></nav>
+  <div>© 2026</div>
+</footer>
+
+  <script>try{if(sessionStorage.getItem('rubot.convo')){document.querySelectorAll('a.btn[href="/"]').forEach(a=>{a.textContent='\u2190 Back to chat';});document.querySelectorAll('.rail a[href="/"]').forEach(a=>{a.dataset.tip='Back to chat';a.setAttribute('aria-label','Back to chat');});}}catch(e){}</script>
+</body>
+</html>

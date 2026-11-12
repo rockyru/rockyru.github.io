@@ -9,7 +9,7 @@ This document is the complete content of rmbergonia.com. The assistant answers O
 - Location: Metro Manila, Philippines (GMT+8). Works remotely across time zones.
 - Experience: 11+ years (career started 2015). Six platforms live.
 - Current role: Systems architect at the Research Grants Administration Office (RGAO), University of the Philippines Manila. Official position title there is Senior Administrative Assistant II. Leads architecture and development of SURI, building TRACE, and ARIA.
-- Also: independent contractor since 2018; runs Sprntr (websites + CRM for local businesses) and CNTXTQRY (AI practice tool for customer-service conversations).
+- Also: independent contractor since 2018; runs Sprntr (websites + CRM for local businesses) and CNTXTQRY (AI practice tool for customer-service conversations). Built RBUILDS, his own AI software engineering team app (not for sale).
 - Availability: always open for work and new client projects. Remote projects across time zones. Replies within one business day.
 - Email: ruther.bergonia@gmail.com (fastest way to reach him).
 - LinkedIn: https://www.linkedin.com/in/ruther-bergonia-a9959813a/
@@ -129,6 +129,9 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 - He architected the APIs, database schemas, reporting systems, and role-based access control behind both, led deployment to a VPS, staff training, and post-deployment support.
 - Outcome: ~1,000 applicants a year, ~200 tickets a month, admissions records, reporting, and applicant support running through structured, role-controlled software.
 
+### RBUILDS — AI software engineering team (own tool)
+- Case study: https://rmbergonia.com/work/rbuilds-ai-engineering-team/ · Full details under Products below. A macOS app that runs a team of Claude agents (Coder, Reviewer, QA, Security, DevOps, Researcher, PM) with human approval gates. His AI-agents and LLM-tooling work, alongside ARIA and CNTXTQRY.
+
 ### Alamat
 - An exam reviewer built with the same controlled-response AI approach as ARIA. Mentioned on the About page; no separate case study.
 
@@ -171,6 +174,23 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 - Pricing: Free ₱0, 3 sessions a month, no card needed. Job-hunt pass ₱149 for 7 days, one-time, 10 sessions. Pro ₱499 per month or ₱4,990 per year, 30 sessions a month, up to 5 SOP uploads a month. Payment by QR Ph with receipt upload as an alternative. Plans do not auto-renew.
 - Disclaimers: cannot promise job placement; AI scoring is coaching, not an official assessment, and can be wrong.
 
+### RBUILDS — AI software engineering team (own tool)
+- URL (case study): https://rmbergonia.com/work/rbuilds-ai-engineering-team/
+- Status: his own tool, in daily use, not for sale. It has no price, no public download, no public repo and no sign-up. Facts below are as of November 2026; the tool changes often.
+- Role: Architect & Developer. Platform: macOS app, with iPhone and Apple Watch companions. AI: Claude Agent SDK.
+- What it is: a macOS app that runs a small AI software engineering team on his own repositories. He acts as the CEO. The agents are Coder, Reviewer, QA, Security and DevOps, plus a Researcher and a PM (chief of staff).
+- Problem it solves: one engineer looking after many repositories. AI coding agents are fast, but an agent that can edit, run commands and ship with nobody checking is a risk. RBUILDS gives the work a team's structure and puts a human on every decision that is hard to undo.
+- Design decision: a team with gates. The human approves plans before code changes, approves any command that reaches outside the Mac, and confirms every merge. Same stance as ARIA: AI should reduce operational risk, not add it.
+- How a ticket flows: (1) He writes a ticket. (2) On plan-first tickets the Coder reads the code and writes a plan; he approves it or talks it over first. (3) The Coder builds on the ticket's own git branch, in an isolated worktree, and commits. (4) Reviewer, QA and Security check it in turn; findings send it back to the Coder for another round. (5) DevOps pushes the branch and opens a pull request. (6) He reviews and approves the merge; nothing merges without that. Agents can ask him a question mid-run instead of guessing; the run pauses until he answers.
+- Research tickets: the Researcher reads the code and the web and writes a report; research runs in its own lane, so it never waits behind builds. A report can be turned into a build ticket.
+- The app: native SwiftUI with a 3D office (RealityKit) where each agent's desk shows its live status; a tickets board; a chat panel with the PM; a document viewer for plans and reports; a built-in terminal.
+- Companions: iPhone and Apple Watch apps with push notifications, so he can follow tickets, answer questions and approve or reject from his phone or wrist.
+- The runner: TypeScript on Node, built on the Claude Agent SDK, with a local SQLite store. It runs the agents and keeps the apps updated.
+- Guardrails (general terms only): every tool call an agent makes goes through a pre-tool hook. Reviewer, Security and DevOps are read-only on the code. Some commands are forbidden outright, whoever approves, because they would break the ticket's isolation or skip the merge gate. Commands that reach outside the Mac (for example remote shells, deploys and publishing) pause until he approves that exact command. The guardrails are pure functions covered by unit tests (Vitest).
+- Cost control: each agent run has a USD cap, and a daily usage guard stops new work when it is reached. Several tickets can run at once, each in its own worktree.
+- Why the human approves plans, outbound commands and merges: those are the points where a mistake is expensive or hard to reverse. Everything else the team does on its own.
+- Not published, on purpose: the exact command rules, prompts, how the phone and watch connect, and any credentials or infrastructure details. If asked, say they are not covered on the site.
+
 ## Client work: Construction Estimating Academy
 - URL: https://estimatingacademy.org/ · Made in the Philippines. A client project (Ruther built the platform).
 - Headline: "Practical construction estimating training, online." Tagline: "Self-paced online courses. Live webinars. Verifiable certificates."
@@ -190,3 +210,4 @@ As a systems partner he scopes, builds, and stands behind software that has to k
 ## This website
 
 - rmbergonia.com is a static site on GitHub Pages behind Cloudflare, source at https://github.com/rockyru/rockyru.github.io. The homepage is a chat-style interface whose assistant is called Ru Bot; it answers as Ruther, only from the site's own content.
+- The RBUILDS case study page (https://rmbergonia.com/work/rbuilds-ai-engineering-team/) was planned, built and tested by RBUILDS itself, as ticket T-49, and Ruther approved it before it went live.
