@@ -497,7 +497,7 @@
 
   // ── Scripted answers (mirror worker/knowledge.md) ──────────────
   const INTENTS = [
-    { id: 'rbuilds', hidden: true, match: /\b(rbuilds|ai (dev|engineering|software) team|agent team)\b/i,
+    { id: 'rbuilds', group: 'cases', label: 'RBUILDS', icon: 'doc', match: /\b(rbuilds|ai (dev|engineering|software) team|agent team)\b/i,
       text: [
         `<strong>RBUILDS</strong> is my own tool: a macOS app that runs a small AI software engineering team on my repositories. Claude agents work as Coder, Reviewer, QA, Security and DevOps, plus a Researcher and a PM, and I act as the CEO.`,
         `Every ticket gets its own branch in an isolated worktree. The team plans, builds, reviews and opens the pull request on its own, but I sit at three gates: I approve plans before code changes, any command that reaches outside my Mac, and every merge. iPhone and Apple Watch companions let me answer and approve from anywhere.`,
