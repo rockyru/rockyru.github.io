@@ -35,6 +35,7 @@ Contact: ruther.bergonia@gmail.com — always available for remote projects acro
 ## Products
 
 - [CNTXTQRY](https://cntxtqry.com/): Ruther's AI practice tool for customer-service conversations. BPO applicants and virtual assistants rehearse chat, email and voice scenarios with an AI customer and get scored feedback (empathy, discovery, accuracy, resolution, communication, out of 100). Free: 3 sessions a month. Job-hunt pass ₱149 for 7 days (10 sessions). Pro ₱499 a month or ₱4,990 a year (30 sessions, SOP uploads). No auto-renew.
+- [RBUILDS](https://rmbergonia.com/work/rbuilds-ai-engineering-team/): Ruther's own macOS app that runs an AI software engineering team (Coder, Reviewer, QA, Security, DevOps, Researcher, PM) on the Claude Agent SDK, with iPhone and Apple Watch companions. Every ticket gets its own branch and isolated workspace; the human approves plans, outbound commands and merges. In daily use, not for sale.
 
 ## Client platforms
 

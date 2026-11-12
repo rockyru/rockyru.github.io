@@ -411,7 +411,7 @@
         <div class="thread-inner" id="threadInner">
           <article class="summary" id="summary" aria-label="Summary of this site">
             <h1>Ruther Bergonia: software systems architect and senior full-stack engineer, Metro Manila</h1>
-            <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (research-team workspace built on SURI's API, in development). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, and <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
+            <p>Production systems for universities, institutional offices and SaaS teams: <a href="/work/suri-research-information-system/">SURI</a> (research information system of record at UP Manila, 50+ users, reporting in seconds), <a href="/work/go-aral-graduate-support-platform/">GO-ARAL</a> (graduate admissions and ticketing, ~1,000 applicants a year), <a href="/work/aria-controlled-response-ai/">ARIA</a> (controlled-response AI assistant on Claude) and <a href="/work/race-platform-orchestration/">TRACE</a> (research-team workspace built on SURI's API, in development). Products: <a href="https://sprntr.dev/" rel="noopener">Sprntr</a>, websites and CRM for Philippine service businesses from ₱15,000, <a href="https://cntxtqry.com/" rel="noopener">CNTXTQRY</a>, an AI practice tool for customer-service conversations, and <a href="/work/rbuilds-ai-engineering-team/">RBUILDS</a>, my own AI software engineering team app with human approval gates. Stack: Laravel, Vue, React, Next.js, TypeScript, MySQL, Docker, Nginx, Claude and OpenAI integration.</p>
             <p><a href="/about-ruther-bergonia/">About</a> · <a href="/work/">Case studies</a> · <a href="/services/">Services</a> · <a href="/contact/">Contact</a> · <a href="/assets/ruther-bergonia-resume.pdf">Résumé (PDF)</a> · <a href="mailto:ruther.bergonia@gmail.com">ruther.bergonia@gmail.com</a></p>
           </article>
         </div>
@@ -478,6 +478,7 @@
     aria:  { t: 'ARIA', d: 'Controlled-response AI assistant. Approved sources only, human handoff, tracked tickets.', m: 'Claude · RAG · Laravel', img: '/images/og-work.png', url: '/work/aria-controlled-response-ai/' },
     race:  { t: 'TRACE', d: 'Workspace for research teams on SURI\'s records: tasks, milestones, files, budget, procurement. In development.', m: 'Vue 3 · Laravel', img: '/images/trace.png', url: '/work/race-platform-orchestration/' },
     cntxt: { t: 'CNTXTQRY', d: 'AI practice tool for customer-service conversations. Chat, email and voice rehearsal with scored feedback.', m: 'Product · Live', img: '/images/cntxtqry.jpg', url: 'https://cntxtqry.com/', ext: true },
+    rbuilds: { t: 'RBUILDS', d: 'My AI software engineering team: Claude agents as Coder, Reviewer, QA, Security and DevOps, with me approving plans, outbound commands and merges.', m: 'Product · Own tool', img: '/images/og-rbuilds.png', url: '/work/rbuilds-ai-engineering-team/' },
     estim: { t: 'Construction Estimating Academy', d: 'Online training platform: self-paced courses, live webinars, template store, verifiable certificates.', m: 'Client · Live', img: '/images/estimatingacademy.jpg', url: 'https://estimatingacademy.org/', ext: true },
     lamour: { t: 'Lamour Printing Services', d: 'Print shop in Sampaloc, Manila. Sprntr\'s first pilot customer.', m: 'Sprntr client', word: 'Print', url: 'https://lamour.sprntr.dev/', ext: true },
     pets:  { t: 'Pampered Pets Club', d: 'Grooming, hotel and daycare in Batangas City, with a "Book a visit" flow.', m: 'Sprntr client', word: 'Pets', url: 'https://pamperedpets.sprntr.dev/', ext: true },
@@ -496,6 +497,15 @@
 
   // ── Scripted answers (mirror worker/knowledge.md) ──────────────
   const INTENTS = [
+    { id: 'rbuilds', hidden: true, match: /\b(rbuilds|ai (dev|engineering|software) team|agent team)\b/i,
+      text: [
+        `<strong>RBUILDS</strong> is my own tool: a macOS app that runs a small AI software engineering team on my repositories. Claude agents work as Coder, Reviewer, QA, Security and DevOps, plus a Researcher and a PM, and I act as the CEO.`,
+        `Every ticket gets its own branch in an isolated worktree. The team plans, builds, reviews and opens the pull request on its own, but I sit at three gates: I approve plans before code changes, any command that reaches outside my Mac, and every merge. iPhone and Apple Watch companions let me answer and approve from anywhere.`,
+        `It's in daily use and not for sale. This case study was itself built by RBUILDS.`,
+      ],
+      rich: () => cards(['rbuilds']) + tags(['Claude Agent SDK', 'SwiftUI · RealityKit', 'TypeScript', 'SQLite', 'Human approval gates', 'Not for sale']) + btns([{ label: 'Read the case study', href: '/work/rbuilds-ai-engineering-team/', primary: true }]),
+      follow: [{ q: 'How does RBUILDS keep a human in charge?', ai: true }, 'Tell me about ARIA', 'Show all projects', 'Are you available for hire?'] },
+
     { id: 'about', label: 'About me', icon: 'user',
       match: /\b(who are you|who is ruther|about (you|yourself|ruther|him)|yourself|introduc|intro|background|bio|what do you do)\b/i,
       text: [
@@ -509,8 +519,8 @@
     { id: 'work', label: 'Selected work', icon: 'grid',
       match: /\b(work|projects?|built|portfolio|case stud(y|ies)|systems?|shipped)\b/i,
       text: [`Four systems in production for UP Manila, each solving a real operational problem, plus the products and client platforms I run or built.`],
-      rich: () => cards(['suri', 'aral', 'aria', 'race', 'cntxt', 'estim']) + btns([{ label: 'All case studies', href: '/work/' }]),
-      follow: ['Tell me about SURI', 'How does ARIA stay accurate?', 'What is TRACE?', 'Show me client sites'] },
+      rich: () => cards(['suri', 'aral', 'aria', 'race', 'cntxt', 'rbuilds', 'estim']) + btns([{ label: 'All case studies', href: '/work/' }]),
+      follow: ['Tell me about SURI', 'How does ARIA stay accurate?', 'What is RBUILDS?', 'Show me client sites'] },
 
     { id: 'suri', group: 'cases', label: 'SURI', icon: 'doc', match: /\bsuri\b/i,
       text: [
@@ -641,7 +651,7 @@
         `It's built for Filipino BPO applicants preparing for mock assessments and virtual assistants preparing for client work. VAs can upload a client's SOP to generate practice scenarios, and agency workspaces get coach review. Scoring is coaching, not an official assessment, and it can't promise job placement.`,
       ],
       rich: () => cards(['cntxt']) + stats([['Free', '3 sessions a month, no card'], ['₱149', 'Job-hunt pass, 7 days, 10 sessions'], ['₱499', 'Pro per month, or ₱4,990 a year']], true) + tags(['Chat · Email · Voice', 'AI judge', 'SOP upload', 'Printable reports', 'QR Ph', 'No auto-renew']) + btns([{ label: 'Try CNTXTQRY', href: 'https://cntxtqry.com/', primary: true, ext: true }]),
-      follow: ['Show all projects', 'What AI tools do you use?', 'How do I contact you?'] },
+      follow: ['What is RBUILDS?', 'Show all projects', 'What AI tools do you use?', 'How do I contact you?'] },
 
     { id: 'contact', label: 'Hire / contact', icon: 'mail',
       match: /\b(contact|hire|hiring|available|availability|email|reach|talk|call|book|work with|remote|open for work|start a project)\b/i,
@@ -679,7 +689,7 @@
   };
 
   const SUGGESTIONS = [
-    { t: 'Production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY', q: 'What have you built?', id: 'work' },
+    { t: 'Production projects', d: 'SURI, GO-ARAL, ARIA, TRACE, CNTXTQRY, RBUILDS', q: 'What have you built?', id: 'work' },
     { t: 'Technical expertise', d: 'Laravel, Vue, React, MySQL, Docker, AI', q: 'What are your capabilities?', id: 'stack' },
     { t: 'Evaluate for a role', d: 'Evidence-based fit check, recruiter mode', q: 'Evaluate Ruther for a senior full-stack developer role (Laravel, Vue, systems architecture). Be specific about evidence from his work, and say what the site does not show.', ai: true },
     { t: 'How he builds', d: 'Approach, principles, process', q: 'How do you build?', id: 'approach' },
@@ -791,7 +801,7 @@
     'What are your capabilities?': 'stack', 'What AI tools do you use?': 'stack',
     'How do you build?': 'approach', 'Tell me about your experience': 'experience', 'What do you do as a freelancer?': 'freelance',
     'What does Sprntr cost?': 'services', "What's included in Sprntr?": 'sprntr-included', 'How does the Sprntr process work?': 'sprntr-process', 'Sprntr FAQ': 'sprntr-faq',
-    'Show me client sites': 'clients', 'What is CNTXTQRY?': 'cntxt',
+    'Show me client sites': 'clients', 'What is CNTXTQRY?': 'cntxt', 'What is RBUILDS?': 'rbuilds',
     'Are you available for hire?': 'contact', 'How do I contact you?': 'contact', 'Send a message from here': 'compose', 'What should I include in an email?': 'include',
   };
   function addFollowups(body, list) {
@@ -812,6 +822,8 @@
     let list;
     if (/\b(hire|hiring|role|position|fit|candidate|recruit|job|interview|evaluate|team|senior|lead|vacancy|resume|résumé|cv)\b/.test(qt))
       list = [{ q: 'What are the gaps or risks in hiring Ruther for this?', ai: true }, { q: 'What would you ask Ruther in a technical interview, based on his work?', ai: true }, 'Send a message from here', 'Download résumé'];
+    else if (/\brbuilds\b/.test(qt))
+      list = [{ q: 'How does RBUILDS keep a human in charge?', ai: true }, { q: 'What is RBUILDS built with?', ai: true }, 'Tell me about ARIA', 'Are you available for hire?'];
     else if (/\bsuri\b/.test(qt))
       list = [{ q: 'What architecture decisions shaped SURI?', ai: true }, { q: 'What was hard about building SURI?', ai: true }, 'What is TRACE?', 'Are you available for hire?'];
     else if (/\baria\b/.test(qt) || /\b(rag|retrieval|hallucinat|refus)/.test(t))
